@@ -40,7 +40,8 @@
 						<p class="text-body-s mt-1">
 							Head office<br />Block 54A, Plot 10, Off Rufus Giwa Street, Off Adebayo Doherty Road,
 							Off Admiralty Way, Lekki Phase 1, Lagos.
-							<br /><a href="#map" class="text-bright-blue">↘ Google map </a>
+							<br /><a href="/" class="text-bright-blue">↘ Google map </a>
+							<!--TODO: replace with map url-->
 						</p>
 					</div>
 
