@@ -131,11 +131,16 @@ export default {
 			'black-600': 'var(--color-black-600)',
 			'black-500': 'var(--color-black-500)',
 			'black-400': 'var(--color-black-400)',
-			'black-300': 'var(--color-black-300)'
+			'black-300': 'var(--color-black-300)',
+			white: '#ffffff'
 		},
 		extend: {
 			fontFamily: {
 				sans: ['Lato', '-apple-system', 'sans-serif']
+			},
+			spacing: {
+				22: '5.5rem',
+				19: '4.75rem'
 			}
 		}
 	},
