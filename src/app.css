@@ -1,0 +1,44 @@
+@import url('https://use.typekit.net/mmt7aqb.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--color-midnight-blue: hsl(232, 45%, 27%);
+	--color-pewter-blue: hsl(199, 31%, 61%);
+	--color-burlywood: hsl(31, 62%, 69%);
+	--color-vivid-burgundy: hsl(355, 73%, 37%);
+	--color-naples-yellow: hsl(47, 100%, 68%);
+	--color-deep-blue: hsl(219, 77%, 22%);
+	--color-bright-blue: hsl(220, 84%, 54%);
+	--color-neon-blue: hsl(252, 100%, 64%);
+	--color-soft-blue: hsl(206, 92%, 64%);
+	--color-greyish-blue: hsl(220, 22%, 54%);
+	--color-whitish-blue: hsl(230, 75%, 98%);
+	--color-mangeta: hsl(309, 62%, 65%);
+	--color-orange: hsl(16, 82%, 65%);
+	--color-light-green: hsl(135, 46%, 58%);
+	--color-success: hsl(154, 73%, 47%);
+	--color-warning: hsl(43, 95%, 66%);
+	--color-error: hsl(0, 100%, 68%);
+	--color-link: hsl(238, 71%, 55%);
+	--color-black-1000: hsl(0, 0%, 4%);
+	--color-black-900: hsl(0, 0%, 44%);
+	--color-black-800: hsl(0, 0%, 55%);
+	--color-black-700: hsl(0, 0%, 82%);
+	--color-black-600: hsl(0, 0%, 87%);
+	--color-black-500: hsl(0, 0%, 91%);
+	--color-black-400: hsl(0, 0%, 95%);
+	--color-black-300: hsl(0, 0%, 98%);
+}
+
+body {
+	color: var(--color-midnight-blue);
+	background-color: white;
+}
+
+.dark body {
+	background-color: var(--color-black-1000);
+	color: white;
+}
