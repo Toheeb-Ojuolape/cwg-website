@@ -132,7 +132,8 @@ export default {
 			'black-500': 'var(--color-black-500)',
 			'black-400': 'var(--color-black-400)',
 			'black-300': 'var(--color-black-300)',
-			white: '#ffffff'
+			white: '#ffffff',
+			transparent: 'transparent'
 		},
 		extend: {
 			fontFamily: {
@@ -140,7 +141,8 @@ export default {
 			},
 			spacing: {
 				22: '5.5rem',
-				19: '4.75rem'
+				19: '4.75rem',
+				25: '6.25rem'
 			}
 		}
 	},
