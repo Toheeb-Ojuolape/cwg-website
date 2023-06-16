@@ -10,6 +10,7 @@
 	<Nav />
 
 	<main>
+		<div class="h-[116px]" />
 		<slot />
 	</main>
 

@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import ArrowDownIcon from '../Svgs/ArrowDownIcon.svelte';
 	import ThemeToggleIcon from '../Svgs/ThemeToggleIcon.svelte';
 	import CommunityDropdown from './CommunityDropdown.svelte';
@@ -7,9 +8,24 @@
 	import ServicesDropdown from './ServicesDropdown.svelte';
 
 	let shouldRotate = false;
+	let shouldHaveColor = false;
+
+	onMount(() => {
+		window.addEventListener('scroll', (ev) => {
+			if (window.scrollY >= 22) {
+				shouldHaveColor = true;
+			} else {
+				shouldHaveColor = false;
+			}
+		});
+	});
 </script>
 
-<nav class="pt-8 pb-4">
+<nav
+	class="pt-8 pb-4 fixed top-0 left-0 right-0 z-10 transition-all"
+	class:bg-transparent={!shouldHaveColor}
+	class:bg-white={shouldHaveColor}
+>
 	<div class="flex items-center justify-between px-4 lg:px-8 box-container mx-auto">
 		<NavLogo />
 
