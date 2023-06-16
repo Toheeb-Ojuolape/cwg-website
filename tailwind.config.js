@@ -146,6 +146,12 @@ export default {
 			},
 			maxWidth: {
 				'8xl': '90rem'
+			},
+			borderRadius: {
+				10: '10px'
+			},
+			boxShadow: {
+				brand: '0px 12px 20px rgba(0, 0, 0, 0.1)'
 			}
 		}
 	},

@@ -36,6 +36,7 @@
 body {
 	color: var(--color-midnight-blue);
 	background-color: white;
+	transition: all 0.5s ease-in-out;
 }
 
 .dark body {
@@ -45,4 +46,44 @@ body {
 
 .box-container {
 	max-width: 1440px;
+}
+
+.Nav__dropdown__container {
+	transform-origin: top;
+	position: absolute;
+	margin-top: 16px;
+	transform: scaleY(0);
+	transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+	/* box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1); */
+}
+
+.Nav__dropdown__container:hover {
+	transform: scaleY(1);
+}
+
+.peer:hover + .Nav__dropdown__container {
+	transform: scaleY(1);
+}
+
+.caret,
+.caret span {
+	border-style: solid;
+	border-width: 0px 10px 10px 10px;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	width: 0px;
+	height: 0px;
+	display: block;
+}
+
+.caret {
+	border-bottom-color: var(--color-black-500);
+	position: absolute;
+	top: -9px;
+}
+
+.caret span {
+	border-bottom-color: white;
+	margin: 1px -10px -9px;
 }
