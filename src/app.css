@@ -74,7 +74,6 @@ body {
 	border-right-color: transparent;
 	width: 0px;
 	height: 0px;
-	display: block;
 }
 
 .caret {
@@ -84,6 +83,7 @@ body {
 }
 
 .caret span {
+	display: block;
 	border-bottom-color: white;
 	margin: 1px -10px -9px;
 }
