@@ -25,10 +25,12 @@
 </script>
 
 <div>
-	<div class="link-container pt-9 grid grid-cols-3 pb-8 px-8 border border-black-500 rounded-10">
+	<div
+		class="link-container lg:pt-9 grid lg:grid-cols-3 lg:pb-8 px-4 lg:px-8 lg:border lg:border-black-500 lg:rounded-10"
+	>
 		{#each list as { link, subtitle, title }}
 			<a
-				class="text-body-medium-l hover:scale-110 transition-all duration-300"
+				class="text-body-medium-s lg:text-body-medium-l hover:scale-110 transition-all duration-300"
 				href={link}
 				aria-label={title}
 			>
@@ -38,7 +40,7 @@
 		{/each}
 	</div>
 
-	<div class="caret left-14">
+	<div class="hidden lg:block caret left-14">
 		<span />
 	</div>
 </div>
@@ -53,5 +55,14 @@
 		row-gap: 12px;
 		column-gap: 30px;
 		max-width: 787px;
+	}
+
+	@media (max-width: 1024px) {
+		.link-container {
+			background-image: none;
+			background-color: transparent;
+			max-width: 100%;
+			column-gap: 0px;
+		}
 	}
 </style>
