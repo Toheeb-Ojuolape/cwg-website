@@ -1,5 +1,7 @@
 <script>
 	import Hero from './Hero.svelte';
+	import InvestorAnnualCareerSection from './InvestorAnnualCareerSection.svelte';
+	import QualityPolicySection from './QualityPolicySection.svelte';
 	import SectionOne from './SectionOne.svelte';
 	import SectionTwo from './SectionTwo.svelte';
 </script>
@@ -8,4 +10,6 @@
 	<Hero />
 	<SectionOne />
 	<SectionTwo />
+	<InvestorAnnualCareerSection />
+	<QualityPolicySection />
 </div>
