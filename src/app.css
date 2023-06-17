@@ -36,7 +36,7 @@
 body {
 	color: var(--color-midnight-blue);
 	background-color: white;
-	transition: all s;
+	transition: all 0.3s;
 }
 
 .dark body {
@@ -51,6 +51,29 @@ body {
 @media (min-width: 1536px) {
 	.box-container {
 		max-width: 1536px;
+	}
+}
+
+.section-container {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+@media (min-width: 1024px) {
+	.section-container {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+}
+
+@media (min-width: 1536px) {
+	.section-container {
+		max-width: 1536px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 }
 
@@ -99,4 +122,24 @@ body {
 
 .dark .caret span {
 	border-bottom-color: var(--color-black-1000);
+}
+
+.arrow-button {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.arrow-button:hover {
+	color: var(--color-pewter-blue);
+	transform: scale(1.1);
+}
+
+.arrow-right {
+	margin-top: 4px;
+	transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }

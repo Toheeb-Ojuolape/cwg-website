@@ -3,7 +3,13 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		fontSize: {
-			'body-l': ['18px', '26px'],
+			'body-l': [
+				'18px',
+				{
+					lineHeight: '26px',
+					fontWeight: '300'
+				}
+			],
 			'body-m': ['15px', '24px'],
 			'body-s': ['14px', '22px'],
 			'body-xs': ['12px', '18px'],
@@ -142,6 +148,7 @@ export default {
 			},
 			spacing: {
 				13: '3.25rem',
+				15: '3.75rem',
 				19: '4.75rem',
 				22: '5.5rem',
 				23: '5.75rem',
