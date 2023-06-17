@@ -26,7 +26,7 @@
 
 <div>
 	<div
-		class="link-container lg:pt-9 grid lg:grid-cols-3 lg:pb-8 px-4 lg:px-8 lg:border lg:border-black-500 lg:rounded-10"
+		class="link-container bg-white dark:bg-black-1000 lg:pt-9 grid lg:grid-cols-3 lg:pb-8 px-4 lg:px-8 lg:border lg:border-black-500 dark:lg:border-white/20 lg:rounded-10"
 	>
 		{#each list as { link, subtitle, title }}
 			<a
@@ -47,7 +47,6 @@
 
 <style>
 	.link-container {
-		background-color: white;
 		background-image: url(../../images/services_bg.svg);
 		background-repeat: no-repeat;
 		background-position: left top;

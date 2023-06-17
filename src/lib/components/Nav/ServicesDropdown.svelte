@@ -34,11 +34,11 @@
 
 <div>
 	<div
-		class="link-container lg:pt-10 grid lg:grid-cols-3 lg:pb-8 px-4 lg:px-8 lg:border lg:border-black-500 lg:rounded-10 max-w-[867px]"
+		class="link-container bg-white dark:bg-black-1000 lg:pt-10 grid lg:grid-cols-3 lg:pb-8 px-4 lg:px-8 lg:border lg:border-black-500 dark:lg:border-white/20 lg:rounded-10 max-w-[867px]"
 	>
 		{#each list as { link, title, icon }}
 			<a
-				class="text-body-medium-s lg:text-body-medium-l flex items-center gap-2 pb-3 lg:pb-[10px] lg:border-b-[0.5px] lg:border-b-pewter-blue hover:scale-110 transition-all duration-300"
+				class="text-body-medium-s lg:text-body-medium-l flex items-center gap-2 pb-3 lg:pb-4 lg:border-b-[0.5px] lg:border-b-pewter-blue dark:lg:border-b-white/30 hover:scale-110 transition-all duration-300"
 				href={link}
 				aria-label={title}
 				><svelte:component this={icon} />
@@ -54,7 +54,6 @@
 
 <style>
 	.link-container {
-		background-color: white;
 		background-image: url(../../images/services_bg.svg);
 		background-repeat: no-repeat;
 		background-position: left top;

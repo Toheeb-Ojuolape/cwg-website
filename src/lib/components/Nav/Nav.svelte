@@ -1,22 +1,25 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import ArrowDownIcon from '../Svgs/ArrowDownIcon.svelte';
-	import ThemeToggleIcon from '../Svgs/ThemeToggleIcon.svelte';
 	import CommunityDropdown from './CommunityDropdown.svelte';
 	import CompanyDropdown from './CompanyDropdown.svelte';
 	import NavLogo from './NavLogo.svelte';
 	import ServicesDropdown from './ServicesDropdown.svelte';
 	import { browser } from '$app/environment';
+	import ThemeSwitcher from '../ThemeSwitcher.svelte';
+	import { theme } from '$lib/stores/theme-store';
 
 	type SeletedDrawer = 'company' | 'services' | 'community';
 
-	let shouldRotate = false;
 	let shouldHaveColor = false;
 
 	let showDrawer = false;
 	let showDrawerContainer = false;
 
 	let selectedDrawer: SeletedDrawer | undefined;
+
+	$: isWhite = (shouldHaveColor || showDrawer) && $theme === 'light';
+	$: isDark = (shouldHaveColor || showDrawer) && $theme === 'dark';
 
 	onMount(() => {
 		shouldHaveColor = window.scrollY >= 18;
@@ -54,7 +57,8 @@
 	id="nav"
 	class="pt-4 lg:pt-8 pb-4 fixed top-0 left-0 right-0 z-10"
 	class:bg-transparent={!shouldHaveColor}
-	class:Nav__scroll={shouldHaveColor || showDrawer}
+	class:Nav__scroll={isWhite}
+	class:Nav__scroll--dark={isDark}
 >
 	<div class="flex items-center justify-between px-4 lg:px-8 box-container mx-auto">
 		<NavLogo />
@@ -87,24 +91,18 @@
 			<li><a href="/">Fifthlab</a></li>
 		</ul>
 
-		<button class="hidden lg:block" on:click={() => (shouldRotate = !shouldRotate)}>
-			<div
-				class:-scale-x-100={shouldRotate}
-				class:scale-x-100={!shouldRotate}
-				class="transition-all duration-500"
-			>
-				<ThemeToggleIcon />
-			</div>
-		</button>
+		<div class="hidden lg:block">
+			<ThemeSwitcher />
+		</div>
 
 		<button
 			class="block lg:hidden"
 			on:click={() => (showDrawerContainer ? closeDrawer() : (showDrawerContainer = true))}
 		>
 			<div class="Nav__menu-icon" class:Nav__menu-icon--visible={showDrawer}>
-				<div />
-				<div class:Nav__menu-icon--middle={showDrawer} />
-				<div />
+				<div class="bg-midnight-blue dark:bg-white" />
+				<div class="bg-midnight-blue dark:bg-white" class:Nav__menu-icon--middle={showDrawer} />
+				<div class="bg-midnight-blue dark:bg-white" />
 			</div>
 		</button>
 	</div>
@@ -118,13 +116,15 @@
 	on:keyup
 >
 	<div
-		class="h-full flex flex-col bg-white/80 w-[250px] transition origin-right duration-300"
+		class="h-full flex flex-col bg-white/80 dark:bg-black/80 w-[250px] transition origin-right duration-300"
 		class:scale-x-0={!showDrawer}
 		class:scale-x-100={showDrawer}
 		on:click|stopPropagation={() => {}}
 		on:keyup
 	>
-		<ul class="Nav__mobile__ul flex-1 overflow-y-auto">
+		<ul
+			class="[&_li]:py-5 [&_li]:mx-6 [&_li]:border-b-[0.5px] [&_li]:border-b-pewter-blue dark:[&_li]:border-b-white/30 flex-1 overflow-y-auto"
+		>
 			<li on:click={() => onSelectDrawerItem('company')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
 					Company
@@ -184,14 +184,8 @@
 			<li><a href="/">Fifthlab</a></li>
 		</ul>
 
-		<button class="max-w-max p-5" on:click={() => (shouldRotate = !shouldRotate)}>
-			<div
-				class:-scale-x-100={shouldRotate}
-				class:scale-x-100={!shouldRotate}
-				class="transition-all duration-500"
-			>
-				<ThemeToggleIcon />
-			</div>
+		<button class="max-w-max p-5">
+			<ThemeSwitcher />
 		</button>
 	</div>
 </div>
@@ -203,11 +197,17 @@
 		backdrop-filter: blur(5px);
 	}
 
-	.Nav__mobile__ul li {
+	.Nav__scroll--dark {
+		background-color: rgba(0, 0, 0, 0.8);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		backdrop-filter: blur(5px);
+	}
+
+	/* .Nav__mobile__ul li {
 		padding: 20px 0;
 		border-bottom: 0.5px solid var(--color-pewter-blue);
 		margin: 0 24px;
-	}
+	} */
 
 	.Nav__drawer__item {
 		display: grid;
@@ -241,7 +241,6 @@
 		height: 3px;
 		width: 20px;
 		border-radius: 2px;
-		background-color: var(--color-midnight-blue);
 		transition: all 0.5s;
 	}
 

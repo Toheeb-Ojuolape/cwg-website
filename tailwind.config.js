@@ -133,6 +133,7 @@ export default {
 			'black-400': 'var(--color-black-400)',
 			'black-300': 'var(--color-black-300)',
 			white: '#ffffff',
+			black: '#000000',
 			transparent: 'transparent'
 		},
 		extend: {
