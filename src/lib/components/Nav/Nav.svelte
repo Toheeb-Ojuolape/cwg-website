@@ -8,6 +8,7 @@
 	import { browser } from '$app/environment';
 	import ThemeSwitcher from '../ThemeSwitcher.svelte';
 	import { theme } from '$lib/stores/theme-store';
+	import { page } from '$app/stores';
 
 	type SeletedDrawer = 'company' | 'services' | 'community';
 
@@ -20,6 +21,7 @@
 
 	$: isWhite = (shouldHaveColor || showDrawer) && $theme === 'light';
 	$: isDark = (shouldHaveColor || showDrawer) && $theme === 'dark';
+	$: useWhite = !shouldHaveColor && $page.url.pathname === '/';
 
 	onMount(() => {
 		shouldHaveColor = window.scrollY >= 18;
@@ -61,38 +63,44 @@
 	class:Nav__scroll--dark={isDark}
 >
 	<div class="flex items-center justify-between px-4 lg:px-8 box-container mx-auto">
-		<NavLogo />
+		<NavLogo useWhiteLogo={useWhite} />
 
 		<ul
 			class="hidden flex-1 lg:flex items-center justify-center gap-5 font-medium text-[17px] leading-[27px]"
 		>
 			<li>
-				<span class="flex peer gap-1 items-center cursor-pointer">Company<ArrowDownIcon /></span>
+				<span class="flex peer gap-1 items-center cursor-pointer" class:text-white={useWhite}
+					>Company<ArrowDownIcon /></span
+				>
 				<div class="Nav__dropdown__container">
 					<CompanyDropdown />
 				</div>
 			</li>
 
 			<li>
-				<a href="/" class="flex peer gap-1 items-center">Services<ArrowDownIcon /></a>
+				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
+					>Services<ArrowDownIcon /></a
+				>
 				<div class="Nav__dropdown__container">
 					<ServicesDropdown />
 				</div>
 			</li>
 
-			<li><a href="/">Our sectors</a></li>
+			<li><a href="/" class:text-white={useWhite}>Our sectors</a></li>
 			<li>
-				<a href="/" class="flex peer gap-1 items-center">Community<ArrowDownIcon /></a>
+				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
+					>Community<ArrowDownIcon /></a
+				>
 				<div class="Nav__dropdown__container">
 					<CommunityDropdown />
 				</div>
 			</li>
-			<li><a href="/">Insights</a></li>
-			<li><a href="/">Fifthlab</a></li>
+			<li><a href="/" class:text-white={useWhite}>Insights</a></li>
+			<li><a href="/" class:text-white={useWhite}>Fifthlab</a></li>
 		</ul>
 
 		<div class="hidden lg:block">
-			<ThemeSwitcher />
+			<ThemeSwitcher {useWhite} />
 		</div>
 
 		<button
@@ -116,7 +124,7 @@
 	on:keyup
 >
 	<div
-		class="h-full flex flex-col bg-white/80 dark:bg-black/80 w-[250px] transition origin-right duration-300"
+		class="h-full flex flex-col bg-white/[.85] dark:bg-black/[.85] w-[250px] transition origin-right duration-300"
 		class:scale-x-0={!showDrawer}
 		class:scale-x-100={showDrawer}
 		on:click|stopPropagation={() => {}}
@@ -192,22 +200,16 @@
 
 <style>
 	.Nav__scroll {
-		background-color: rgba(255, 255, 255, 0.8);
+		background-color: rgba(255, 255, 255, 0.85);
 		border-bottom: 1px solid var(--color-black-500);
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(7px);
 	}
 
 	.Nav__scroll--dark {
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.85);
 		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(7px);
 	}
-
-	/* .Nav__mobile__ul li {
-		padding: 20px 0;
-		border-bottom: 0.5px solid var(--color-pewter-blue);
-		margin: 0 24px;
-	} */
 
 	.Nav__drawer__item {
 		display: grid;
@@ -224,7 +226,7 @@
 	.Nav__drawer {
 		height: calc(100vh - 101px);
 		top: 101px;
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(7px);
 	}
 
 	.Nav__menu-icon {

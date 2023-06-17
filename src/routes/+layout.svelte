@@ -2,6 +2,9 @@
 	import '../app.css';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Nav from '$lib/components/Nav/Nav.svelte';
+	import { page } from '$app/stores';
+
+	console.log($page.url.pathname);
 </script>
 
 <svelte:head>
@@ -31,7 +34,7 @@
 	<Nav />
 
 	<main>
-		<div class="h-[116px]" />
+		<div class:h-[116px]={$page.url.pathname !== '/'} />
 		<slot />
 	</main>
 

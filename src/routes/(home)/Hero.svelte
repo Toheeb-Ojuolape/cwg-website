@@ -1,0 +1,106 @@
+<script>
+	import Countup from '$lib/components/Countup.svelte';
+	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
+	import PlayIcon from '$lib/components/Svgs/PlayIcon.svelte';
+	import SoundWaveIcon from '$lib/components/Svgs/SoundWaveIcon.svelte';
+
+	let selectedBanner = 1;
+</script>
+
+<header>
+	<div class="hero">
+		<div class="mx-auto h-full box-container px-4 pb-4 lg:px-8 flex flex-col">
+			<div class="h-[116px]" />
+
+			<div class="flex-1">
+				<div class="text-white flex justify-end gap-[14px]">
+					<p class="text-body-l">The CWG story</p>
+					<PlayIcon />
+					<div>
+						<SoundWaveIcon />
+						<p class="text-body-xxs text-right">SOUND<br />ON</p>
+					</div>
+				</div>
+
+				<div class="max-w-[50%] text-white">
+					<h1 class="text-headline-1 font-medium mb-7">
+						We Are Positioning Africa to Maximize the Future
+					</h1>
+					<p class="mb-9">
+						We have over two decades of immense contribution to the Information
+						Communication & Technology Sector across Africa.
+					</p>
+					<a href="/lo">
+						<button
+							class="text-button-l flex items-center gap-4 group transition-all duration-500 hover:text-pewter-blue hover:scale-110"
+							>Learn more
+							<div class="mt-[6px]">
+								<ArrowRightSolidIcon className="group-hover:fill-pewter-blue" />
+							</div></button
+						>
+					</a>
+				</div>
+			</div>
+
+			<div class="relative flex flex-col items-end text-body-list-m text-white gap-4">
+				{#each ['01', '02', '03'] as banner, index}
+					<p
+						class="transition duration-300 hover:text-pewter-blue cursor-pointer"
+						class:text-pewter-blue={selectedBanner === index + 1}
+						on:click={() => (selectedBanner = index + 1)}
+						on:keypress
+					>
+						{banner}
+					</p>
+				{/each}
+
+				<div
+					class="line h-[2px] bg-pewter-blue w-7 absolute right-8 transition-all duration-500"
+					class:translate-y-3={selectedBanner === 1}
+					class:translate-y-13={selectedBanner === 2}
+					class:translate-y-23={selectedBanner === 3}
+				/>
+			</div>
+
+			<div class="max-w-[1065px] mx-auto w-full text-burlywood flex justify-between">
+				<div>
+					<p class="text-headline-1">
+						<Countup value={4} />
+					</p>
+					<p class="text-body-l">Operation Hubs</p>
+				</div>
+
+				<div>
+					<p class="text-headline-1">
+						<Countup value={13} />
+					</p>
+					<p class="text-body-l">Partnerships</p>
+				</div>
+
+				<div>
+					<p class="text-headline-1">
+						<Countup value={26} suffix="+" />
+					</p>
+					<p class="text-body-l">Countries</p>
+				</div>
+
+				<div>
+					<p class="text-headline-1">
+						<Countup value={50} suffix="+" />
+					</p>
+					<p class="text-body-l">Awards</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<style>
+	.hero {
+		background-image: url(../../lib/images/hero_banner.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 800px;
+	}
+</style>

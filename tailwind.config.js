@@ -141,8 +141,10 @@ export default {
 				sans: ['Lato', '-apple-system', 'sans-serif']
 			},
 			spacing: {
-				22: '5.5rem',
+				13: '3.25rem',
 				19: '4.75rem',
+				22: '5.5rem',
+				23: '5.75rem',
 				25: '6.25rem'
 			},
 			maxWidth: {

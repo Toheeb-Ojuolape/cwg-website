@@ -3,6 +3,8 @@
 	import { theme } from '$lib/stores/theme-store';
 	import ThemeToggleIcon from './Svgs/ThemeToggleIcon.svelte';
 
+	export let useWhite = false;
+
 	let isDarkMode = false;
 
 	$: theme.setTheme(isDarkMode ? 'dark' : 'light');
@@ -41,6 +43,6 @@
 		class:scale-x-100={!isDarkMode}
 		class="transition-all duration-500"
 	>
-		<ThemeToggleIcon />
+		<ThemeToggleIcon {useWhite} />
 	</div>
 </button>
