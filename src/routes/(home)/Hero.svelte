@@ -30,7 +30,7 @@
 						We have over two decades of immense contribution to the Information
 						Communication & Technology Sector across Africa.
 					</p>
-					<a href="/lo">
+					<a href="/">
 						<button
 							class="text-button-l flex items-center gap-4 group transition-all duration-500 hover:text-pewter-blue hover:scale-110"
 							>Learn more

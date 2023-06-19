@@ -4,7 +4,7 @@
 </script>
 
 <section
-	class="box-container mx-auto grid grid-cols-3 gap-[42px] w-full pl-4 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-t-black-600 mt-[71px]"
+	class="box-container mx-auto grid grid-cols-3 gap-[42px] w-full pl-4 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-y-black-600 dark:border-y-white/10 mt-[71px]"
 >
 	<div class="h-full flex flex-col justify-center">
 		<h2 class="text-headline-2 mb-6">Our Quality Policy</h2>
@@ -18,7 +18,7 @@
 				>Learn more
 				<div class="mt-1">
 					<ArrowRightLong
-						strokeClassName="stroke-midnight-blue group-hover:stroke-pewter-blue"
+						strokeClassName="stroke-midnight-blue group-hover:stroke-pewter-blue dark:stroke-white"
 						fillClassName="fill-midnight-blue group-hover:stroke-pewter-blue"
 					/>
 				</div></button
