@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 
 	export let length: number;
-	let selected = 0;
+	export let selected: number = 0;
 
 	const dispatch = createEventDispatcher();
 
@@ -16,8 +16,8 @@
 	{#each Array(length) as _, i}
 		<div
 			class="Dot"
-			class:Dot--selected={i === selected}
-			class:Dot--unselected={i !== selected}
+			class:Dot--selected={selected === i}
+			class:Dot--unselected={selected !== i}
 			on:click={() => onSelectDot(i)}
 			on:keyup
 		/>
