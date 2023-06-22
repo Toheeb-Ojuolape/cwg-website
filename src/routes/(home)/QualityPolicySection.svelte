@@ -27,6 +27,6 @@
 	</div>
 
 	<div class="col-span-2">
-		<img class="h-[335px]" src={HomeQualityPolicy} alt="home-quality-policy" />
+		<img class="h-[335px] w-full" src={HomeQualityPolicy} alt="home-quality-policy" />
 	</div>
 </section>

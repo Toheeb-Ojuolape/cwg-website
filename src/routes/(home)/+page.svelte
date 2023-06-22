@@ -2,6 +2,7 @@
 	import Hero from './Hero.svelte';
 	import IndustriesSection from './IndustriesSection.svelte';
 	import InvestorAnnualCareerSection from './InvestorAnnualCareerSection.svelte';
+	import NewsSection from './NewsSection.svelte';
 	import QualityPolicySection from './QualityPolicySection.svelte';
 	import SectionOne from './SectionOne.svelte';
 	import SectionTwo from './SectionTwo.svelte';
@@ -14,4 +15,5 @@
 	<InvestorAnnualCareerSection />
 	<IndustriesSection />
 	<QualityPolicySection />
+	<NewsSection />
 </div>

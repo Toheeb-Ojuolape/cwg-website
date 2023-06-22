@@ -149,6 +149,8 @@ export default {
 			spacing: {
 				13: '3.25rem',
 				15: '3.75rem',
+				17: '4.25rem',
+				18: '4.5rem',
 				19: '4.75rem',
 				22: '5.5rem',
 				23: '5.75rem',

@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-	--color-midnight-blue: hsl(232, 45%, 27%);
+	--color-midnight-blue: #262e64;
 	--color-pewter-blue: hsl(199, 31%, 61%);
 	--color-burlywood: hsl(31, 62%, 69%);
 	--color-vivid-burgundy: hsl(355, 73%, 37%);
