@@ -2,10 +2,10 @@
 	import Group from '$lib/images/Group.png';
 </script>
 
-<section class="section-container bg-whitish-blue dark:bg-white/10 pt-11 pb-20">
-	<h2 class="text-headline-2 text-center mb-14">Our Journey</h2>
+<section class="section-container bg-whitish-blue dark:bg-white/10 pt-8 lg:pt-11 pb-10 lg:pb-20">
+	<h2 class="text-headline-4 lg:text-headline-2 text-center mb-8 lg:mb-14">Our Journey</h2>
 
-	<div class="flex justify-center gap-30">
+	<div class="flex flex-col gap-10 lg:flex-row lg:justify-center lg:gap-30">
 		<div class="Table">
 			<div class="Table__header">
 				<div>Journey Date</div>
@@ -16,11 +16,11 @@
 				{#each [1, 2, 3, 4, 5, 6, 7] as _}
 					<div class="Table__body border-b border-b-[#7DA7BB]/30">
 						<div class="bg-black-300 dark:bg-black/20">
-							<p class="text-[20px]">1992</p>
+							<p class="text-base lg:text-[20px]">1992</p>
 						</div>
 						<div class="bg-black-400 dark:bg-black/40">
-							<p class="text-[20px]">Network and Communication</p>
-							<p class="text-body-s font-light">DCC</p>
+							<p class="text-base lg:text-[20px]">Network and Communication</p>
+							<p class="text-body-xs lg:text-body-s font-light">DCC</p>
 						</div>
 						<div class="bg-black-300 dark:bg-black/20">
 							<img alt="group" src={Group} class="w-11" />
@@ -40,11 +40,11 @@
 				{#each [1, 2, 3, 4, 5, 6, 7] as _}
 					<div class="Table__body border-b border-b-[#7DA7BB]/30">
 						<div class="bg-black-300 dark:bg-black/20">
-							<p class="text-[20px]">1992</p>
+							<p class="text-base lg:text-[20px]">1992</p>
 						</div>
 						<div class="bg-black-400 dark:bg-black/40">
-							<p class="text-[20px]">Network and Communication</p>
-							<p class="text-body-s font-light">DCC</p>
+							<p class="text-base lg:text-[20px]">Network and Communication</p>
+							<p class="text-body-xs lg:text-body-s font-light">DCC</p>
 						</div>
 						<div class="bg-black-300 dark:bg-black/20">
 							<img alt="group" src={Group} class="w-11" />

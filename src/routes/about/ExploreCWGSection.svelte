@@ -14,9 +14,11 @@
 </script>
 
 <section
-	class="box-container mx-auto flex items-center gap-13 pl-4 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-y-black-600 dark:border-y-black-900"
+	class="box-container mx-auto grid lg:flex lg:flex-row lg:items-center py-8 lg:py-0 lg:gap-13 pl-4 pr-4 lg:pr-0 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-y-black-600 dark:border-y-black-900"
 >
-	<div class="text-body-l flex flex-col gap-4 flex-1">
+	<div
+		class="text-body-s font-light lg:text-body-l text-center lg:text-left flex flex-col gap-4 flex-1"
+	>
 		<p>
 			As a leading provider of IT services across Africa, CWG operates a firmly established
 			partnership network which connects businesses, enterprises, governments, customers, and
@@ -40,10 +42,10 @@
 	</div>
 
 	<div
-		class="py-[10px] pr-4 lg:pr-8 bg-whitish-blue dark:bg-white/10 flex flex-col items-end w-[354px]"
+		class="py-[10px] row-start-1 mb-5 lg:mb-0 lg:row-start-auto pr-4 lg:pr-8 bg-whitish-blue dark:bg-white/10 flex flex-col items-center lg:items-end lg:w-[354px]"
 	>
-		<h2 class="mb-8 text-headline-2">Explore CWG</h2>
-		<div class="flex flex-col gap-[10px] items-end">
+		<h2 class="mb-4 lg:mb-8 text-headline-4 lg:text-headline-2">Explore CWG</h2>
+		<div class="flex flex-col gap-[10px] items-center lg:items-end">
 			{#each links as { link, title }, i}
 				<a
 					href={link}

@@ -11,9 +11,9 @@
 
 <div>
 	<header
-		class="header h-[477px] text-white box-container mx-auto px-4 lg:px-8 flex flex-col justify-center gap-[10px]"
+		class="header h-[300px] lg:h-[477px] text-white box-container mx-auto px-4 lg:px-8 flex flex-col justify-center gap-[10px]"
 	>
-		<h1 class="text-headline-1">About CWG</h1>
+		<h1 class="text-headline-2 lg:text-headline-1">About CWG</h1>
 		<a href="/"
 			><button class="arrow-button text-button-l group"
 				>Explore CWG @ 30
