@@ -1,5 +1,5 @@
 export const company = [
-	{ title: 'About CWG', link: '' },
+	{ title: 'About CWG', link: '/about' },
 	{ title: 'Leadership', link: '' },
 	{ title: 'Culture', link: '' },
 	{ title: 'Impact', link: '' },

@@ -12,8 +12,10 @@
 	import FooterRightComponent from './FooterRightComponent.svelte';
 </script>
 
-<footer class="bg-midnight-blue">
-	<div class="box-container w-full mx-auto flex flex-col px-4 lg:px-8 lg:flex-row">
+<footer>
+	<div
+		class="box-container bg-midnight-blue w-full mx-auto flex flex-col px-4 lg:px-8 lg:flex-row"
+	>
 		<div class="flex-1">
 			<div class="grid grid-cols-2 gap-4 lg:gap-0 lg:grid-cols-4 pt-22 pb-4 lg:pb-8">
 				<FooterLinks title="Company" list={company} />
@@ -38,8 +40,8 @@
 					<div class="flex gap-6 items-start">
 						<h5 class="hidden lg:block text-greyish-blue text-headline-5">A</h5>
 						<p class="text-body-s mt-1">
-							Head office<br />Block 54A, Plot 10, Off Rufus Giwa Street, Off Adebayo Doherty Road,
-							Off Admiralty Way, Lekki Phase 1, Lagos.
+							Head office<br />Block 54A, Plot 10, Off Rufus Giwa Street, Off Adebayo
+							Doherty Road, Off Admiralty Way, Lekki Phase 1, Lagos.
 							<br /><a href="/" class="text-bright-blue">↘ Google map </a>
 							<!--TODO: replace with map url-->
 						</p>
@@ -47,7 +49,8 @@
 
 					<div class="flex gap-6 mt-4 items-start">
 						<h5 class="hidden lg:block text-greyish-blue text-headline-5">T</h5>
-						<a href="tel:23412809800" rel="noreferrer" class="text-body-s mt-1">+234 (0)128 09800</a
+						<a href="tel:23412809800" rel="noreferrer" class="text-body-s mt-1"
+							>+234 (0)128 09800</a
 						>
 					</div>
 

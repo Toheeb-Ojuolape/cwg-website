@@ -6,15 +6,15 @@
 
 :root {
 	--color-midnight-blue: #262e64;
-	--color-pewter-blue: hsl(199, 31%, 61%);
-	--color-burlywood: hsl(31, 62%, 69%);
-	--color-vivid-burgundy: hsl(355, 73%, 37%);
-	--color-naples-yellow: hsl(47, 100%, 68%);
-	--color-deep-blue: hsl(219, 77%, 22%);
-	--color-bright-blue: hsl(220, 84%, 54%);
-	--color-neon-blue: hsl(252, 100%, 64%);
-	--color-soft-blue: hsl(206, 92%, 64%);
-	--color-greyish-blue: hsl(220, 22%, 54%);
+	--color-pewter-blue: #7da7ba;
+	--color-burlywood: #e1b27f;
+	--color-vivid-burgundy: #a31925;
+	--color-naples-yellow: #ffdc5c;
+	--color-deep-blue: #0d2b63;
+	--color-bright-blue: #2769ec;
+	--color-neon-blue: #6c47ff;
+	--color-soft-blue: #4faef8;
+	--color-greyish-blue: #7081a4;
 	--color-whitish-blue: hsl(230, 75%, 98%);
 	--color-mangeta: hsl(309, 62%, 65%);
 	--color-orange: hsl(16, 82%, 65%);

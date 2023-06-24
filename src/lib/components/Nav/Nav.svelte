@@ -62,15 +62,16 @@
 	class:Nav__scroll={isWhite}
 	class:Nav__scroll--dark={isDark}
 >
-	<div class="flex items-center justify-between px-4 lg:px-8 box-container mx-auto">
+	<div class="flex items-center justify-between px-4 lg:px-8 2xl:px-0 box-container mx-auto">
 		<NavLogo useWhiteLogo={useWhite} />
 
 		<ul
 			class="hidden flex-1 lg:flex items-center justify-center gap-5 font-medium text-[17px] leading-[27px]"
 		>
 			<li>
-				<span class="flex peer gap-1 items-center cursor-pointer" class:text-white={useWhite}
-					>Company<ArrowDownIcon /></span
+				<span
+					class="flex peer gap-1 items-center cursor-pointer"
+					class:text-white={useWhite}>Company<ArrowDownIcon /></span
 				>
 				<div class="Nav__dropdown__container">
 					<CompanyDropdown />
@@ -109,7 +110,10 @@
 		>
 			<div class="Nav__menu-icon" class:Nav__menu-icon--visible={showDrawer}>
 				<div class="bg-midnight-blue dark:bg-white" />
-				<div class="bg-midnight-blue dark:bg-white" class:Nav__menu-icon--middle={showDrawer} />
+				<div
+					class="bg-midnight-blue dark:bg-white"
+					class:Nav__menu-icon--middle={showDrawer}
+				/>
 				<div class="bg-midnight-blue dark:bg-white" />
 			</div>
 		</button>
@@ -136,7 +140,10 @@
 			<li on:click={() => onSelectDrawerItem('company')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
 					Company
-					<div class="transition duration-500" class:rotate-180={selectedDrawer === 'company'}>
+					<div
+						class="transition duration-500"
+						class:rotate-180={selectedDrawer === 'company'}
+					>
 						<ArrowDownIcon />
 					</div>
 				</div>
@@ -153,7 +160,10 @@
 			<li on:click={() => onSelectDrawerItem('services')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
 					Services
-					<div class="transition duration-500" class:rotate-180={selectedDrawer === 'services'}>
+					<div
+						class="transition duration-500"
+						class:rotate-180={selectedDrawer === 'services'}
+					>
 						<ArrowDownIcon />
 					</div>
 				</div>
@@ -174,7 +184,10 @@
 			<li on:click={() => onSelectDrawerItem('community')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
 					Community
-					<div class="transition duration-500" class:rotate-180={selectedDrawer === 'community'}>
+					<div
+						class="transition duration-500"
+						class:rotate-180={selectedDrawer === 'community'}
+					>
 						<ArrowDownIcon />
 					</div>
 				</div>

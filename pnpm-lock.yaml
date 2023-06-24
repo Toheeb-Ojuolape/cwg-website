@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  embla-carousel-autoplay:
+    specifier: 8.0.0-rc07
+    version: 8.0.0-rc07(embla-carousel@8.0.0-rc07)
+  embla-carousel-svelte:
+    specifier: 8.0.0-rc07
+    version: 8.0.0-rc07(svelte@3.59.1)
   svelte-inview:
     specifier: ^4.0.0
     version: 4.0.0(svelte@3.59.1)
@@ -872,6 +878,36 @@ packages:
   /electron-to-chromium@1.4.429:
     resolution: {integrity: sha512-COua8RvN548KwPFzKMrTjFbmDsQRgdi0zSAhmo70TwC1tfLOSqq8p09n+GkdF5buvzE/NEYn1dP3itbfhun9gg==}
     dev: true
+
+  /embla-carousel-autoplay@8.0.0-rc07(embla-carousel@8.0.0-rc07):
+    resolution: {integrity: sha512-gwtSBgwdmveGwaltjLhDJwdg55lUxvTxQ3V+zXyfJ/LvOwfWERyP6/DGJ99a0SJBI19N6DZyy1e2NB3HLrCIDw==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc07
+    dependencies:
+      embla-carousel: 8.0.0-rc07
+    dev: false
+
+  /embla-carousel-reactive-utils@8.0.0-rc07(embla-carousel@8.0.0-rc07):
+    resolution: {integrity: sha512-MfdReTR3p0GTcUqLY0DNF5mkYRHF/pler9yBUjRjjjBb1OTQjcFedXYhoCDO49009x/IPM00kcbQQuEtJWpQRQ==}
+    peerDependencies:
+      embla-carousel: 8.0.0-rc07
+    dependencies:
+      embla-carousel: 8.0.0-rc07
+    dev: false
+
+  /embla-carousel-svelte@8.0.0-rc07(svelte@3.59.1):
+    resolution: {integrity: sha512-6CUumJjHxcl1coA1gVAS8CS6fQ6ca3omcsNKWBgAnWfzPOFxFnLbCKfMaaQ3dBFdT1Fuy+WV625aQVJdrJV7VQ==}
+    peerDependencies:
+      svelte: ^3.49.0
+    dependencies:
+      embla-carousel: 8.0.0-rc07
+      embla-carousel-reactive-utils: 8.0.0-rc07(embla-carousel@8.0.0-rc07)
+      svelte: 3.59.1
+    dev: false
+
+  /embla-carousel@8.0.0-rc07:
+    resolution: {integrity: sha512-IdGbZH042gRT0/3dOCbiv45jOt5E7jpM4h25VzyJujule/3GitJ1/Ib3U/X83auiI3aojKoBe13e1g5g7bwnjg==}
+    dev: false
 
   /es6-promise@3.3.1:
     resolution: {integrity: sha512-SOp9Phqvqn7jtEUxPWdWfWoLmyt2VaJ6MpvP9Comy1MceMXqE6bxvaTu4iaxpYYPzhny28Lc+M87/c2cPK6lDg==}

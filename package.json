@@ -34,6 +34,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"embla-carousel-autoplay": "8.0.0-rc07",
+		"embla-carousel-svelte": "8.0.0-rc07",
 		"svelte-inview": "^4.0.0"
 	}
 }

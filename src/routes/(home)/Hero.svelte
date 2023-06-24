@@ -9,7 +9,7 @@
 
 <header>
 	<div class="hero">
-		<div class="mx-auto h-full box-container px-4 pb-4 lg:px-8 flex flex-col">
+		<div class="mx-auto h-full box-container px-4 pb-4 lg:px-8 2xl:px-0 flex flex-col">
 			<div class="h-[116px]" />
 
 			<div class="flex-1">
