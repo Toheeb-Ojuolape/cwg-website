@@ -18,7 +18,7 @@
 		{
 			title: 'Leadership',
 			subtitle: 'Collaborative expertise driving positive impact',
-			link: '/'
+			link: '/leadership'
 		},
 		{
 			title: 'Investor Relations',

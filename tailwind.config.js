@@ -140,9 +140,13 @@ export default {
 			'black-300': 'var(--color-black-300)',
 			white: '#ffffff',
 			black: '#000000',
-			transparent: 'transparent'
+			transparent: 'transparent',
+			'dark-highlight': 'var(--color-dark-highlight)'
 		},
 		extend: {
+			backgroundImage: {
+				leadership: "url('/src/lib/images/leadership-hero.png')"
+			},
 			fontFamily: {
 				sans: ['Lato', '-apple-system', 'sans-serif']
 			},
@@ -152,10 +156,12 @@ export default {
 				17: '4.25rem',
 				18: '4.5rem',
 				19: '4.75rem',
+				21: '5.25rem',
 				22: '5.5rem',
 				23: '5.75rem',
 				25: '6.25rem',
-				30: '7.5rem'
+				30: '7.5rem',
+				33: '8.25rem'
 			},
 			maxWidth: {
 				'8xl': '90rem'

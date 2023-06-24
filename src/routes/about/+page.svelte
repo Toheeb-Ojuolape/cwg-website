@@ -3,7 +3,7 @@
 	import Celebrating30Years from './Celebrating30Years.svelte';
 	import ChampioningSection from './ChampioningSection.svelte';
 	import ExploreCwgSection from './ExploreCWGSection.svelte';
-	import MoreAboutUs from './MoreAboutUs.svelte';
+	import MoreAboutUs from '$lib/components/MoreAboutUs.svelte';
 	import OurJourneySection from './OurJourneySection.svelte';
 	import PanAfricaSection from './PanAfricaSection.svelte';
 	import TimelineSection from './TimelineSection.svelte';

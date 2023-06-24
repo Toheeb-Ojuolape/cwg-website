@@ -5,7 +5,7 @@
 		{ title: 'Our Polices & Sector', link: '/' },
 		{ title: 'The Mission, Vision, Value and Culture', link: '/' },
 		{ title: 'Our Partners', link: '/' },
-		{ title: 'Leadership', link: '/' },
+		{ title: 'Leadership', link: '/leadership' },
 		{ title: 'Awards', link: '/' },
 		{ title: 'Impact', link: '/' },
 		{ title: 'Our Product', link: '/' },

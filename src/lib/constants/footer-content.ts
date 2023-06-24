@@ -1,6 +1,6 @@
 export const company = [
 	{ title: 'About CWG', link: '/about' },
-	{ title: 'Leadership', link: '' },
+	{ title: 'Leadership', link: '/leadership' },
 	{ title: 'Culture', link: '' },
 	{ title: 'Impact', link: '' },
 	{ title: 'Our partners', link: '' },

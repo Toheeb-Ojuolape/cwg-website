@@ -31,6 +31,7 @@
 	--color-black-500: hsl(0, 0%, 91%);
 	--color-black-400: hsl(0, 0%, 95%);
 	--color-black-300: hsl(0, 0%, 98%);
+	--color-dark-highlight: #1e1e1e;
 }
 
 body {
