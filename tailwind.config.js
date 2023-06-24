@@ -2,115 +2,6 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		fontSize: {
-			'body-l': [
-				'18px',
-				{
-					lineHeight: '26px',
-					fontWeight: '300'
-				}
-			],
-			'body-m': ['15px', '24px'],
-			'body-s': ['14px', '22px'],
-			'body-xs': ['12px', '18px'],
-			'body-xxs': ['10px', '18px'],
-			'body-medium-l': [
-				'18px',
-				{
-					lineHeight: '27px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-medium-m': [
-				'16px',
-				{
-					lineHeight: '18px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-medium-s': [
-				'14px',
-				{
-					lineHeight: '24px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-medium-xs': [
-				'12px',
-				{
-					lineHeight: '24px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-medium-xxs': [
-				'10px',
-				{
-					lineHeight: '24px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-bold-l': [
-				'18px',
-				{
-					lineHeight: '27px',
-					letterSpacing: '-0.02em',
-					fontWeight: '700'
-				}
-			],
-			'body-bold-m': [
-				'15px',
-				{
-					lineHeight: '24px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-bold-s': [
-				'13px',
-				{
-					lineHeight: '21px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'headline-1': ['64px', '77px'],
-			'headline-2': ['40px', '52px'],
-			'headline-3': ['36px', '47px'],
-			'headline-4': ['32px', '42px'],
-			'headline-5': ['28px', '36px'],
-			'headline-6': ['24px', '31px'],
-			'button-l': [
-				'16px',
-				{
-					lineHeight: '26px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'button-m': [
-				'14px',
-				{
-					lineHeight: '24px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'button-s': [
-				'13px',
-				{
-					lineHeight: '20px',
-					letterSpacing: '-0.02em',
-					fontWeight: '500'
-				}
-			],
-			'body-list-l': ['17px', '27px'],
-			'body-list-m': ['15px', '24px']
-		},
 		colors: {
 			'midnight-blue': 'var(--color-midnight-blue)',
 			'pewter-blue': 'var(--color-pewter-blue)',
@@ -144,8 +35,118 @@ export default {
 			'dark-highlight': 'var(--color-dark-highlight)'
 		},
 		extend: {
+			fontSize: {
+				'body-l': [
+					'18px',
+					{
+						lineHeight: '26px',
+						fontWeight: '300'
+					}
+				],
+				'body-m': ['15px', '24px'],
+				'body-s': ['14px', '22px'],
+				'body-xs': ['12px', '18px'],
+				'body-xxs': ['10px', '18px'],
+				'body-medium-l': [
+					'18px',
+					{
+						lineHeight: '27px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-medium-m': [
+					'16px',
+					{
+						lineHeight: '18px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-medium-s': [
+					'14px',
+					{
+						lineHeight: '24px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-medium-xs': [
+					'12px',
+					{
+						lineHeight: '24px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-medium-xxs': [
+					'10px',
+					{
+						lineHeight: '24px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-bold-l': [
+					'18px',
+					{
+						lineHeight: '27px',
+						letterSpacing: '-0.02em',
+						fontWeight: '700'
+					}
+				],
+				'body-bold-m': [
+					'15px',
+					{
+						lineHeight: '24px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-bold-s': [
+					'13px',
+					{
+						lineHeight: '21px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'headline-1': ['64px', '77px'],
+				'headline-2': ['40px', '52px'],
+				'headline-3': ['36px', '47px'],
+				'headline-4': ['32px', '42px'],
+				'headline-5': ['28px', '36px'],
+				'headline-6': ['24px', '31px'],
+				'button-l': [
+					'16px',
+					{
+						lineHeight: '26px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'button-m': [
+					'14px',
+					{
+						lineHeight: '24px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'button-s': [
+					'13px',
+					{
+						lineHeight: '20px',
+						letterSpacing: '-0.02em',
+						fontWeight: '500'
+					}
+				],
+				'body-list-l': ['17px', '27px'],
+				'body-list-m': ['15px', '24px']
+			},
 			backgroundImage: {
-				leadership: "url('/src/lib/images/leadership-hero.png')"
+				leadership: "url('/src/lib/images/leadership-hero.png')",
+				'dotted-map': "url('/images/dotted-map.svg')"
 			},
 			fontFamily: {
 				sans: ['Lato', '-apple-system', 'sans-serif']
@@ -161,7 +162,8 @@ export default {
 				23: '5.75rem',
 				25: '6.25rem',
 				30: '7.5rem',
-				33: '8.25rem'
+				33: '8.25rem',
+				50: '12.5rem'
 			},
 			maxWidth: {
 				'8xl': '90rem'

@@ -6,7 +6,7 @@
 	export let leader: Leader;
 </script>
 
-<div class="h-[393px] relative cursor-pointer group">
+<div class="h-[393px] relative cursor-pointer group Person">
 	<div class="h-full overflow-hidden">
 		<img src={leader.image} alt={leader.name} class="w-full h-full object-cover" />
 	</div>
@@ -38,7 +38,7 @@
 				</p>
 
 				<a
-					href="/"
+					href={`/leadership/${leader.name}`}
 					class="text-button-l self-end hover:scale-110 transition-all duration-300 flex"
 				>
 					Read full profile <div class="-rotate-45">
@@ -49,3 +49,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.Person {
+		border: 1px solid rgba(125, 167, 187, 0.1);
+	}
+</style>
