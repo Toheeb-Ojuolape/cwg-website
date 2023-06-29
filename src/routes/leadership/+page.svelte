@@ -21,18 +21,18 @@
 
 <div>
 	<header
-		class="text-white box-container bg-midnight-blue mx-auto pl-4 lg:pl-8 flex items-center justify-between"
+		class="text-white box-container bg-midnight-blue mx-auto pl-0 lg:pl-8 lg:flex lg:flex-row lg:items-center lg:justify-between"
 	>
-		<div class="flex-1">
-			<h1 class="text-headline-1">Our Leadership</h1>
-			<p class="text-body-m max-w-[567px]">
+		<div class="flex-1 mx-4 lg:mx-0 py-10 lg:py-0">
+			<h1 class="text-headline-2 lg:text-headline-1">Our Leadership</h1>
+			<p class="text-body-s lg:text-body-m w-full max-w-[567px]">
 				Our leadership team is comprised of committed, driven, and seasoned executives who
 				collaborate with each other, leveraging their extensive expertise and experience
 				along side other employees to create a positive impact for all our stakeholders.
 			</p>
 		</div>
 
-		<div class="flex-1 bg-leadership bg-cover bg-no-repeat h-[477px]" />
+		<div class="lg:flex-1 bg-leadership bg-cover bg-no-repeat h-[300px] lg:h-[477px] w-full" />
 	</header>
 
 	<section class="box-container mx-auto lg:px-33 pt-16">
@@ -54,7 +54,7 @@
 			>
 		</div>
 		<div
-			class="bg-whitish-blue dark:bg-dark-highlight px-16 pt-21 pb-20 border border-black-500 dark:border-black-900"
+			class="bg-whitish-blue dark:bg-dark-highlight px-4 lg:px-16 pt-10 lg:pt-21 pb-10 lg:pb-20 border border-black-500 dark:border-black-900"
 		>
 			<LeadershipCardList {leaders} />
 		</div>

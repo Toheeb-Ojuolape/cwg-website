@@ -1,15 +1,17 @@
-<header class="box-container mx-auto bg-deep-blue bg-dotted-map h-[380px] px-50 flex gap-9">
+<header
+	class="box-container mx-auto bg-deep-blue bg-dotted-map lg:h-[380px] lg:px-50 flex flex-col lg:flex-row gap-6 lg:gap-9"
+>
 	<div>
 		<img
 			src="/images/leadership-hero.png"
 			alt="leadership-hero"
-			class="h-full w-[317px] object-cover"
+			class="h-full w-full lg:w-[317px] object-cover"
 		/>
 	</div>
-	<div class="text-white pb-9 flex flex-col justify-end h-full">
+	<div class="text-white pb-9 px-4 lg:px-0 flex flex-col justify-end h-full">
 		<p class="text-xs leading-6 font-light uppercase">Board of Directors</p>
-		<h1 class="text-headline-1 -ml-1">Phillip Obioha</h1>
-		<p class="text-body-l">Chairman, Board of Directors</p>
+		<h1 class="text-headline-2 lg:text-headline-1 -ml-1">Phillip Obioha</h1>
+		<p class="text-body-m font-light lg:text-body-l">Chairman, Board of Directors</p>
 		<div class="flex items-center gap-1 mt-2">
 			<a href="/">
 				<svg

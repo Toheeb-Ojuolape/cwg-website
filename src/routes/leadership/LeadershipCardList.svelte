@@ -6,7 +6,7 @@
 	export let leaders: Leader[];
 </script>
 
-<div class="grid grid-cols-3">
+<div class="grid lg:grid-cols-3">
 	{#if leaders.length > 0}
 		{#each leaders as leader}
 			<PersonCard {leader} />

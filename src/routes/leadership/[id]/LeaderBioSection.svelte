@@ -1,6 +1,8 @@
-<section class="box-container pl-50 pr-32 pb-8 pt-4 mx-auto bg-whitish-blue dark:bg-dark-highlight">
-	<h2 class="text-headline-2 mb-8">About Phillip</h2>
-	<div class="flex flex-col gap-4 text-body-l">
+<section
+	class="box-container px-4 lg:pl-50 lg:pr-32 pb-8 pt-4 mx-auto bg-whitish-blue dark:bg-dark-highlight"
+>
+	<h2 class="text-headline-3 lg:text-headline-2 mb-5 lg:mb-8">About Phillip</h2>
+	<div class="flex flex-col gap-4 text-body-m font-light lg:text-body-l">
 		<p>
 			Phillip Obioha is the Chairman, Board of Directors of CWG Plc. Prior to his transition
 			to this current position, he was the Non-Executive Director on the board and served as

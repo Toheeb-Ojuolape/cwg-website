@@ -25,7 +25,7 @@
 		</div>
 
 		<div
-			class="bg-[#0D2C65] text-white grid grid-rows-[0] overflow-hidden transition-[flex] duration-1000 group-hover:flex-1 group-hover:grid-rows-1"
+			class="bg-[#0D2C65] text-white grid grid-rows-[0] overflow-hidden transition-[flex] duration-1000 group-active:flex-1 group-hover:flex-1 group-active:grid-rows-1 group-hover:grid-rows-1"
 		>
 			<div
 				class="pt-7 px-8 pb-[30px] flex opacity-0 flex-col justify-between group-hover:opacity-100"
