@@ -16,8 +16,6 @@
 		lastIndex = Math.round(([...array].length + 1) / 3);
 	}
 
-	$: console.log({ lastIndex, currentPageIndex }, array.length / 3);
-
 	function onPageChange(event: { detail: number }) {
 		currentPageIndex = event.detail;
 	}

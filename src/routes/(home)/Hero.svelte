@@ -22,27 +22,31 @@
 					</div>
 				</div>
 
-				<div class="max-w-[50%] text-white">
-					<h1 class="text-headline-1 font-medium mb-7">
+				<div class="w-full lg:max-w-[50%] text-white text-center lg:text-left">
+					<h1 class="text-headline-2 lg:text-headline-1 font-medium mb-7">
 						We Are Positioning Africa to Maximize the Future
 					</h1>
 					<p class="mb-9">
 						We have over two decades of immense contribution to the Information
 						Communication & Technology Sector across Africa.
 					</p>
-					<a href="/">
+					<a href="/" class="flex justify-center lg:justify-start">
 						<button
 							class="text-button-l flex items-center gap-4 group transition-all duration-500 hover:text-pewter-blue hover:scale-110"
 							>Learn more
 							<div class="mt-[6px]">
-								<ArrowRightSolidIcon className="group-hover:fill-pewter-blue" />
+								<ArrowRightSolidIcon
+									className="fill-white group-hover:fill-pewter-blue"
+								/>
 							</div></button
 						>
 					</a>
 				</div>
 			</div>
 
-			<div class="relative flex flex-col items-end text-body-list-m text-white gap-4">
+			<div
+				class="hidden relative lg:flex lg:flex-col lg:items-end text-body-list-m text-white gap-4"
+			>
 				{#each ['01', '02', '03'] as banner, index}
 					<p
 						class="transition duration-300 hover:text-pewter-blue cursor-pointer"
@@ -62,33 +66,35 @@
 				/>
 			</div>
 
-			<div class="max-w-[1065px] mx-auto w-full text-burlywood flex justify-between">
+			<div
+				class="max-w-[1065px] mx-auto w-full text-burlywood grid grid-cols-2 [&>div]:text-center lg:flex lg:flex-row lg:justify-between"
+			>
 				<div>
-					<p class="text-headline-1">
+					<p class="text-headline-2 lg:text-headline-1">
 						<Countup value={4} />
 					</p>
-					<p class="text-body-l">Operation Hubs</p>
+					<p class="text-body-s font-light lg:text-body-l">Operation Hubs</p>
 				</div>
 
 				<div>
-					<p class="text-headline-1">
+					<p class="text-headline-2 lg:text-headline-1">
 						<Countup value={13} />
 					</p>
-					<p class="text-body-l">Partnerships</p>
+					<p class="text-body-s font-light lg:text-body-l">Partnerships</p>
 				</div>
 
 				<div>
-					<p class="text-headline-1">
+					<p class="text-headline-2 lg:text-headline-1">
 						<Countup value={26} suffix="+" />
 					</p>
-					<p class="text-body-l">Countries</p>
+					<p class="text-body-s font-light lg:text-body-l">Countries</p>
 				</div>
 
 				<div>
-					<p class="text-headline-1">
+					<p class="text-headline-2 lg:text-headline-1">
 						<Countup value={50} suffix="+" />
 					</p>
-					<p class="text-body-l">Awards</p>
+					<p class="text-body-s font-light lg:text-body-l">Awards</p>
 				</div>
 			</div>
 		</div>
@@ -102,5 +108,12 @@
 		background-position: center;
 		background-size: cover;
 		height: 800px;
+		width: 100%;
+	}
+
+	@media (max-width: 1024px) {
+		.hero {
+			height: auto;
+		}
 	}
 </style>

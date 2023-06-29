@@ -28,9 +28,11 @@
 			shouldShowSlide = true;
 		}
 	}}
-	class="section-container mt-[105.65px]"
+	class="section-container mt-8 lg:mt-[105.65px]"
 >
-	<h2 class="text-headline-1 text-center mb-16">Industries we dominate</h2>
+	<h2 class="text-headline-2 lg:text-headline-1 text-center mb-6 lg:mb-16">
+		Industries we dominate
+	</h2>
 
 	<div class="min-h-[324px]">
 		{#if browser}
@@ -43,14 +45,18 @@
 				bind:this={carousel}
 			>
 				{#each [1, 2, 3] as _, i}
-					<div class="grid grid-cols-2 gap-[55.25px]">
+					<div class="grid lg:grid-cols-2 gap:4 lg:gap-[55.25px]">
 						<div class="h-[324px] bg-burlywood" />
 
 						<div class="flex flex-col justify-center">
-							<h3 class="text-headline-3 mb-[37.5px]">
+							<h3
+								class="text-headline-4 lg:text-headline-3 mb-6 mt-3 lg:mt-0 lg:mb-[37.5px]"
+							>
 								Financial Service Institutions
 							</h3>
-							<p class="text-body-l max-w-[532px] overflow-hidden">
+							<p
+								class="text-body-m font-light lg:text-body-l max-w-[532px] overflow-hidden"
+							>
 								Globally, Financial Services Institutions are constantly undergoing
 								technological upgrades. CWG supports this drive in Financial
 								Technology platforms and provides cloud services and software
@@ -63,7 +69,7 @@
 				{/each}
 
 				<div slot="dots">
-					<div class="flex justify-center mt-[72px]">
+					<div class="flex justify-center mt-10 lg:mt-[72px]">
 						<DotPager
 							length={pagesCount}
 							selected={currentPageIndex}

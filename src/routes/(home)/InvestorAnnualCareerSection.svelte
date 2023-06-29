@@ -2,14 +2,14 @@
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 </script>
 
-<section class="box-container mx-auto grid grid-cols-3">
+<section class="box-container mx-auto grid lg:grid-cols-3">
 	<div class="Section__card">
 		<div>
 			<div class="Section__card__header">
-				<p class="text-headline-2">Investor Relations</p>
+				<p class="text-headline-3 lg:text-headline-2">Investor Relations</p>
 				<ArrowRightLong />
 			</div>
-			<p class="text-body-l">
+			<p class="text-body-m font-light lg:text-body-l">
 				Today’s CWG has defined a clear strategy to lead in the era of information
 				technology.
 			</p>
@@ -19,10 +19,10 @@
 	<div class="Section__card">
 		<div>
 			<div class="Section__card__header">
-				<p class="text-headline-2">Annual Reports</p>
+				<p class="text-headline-3 lg:text-headline-2">Annual Reports</p>
 				<ArrowRightLong />
 			</div>
-			<p class="text-body-l">
+			<p class="text-body-m font-light lg:text-body-l">
 				Audited financials for the year showcasing record improvement in organic sales
 				growth and profitability
 			</p>
@@ -32,10 +32,10 @@
 	<div class="Section__card">
 		<div>
 			<div class="Section__card__header">
-				<p class="text-headline-2">Careers at CWG</p>
+				<p class="text-headline-3 lg:text-headline-2">Careers at CWG</p>
 				<ArrowRightLong />
 			</div>
-			<p class="text-body-l">
+			<p class="text-body-m font-light lg:text-body-l">
 				Discover more about our employees and explore the possibility of joining our
 				successful brand.
 			</p>
@@ -74,5 +74,22 @@
 		align-items: center;
 		justify-content: space-between;
 		margin-bottom: 129px;
+	}
+
+	@media (max-width: 1024px) {
+		.Section__card {
+			height: 250px;
+		}
+
+		.Section__card > div {
+			padding: 20px 16px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.Section__card__header {
+			margin-bottom: 0px;
+		}
 	}
 </style>

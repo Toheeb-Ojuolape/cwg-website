@@ -4,11 +4,11 @@
 </script>
 
 <section
-	class="box-container mx-auto grid grid-cols-3 gap-[42px] w-full pl-4 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-y-black-600 dark:border-y-white/10 mt-[71px]"
+	class="box-container mx-auto grid lg:grid-cols-3 gap-8 lg:gap-[42px] w-full pl-4 pr-4 lg:pr-0 pt-8 lg:pt-0 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-y-black-600 dark:border-y-white/10 mt-[71px]"
 >
 	<div class="h-full flex flex-col justify-center">
-		<h2 class="text-headline-2 mb-6">Our Quality Policy</h2>
-		<p class="text-body-l mb-6">
+		<h2 class="text-headline-3 lg:text-headline-2 mb-4 lg:mb-6">Our Quality Policy</h2>
+		<p class="text-body-m font-light lg:text-body-l mb-4 lg:mb-6">
 			CWG Plc shall deliver ICT Solutions that will add value to our customer’s operation,
 			meet and exceed our customer’s expectation and we shall deliver them right first time
 			and all the time
