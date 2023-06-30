@@ -3,7 +3,7 @@
 
 	const links = [
 		{ title: 'Our Polices & Sector', link: '/' },
-		{ title: 'The Mission, Vision, Value and Culture', link: '/' },
+		{ title: 'The Mission, Vision, Value and Culture', link: '/mission-vision-value' },
 		{ title: 'Our Partners', link: '/' },
 		{ title: 'Leadership', link: '/leadership' },
 		{ title: 'Awards', link: '/' },

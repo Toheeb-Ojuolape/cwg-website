@@ -22,7 +22,7 @@
 			</div>
 		</a>
 
-		<a href="/" class="flex-1 group">
+		<a href="/mission-vision-value" class="flex-1 group">
 			<div class="h-[180px] overflow-hidden mb-3 lg:mb-7">
 				<img src={AboutImage} alt="About us" class="AboutImage__block" />
 			</div>
