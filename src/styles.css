@@ -1,0 +1,12 @@
+.header-text-wrapper {
+    max-width: 586px;
+}
+@media(min-width: 1024px) {
+    .header-title {
+        line-height: 66px;
+    }
+    .header-title-desc {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}

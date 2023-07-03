@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '../styles.css';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Nav from '$lib/components/Nav/Nav.svelte';
 	import { page } from '$app/stores';
