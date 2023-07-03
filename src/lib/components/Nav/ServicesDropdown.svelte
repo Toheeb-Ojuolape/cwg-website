@@ -15,20 +15,20 @@
 	import UsersIcon from '../Svgs/UsersIcon.svelte';
 
 	const list = [
-		{ title: 'Airtime Vending', link: '/', icon: CallHospitalIcon },
-		{ title: 'Payment Terminal Solution', link: '/', icon: CardOutlineIcon },
-		{ title: 'E-Gaming', link: '/', icon: GameControllerIcon },
-		{ title: 'Hardware Services', link: '/', icon: BlockChainIcon },
-		{ title: 'Managed Services', link: '/', icon: UsersIcon },
-		{ title: 'Training', link: '/', icon: BookAddIcon },
-		{ title: 'Software Services', link: '/', icon: CodeSlashIcon },
-		{ title: 'IT Infrastructure', link: '/', icon: CompassIcon },
-		{ title: 'Support Hub', link: '/', icon: HeadphonesIcon },
-		{ title: 'E-Government Solution', link: '/', icon: PieChartIcon },
-		{ title: 'Colocation', link: '/', icon: DataSetIcon },
-		{ title: 'Cloud Services', link: '/', icon: NeuralNetworkIcon },
-		{ title: 'Metering', link: '/', icon: HomeFlashIcon },
-		{ title: 'ATM Management', link: '/', icon: SmartKeyIcon }
+		{ title: 'Airtime Vending', link: '/services/airtime-vending', icon: CallHospitalIcon },
+		{ title: 'Payment Terminal Solution', link: '/services/payment-terminal-solution', icon: CardOutlineIcon },
+		{ title: 'E-Gaming', link: '/services/e-gaming', icon: GameControllerIcon },
+		{ title: 'Hardware Services', link: '/services/hardware-services', icon: BlockChainIcon },
+		{ title: 'Managed Services', link: '/services/managed-services', icon: UsersIcon },
+		{ title: 'Training', link: '/services/training', icon: BookAddIcon },
+		{ title: 'Software Services', link: '/services/software-services', icon: CodeSlashIcon },
+		{ title: 'IT Infrastructure', link: '/services/it-infrastructure', icon: CompassIcon },
+		{ title: 'Support Hub', link: '/services/support-hub', icon: HeadphonesIcon },
+		{ title: 'E-Government Solution', link: '/services/e-government-solution', icon: PieChartIcon },
+		{ title: 'Colocation', link: '/services/colocation', icon: DataSetIcon },
+		{ title: 'Cloud Services', link: '/services/cloud-services', icon: NeuralNetworkIcon },
+		{ title: 'Metering', link: '/services/metering', icon: HomeFlashIcon },
+		{ title: 'ATM Management', link: '/services/atm-management', icon: SmartKeyIcon }
 	];
 </script>
 

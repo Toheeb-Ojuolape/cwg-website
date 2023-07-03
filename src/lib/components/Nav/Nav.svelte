@@ -79,7 +79,7 @@
 			</li>
 
 			<li>
-				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
+				<a href="/services" class="flex peer gap-1 items-center" class:text-white={useWhite}
 					>Services<ArrowDownIcon /></a
 				>
 				<div class="Nav__dropdown__container">

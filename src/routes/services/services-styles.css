@@ -12,6 +12,12 @@
     font-size: 17px;
 }
 
+.grid-content-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
 @media(max-width: 992px) {
     .services-grid-wrapper {
         grid-template-columns: 1fr 1fr 1fr;
@@ -22,5 +28,8 @@
     .services-grid-wrapper {
         grid-template-columns: 100%;
         gap: 20px;
+    }
+    .grid-content-box {
+        grid-template-columns: 100%;
     }
 }

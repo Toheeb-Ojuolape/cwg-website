@@ -1,6 +1,17 @@
 .header-text-wrapper {
     max-width: 586px;
 }
+.header-top-title {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+img {
+    max-width: 100%;
+}
+.gray-line {
+    background-color: #ddd;
+    opacity: 0.15;
+}
 @media(min-width: 1024px) {
     .header-title {
         line-height: 66px;
