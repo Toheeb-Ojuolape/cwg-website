@@ -18,6 +18,13 @@
     gap: 30px;
 }
 
+path.fill-blue {
+    fill: var(--color-midnight-blue);
+}
+.dark path.fill-blue {
+    fill: #fff;
+}
+
 @media(max-width: 992px) {
     .services-grid-wrapper {
         grid-template-columns: 1fr 1fr 1fr;
