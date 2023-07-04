@@ -14,7 +14,7 @@
 
 <footer>
 	<div class="bg-midnight-blue">
-		<div class="w-full mx-auto flex flex-col px-4 lg:px-8 lg:flex-row box-container">
+		<div class="w-full mx-auto flex flex-col section-container lg:flex-row">
 			<div class="flex-1">
 				<div class="grid grid-cols-2 gap-4 lg:gap-0 lg:grid-cols-4 pt-22 pb-4 lg:pb-8">
 					<FooterLinks title="Company" list={company} />
