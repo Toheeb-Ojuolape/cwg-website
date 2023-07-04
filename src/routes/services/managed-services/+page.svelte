@@ -1,6 +1,6 @@
 <script>
     import "../services-styles.css"
-	import ServicedIndustriesCards from "./servicedIndustriesCards.svelte";
+	import ServicedIndustriesCards from "./ServicedIndustriesCards.svelte";
 </script>
 
 <main>
