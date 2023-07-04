@@ -1,4 +1,6 @@
-<section class="box-container mx-auto border-t border-t-black-600 flex gap-10 items-center">
+<section
+	class="box-container mx-auto border-t border-t-black-600 dark:border-t-black-900 flex gap-10 items-center"
+>
 	<div class="flex-1 h-[397px] bg-burlywood" />
 	<div class="flex-1 lg:pr-8 2xl:pr-0">
 		<h4 class="text-headline-4 mb-3">Our Manifesto</h4>

@@ -17,7 +17,9 @@
 	}
 </script>
 
-<section class="box-container mt-25 mx-auto flex lg:flex-row gap-20 bg-whitish-blue">
+<section
+	class="box-container mt-25 mx-auto flex lg:flex-row gap-20 bg-whitish-blue dark:bg-dark-highlight"
+>
 	<div class="flex-1 h-[390px] bg-burlywood" />
 	<div class="flex-1 flex flex-col justify-center">
 		<div

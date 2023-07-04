@@ -12,13 +12,13 @@
 	}
 </script>
 
-<section class="box-container mx-auto bg-black-300 flex items-center gap-19">
+<section class="box-container mx-auto bg-black-300 dark:bg-dark-highlight flex items-center gap-19">
 	<div class="flex-[3] pl-4 lg:pl-8">
 		<h2 class="text-headline-2 mb-6">Our Cultural Attributes</h2>
 
 		<div class="flex flex-col gap-[10px]">
 			{#each Array(5) as _, i}
-				<div class="border-b border-b-black-600 pb-8">
+				<div class="border-b border-b-black-600 dark:border-b-black-900 pb-8">
 					<button
 						on:click={() => onChangeCurrentIndex(i)}
 						class="flex justify-between items-center w-full"
@@ -32,7 +32,9 @@
 						</div>
 					</button>
 					<div class="content" class:content--show={currentIndex === i}>
-						<p class="text-body-l text-greyish-blue overflow-hidden">
+						<p
+							class="text-body-l text-greyish-blue dark:text-black-700 overflow-hidden"
+						>
 							At CWG, listening to our people is important, and we want everyone to
 							feel like they are heard, and that their opinion matters. We also want
 							to ensure that everyone understands that the work they do is valued. We

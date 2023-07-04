@@ -23,7 +23,9 @@
 	];
 </script>
 
-<section class="section-container mx-auto border-t border-t-black-600 pt-10 mb-14">
+<section
+	class="section-container mx-auto border-t border-t-black-600 dark:border-t-black-900 pt-10 mb-14"
+>
 	<div class="flex flex-col gap-5 lg:flex-row">
 		{#each list as { title, subtitle }}
 			<div class="text-white flex-1">
