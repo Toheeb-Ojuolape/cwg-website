@@ -66,6 +66,10 @@ path.fill-blue {
     object-position: center;
 }
 
+#benefiting-cards-wrapper .text-headline-6 {
+    font-size: 26px;
+}
+
 @media(max-width: 992px) {
     .services-grid-wrapper {
         grid-template-columns: 1fr 1fr 1fr;
