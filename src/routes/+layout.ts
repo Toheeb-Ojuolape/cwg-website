@@ -1,1 +1,1 @@
-export const prerender = true;
+// export const prerender = true; TODO: uncomment this line to enable prerendering

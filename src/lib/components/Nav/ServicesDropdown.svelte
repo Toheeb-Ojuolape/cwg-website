@@ -16,7 +16,11 @@
 
 	const list = [
 		{ title: 'Airtime Vending', link: '/services/airtime-vending', icon: CallHospitalIcon },
-		{ title: 'Payment Terminal Solution', link: '/services/payment-terminal-solution', icon: CardOutlineIcon },
+		{
+			title: 'Payment Terminal Solution',
+			link: '/services/payment-terminal-solution',
+			icon: CardOutlineIcon
+		},
 		{ title: 'E-Gaming', link: '/services/e-gaming', icon: GameControllerIcon },
 		{ title: 'Hardware Services', link: '/services/hardware-services', icon: BlockChainIcon },
 		{ title: 'Managed Services', link: '/services/managed-services', icon: UsersIcon },
@@ -24,7 +28,11 @@
 		{ title: 'Software Services', link: '/services/software-services', icon: CodeSlashIcon },
 		{ title: 'IT Infrastructure', link: '/services/it-infrastructure', icon: CompassIcon },
 		{ title: 'Support Hub', link: '/services/support-hub', icon: HeadphonesIcon },
-		{ title: 'E-Government Solution', link: '/services/e-government-solution', icon: PieChartIcon },
+		{
+			title: 'E-Government Solution',
+			link: '/services/e-government-solution',
+			icon: PieChartIcon
+		},
 		{ title: 'Colocation', link: '/services/colocation', icon: DataSetIcon },
 		{ title: 'Cloud Services', link: '/services/cloud-services', icon: NeuralNetworkIcon },
 		{ title: 'Metering', link: '/services/metering', icon: HomeFlashIcon },
