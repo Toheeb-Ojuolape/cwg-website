@@ -20,7 +20,7 @@
         </div>
 	</header>
 
-    <div id="section-services" class="p-5">
+    <div id="sections-wrapper" class="py-5">
         <section class="section-container grid-content-box p-10">
             <div class="section-text-side">
                 <h2 class="text-headline-4 lg:text-headline-2">
