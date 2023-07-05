@@ -77,9 +77,19 @@ img.management-item-img {
     height: 80px;
 }
 
+.quote-box {
+    border-left: 8px solid var(--color-pewter-blue);
+}
+
 @media(min-width: 1024px) {
     .management-item:not(:last-child) {
         border-right: 1px solid #dddddd;
+    }
+}
+
+@media(min-width: 640px) {
+    .quote-box {
+        font-size: 24px;
     }
 }
 
