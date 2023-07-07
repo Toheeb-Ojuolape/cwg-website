@@ -1,4 +1,4 @@
-<div class="pts-portfolio-block bg-whitish-blue">
+<div class="pts-portfolio-block bg-whitish-blue dark:bg-dark-highlight">
     <div class="pts-portfolio-header flex gap-[10px] bg-midnight-blue text-white">
         <img src="/images/setting.svg" alt="setting" class="portfolio-icon">
         <span>Seamless Payment Processing</span>
@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div class="pts-portfolio-block bg-whitish-blue">
+<div class="pts-portfolio-block bg-whitish-blue dark:bg-dark-highlight">
     <div class="pts-portfolio-header flex gap-[10px] bg-midnight-blue text-white">
         <img src="/images/shield.svg" alt="shield" class="portfolio-icon">
         <span>Robust Security Features</span>
@@ -28,7 +28,7 @@
     </div>
 </div>
 
-<div class="pts-portfolio-block bg-whitish-blue">
+<div class="pts-portfolio-block bg-whitish-blue dark:bg-dark-highlight">
     <div class="pts-portfolio-header flex gap-[10px] bg-midnight-blue text-white">
         <img src="/images/user-add.svg" alt="user-add" class="portfolio-icon">
         <span>Versatile and User-Friendly Interface</span>
@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="pts-portfolio-block bg-whitish-blue">
+<div class="pts-portfolio-block bg-whitish-blue dark:bg-dark-highlight">
     <div class="pts-portfolio-header flex gap-[10px] bg-midnight-blue text-white">
         <img src="/images/connection.svg" alt="connection" class="portfolio-icon">
         <span>Integration and Compatibility</span>
@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<div class="pts-portfolio-block bg-whitish-blue">
+<div class="pts-portfolio-block bg-whitish-blue dark:bg-dark-highlight">
     <div class="pts-portfolio-header flex gap-[10px] bg-midnight-blue text-white">
         <img src="/images/graph.svg" alt="graph" class="portfolio-icon">
         <span>Analytics and Reporting</span>

@@ -137,7 +137,7 @@
 <style>
     header.header {
 		background-image: url('/images/colocation-banner.jpg');
-		background-size: cover;
+		background-size: inherit;
         background-position: center 20%;
 	}
 </style>

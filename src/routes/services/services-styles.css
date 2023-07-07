@@ -11,6 +11,12 @@
     color: white;
     font-size: 17px;
 }
+a.services-block {
+    transition: transform 1.2s;
+}
+a.services-block:hover {
+    transform: scale(1.05);
+}
 
 .grid-content-box {
     display: grid;

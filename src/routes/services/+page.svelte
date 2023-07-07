@@ -24,7 +24,7 @@
     <div class="services-content">
         <div class="section-container">
             <div class="services-grid-wrapper">
-                <a href="/services/software-services" class="servics-block bg-greyish-blue">
+                <a href="/services/software-services" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/software-services.jpg" alt="software-services">
                     </div>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/e-government-solution" class="servics-block bg-greyish-blue">
+                <a href="/services/e-government-solution" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/e-government-solution.jpg" alt="e-government-solution">
                     </div>
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/metering" class="servics-block bg-greyish-blue">
+                <a href="/services/metering" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/metering.jpg" alt="metering">
                     </div>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/payment-terminal-solution" class="servics-block bg-greyish-blue">
+                <a href="/services/payment-terminal-solution" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/payment-terminal-solution.jpg" alt="payment-terminal-solution">
                     </div>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/managed-services" class="servics-block bg-greyish-blue">
+                <a href="/services/managed-services" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/managed-services.jpg" alt="managed-services">
                     </div>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/it-infrastructure" class="servics-block bg-greyish-blue">
+                <a href="/services/it-infrastructure" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/it-infrastructure.jpg" alt="it-infrastructure">
                     </div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/colocation" class="servics-block bg-greyish-blue">
+                <a href="/services/colocation" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/data-center-colocation.jpg" alt="data-center-colocation">
                     </div>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/atm-management" class="servics-block bg-greyish-blue">
+                <a href="/services/atm-management" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/atm-management.jpg" alt="atm-management">
                     </div>
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/e-gaming" class="servics-block bg-greyish-blue">
+                <a href="/services/e-gaming" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/e-gaming.jpg" alt="e-gaming">
                     </div>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/training" class="servics-block bg-greyish-blue">
+                <a href="/services/training" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/training.jpg" alt="training">
                     </div>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/support-hub" class="servics-block bg-greyish-blue">
+                <a href="/services/support-hub" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/support-hub.jpg" alt="support-hub">
                     </div>
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/cloud-services" class="servics-block bg-greyish-blue">
+                <a href="/services/cloud-services" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/cloud-services.jpg" alt="cloud-services">
                     </div>
@@ -156,7 +156,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/hardware-services" class="servics-block bg-greyish-blue">
+                <a href="/services/hardware-services" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/hardware-services.jpg" alt="hardware-services">
                     </div>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services/airtime-vending" class="servics-block bg-greyish-blue">
+                <a href="/services/airtime-vending" class="services-block bg-greyish-blue">
                     <div class="services-img">
                         <img src="/images/airtime-vending.jpg" alt="airtime-vending">
                     </div>
@@ -186,7 +186,7 @@
 <style>
     header.header {
 		background-image: url('/images/services-banner.jpg');
-		background-size: cover;
+		background-size: inherit;
         background-position: center 20%;
 	}
 </style>
