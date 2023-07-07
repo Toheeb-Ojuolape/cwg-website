@@ -180,6 +180,11 @@ ul.course-list li {
     border: 1px solid#DDD;
 }
 
+.pts-portfolio-header {
+    font-size: 20px;
+    padding: 10px;
+}
+
 @media(min-width: 1024px) {
     .management-item:not(:last-child) {
         border-right: 1px solid #dddddd;
@@ -189,6 +194,9 @@ ul.course-list li {
 @media(min-width: 640px) {
     .quote-box {
         font-size: 24px;
+    }
+    .quote-box-2 {
+        font-size: 40px;
     }
     img.cwg-txt-img {
         width: 70%;
