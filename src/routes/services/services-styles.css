@@ -68,8 +68,15 @@ path.fill-blue {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     object-position: center;
+}
+
+.grid-content-box-2 {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 20px;
+    align-items: center;
 }
 
 #benefiting-cards-wrapper .text-headline-6 {
@@ -191,9 +198,37 @@ ul.course-list li {
     padding: 10px;
 }
 
+.new-model-block {
+    font-size: 15px;
+}
+.model-img-wrapper {
+    width: 100%;
+    padding-top: 75%;
+    position: relative;
+}
+img.model-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 @media(min-width: 1024px) {
     .management-item:not(:last-child) {
         border-right: 1px solid #dddddd;
+    }
+    .grid-content-box-2 {
+        grid-template-columns: 2fr 1fr;
+        gap: 0;
+    }
+}
+@media(min-width: 768px) {
+    .grid-content-box-2 {
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
     }
 }
 
