@@ -114,7 +114,7 @@ img.management-item-img {
 
 section {
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 @keyframes scrolling {
@@ -183,12 +183,16 @@ ul.course-list li {
     border: 1px solid#DDD;
     color: var(--color-midnight-blue);
 }
-.dark .course-block:nth-child(odd) ul.course-list li {
+.dark .course-block:nth-child(odd) {
+    background-color: var(--color-dark-highlight);
+    color: whitesmoke;
+}
+/* .dark .course-block:nth-child(odd) ul.course-list li {
     color: var(--color-greyish-blue);
 }
 .dark .course-block:nth-child(odd) .stroke-blue {
     stroke: var(--color-midnight-blue);
-}
+} */
 .course-block:nth-child(even) {
     border: 1px solid#DDD;
 }

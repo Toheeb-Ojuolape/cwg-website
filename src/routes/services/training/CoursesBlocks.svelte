@@ -4,13 +4,13 @@
 
 <!--==== Advanced Service Platforms Management ====-->
 <div class="course-block pt-6 pb-10 px-5">
-    <div class="course-block-header flex gap-10 justify-between text-[20px]">
+    <div class="course-block-header flex gap-1 justify-between text-[18px]">
         <span class="">Advanced Service Platforms Management</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
         </div>
     </div>
-    <ul class="course-list">
+    <ul class="course-list mt-6">
         <li class="flex gap-4">
             <span>✓</span>  
             <span>E-Commerce Platform</span>
@@ -52,13 +52,13 @@
 
 <!--==== IT Infrastructure & Cloud Platform ====-->
 <div class="course-block pt-6 pb-10 px-5">
-    <div class="course-block-header flex gap-10 justify-between text-[20px]">
+    <div class="course-block-header flex gap-1 justify-between text-[18px]">
         <span class="">IT Infrastructure & Cloud Platform</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
         </div>
     </div>
-    <ul class="course-list">
+    <ul class="course-list mt-6">
         <li class="flex gap-4">
             <span>✓</span>  
             <span>Dell/EMC Enterprise Solutions</span>
@@ -100,13 +100,13 @@
 
 <!--==== Data Centre Infrastructure Management ====-->
 <div class="course-block pt-6 pb-10 px-5">
-    <div class="course-block-header flex gap-10 justify-between text-[20px]">
+    <div class="course-block-header flex gap-1 justify-between text-[18px]">
         <span class="">Data Centre Infrastructure Management</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
         </div>
     </div>
-    <ul class="course-list">
+    <ul class="course-list mt-6">
         <li class="flex gap-4">
             <span>✓</span>  
             <span>Data Centre Management</span>
@@ -140,13 +140,13 @@
 
 <!--==== Software Training ====-->
 <div class="course-block pt-6 pb-10 px-5">
-    <div class="course-block-header flex gap-10 justify-between text-[20px]">
+    <div class="course-block-header flex gap-1 justify-between text-[18px]">
         <span class="">Software Training</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
         </div>
     </div>
-    <ul class="course-list">
+    <ul class="course-list mt-6">
         <li class="flex gap-4">
             <span>✓</span>  
             <span>Oracle SQL Overview</span>

@@ -95,7 +95,7 @@
 
 		<hr class="gray-line" />
 
-		<section class="mt-10 mb-20 box-container mx-auto lg:px-21 px-10">
+		<section class="mt-10 mb-20 section-container mx-auto">
 			<div class="text-center mb-13 m-auto max-w-[818px] section-header">
 				<h2 class="text-headline-2 mb-2">Industries we have offer manage services</h2>
 				<p class="text-body-l font-normal">

@@ -131,7 +131,7 @@
 
         <hr class="gray-line" />
 
-        <section class="mt-10 mb-20 box-container mx-auto lg:px-21 px-10 overflow-hidden">
+        <section class="mt-10 mb-20 section-container mx-auto overflow-hidden">
             <div class="text-center mb-13 m-auto max-w-[950px] section-header">
                 <h2 class="text-headline-2 mb-2">Industries Benefiting from CWG's Cloud Services</h2>
                 <p class="text-body-l font-normal">
