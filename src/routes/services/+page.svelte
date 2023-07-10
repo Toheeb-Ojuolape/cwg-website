@@ -7,7 +7,7 @@
     <header
 		class="header h-[300px] lg:h-[477px] text-white mx-auto px-4 lg:px-8 flex flex-col justify-center gap-[10px]"
 	>
-		<div class="box-container">
+		<div class="section-container">
             <div class="header-text-wrapper">
                 <h1 class="text-headline-2 header-title lg:text-headline-1">
                     We are Constantly Innovating
