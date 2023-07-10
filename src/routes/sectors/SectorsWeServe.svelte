@@ -7,7 +7,7 @@
         <img src="/images/financial-service-institutions.jpg" alt="financial-service-institutions" class="sws-img">
     </div>
     <div class="sws-block-title bg-midnight-blue text-white py-4 px-8 sm:px-10">Financial Service Institutions</div>
-    <div class="sws-block-desc relative p-8 sm:p-10 pb-30">
+    <div class="sws-block-desc relative p-8 pb-30 sm:p-10 sm:pb-30">
         <p>
             Globally, Financial Services Institutions are constantly undergoing technological upgrades. CWG
             supports this drive in Financial Technology platforms and provides cloud services and software
@@ -18,7 +18,7 @@
             further through her ATM as a Service Initiative.
         </p>
     </div>
-    <a href="/#!" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
+    <a href="/sectors/financial-service-institutions" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
         <span>Learn more</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
@@ -31,7 +31,7 @@
         <img src="/images/telecommunications-2.jpg" alt="telecommunications" class="sws-img">
     </div>
     <div class="sws-block-title bg-midnight-blue text-white py-4 px-8 sm:px-10">Telecommunications</div>
-    <div class="sws-block-desc relative p-8 sm:p-10 pb-30">
+    <div class="sws-block-desc relative p-8 pb-30 sm:p-10 sm:pb-30">
         <p>
             CWG provides managed services, IT infrastructure support and integration to major
             telecommunication giants such as MTN and Etisalat. Also, Cloud services such as the
@@ -40,7 +40,7 @@
             40% of telecommunications managed services.
         </p>
     </div>
-    <a href="/#!" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
+    <a href="/sectors/telecommunications" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
         <span>Learn more</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
@@ -53,7 +53,7 @@
         <img src="/images/public-sector.jpg" alt="public-sector" class="sws-img">
     </div>
     <div class="sws-block-title bg-midnight-blue text-white py-4 px-8 sm:px-10">Public Sector</div>
-    <div class="sws-block-desc relative p-8 sm:p-10 pb-30">
+    <div class="sws-block-desc relative p-8 pb-30 sm:p-10 sm:pb-30">
         <p>
             This sector is responsible for deploying Technology Solutions to assist and support different
             tiers of Government in their bid to improve the lives of her citizenry. CWG is responsible
@@ -67,7 +67,7 @@
             that enable growth.
         </p>
     </div>
-    <a href="/#!" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
+    <a href="/sectors/public-sector" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
         <span>Learn more</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
@@ -80,7 +80,7 @@
         <img src="/images/emergent.jpg" alt="emergent" class="sws-img">
     </div>
     <div class="sws-block-title bg-midnight-blue text-white py-4 px-8 sm:px-10">Emergent</div>
-    <div class="sws-block-desc relative p-8 sm:p-10 pb-30">
+    <div class="sws-block-desc relative p-8 pb-30 sm:p-10 sm:pb-30 ">
         <p>
             The Emergent Business Sector is positioned and poised to provide ICT solutions for a wider range of
             emerging markets. These could spring up in varying sectors spanning through the Healthcare
@@ -95,7 +95,7 @@
             many technology platforms the business can deploy, establish or integrate to ensure economic stability.
         </p>
     </div>
-    <a href="/#!" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
+    <a href="/sectors/emergent" class="learn-more-link flex gap-5 text-lg max-w-[170px] mt-10">
         <span>Learn more</span>
         <div class="arrow-right">
             <ArrowRightLong strokeClassName="stroke-blue" />
