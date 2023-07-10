@@ -87,7 +87,7 @@
 				</div>
 			</li>
 
-			<li><a href="/" class:text-white={useWhite}>Our sectors</a></li>
+			<li><a href="/sectors" class:text-white={useWhite}>Our sectors</a></li>
 			<li>
 				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
 					>Community<ArrowDownIcon /></a
@@ -178,7 +178,7 @@
 			</li>
 
 			<li>
-				<a href="/" class="">Our sectors</a>
+				<a href="/sectors" class="">Our sectors</a>
 			</li>
 
 			<li on:click={() => onSelectDrawerItem('community')} on:keyup>
