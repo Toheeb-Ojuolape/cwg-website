@@ -97,7 +97,7 @@
 				</div>
 			</li>
 			<li><a href="/" class:text-white={useWhite}>Insights</a></li>
-			<li><a href="/" class:text-white={useWhite}>Fifthlab</a></li>
+			<li><a href="/fifthlab" class:text-white={useWhite}>Fifthlab</a></li>
 		</ul>
 
 		<div class="hidden lg:block">
@@ -202,7 +202,7 @@
 			</li>
 
 			<li><a href="/">Insights</a></li>
-			<li><a href="/">Fifthlab</a></li>
+			<li><a href="/fifthlab">Fifthlab</a></li>
 		</ul>
 
 		<button class="max-w-max p-5">

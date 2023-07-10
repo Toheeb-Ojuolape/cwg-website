@@ -145,6 +145,12 @@ a.header-link:hover::before {
     width: 100%;
     transition: width 1.2s;
 }
+section a.header-link, section a.header-link::before {
+    border-color: var(--color-midnight-blue);
+}
+.dark section a.header-link {
+    border-color: white;
+}
 
 img.quote-icon {
     width: 60px;
@@ -218,6 +224,9 @@ img.model-img {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+.fill-dark-gray {
+    fill: #111827;
 }
 
 @media(min-width: 1024px) {
