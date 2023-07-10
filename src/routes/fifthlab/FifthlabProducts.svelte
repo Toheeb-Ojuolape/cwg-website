@@ -3,7 +3,7 @@
 </script>
 
 <div class="fifthlab-product-block m-auto">
-    <div class="grid bg-whitish-blue">
+    <div class="grid bg-whitish-blue dark:bg-dark-highlight">
         <div class="produt-img-side relative bg-midnight-blue">
             <img src="/images/billsnpay-img.jpg" alt="billsnpay-img" class="product-img">
         </div>
@@ -26,7 +26,7 @@
 </div>
 
 <div class="fifthlab-product-block m-auto">
-    <div class="grid bg-whitish-blue">
+    <div class="grid bg-whitish-blue dark:bg-dark-highlight">
         <div class="produt-img-side relative bg-midnight-blue">
             <img src="/images/smerp-img.jpg" alt="smerp-img" class="product-img">
         </div>
@@ -49,7 +49,7 @@
 </div>
 
 <div class="fifthlab-product-block m-auto">
-    <div class="grid bg-whitish-blue">
+    <div class="grid bg-whitish-blue dark:bg-dark-highlight">
         <div class="produt-img-side relative bg-midnight-blue">
             <img src="/images/finedge-img.jpg" alt="finedge-img" class="product-img">
         </div>
@@ -73,7 +73,7 @@
 </div>
 
 <div class="fifthlab-product-block m-auto">
-    <div class="grid bg-whitish-blue">
+    <div class="grid bg-whitish-blue dark:bg-dark-highlight">
         <div class="produt-img-side relative bg-midnight-blue">
             <img src="/images/ucp-img.jpg" alt="ucp-img" class="product-img">
         </div>
@@ -96,7 +96,7 @@
 </div>
 
 <div class="fifthlab-product-block m-auto">
-    <div class="grid bg-whitish-blue">
+    <div class="grid bg-whitish-blue dark:bg-dark-highlight">
         <div class="produt-img-side relative bg-midnight-blue">
             <img src="/images/kuleanpay-img.jpg" alt="kuleanpay-img" class="product-img">
         </div>

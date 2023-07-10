@@ -77,7 +77,7 @@
 				<div class="flex-1">
 					<img src="/images/people-talking.jpg" alt="people-talking" />
 				</div>
-				<div class="flex-1 p-5 pb-8 sm:p-0">
+				<div class="flex-1 p-5 pb-8 sm:p-0 sm:py-5 md:py-0">
 					<p class="text-body-s lg:text-body-m max-w-[515px] w-full my-2">
 						With a proven track record of success, Fifthlab has helped numerous businesses across
                         various industries achieve their goals and drive growth. Whether it's developing a
