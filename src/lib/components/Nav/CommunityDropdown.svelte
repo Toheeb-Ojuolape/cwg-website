@@ -6,7 +6,7 @@
 			link: '/'
 		},
 		{ title: 'Digital Banking Summit', subtitle: 'Transforming customer engagement', link: '/' },
-		{ title: 'The CWG Tech Community', subtitle: 'Cohort for Women and fresh graduate', link: '/' },
+		{ title: 'The CWG Tech Community', subtitle: 'Cohort for Women and fresh graduate', link: '/community/cwg-tech-community' },
 		{ title: 'Pitch for transformation', subtitle: "Empowering Africa's future shapers", link: '/' }
 	];
 </script>
