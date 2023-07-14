@@ -4,14 +4,14 @@
     let currentIndex = 0;
     let images = [
       {
-        url: '/images/tobi-video-thumbnail.jpg',
-        caption: 'Meet Tobi Ayeni, Founder Miss Techy',
-        videoId: '2375rRcb4VE',
+        url: '/images/documentary-thumbnail-1.jpg',
+        caption: '1st Annual Digital Banking Submit 2022',
+        videoId: 'PT7bJ6eUrgs',
       },
       {
-        url: '/images/modupe-video-thumbnail.jpg',
-        caption: 'Meet Modupe Durosinmi - Etti, Program Director/The Bulb',
-        videoId: 'pc-fx0zUP6k',
+        url: '/images/documentary-thumbnail-2.jpg',
+        caption: 'Vericash Documentary',
+        videoId: 'PT7bJ6eUrgs',
       },
     ];
   

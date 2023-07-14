@@ -87,6 +87,36 @@
     gap: 12px;
     position: relative;
 }
+.dbs img.contact-item-img {
+    width: 40px;
+}
+/* .dbs .lp-white-side {
+    border-top: 1px solid #6E80A3;
+    border-bottom: 1px solid #6E80A3;
+} */
+.dbs .cut-out-1 {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    right: -40px;
+}
+.dbs .cut-out-2 {
+    width: 80px;
+    height: 80px;
+    bottom: -40px;
+    right: -40px;
+}
+
+.dbs .marquee-item {
+    flex: 0 0 180vw;
+}
+.dbs .marquee-item img {
+    filter: grayscale(0.5);
+}
+
+.logo-div-wrapper .logo-div:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
 
 @media(max-width: 768px) {
     .label-patterned {
@@ -105,7 +135,7 @@
         background-image: url(/images/vector-half-2a.png);
         background-position: bottom;
     }
-    .cut-out-1 {
+    .cut-out-1, .dbs .cut-out-1 {
         top: initial;
         right: initial;
         bottom: -50px;
@@ -113,9 +143,16 @@
         border-bottom: none;
         border-right: 1px solid #6E80A3;
     }
+    .dbs .cut-out-1 {
+        bottom: -40px;
+        left: -40px;
+    }
     .cut-out-2 {
         border-top: none;
         border-left: 1px solid #6E80A3;
+    }
+    .dbs .marquee-item {
+        flex: 0 0 200vw;
     }
 }
 
@@ -150,13 +187,13 @@
         position: relative;
         z-index: 1;
     }
-    .cut-out-1 {
+    .cut-out-1, .dbs .cut-out-1 {
         width: 60px;
         height: 60px;
         bottom: -30px;
         left: -30px;
     }
-    .cut-out-2 {
+    .cut-out-2, .dbs .cut-out-2 {
         width: 60px;
         height: 60px;
         bottom: -30px;
@@ -164,5 +201,11 @@
     }
     img.contact-item-img {
         width: 60px;
+    }
+    .dbs .marquee-item {
+        flex: 0 0 250vw;
+    }
+    .hidden-xs {
+        display: none;
     }
 }

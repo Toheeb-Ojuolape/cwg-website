@@ -8,7 +8,7 @@
 
 <main>
     <header
-		class="header text-midnight-blue h-[300px] lg:h-[477px] mx-auto flex flex-col justify-center gap-[10px]"
+		class="header text-midnight-blue lg:h-[477px] py-10 mx-auto flex flex-col justify-center gap-[10px]"
 	>
 		<div class="section-container relative">
 			<div class="flex gap-5 items-center">
