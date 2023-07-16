@@ -3,7 +3,7 @@
 		{
 			title: 'The Texcellence Conference',
 			subtitle: 'Unleash innovation, embrace the future',
-			link: '/'
+			link: '/community/texcellence-conference'
 		},
 		{ 
 			title: 'Digital Banking Summit',

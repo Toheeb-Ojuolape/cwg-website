@@ -107,15 +107,79 @@
     right: -40px;
 }
 
+.dbs .marquee-content {
+    animation: scrolling-2 25s linear infinite;
+}
+
 .dbs .marquee-item {
     flex: 0 0 180vw;
 }
 .dbs .marquee-item img {
-    filter: grayscale(0.5);
+    filter: grayscale(1);
+}
+
+@keyframes scrolling-2 {
+    0% { transform: translateX(0); }
+    100% { transform: translatex(-180vw); }
+}
+
+.more-links-wrapper a {
+    font-size: 40px;
+    transition: transform 1.2s;
+}
+.more-links-wrapper a:hover {
+    transform: scale(1.05);
+}
+
+.marquee-text-wrapper {
+    font-size: 18px;
+}
+.marquee-text {
+    white-space: nowrap;
+    /* overflow: hidden;  */
+    animation: marquee 10s linear infinite; 
+}
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 .logo-div-wrapper .logo-div:not(:last-child) {
     border-right: 1px solid #ddd;
+}
+
+.transformation-pitch-section {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+
+.transformation-pitch-section > .grid{
+    grid-template-columns: 1fr 1.2fr 1fr;
+}
+
+@media(min-width: 1024px) {
+    .t-speaker {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    img.t-speaker-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+@media(max-width: 1023px) {
+    .ess-txt-side {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%;
+    }
 }
 
 @media(max-width: 768px) {
@@ -153,6 +217,12 @@
     }
     .dbs .marquee-item {
         flex: 0 0 200vw;
+    }
+    /* .transformation-pitch-section > .grid{
+        grid-template-columns: 100%;
+    } */
+    .transformation-pitch-section .section-img-side img.bg-img {
+        position: relative;
     }
 }
 
@@ -207,5 +277,8 @@
     }
     .hidden-xs {
         display: none;
+    }
+    .transformation-pitch-section > .grid{
+        grid-template-columns: 100%;
     }
 }

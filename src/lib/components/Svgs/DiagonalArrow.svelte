@@ -1,0 +1,8 @@
+<script>
+	export let strokeClassName = 'stroke-white';
+</script>
+
+<svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M28.0609 9.70051L0.900498 36.8609L6.21209 42.1725L33.1758 14.8154L35.0379 12.3631L35.7264 13.0517L35.0438 16.095L35.1626 29.1568L42.1352 29.0696L42.1947 4.61609L38.1619 0.583212L13.7083 0.642729L13.6212 7.61531L26.4862 7.53746L29.7263 7.05155L30.5132 7.83845L28.0609 9.70051Z" class={`${strokeClassName}`}/>
+</svg>
+    
