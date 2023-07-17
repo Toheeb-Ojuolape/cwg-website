@@ -4,7 +4,7 @@
 
 <main>
     <header
-		class="header h-[300px] lg:h-[477px] text-white mx-auto px-4 lg:px-8 flex flex-col justify-center gap-[10px]"
+		class="header h-[300px] lg:h-[477px] text-white flex flex-col justify-center gap-[10px]"
 	>
 		<div class="section-container">
             <div class="header-text-wrapper">
