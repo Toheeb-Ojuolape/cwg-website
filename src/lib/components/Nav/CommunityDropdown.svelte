@@ -18,7 +18,7 @@
 		{
 			title: 'Pitch for transformation',
 			subtitle: "Empowering Africa's future shapers",
-			link: '/'
+			link: '/community/pitch-for-transformation'
 		}
 	];
 </script>

@@ -157,6 +157,19 @@
     grid-template-columns: 1fr 1.2fr 1fr;
 }
 
+.round-block {
+    border-left: 1px solid var(--color-greyish-blue);
+    border-right: 1px solid var(--color-greyish-blue);
+}
+.round-block-title {
+    font-size: 40px;
+}
+
+.eligibility-section {
+    border-left: 8px solid var(--color-pewter-blue);
+    padding-left: 30px;
+}
+
 @media(min-width: 1024px) {
     .t-speaker {
         display: grid;
@@ -179,6 +192,9 @@
         padding-left: 16px;
         padding-right: 16px;
         width: 100%;
+    }
+    .section-container .section-container {
+        padding: 0 !important;
     }
 }
 
