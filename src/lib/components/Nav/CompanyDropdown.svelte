@@ -1,7 +1,15 @@
 <script lang="ts">
 	const list = [
-		{ title: 'About CWG', subtitle: 'CWG at a glance', link: '/about' },
-		{ title: 'Awards', subtitle: 'Award-winning solutions, powering pan-Africa', link: '/' },
+		{
+			title: 'About CWG',
+			subtitle: 'CWG at a glance',
+			link: '/about'
+		},
+		{ 
+			title: 'Awards',
+			subtitle: 'Award-winning solutions, powering pan-Africa',
+			link: '/'
+		},
 		{
 			title: 'Partners',
 			subtitle: 'Empowering growth through expert insights and advisory',
@@ -12,9 +20,21 @@
 			subtitle: 'Supporting Innovation and a Forward Thinking Africa',
 			link: '/mission-vision-value'
 		},
-		{ title: 'Regions', subtitle: 'Our companies, our success', link: '/' },
-		{ title: 'Impact', subtitle: 'Empowering tech frontiers', link: '/' },
-		{ title: 'Careers', subtitle: 'Join the amazing team', link: '/' },
+		{
+			title: 'Regions',
+			subtitle: 'Our companies, our success',
+			link: '/'
+		},
+		{
+			title: 'Impact',
+			subtitle: 'Empowering tech frontiers',
+			link: '/impact'
+		},
+		{
+			title: 'Careers',
+			subtitle: 'Join the amazing team',
+			link: '/'
+		},
 		{
 			title: 'Leadership',
 			subtitle: 'Collaborative expertise driving positive impact',
