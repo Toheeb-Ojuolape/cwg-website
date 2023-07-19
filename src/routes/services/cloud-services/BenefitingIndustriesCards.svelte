@@ -1,6 +1,6 @@
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/banking-and-finance.jpg" alt="banking-and-finance">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Finance</h4>
@@ -17,7 +17,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/retail-2.jpg" alt="retail-2">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Retail</h4>
@@ -33,7 +33,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/healthcare.jpg" alt="healthcare">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Healthcare</h4>
@@ -50,7 +50,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/education.jpg" alt="education">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Education</h4>
@@ -67,7 +67,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/manufacturing.jpg" alt="manufacturing">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Manufacturing</h4>

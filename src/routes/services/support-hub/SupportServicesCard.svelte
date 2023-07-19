@@ -1,5 +1,5 @@
 <div class="bg-whitish-blue dark:bg-dark-highlight support-services-block">
-    <div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+    <div class="img-box-wrapper w-full bg-midnight-blue mb-4">
         <img src="/images/cloud-services-2.jpg" alt="cloud-services-2">
     </div>
 	<div class="px-5 pb-10">
@@ -32,7 +32,7 @@
 </div>  
 
 <div class="bg-whitish-blue dark:bg-dark-highlight support-services-block">
-    <div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+    <div class="img-box-wrapper w-full bg-midnight-blue mb-4">
         <img src="/images/infrastructure-services-2.jpg" alt="infrastructure-services-2">
     </div>
 	<div class="px-5 pb-10">
@@ -69,7 +69,7 @@
 </div>  
 
 <div class="bg-whitish-blue dark:bg-dark-highlight support-services-block">
-    <div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+    <div class="img-box-wrapper w-full bg-midnight-blue mb-4">
         <img src="/images/managed-services-2.jpg" alt="managed-services-2">
     </div>
 	<div class="px-5 pb-10">
@@ -106,7 +106,7 @@
 </div>  
 
 <div class="bg-whitish-blue dark:bg-dark-highlight support-services-block">
-    <div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+    <div class="img-box-wrapper w-full bg-midnight-blue mb-4">
         <img src="/images/software-services-2.jpg" alt="software-services-2">
     </div>
 	<div class="px-5 pb-10">
@@ -139,7 +139,7 @@
 </div>  
 
 <div class="bg-whitish-blue dark:bg-dark-highlight support-services-block">
-    <div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+    <div class="img-box-wrapper w-full bg-midnight-blue mb-4">
         <img src="/images/communication-services.jpg" alt="communication-services">
     </div>
 	<div class="px-5 pb-10">

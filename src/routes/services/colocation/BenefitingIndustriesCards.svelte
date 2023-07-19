@@ -1,6 +1,6 @@
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/banking-and-finance.jpg" alt="banking-and-finance">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Banking and Finance</h4>
@@ -15,7 +15,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/telecommunications.jpg" alt="telecommunications">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Telecommunications</h4>
@@ -30,7 +30,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/healthcare.jpg" alt="healthcare">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Healthcare</h4>
@@ -45,7 +45,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/ecommerce.jpg" alt="ecommerce">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">E-commerce</h4>
@@ -60,7 +60,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/education.jpg" alt="education">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Education</h4>
@@ -76,7 +76,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/energy.jpg" alt="energy">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Energy and utilities</h4>
@@ -92,7 +92,7 @@
 
 <div class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block">
 	<div class="flex-1 px-5 pb-15">
-		<div class="img-box-wrapper w-full bg-vivid-burgundy mb-4">
+		<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
             <img src="/images/government.jpg" alt="government">
         </div>
 		<h4 class="text-headline-6 mb-3 industry-block-title">Government</h4>
