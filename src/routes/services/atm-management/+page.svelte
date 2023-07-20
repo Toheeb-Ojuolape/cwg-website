@@ -107,7 +107,7 @@
                 <div class="management-item sm:p-10 p-5">
                     <img src="/images/bank.svg" alt="bank" class="management-item-img">
                     <h5 class="text-headline-3 lg:text-headline-1  pt-5 pb-3">22</h5>
-                    <p>No of Banks</p>
+                    <p>No. of Banks</p>
                 </div>
                 <div class="management-item sm:p-10 p-5">
                     <img src="/images/atm-managers.svg" alt="atm-managers" class="management-item-img">
