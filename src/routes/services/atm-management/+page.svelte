@@ -112,7 +112,7 @@
                 <div class="management-item sm:p-10 p-5">
                     <img src="/images/atm-managers.svg" alt="atm-managers" class="management-item-img">
                     <h5 class="text-headline-3 lg:text-headline-1  pt-5 pb-3">2000</h5>
-                    <p>Number of ATMS Managers</p>
+                    <p>Number of ATMs Managers</p>
                 </div>
             </div>
         </section>
