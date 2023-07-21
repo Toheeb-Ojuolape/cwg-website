@@ -13,7 +13,7 @@
 		{
 			title: 'Partners',
 			subtitle: 'Empowering growth through expert insights and advisory',
-			link: '/'
+			link: '/partners'
 		},
 		{
 			title: 'Mission, Vision & Value',
