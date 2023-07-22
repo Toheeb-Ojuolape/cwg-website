@@ -1,0 +1,34 @@
+div#our-regions {
+    position: fixed;
+    width: calc(100% - 30px);
+    left: 15px;
+    top: 100px;
+    border-radius: 4px;
+    overflow: auto;
+    max-height: calc(100vh - 110px);
+    z-index: 1000;
+}
+.read-more-div {
+    position: absolute;
+    width: calc(100% - 30px);
+    left: 15px;
+    bottom: 20px;
+}
+img.close {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    cursor: pointer;
+}
+
+@media(max-width: 640px) {
+    div#our-regions {
+        width: 100%;
+        left: 0;
+        top: 0;
+        max-height: calc(100vh - 30px);
+    }
+    img.close {
+        top: 0px;
+    }
+}

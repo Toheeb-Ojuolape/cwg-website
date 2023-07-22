@@ -10,6 +10,10 @@
 	import { theme } from '$lib/stores/theme-store';
 	import { page } from '$app/stores';
 
+	import Caret from '../Svgs/Caret.svelte';
+	import '../OurRegions/regions.css';
+	import RegionsWrapper from '../OurRegions/RegionsWrapper.svelte';
+
 	type SeletedDrawer = 'company' | 'services' | 'community';
 
 	let shouldHaveColor = false;
@@ -50,6 +54,12 @@
 		} else {
 			selectedDrawer = undefined;
 		}
+	}
+
+	let displayRegion = false;
+
+	function toggleDisplayRegion() {
+		displayRegion = !displayRegion;
 	}
 </script>
 
@@ -100,7 +110,15 @@
 			<li><a href="/fifthlab" class:text-white={useWhite}>Fifthlab</a></li>
 		</ul>
 
-		<div class="hidden lg:block">
+		<div class="hidden lg:flex gap-[50px] items-center">
+			<div class="region-wrapper-trigger relative">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<div class="flex items-center gap-[10px] cursor-pointer" on:click={toggleDisplayRegion}>
+					<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag">
+					<span>Nigeria</span>
+					<Caret />
+				</div>
+			</div>
 			<ThemeSwitcher {useWhite} />
 		</div>
 
@@ -119,6 +137,8 @@
 		</button>
 	</div>
 </nav>
+
+<RegionsWrapper {displayRegion} />
 
 <div
 	class="Nav__drawer z-50 fixed left-0 right-0 flex flex-col items-end lg:hidden"
@@ -204,6 +224,15 @@
 			<li><a href="/">Insights</a></li>
 			<li><a href="/fifthlab">Fifthlab</a></li>
 		</ul>
+
+		<div class="region-wrapper-trigger relative max-w-max p-5">
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<div class="flex items-center gap-[10px] cursor-pointer" on:click={toggleDisplayRegion}>
+				<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag">
+				<span>Nigeria</span>
+				<Caret />
+			</div>
+		</div>
 
 		<button class="max-w-max p-5">
 			<ThemeSwitcher />
