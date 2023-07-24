@@ -1,0 +1,111 @@
+.award-block {
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid var(--color-pewter-blue);
+    border-top: none;
+    border-bottom: 1.5px solid var(--color-pewter-blue);
+    position: relative;
+}
+.award-block::before {
+    content: "\2605";
+    position: absolute;
+    bottom: -10px;
+    left: -12px;
+    width: 24px;
+    height: 24px;
+    color: var(--color-pewter-blue);
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+.award-block:last-child::after {
+    content: "\2605";
+    position: absolute;
+    bottom: -10px;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    color: var(--color-pewter-blue);
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+}
+.dark .award-block::before, .dark .award-block::after {
+    background-color: black;
+}
+.award-block:nth-child(n + 21) {
+    display: none; 
+ }
+.award-block:nth-child(n + 21).show-awards {
+    display: block;
+}
+.award-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    margin-bottom: 20px;
+}
+.award-title {
+    font-size: 24px;
+}
+.award-desc {
+    font-size: 14px;
+}
+
+button.show-awards-trigger-wrapper {
+    border-bottom: 1px solid var(--color-bright-blue);
+    padding: 10px 0;
+    width: 145px;
+    transition: transform 1.2s;
+    font-size: 16px;
+}
+button.show-awards-trigger-wrapper:hover {
+    transform: scale(1.05);
+}
+
+@media(min-width: 1024px) {
+    .award-block:nth-child(4n+4)::after {
+        content: "\2605";
+        position: absolute;
+        bottom: -10px;
+        right: -12px;
+        width: 24px;
+        height: 24px;
+        color: var(--color-pewter-blue);
+        background-color: white;
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
+@media(min-width: 640px) {
+    .award-block:nth-child(3n+3)::after {
+        content: "\2605";
+        position: absolute;
+        bottom: -10px;
+        right: -12px;
+        width: 24px;
+        height: 24px;
+        color: var(--color-pewter-blue);
+        background-color: white;
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
+
+@media(max-width: 639px) {
+    .award-title {
+        font-size: 20px;
+    }
+    .award-block::after {
+        content: "\2605";
+        position: absolute;
+        bottom: -10px;
+        right: -12px;
+        width: 24px;
+        height: 24px;
+        color: var(--color-pewter-blue);
+        background-color: white;
+        border-radius: 50%;
+        z-index: 1;
+    }
+}

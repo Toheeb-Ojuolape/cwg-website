@@ -8,7 +8,7 @@
 		{ 
 			title: 'Awards',
 			subtitle: 'Award-winning solutions, powering pan-Africa',
-			link: '/'
+			link: '/awards'
 		},
 		{
 			title: 'Partners',
