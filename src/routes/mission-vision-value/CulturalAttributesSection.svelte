@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { CMS_URL } from '$lib/api';
 	import ArrowDownIcon from '$lib/components/Svgs/ArrowDownIcon.svelte';
+	import type { MissionPage } from '$lib/types/mission-page';
+
+	export let image: MissionPage['culture_attributes_section_image'];
+	export let section: MissionPage['culture_attributes_section_accordion'];
 
 	let currentIndex: number | undefined;
 
@@ -14,16 +19,16 @@
 
 <section class="box-container mx-auto bg-black-300 dark:bg-dark-highlight flex items-center gap-19">
 	<div class="flex-[3] pl-4 lg:pl-8">
-		<h2 class="text-headline-2 mb-6">Our Cultural Attributes</h2>
+		<h2 class="text-headline-2 mb-6">{section.title}</h2>
 
 		<div class="flex flex-col gap-[10px]">
-			{#each Array(5) as _, i}
+			{#each section.items as { content, title }, i}
 				<div class="border-b border-b-black-600 dark:border-b-black-900 pb-8">
 					<button
 						on:click={() => onChangeCurrentIndex(i)}
 						class="flex justify-between items-center w-full"
 					>
-						<h6 class="text-headline-6">Change/Adaptability</h6>
+						<h6 class="text-headline-6">{title}</h6>
 						<div
 							class="arrow-container"
 							class:arrow-container--expanded={currentIndex === i}
@@ -35,11 +40,7 @@
 						<p
 							class="text-body-l text-greyish-blue dark:text-black-700 overflow-hidden"
 						>
-							At CWG, listening to our people is important, and we want everyone to
-							feel like they are heard, and that their opinion matters. We also want
-							to ensure that everyone understands that the work they do is valued. We
-							go the extra mile to get to know our teams on a personal level, and
-							build a foundation of trust.
+							{@html content ?? ''}
 						</p>
 					</div>
 				</div>
@@ -47,7 +48,9 @@
 		</div>
 	</div>
 
-	<div class="flex-[2] h-[600px] bg-burlywood" />
+	<div class="flex-[2] h-[600px]">
+		<img src={CMS_URL + image.data?.attributes.url} alt="Our Cultural Attributes" />
+	</div>
 </section>
 
 <style>

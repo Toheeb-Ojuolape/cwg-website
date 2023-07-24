@@ -1,6 +1,10 @@
 <script lang="ts">
 	import MoreAboutUs from '$lib/components/MoreAboutUs.svelte';
+	import type { PageData } from './$types';
 	import LeadershipCardList from './LeadershipCardList.svelte';
+
+	export let data: PageData;
+	console.log(JSON.stringify(data.leaderships));
 
 	let activeTab: 'directors' | 'management' = 'directors';
 
