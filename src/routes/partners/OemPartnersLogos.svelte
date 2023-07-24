@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
+	import { theme } from '$lib/stores/theme-store';
 	import type { OEMPartner } from '$lib/types/oem-partner';
 
-	export let logos: OEMPartner['attributes']['logo']['data'];
+	export let logos: OEMPartner[];
 	let showMore = true;
 
 	function toggleSeeMore() {
@@ -15,38 +16,14 @@
 </script>
 
 <div class={showMore ? `${commonClasses} show-more` : `${commonClasses}`}>
-	{#each logos as { attributes: { url } }}
-		<img src={CMS_URL + url} alt="" class="partner-logo" />
+	{#each logos as { attributes: { logo, logo_dark } }}
+		<img
+			src={CMS_URL +
+				($theme === 'light' ? logo.data.attributes.url : logo_dark.data.attributes.url)}
+			alt=""
+			class="partner-logo"
+		/>
 	{/each}
-	<img src="/images/oem/infosys.svg" alt="infosys" class="partner-logo" />
-	<img src="/images/oem/ameyo.svg" alt="ameyo" class="partner-logo" />
-	<img src="/images/oem/hitachi.svg" alt="hitachi" class="partner-logo dark:hidden block" />
-	<img src="/images/oem/hitachi-white.svg" alt="hitachi" class="partner-logo dark:block hidden" />
-	<img src="/images/oem/ibm.svg" alt="ibm" class="partner-logo" />
-	<img src="/images/oem/veritas.svg" alt="veritas" class="partner-logo" />
-	<img src="/images/oem/cisco.svg" alt="cisco" class="partner-logo" />
-	<img src="/images/oem/f5.svg" alt="f5" class="partner-logo" />
-	<img src="/images/oem/nutanix.svg" alt="nutanix" class="partner-logo" />
-	<img src="/images/oem/newgen.svg" alt="newgen" class="partner-logo" />
-	<img src="/images/oem/vmware.svg" alt="vmware" class="partner-logo" />
-	<img
-		src="/images/oem/check-point.svg"
-		alt="check-point"
-		class="partner-logo dark:hidden block"
-	/>
-	<img
-		src="/images/oem/check-point-white.svg"
-		alt="check-point"
-		class="partner-logo dark:block hidden"
-	/>
-	<img src="/images/oem/dell-emc.svg" alt="dell-emc" class="partner-logo" />
-	<img src="/images/oem/netapp.svg" alt="netapp" class="partner-logo dark:hidden block" />
-	<img src="/images/oem/netapp-white.svg" alt="netapp" class="partner-logo dark:block hidden" />
-	<img src="/images/oem/microsoft.svg" alt="microsoft" class="partner-logo" />
-	<img src="/images/oem/redhat.svg" alt="redhat" class="partner-logo dark:hidden block" />
-	<img src="/images/oem/redhat-white.svg" alt="redhat" class="partner-logo dark:block hidden" />
-	<img src="/images/oem/zadara.svg" alt="zadara" class="partner-logo dark:hidden block" />
-	<img src="/images/oem/zadara-white.svg" alt="zadara" class="partner-logo dark:block hidden" />
 </div>
 
 <!--=== Toggle Button ===-->

@@ -9,7 +9,7 @@ import type { OEMPartner } from '$lib/types/oem-partner';
 import type { LayoutLoad } from './$types';
 
 interface LayoutResponseData {
-	// oemPartners: OEMPartner[];
+	oemPartners: OEMPartner[];
 	nav: Nav;
 	footer: Footer;
 	moreAboutUs: MoreAboutUs;
@@ -30,30 +30,40 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		.get('more-about-us?populate[0]=content.image')
 		.then((res) => res.data.data.attributes);
 
-	// const oemPartners = await grapgqlClient({
-	// 	data: {
-	// 		query: `{
-	// 				oemPartners {
-	// 					data {
-	// 						attributes {
-	// 							logo {
-	// 								data {
-	// 									attributes {
-	// 										url
-	// 									}
-	// 								}
-	// 							}
-	// 						}
-	// 					}
-	// 				}
-	// 			}`
-	// 	}
-	// });
+	const oemPartners = await grapgqlClient({
+		data: {
+			query: `{
+				oemPartners {
+					data {
+						attributes {
+							name
+							logo {
+								data {
+									attributes {
+										alternativeText
+										url
+									}
+								}
+							}
+							logo_dark {
+								data {
+									attributes {
+										alternativeText
+										url
+									}
+								}
+							}
+						}
+					}
+				}
+			}`
+		}
+	});
 
 	return {
 		nav,
 		footer,
-		moreAboutUs
-		// oemPartners: oemPartners.data.data.oemPartners.data
+		moreAboutUs,
+		oemPartners: oemPartners.data.data.oemPartners.data
 	};
 }) satisfies LayoutLoad;

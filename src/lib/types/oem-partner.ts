@@ -1,19 +1,22 @@
 export interface OEMPartner {
-	attributes: PokedexAttributes;
+	attributes: OEMPartnerAttributes;
 }
 
-export interface PokedexAttributes {
+export interface OEMPartnerAttributes {
+	name: string;
 	logo: Logo;
+	logo_dark: Logo;
 }
 
 export interface Logo {
-	data: Datum[];
+	data: Data;
 }
 
-export interface Datum {
-	attributes: DatumAttributes;
+export interface Data {
+	attributes: DataAttributes;
 }
 
-export interface DatumAttributes {
+export interface DataAttributes {
+	alternativeText: null;
 	url: string;
 }
