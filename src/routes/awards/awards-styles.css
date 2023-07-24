@@ -31,7 +31,7 @@
     z-index: 1;
 }
 .dark .award-block::before, .dark .award-block::after {
-    background-color: black;
+    background-color: black !important;
 }
 .award-block:nth-child(n + 21) {
     display: none; 
