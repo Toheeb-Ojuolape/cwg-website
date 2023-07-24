@@ -20,11 +20,11 @@
 			subtitle: 'Supporting Innovation and a Forward Thinking Africa',
 			link: '/mission-vision-value'
 		},
-		{
-			title: 'Regions',
-			subtitle: 'Our companies, our success',
-			link: '/'
-		},
+		// {
+		// 	title: 'Regions',
+		// 	subtitle: 'Our companies, our success',
+		// 	link: '/'
+		// },
 		{
 			title: 'Impact',
 			subtitle: 'Empowering tech frontiers',
