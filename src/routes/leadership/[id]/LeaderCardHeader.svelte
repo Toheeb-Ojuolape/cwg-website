@@ -1,17 +1,28 @@
+<script lang="ts">
+	import { CMS_URL } from '$lib/api';
+	import type { Leader } from '../leadership-types';
+
+	export let leader: Leader;
+
+	const { position, name, image, leadership_types } = leader.attributes;
+</script>
+
 <header
 	class="box-container mx-auto bg-deep-blue bg-dotted-map lg:h-[380px] lg:px-50 flex flex-col lg:flex-row gap-6 lg:gap-9"
 >
 	<div>
 		<img
-			src="/images/leadership-hero.png"
-			alt="leadership-hero"
+			src={CMS_URL + image.data.attributes.url}
+			alt={name}
 			class="h-full w-full lg:w-[317px] object-cover"
 		/>
 	</div>
 	<div class="text-white pb-9 px-4 lg:px-0 flex flex-col justify-end h-full">
-		<p class="text-xs leading-6 font-light uppercase">Board of Directors</p>
-		<h1 class="text-headline-2 lg:text-headline-1 -ml-1">Phillip Obioha</h1>
-		<p class="text-body-m font-light lg:text-body-l">Chairman, Board of Directors</p>
+		<p class="text-xs leading-6 font-light uppercase">
+			{leadership_types.data[0].attributes.title}
+		</p>
+		<h1 class="text-headline-2 lg:text-headline-1 -ml-1">{name}</h1>
+		<p class="text-body-m font-light lg:text-body-l">{position}</p>
 		<div class="flex items-center gap-1 mt-2">
 			<a href="/">
 				<svg

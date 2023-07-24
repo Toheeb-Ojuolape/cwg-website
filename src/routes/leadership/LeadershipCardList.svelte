@@ -3,7 +3,7 @@
 
 	import PersonCard from './PersonCard.svelte';
 
-	export let leaders: Leader[];
+	export let leaders: Leader[] = [];
 </script>
 
 <div class="grid lg:grid-cols-3">
