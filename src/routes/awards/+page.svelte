@@ -1,19 +1,32 @@
-<script>
+<script lang="ts">
+	import { CMS_URL } from '$lib/api';
 	import '../services/services-styles.css';
-    import './awards-styles.css'
+	import type { PageData } from './$types';
+	import './awards-styles.css';
 	import AwardsBlock from './AwardsBlock.svelte';
+
+	export let data: PageData;
+
+	const pageData = data.awardsPage;
 </script>
 
 <main>
 	<header
 		class="header h-[300px] lg:h-[477px] text-white flex flex-col justify-center gap-[10px]"
+		style={`background-image: url('${CMS_URL}${pageData.header.background_image.data.attributes.url}');`}
 	>
 		<div class="section-container">
 			<div class="header-text-wrapper">
-				<h1 class="text-headline-2 header-title lg:text-headline-1">
-                </h1>
-				<p class="mb-9 header-title-desc">
-                </p>
+				{#if pageData.header.title}
+					<h1 class="text-headline-2 header-title lg:text-headline-1">
+						{pageData.header.title}
+					</h1>
+				{/if}
+				{#if pageData.header.description}
+					<p class="mb-9 header-title-desc">
+						{pageData.header.description}
+					</p>
+				{/if}
 			</div>
 		</div>
 	</header>
@@ -21,32 +34,31 @@
 	<div id="sections-wrapper" class="py-5">
 		<section class="mt-10 mb-20 section-container mx-auto">
 			<div class="text-center mb-5 m-auto max-w-[550px] section-header">
-				<h2 class="text-headline-2 mb-2">Awards</h2>
+				<h2 class="text-headline-2 mb-2">{pageData.page_title}</h2>
 				<p class="text-body-l font-normal">
-					We are an award winning pan African systems solutions company
+					{pageData.page_subtitle}
 				</p>
 			</div>
 
-            <div class="flex gap-[25px] flex-wrap justify-center">
-                <img src="/images/wef.svg" alt="wef" class="awards-company dark:bg-white">
-                <img src="/images/oracle.svg" alt="oracle" class="awards-company">
-                <img src="/images/dell.svg" alt="dell" class="awards-company">
-                <img src="/images/infosys.svg" alt="infosys" class="awards-company">
-                <img src="/images/cisco.svg" alt="cisco" class="awards-company">
-                <img src="/images/wincor-nixdorf.svg" alt="wincor-nixdorf" class="awards-company dark:bg-white">
-                <img src="/images/intelsat.svg" alt="intelsat" class="awards-company">
-            </div>
+			<div class="flex gap-[25px] flex-wrap justify-center">
+				{#each pageData.award_companies.data as { attributes: { logo, name } }}
+					<img
+						src={CMS_URL + logo.data.attributes.url}
+						alt={name}
+						class="awards-company dark:bg-white"
+					/>
+				{/each}
+			</div>
 		</section>
 
-        <section class="awards-blocks-wrapper section-container">
-            <AwardsBlock />
-        </section>
+		<section class="awards-blocks-wrapper section-container">
+			<AwardsBlock awards={pageData.awards.data} />
+		</section>
 	</div>
 </main>
 
 <style>
 	header.header {
-		background-image: url('/images/awards-banner.jpg');
 		background-size: inherit;
 		background-position: center 20%;
 	}
