@@ -46,6 +46,7 @@ export interface ServicesLinksDatum {
 export interface FluffyAttributes {
 	title: string;
 	slug: string;
+	subtitle: string;
 	should_show_esteemed_clients: null;
 	createdAt: Date;
 	updatedAt: Date;

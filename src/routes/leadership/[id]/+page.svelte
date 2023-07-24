@@ -8,9 +8,7 @@
 
 	export let data: LayoutData;
 
-	const { allLeaders } = data;
-
-	const leader = allLeaders.find((leader) => leader.attributes.slug === $page.params.id);
+	$: leader = data.allLeaders.find((leader) => leader.attributes.slug === $page.params.id);
 
 	$: if (!leader) {
 		throw error(404, 'Leader not found');
@@ -21,6 +19,6 @@
 	<div>
 		<LeaderCardHeader {leader} />
 		<LeaderBioSection {leader} />
-		<OtherLeadersSection {leader} {allLeaders} />
+		<OtherLeadersSection {leader} allLeaders={$page.data.allLeaders} />
 	</div>
 {/if}
