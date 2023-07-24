@@ -13,8 +13,11 @@
 	import Caret from '../Svgs/Caret.svelte';
 	import '../OurRegions/regions.css';
 	import RegionsWrapper from '../OurRegions/RegionsWrapper.svelte';
+	import type { Nav } from '$lib/types/nav-type';
 
 	type SeletedDrawer = 'company' | 'services' | 'community';
+
+	export let nav: any;
 
 	let shouldHaveColor = false;
 
@@ -81,40 +84,51 @@
 			<li>
 				<span
 					class="flex peer gap-1 items-center cursor-pointer"
-					class:text-white={useWhite}>Company<ArrowDownIcon /></span
+					class:text-white={useWhite}>{nav.company_title}<ArrowDownIcon /></span
 				>
 				<div class="Nav__dropdown__container">
-					<CompanyDropdown />
+					<CompanyDropdown list={nav.company_links.data} />
 				</div>
 			</li>
 
-			<li>
-				<a href="/services" class="flex peer gap-1 items-center" class:text-white={useWhite}
-					>Services<ArrowDownIcon /></a
-				>
-				<div class="Nav__dropdown__container">
-					<ServicesDropdown />
-				</div>
-			</li>
-
-			<li><a href="/sectors" class:text-white={useWhite}>Our sectors</a></li>
 			<li>
 				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
-					>Community<ArrowDownIcon /></a
+					>{nav.services_title}<ArrowDownIcon /></a
 				>
 				<div class="Nav__dropdown__container">
-					<CommunityDropdown />
+					<ServicesDropdown list={nav.services_links.data} />
 				</div>
 			</li>
-			<li><a href="/" class:text-white={useWhite}>Insights</a></li>
-			<li><a href="/fifthlab" class:text-white={useWhite}>Fifthlab</a></li>
+
+			<li>
+				<a href={`/${nav.sectors_slug}`} class:text-white={useWhite}>{nav.sectors_title}</a>
+			</li>
+			<li>
+				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
+					>{nav.community_title}<ArrowDownIcon /></a
+				>
+				<div class="Nav__dropdown__container">
+					<CommunityDropdown list={nav.community_links.data} />
+				</div>
+			</li>
+			<li>
+				<a href={`/${nav.insight_slug}`} class:text-white={useWhite}>{nav.insight_title}</a>
+			</li>
+			<li>
+				<a href={`/${nav.fifthlab_slug}`} class:text-white={useWhite}
+					>{nav.fifthlab_title}</a
+				>
+			</li>
 		</ul>
 
 		<div class="hidden lg:flex gap-[50px] items-center">
 			<div class="region-wrapper-trigger relative">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div class="flex items-center gap-[10px] cursor-pointer" on:click={toggleDisplayRegion}>
-					<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag">
+				<div
+					class="flex items-center gap-[10px] cursor-pointer"
+					on:click={toggleDisplayRegion}
+				>
+					<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag" />
 					<span>Nigeria</span>
 					<Caret />
 				</div>
@@ -159,76 +173,76 @@
 		>
 			<li on:click={() => onSelectDrawerItem('company')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
-					Company
+					{nav.community_title}
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === 'company'}
+						class:rotate-180={selectedDrawer === nav.community_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === 'company'}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.community_title}
 				>
 					<div class="overflow-hidden">
-						<CompanyDropdown />
+						<CompanyDropdown list={nav.company_links.data} />
 					</div>
 				</div>
 			</li>
 
 			<li on:click={() => onSelectDrawerItem('services')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
-					Services
+					{nav.services_title}
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === 'services'}
+						class:rotate-180={selectedDrawer === nav.services_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === 'services'}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.services_title}
 				>
 					<div class="overflow-hidden">
-						<ServicesDropdown />
+						<ServicesDropdown list={nav.services_links.data} />
 					</div>
 				</div>
 			</li>
 
 			<li>
-				<a href="/sectors" class="">Our sectors</a>
+				<a href={`/${nav.sectors_slug}`} class="">{nav.sectors_title}</a>
 			</li>
 
 			<li on:click={() => onSelectDrawerItem('community')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
-					Community
+					{nav.community_title}
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === 'community'}
+						class:rotate-180={selectedDrawer === nav.community_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === 'community'}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.community_title}
 				>
 					<div class="overflow-hidden">
-						<CommunityDropdown />
+						<CommunityDropdown list={nav.community_links.data} />
 					</div>
 				</div>
 			</li>
 
-			<li><a href="/">Insights</a></li>
-			<li><a href="/fifthlab">Fifthlab</a></li>
+			<li><a href={`/${nav.insight_slug}`}>{nav.insight_title}</a></li>
+			<li><a href={`/${nav.fifthlab_slug}`}>{nav.fifthlab_title}</a></li>
 		</ul>
 
 		<div class="region-wrapper-trigger relative max-w-max p-5">
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="flex items-center gap-[10px] cursor-pointer" on:click={toggleDisplayRegion}>
-				<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag">
+				<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag" />
 				<span>Nigeria</span>
 				<Caret />
 			</div>

@@ -4,6 +4,9 @@
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Nav from '$lib/components/Nav/Nav.svelte';
 	import { page } from '$app/stores';
+	import type { LayoutData } from './$types';
+
+	export let data: LayoutData;
 </script>
 
 <svelte:head>
@@ -30,7 +33,7 @@
 </svelte:head>
 
 <div>
-	<Nav />
+	<Nav nav={data.nav} />
 
 	<main>
 		<div class:h-[116px]={$page.url.pathname !== '/'} />
