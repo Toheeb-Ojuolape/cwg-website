@@ -1,14 +1,14 @@
 <script lang="ts">
 	export let title: string;
-	export let list: { title: string; link: string }[];
+	export let list: [];
 </script>
 
 <div>
 	<h6 class="text-headline-6 text-greyish-blue mb-3 lg:mb-5">{title}</h6>
 	<ul class="text-white text-body-s">
-		{#each list as { title, link }}
+		{#each list as { attributes: { title, slug } }}
 			<li>
-				<a href={link}>{title}</a>
+				<a href={slug}>{title}</a>
 			</li>
 		{/each}
 	</ul>

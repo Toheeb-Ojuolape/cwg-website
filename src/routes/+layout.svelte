@@ -5,8 +5,12 @@
 	import Nav from '$lib/components/Nav/Nav.svelte';
 	import { page } from '$app/stores';
 	import type { LayoutData } from './$types';
+	import { mainLayoutStore } from '$lib/stores/layout-store';
+	import { onMount } from 'svelte';
 
 	export let data: LayoutData;
+
+	mainLayoutStore.setMoreAboutUs(data.moreAboutUs);
 </script>
 
 <svelte:head>
@@ -40,5 +44,5 @@
 		<slot />
 	</main>
 
-	<Footer />
+	<Footer footer={data.footer} />
 </div>
