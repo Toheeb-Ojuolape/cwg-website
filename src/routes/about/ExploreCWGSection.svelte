@@ -1,16 +1,8 @@
-<script>
+<script lang="ts">
 	import DirectionRightIcon from '$lib/components/Svgs/DirectionRightIcon.svelte';
+	import type { AboutPage } from '$lib/types/about-page';
 
-	const links = [
-		{ title: 'Our Polices & Sector', link: '/' },
-		{ title: 'The Mission, Vision, Value and Culture', link: '/mission-vision-value' },
-		{ title: 'Our Partners', link: '/' },
-		{ title: 'Leadership', link: '/leadership' },
-		{ title: 'Awards', link: '/' },
-		{ title: 'Impact', link: '/' },
-		{ title: 'Our Product', link: '/' },
-		{ title: 'Investor Relations', link: '/' }
-	];
+	export let data: AboutPage['explore_cwg'];
 </script>
 
 <section
@@ -19,26 +11,7 @@
 	<div
 		class="text-body-s font-light lg:text-body-l text-center lg:text-left flex flex-col gap-4 flex-1"
 	>
-		<p>
-			As a leading provider of IT services across Africa, CWG operates a firmly established
-			partnership network which connects businesses, enterprises, governments, customers, and
-			consumers, utilizing value-added services to help them efficiently drive processes, and
-			improve across their respective activities.
-		</p>
-
-		<p>
-			With over two decades of immense contribution to the Information Communication and
-			Technology Sector, CWG has continuously remained a benchmark for excellence in Africa.
-			We believe in and pursue an excellent service culture, and deliver our operations
-			through global best practices using its ISO9001 certification process across the entire
-			group.
-		</p>
-		<p>
-			Over time, we have received a number of accolades from our partners, clients, customers,
-			media and professional bodies as a result of our service excellence and increased
-			performance. Most recently, The World Economic Forum (WEF) recognized CWG as a Global
-			Growth Company.
-		</p>
+		{@html data.content}
 	</div>
 
 	<div
@@ -46,11 +19,11 @@
 	>
 		<h2 class="mb-4 lg:mb-8 text-headline-4 lg:text-headline-2">Explore CWG</h2>
 		<div class="flex flex-col gap-[10px] items-center lg:items-end">
-			{#each links as { link, title }, i}
+			{#each data.links as { slug, title }, i}
 				<a
-					href={link}
+					href={slug}
 					class="flex text-button-s py-[10px] items-center gap2 hover:scale-110 transition-all duration-300`"
-					class:link={i !== links.length - 1}
+					class:link={i !== data.links.length - 1}
 					>{title}
 					<div class="mt-[2px]"><DirectionRightIcon /></div>
 				</a>

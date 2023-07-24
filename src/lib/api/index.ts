@@ -8,3 +8,9 @@ export const apiClient = axios.create({
 	baseURL: 'http://78.141.232.122/api',
 	timeout: 5000
 });
+
+export const grapgqlClient = axios.create({
+	baseURL: 'http://78.141.232.122/graphql',
+	timeout: 10000,
+	method: 'post'
+});

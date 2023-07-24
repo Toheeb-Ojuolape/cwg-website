@@ -1,6 +1,9 @@
-<script>
+<script lang="ts">
+	import { CMS_URL } from '$lib/api';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
-	import ThirtyYearsLogo from '$lib/components/Svgs/ThirtyYearsLogo.svelte';
+	import type { AboutPage } from '$lib/types/about-page';
+
+	export let data: AboutPage['celebrating_30_section'];
 </script>
 
 <section
@@ -8,27 +11,24 @@
 >
 	<div class="flex-1">
 		<div class="flex justify-center lg:justify-start">
-			<ThirtyYearsLogo />
+			<img src={CMS_URL + data.title_image.data.attributes.url} alt="30 years" />
 		</div>
 
 		<h2 class="hidden lg:block text-headline-2 mb-5 mt-3">
-			Celebrating 30 Years of<br />positioning Africa to Maximise<br />the Future
+			{data.title}
 		</h2>
 
 		<h2 class="block lg:hidden text-headline-4 text-center mb-5 mt-3">
-			Celebrating 30 Years of<br />positioning Africa to Maximise<br />the Future
+			{data.title}
 		</h2>
 
 		<p class="text-body-s font-light text-center lg:text-left lg:text-body-l mb-8 lg:mb-12">
-			CWG started life through our founder Mr. Austin Okere as Computer Warehouse Group in
-			1992, relatively unknown with normal challenges typical with new business. Some 30 years
-			later, CWG is now listed on the Nigerian Stock Exchange, now operational in about 17
-			countries in the world and has witnessed the emergence of 2 non-founder CEOs.
+			{@html data.content}
 		</p>
 
-		<a href="/" class="flex justify-center lg:justify-start">
+		<a href={data.link.slug} class="flex justify-center lg:justify-start">
 			<button class="arrow-button group">
-				Read more
+				{data.link.title}
 				<div class="arrow-right">
 					<ArrowRightSolidIcon className="fill-white group-hover:fill-pewter-blue" />
 				</div>
@@ -36,52 +36,7 @@
 		</a>
 	</div>
 
-	<div class="flex-1 flex gap-4 justify-end lg:pt-8">
-		<div class="Frame">
-			<div />
-			<div />
-		</div>
-
-		<div class="Frame">
-			<div />
-			<div />
-			<div />
-		</div>
-
-		<div class="Frame">
-			<div />
-			<div />
-			<div />
-		</div>
+	<div class="flex-1">
+		<img src={CMS_URL + data.right_images.data[0].attributes.url} alt="" />
 	</div>
 </section>
-
-<style>
-	.Frame {
-		height: 100%;
-		width: 210px;
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-	}
-
-	.Frame > div {
-		height: 134px;
-		width: 100%;
-		background-color: #ffffff;
-	}
-
-	.Frame:nth-child(1) {
-		justify-content: center;
-	}
-
-	.Frame:nth-child(2) {
-		justify-content: center;
-	}
-
-	@media (min-width: 1536px) {
-		.Frame:nth-child(2) {
-			justify-content: flex-end;
-		}
-	}
-</style>
