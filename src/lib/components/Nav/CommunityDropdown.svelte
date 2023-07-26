@@ -8,7 +8,7 @@
 	>
 		{#each list as { attributes: { title, subtitle, slug } }}
 			<a
-				href={slug}
+				href={`/community/${slug}`}
 				class="transition duration-300 pb-3 lg:pb-5 lg:border-b-[0.5px] lg:border-b-pewter-blue dark:lg:border-b-white/30 last:border-b-0 last:pb-0 hover:scale-110"
 			>
 				<p class="text-body-medium-s lg:text-body-medium-l">{title}</p>

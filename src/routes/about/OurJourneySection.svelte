@@ -25,9 +25,11 @@
 							</div>
 							<div class="bg-black-400 dark:bg-black/40">
 								<p class="text-base lg:text-[20px]">{item.achievement_title}</p>
-								<p class="text-body-xs lg:text-body-s font-light">
-									{item.achievement_subtitle}
-								</p>
+								{#if item.achievement_subtitle}
+									<p class="text-body-xs lg:text-body-s font-light">
+										{item.achievement_subtitle}
+									</p>
+								{/if}
 							</div>
 							<div class="bg-black-300 dark:bg-black/20">
 								<img

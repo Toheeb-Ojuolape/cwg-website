@@ -31,7 +31,7 @@
 	<div class="bg-whitish-blue dark:bg-white/10 h-[400px] lg:h-[460px] pt-7 pl-6 pr-8">
 		<div class="mb-4 flex items-center justify-between">
 			<h4 class="text-headline-6 lg:text-headline-4">{title}</h4>
-			<div class="text-body-s lg:text-body-m">{year}</div>
+			<div class="text-body-s lg:text-body-m">{year ?? ''}</div>
 		</div>
 		<p class="text-body-s lg:text-body-m">
 			{@html content}
