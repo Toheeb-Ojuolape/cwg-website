@@ -1,25 +1,25 @@
-<script lang="ts">
-	import { CMS_URL } from '$lib/api';
+<script>
 	import LineIcon from '$lib/components/Svgs/LineIcon.svelte';
 	import MissionCompass from '$lib/components/Svgs/MissionCompass.svelte';
 	import VisionEye from '$lib/components/Svgs/VisionEye.svelte';
-	import type { MissionPage } from '$lib/types/mission-page';
-
-	export let data: MissionPage['mission_vision_section'];
 </script>
 
 <section class="section-container">
-	{#each data as { title, subtitle, image }, i}
-		<div>
-			<img src={CMS_URL + image.data?.attributes.url} alt={title} />
-			<h5 class="text-headline-6 lg:text-headline-5">{title}</h5>
-			<p>{subtitle}</p>
-		</div>
+	<div>
+		<MissionCompass />
+		<h5 class="text-headline-6 lg:text-headline-5">Mission</h5>
+		<p>Positioning Africa to maximize the <br />Future</p>
+	</div>
 
-		{#if i < data.length - 1}
-			<LineIcon />
-		{/if}
-	{/each}
+	<LineIcon />
+
+	<div>
+		<VisionEye />
+		<h5 class="text-headline-6 lg:text-headline-5">Vision</h5>
+		<p>
+			Our vision is to be the most preferred technology<br /> solutions company out of Africa.
+		</p>
+	</div>
 </section>
 
 <style>
