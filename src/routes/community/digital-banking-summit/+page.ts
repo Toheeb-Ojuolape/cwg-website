@@ -1,6 +1,7 @@
 import { graphqlClient } from '$lib/api';
+import type { DigitalSummit } from './types';
 
-export const load = async () => {
+export const load = async (): Promise<{ pageData: DigitalSummit }> => {
 	const res = await graphqlClient({
 		data: {
 			query: `
@@ -30,6 +31,14 @@ export const load = async () => {
                                 video_links {
                                     title
                                     slug
+                                    thumbnail {
+                                        data {
+                                            attributes {
+                                                alternativeText
+                                                url
+                                            }
+                                        }
+                                    }
                                 }
                                 description
                             }
