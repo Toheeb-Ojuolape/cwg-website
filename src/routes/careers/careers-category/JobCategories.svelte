@@ -68,7 +68,7 @@
 
         <ul class="department-roles grid gap-[20px]">
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Staff Software Engineer</div>
                         <div class="role-location text-[15px]">Nigeria</div>
@@ -77,7 +77,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">QA Audit Analyst</div>
                         <div class="role-location text-[15px]">Cameroon</div>
@@ -86,7 +86,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Partner Relationship Manager</div>
                         <div class="role-location text-[15px]">Nigeria</div>
@@ -95,7 +95,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Program Manager</div>
                         <div class="role-location text-[15px]">Nigeria</div>
@@ -104,7 +104,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Product designer</div>
                         <div class="role-location text-[15px]">Uganda</div>
@@ -113,7 +113,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Senior Legal Officer</div>
                         <div class="role-location text-[15px]">Nigeria</div>
@@ -122,7 +122,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Cloud & Software Engineer</div>
                         <div class="role-location text-[15px]">Nigeria</div>
@@ -131,7 +131,7 @@
                 </a>
             </li>
             <li>
-                <a href="#!" class="flex justify-between items-center">
+                <a href="/careers/single-role" class="flex justify-between items-center">
                     <div class="role-details">
                         <div class="role-title text-greyish-blue">Compliance & Risk Manager</div>
                         <div class="role-location text-[15px]">Ghana</div>

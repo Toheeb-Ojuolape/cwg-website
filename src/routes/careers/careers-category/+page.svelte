@@ -1,11 +1,11 @@
 <script>
 	import JoiningCwgQuestions from "../JoiningCwgQuestions.svelte";
-import CareersTestimoniesSlider from "./CareersTestimoniesSlider.svelte";
+    import CareersTestimoniesSlider from "./CareersTestimoniesSlider.svelte";
 	import JobCategories from "./JobCategories.svelte";
 </script>
 
 <main>
-    <header class="section-container py-15">
+    <header class="section-container py-10">
         <div class="text-center max-w-[876px] m-auto">
             <h1 class="header-txt text-[40px] sm:text-[64px] sm:leading-[77px]">Explore jobs and careers at CWG</h1>
             <p class="sm:text-[18px] mt-[10px]">
@@ -30,7 +30,3 @@ import CareersTestimoniesSlider from "./CareersTestimoniesSlider.svelte";
 
     <JoiningCwgQuestions />
 </main>
-
-<!-- <style>
-    .header-txt 
-</style> -->
