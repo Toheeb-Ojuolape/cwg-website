@@ -33,7 +33,7 @@
 		{
 			title: 'Careers',
 			subtitle: 'Join the amazing team',
-			link: '/'
+			link: '/careers'
 		},
 		{
 			title: 'Leadership',
