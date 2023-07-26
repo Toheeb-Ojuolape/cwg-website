@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL =
-	process.env.NODE_ENV === 'production' ? 'http://78.141.232.122' : 'http://127.0.0.1:1337';
+	process.env.NODE_ENV !== 'production' ? 'http://78.141.232.122' : 'http://127.0.0.1:1337';
 
 export const CMS_URL = BASE_URL;
 
