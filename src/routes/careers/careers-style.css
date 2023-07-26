@@ -1,0 +1,54 @@
+.opportunities-block {
+    padding: 75% 30px 0;
+}
+.opportunities-block > div.relative {
+    z-index: 2;
+    position: absolute;
+    bottom: 30px;
+    width: calc(100% - 60px);
+    left: 30px;
+    font-size: 40px;
+    transition: transform 1.2s;
+}
+.opportunities-block:hover > div.relative {
+    transform: scale(1.05);
+}
+.opportunities-block::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    mix-blend-mode: multiply;
+}
+.opportunities-block:nth-child(1):before {
+    background: linear-gradient(180deg, #FFF 0%, #005279 100%);
+}
+.opportunities-block:nth-child(2):before {
+    background: linear-gradient(180deg, #CDCDCD 0%, #2C2F7D 87.50%);
+}
+.opportunities-block:nth-child(3):before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+}
+
+.job-category-block {
+    border: 1px solid #dddddd;
+    padding: 40px 20px;
+    font-size: 22px;
+}
+button.slider-btn svg.fill-pewter-blue {
+    position: relative;
+    z-index: 10;
+}
+button.slider-btn:disabled svg.fill-pewter-blue {
+    fill: #2F3A6D;
+}
+
+
+@media(max-width: 768px) {
+    .opportunities-block > div.relative {
+        font-size: 30px;
+    }
+}

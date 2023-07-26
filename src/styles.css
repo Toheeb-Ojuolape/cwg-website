@@ -24,6 +24,12 @@ img {
     left: 0;
     object-fit: cover;
 }
+.hover-scale {
+    transition: transform 1.2s;
+}
+.hover-scale:hover {
+    transform: scale(1.05);
+}
 @media(min-width: 1024px) {
     .header-title {
         line-height: 66px;
