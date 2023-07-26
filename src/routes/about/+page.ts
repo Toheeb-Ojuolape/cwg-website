@@ -1,9 +1,9 @@
-import { graphqlClient } from '$lib/api';
+import { grapgqlClient } from '$lib/api';
 import type { AboutPage } from '$lib/types/about-page';
 import type { PageLoad } from './$types';
 
 export const load = (async (): Promise<{ aboutPage: AboutPage }> => {
-	const res = await graphqlClient({
+	const res = await grapgqlClient({
 		data: {
 			query: `{
             aboutPage {

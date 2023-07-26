@@ -1,11 +1,6 @@
 <script lang="ts">
 	import { ArrowLeftCircle, ArrowRightCircle, Icon } from 'svelte-hero-icons';
 	import emblaCarouselSvelte, { type EmblaCarouselType } from 'embla-carousel-svelte';
-	import type { MissionPage } from '$lib/types/mission-page';
-	import { CMS_URL } from '$lib/api';
-
-	export let carousel: MissionPage['why_cwg_section_carousel'];
-	export let image: MissionPage['why_cwg_section_image'];
 
 	let emblaApi: EmblaCarouselType;
 
@@ -25,13 +20,7 @@
 <section
 	class="box-container mt-25 mx-auto flex lg:flex-row gap-20 bg-whitish-blue dark:bg-dark-highlight"
 >
-	<div class="flex-1 h-[390px]">
-		<img
-			src={CMS_URL + image.data?.attributes.url}
-			alt={image.data?.attributes.alternativeText}
-			class="h-full w-full object-cover"
-		/>
-	</div>
+	<div class="flex-1 h-[390px] bg-burlywood" />
 	<div class="flex-1 flex flex-col justify-center">
 		<div
 			class="overflow-hidden w-full"
@@ -42,12 +31,15 @@
 			on:emblaInit={(ev) => (emblaApi = ev.detail)}
 		>
 			<div class="flex">
-				{#each carousel as { content, title, subtitle }}
+				{#each Array(3) as _}
 					<div class="flex w-full min-w-full flex-col gap-5 pr-8">
-						<h2 class="text-headline-2">{title}</h2>
-						<h6 class="text-headline-6">{subtitle}</h6>
+						<h2 class="text-headline-2">Why CWG?</h2>
+						<h6 class="text-headline-6">Work-Life Balance & Gender Equity</h6>
 						<p class="text-body-m">
-							{@html content ?? ''}
+							Our labor relations are based on equal opportunities, non-discrimination
+							and respect for diversity. At CWG we are committed to our employees as
+							an active part of our success, and our workplace model promotes
+							professional excellence, and quality of life for our employees.
 						</p>
 					</div>
 				{/each}

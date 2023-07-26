@@ -1,17 +1,16 @@
 import axios from 'axios';
 
-const BASE_URL =
-	process.env.NODE_ENV !== 'production' ? 'http://78.141.232.122' : 'http://127.0.0.1:1337';
+export const BASE_URL = 'http://78.141.232.122/api';
 
-export const CMS_URL = BASE_URL;
+export const CMS_URL = 'http://78.141.232.122';
 
 export const apiClient = axios.create({
-	baseURL: `${BASE_URL}/api`,
+	baseURL: 'http://78.141.232.122/api',
 	timeout: 5000
 });
 
-export const graphqlClient = axios.create({
-	baseURL: `${BASE_URL}/graphql`,
+export const grapgqlClient = axios.create({
+	baseURL: 'http://78.141.232.122/graphql',
 	timeout: 10000,
 	method: 'post'
 });

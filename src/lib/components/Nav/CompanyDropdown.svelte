@@ -11,7 +11,7 @@
 		{#each list as { attributes: { title, subtitle, slug } }}
 			<a
 				class="text-body-medium-s lg:text-body-medium-l hover:scale-110 transition-all duration-300"
-				href={'/' + slug}
+				href={slug}
 				aria-label={title}
 			>
 				<p>{title}</p>
