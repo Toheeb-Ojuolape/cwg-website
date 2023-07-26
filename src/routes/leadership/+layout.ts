@@ -1,4 +1,4 @@
-import { grapgqlClient } from '$lib/api';
+import { graphqlClient } from '$lib/api';
 import type { LayoutLoad } from '../$types';
 import type { Leader, LeadershipPage, LeadershipType } from './leadership-types';
 
@@ -7,7 +7,7 @@ export const load = (async (): Promise<{
 	allLeaders: Leader[];
 	leadershipPage: LeadershipPage;
 }> => {
-	const res = await grapgqlClient({
+	const res = await graphqlClient({
 		data: {
 			query: `{
                 leadershipTypes {
@@ -52,7 +52,7 @@ export const load = (async (): Promise<{
 		}
 	});
 
-	const leaderhipRes = await grapgqlClient({
+	const leaderhipRes = await graphqlClient({
 		data: {
 			query: `{
                 leadershipPage {

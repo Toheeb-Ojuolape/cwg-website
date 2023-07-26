@@ -10,7 +10,7 @@ export const apiClient = axios.create({
 	timeout: 5000
 });
 
-export const grapgqlClient = axios.create({
+export const graphqlClient = axios.create({
 	baseURL: `${BASE_URL}/graphql`,
 	timeout: 10000,
 	method: 'post'

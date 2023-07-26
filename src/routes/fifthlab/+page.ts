@@ -1,9 +1,9 @@
-import { grapgqlClient } from '$lib/api';
+import { graphqlClient } from '$lib/api';
 import type { PageLoad } from './$types';
 import type { FifthlabResponse } from './types';
 
 export const load: PageLoad = async (): Promise<{ fifthlab: FifthlabResponse }> => {
-	const res = await grapgqlClient({
+	const res = await graphqlClient({
 		data: {
 			query: `
             {
