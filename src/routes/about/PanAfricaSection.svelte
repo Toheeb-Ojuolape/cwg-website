@@ -1,6 +1,11 @@
-<script>
+<script lang="ts">
 	import Countup from '$lib/components/Countup.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
+	import type { AboutPage } from '$lib/types/about-page';
+
+	export let title: AboutPage['pan_african_title'];
+	export let link: AboutPage['pan_african_link'];
+	export let content: AboutPage['pan_african_content'];
 </script>
 
 <section
@@ -8,29 +13,16 @@
 >
 	<div class="flex-1">
 		<h2 class="text-headline-4 text-center lg:text-left lg:text-headline-2 mb-7">
-			We Are Pan African
+			{title}
 		</h2>
 		<div
 			class="text-body-s font-light text-center lg:text-left lg:text-body-l flex flex-col gap-4 mb-12"
 		>
-			<p>
-				Our Footprint spans across West, East, and Central Africa Regions. CWG provides
-				resources for level 1-4 management across all countries, and partners with IT
-				services organizations to deliver level 1& 2 resources in other African countries.
-			</p>
-
-			<p>
-				In 2016, Deloitte worked with CWG Plc to build an ecosystem of Service Providers in
-				Sub-Saharan Africa under its PAN Africa Initiative – to help its numerous clients in
-				addressing the challenges in the new converged arena and to help service providers
-				to provide the best of the breed services for their subscribers. In 2018 CWG
-				reorganized its services business under the CWG Support hub to consolidate various
-				support services and strengthen its PAN Africa support.
-			</p>
+			{@html content}
 		</div>
-		<a href="/" class="flex justify-center lg:justify-start"
+		<a href={link.slug} class="flex justify-center lg:justify-start"
 			><button class="arrow-button group"
-				>Learn more about our partners
+				>{link.title}
 				<div class="arrow-right">
 					<ArrowRightSolidIcon
 						className="fill-midnight-blue dark:fill-white group-hover:fill-pewter-blue"

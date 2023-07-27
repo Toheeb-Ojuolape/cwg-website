@@ -2,6 +2,9 @@
 	import TimelineCard from './TimelineCard.svelte';
 	import emblaCarouselSvelte, { type EmblaCarouselType } from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';
+	import type { AboutPage } from '$lib/types/about-page';
+
+	export let data: AboutPage['history_section'];
 
 	let emblaApi: EmblaCarouselType;
 
@@ -24,7 +27,7 @@
 	<h2
 		class="text-headline-4 text-center lg:text-left lg:text-headline-2 mb-9 ml-4 mx-4 lg:mx-0 lg:ml-8 2xl:ml-0"
 	>
-		A Timeline of Our History
+		{data.title}
 	</h2>
 
 	<div
@@ -36,8 +39,9 @@
 		on:emblaInit={(ev) => (emblaApi = ev.detail)}
 	>
 		<div class="flex gap-8 lg:gap-11">
-			{#each carousels as _, index}
+			{#each data.histories as item, index}
 				<TimelineCard
+					{...item}
 					{index}
 					isFirstItem={index === 0}
 					isLastItem={index === carousels.length - 1}

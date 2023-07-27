@@ -1,61 +1,17 @@
 <script lang="ts">
-	const list = [
-		{
-			title: 'About CWG',
-			subtitle: 'CWG at a glance',
-			link: '/about'
-		},
-		{ 
-			title: 'Awards',
-			subtitle: 'Award-winning solutions, powering pan-Africa',
-			link: '/awards'
-		},
-		{
-			title: 'Partners',
-			subtitle: 'Empowering growth through expert insights and advisory',
-			link: '/partners'
-		},
-		{
-			title: 'Mission, Vision & Value',
-			subtitle: 'Supporting Innovation and a Forward Thinking Africa',
-			link: '/mission-vision-value'
-		},
-		// {
-		// 	title: 'Regions',
-		// 	subtitle: 'Our companies, our success',
-		// 	link: '/'
-		// },
-		{
-			title: 'Impact',
-			subtitle: 'Empowering tech frontiers',
-			link: '/impact'
-		},
-		{
-			title: 'Careers',
-			subtitle: 'Join the amazing team',
-			link: '/careers'
-		},
-		{
-			title: 'Leadership',
-			subtitle: 'Collaborative expertise driving positive impact',
-			link: '/leadership'
-		},
-		{
-			title: 'Investor Relations',
-			subtitle: "Invest with confidence in CWG's tech-driven opportunities",
-			link: '/investor-relations'
-		}
-	];
+	import type { Nav } from '$lib/types/nav-type';
+
+	export let list: Nav['services_links']['data'];
 </script>
 
 <div>
 	<div
 		class="link-container bg-white dark:bg-black-1000 lg:pt-9 grid lg:grid-cols-3 lg:pb-8 px-4 lg:px-8 lg:border lg:border-black-500 dark:lg:border-white/20 lg:rounded-10"
 	>
-		{#each list as { link, subtitle, title }}
+		{#each list as { attributes: { title, subtitle, slug } }}
 			<a
 				class="text-body-medium-s lg:text-body-medium-l hover:scale-110 transition-all duration-300"
-				href={link}
+				href={slug}
 				aria-label={title}
 			>
 				<p>{title}</p>
