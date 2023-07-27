@@ -36,7 +36,8 @@
 </svelte:head>
 
 <div>
-	<Nav nav={data.nav} />
+	<!-- <Nav nav={data.nav} /> -->
+	<Nav />
 
 	<main>
 		<div class:h-[116px]={$page.url.pathname !== '/'} />

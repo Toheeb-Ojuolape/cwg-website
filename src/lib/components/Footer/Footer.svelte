@@ -19,32 +19,23 @@
 		<div class="w-full mx-auto flex flex-col section-container lg:flex-row">
 			<div class="flex-1">
 				<div class="grid grid-cols-2 gap-4 lg:gap-0 lg:grid-cols-4 pt-22 pb-4 lg:pb-8">
-					<FooterLinks
-						title={footer.company_title ?? 'Company'}
-						list={footer.company_links.data}
-					/>
-					<FooterLinks title={footer.services_title} list={footer.services.data} />
+					<FooterLinks title={'Company'} list={company} />
+					<FooterLinks title={'Services'} list={products} />
 					<div>
-						<FooterLinks title={footer.sectors_title} list={footer.sectors.data} />
+						<FooterLinks title={'Sectors'} list={industries} />
 						<div class="hidden lg:block lg:mt-11">
-							<FooterLinks
-								title={footer.community_title}
-								list={footer.community_links.data}
-							/>
+							<FooterLinks title={'Community'} list={community} />
 						</div>
 					</div>
-					<FooterLinks title={footer.insight_title} list={footer.insight_links.data} />
+					<FooterLinks title={'Insight'} list={insights} />
 				</div>
 
 				<div class="grid gap-4 lg:gap-0 grid-cols-2 lg:grid-cols-4 mt-0 lg:mt-11">
 					<div class="block lg:hidden">
-						<FooterLinks
-							title={footer.community_title}
-							list={footer.community_links.data}
-						/>
+						<FooterLinks title={'Community'} list={community} />
 					</div>
-					<FooterLinks title={footer.policy_title} list={footer.policy_links.data} />
-					<FooterLinks title={footer.office_title} list={footer.office_links.data} />
+					<FooterLinks title={'Policy'} list={policies} />
+					<FooterLinks title={'Office'} list={offices} />
 
 					<div class="col-span-1 lg:col-span-2 pt-0 lg:pt-[50px] text-white">
 						<div class="flex gap-6 items-start">

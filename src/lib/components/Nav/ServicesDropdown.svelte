@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
 
-	export let list: any;
+	export let list: any = [];
 </script>
 
 <div>
