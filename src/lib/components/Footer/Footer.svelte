@@ -11,7 +11,7 @@
 	import FooterLinks from './FooterLinks.svelte';
 	import FooterRightComponent from './FooterRightComponent.svelte';
 
-	export let footer: any;
+	export let footer: any = [];
 </script>
 
 <footer>

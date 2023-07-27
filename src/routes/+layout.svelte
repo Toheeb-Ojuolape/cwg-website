@@ -7,9 +7,9 @@
 	import type { LayoutData } from './$types';
 	import { mainLayoutStore } from '$lib/stores/layout-store';
 
-	export let data: LayoutData;
+	// export let data: LayoutData;
 
-	mainLayoutStore.setMoreAboutUs(data.moreAboutUs);
+	// mainLayoutStore.setMoreAboutUs(data.moreAboutUs);
 </script>
 
 <svelte:head>
@@ -44,5 +44,6 @@
 		<slot />
 	</main>
 
-	<Footer footer={data.footer} />
+	<!-- <Footer footer={data.footer} /> -->
+	<Footer />
 </div>
