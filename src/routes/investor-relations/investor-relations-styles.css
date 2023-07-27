@@ -1,0 +1,48 @@
+.half-bg {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.dotted-right-border {
+    border-right: 1px dotted var(--color-naples-yellow);
+}
+
+.dividend-block .decline svg {
+    transform: rotate(180deg);
+}
+.dividend-block .decline svg path {
+    fill: var(--color-vivid-burgundy);
+}
+
+.stroke-blue {
+    stroke: var(--color-midnight-blue);
+}
+.dark .stroke-blue {
+    stroke: white;
+}
+
+@media(max-width: 1023px) {
+    .yearly-block .tabs .section-container {
+        overflow-x: auto;
+        float: left;
+    }
+}
+
+@media(max-width: 768px) {
+    .half-bg {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .half-bg .bg-img {
+        position: relative;
+    }
+}
+
+@media(max-width: 640px) {
+    .dotted-right-border {
+        border-right: none;
+    }
+}

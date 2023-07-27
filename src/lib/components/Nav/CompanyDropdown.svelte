@@ -43,7 +43,7 @@
 		{
 			title: 'Investor Relations',
 			subtitle: "Invest with confidence in CWG's tech-driven opportunities",
-			link: '/'
+			link: '/investor-relations'
 		}
 	];
 </script>
