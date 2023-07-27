@@ -16,8 +16,8 @@
 
 	<div class="flex flex-col lg:flex-row gap-8 lg:gap-10">
 		<!-- <a href={data.content[0].slug} class="w-full lg:w-[380px] group"> -->
-		<a href="#!" class="w-full lg:w-[380px] bg-midnight-blue group">
-			<div class="h-[180px] overflow-hidden mb-3 lg:mb-7">
+		<a href="#!" class="w-full lg:w-[380px] group">
+			<div class="h-[180px] overflow-hidden mb-3 bg-midnight-blue lg:mb-7">
 				<!-- <img
 					src={CMS_URL + data.content[0].image.data.attributes.url}
 					alt={data.content[0].title}
@@ -33,8 +33,8 @@
 		</a>
 
 		<!-- <a href={data.content[1].slug} class="flex-1 group"> -->
-		<a href="#!" class="flex-1 group bg-burlywood">
-			<div class="h-[180px] overflow-hidden mb-3 lg:mb-7">
+		<a href="#!" class="flex-1 group">
+			<div class="h-[180px] overflow-hidden bg-burlywood mb-3 lg:mb-7">
 				<!-- <img
 					src={CMS_URL + data.content[1].image.data.attributes.url}
 					alt="About us"
@@ -50,8 +50,8 @@
 		</a>
 
 		<!-- <a href={data.content[2].slug} class="w-full lg:w-[380px] group"> -->
-		<a href="#!" class="w-full lg:w-[380px] bg-vivid-burgundy group">
-			<div class="h-[180px] overflow-hidden mb-3 lg:mb-7">
+		<a href="#!" class="w-full lg:w-[380px] group">
+			<div class="h-[180px] overflow-hidden bg-vivid-burgundy mb-3 lg:mb-7">
 				<!-- <img
 					src={CMS_URL + data.content[2].image.data.attributes.url}
 					alt="About us"
