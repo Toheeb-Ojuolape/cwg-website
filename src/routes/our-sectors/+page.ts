@@ -1,52 +1,68 @@
 import { graphqlClient } from '$lib/api';
-import type { AwardsPage } from '$lib/types/awards-page';
 import type { PageLoad } from './$types';
+import type { SectorsPage } from './types';
 
-export const load = (async (): Promise<{ awardsPage: AwardsPage }> => {
+export const load: PageLoad = async (): Promise<{ sectorsPage: SectorsPage }> => {
 	const res = await graphqlClient({
 		data: {
-			query: `{
-                awardsPage {
+			query: `
+            {
+                sectorPage {
                     data {
                         attributes {
-                            page_title
-                            page_subtitle
                             header {
-                                background_image {
+                                title
+                                sub_title
+                                bg_image {
                                     data {
                                         attributes {
+                                            alternativeText
                                             url
                                         }
                                     }
                                 }
-                                title
-                                description
+                                sub_headline
                             }
-                            awards {
+                            sectors_section_title
+                            sectors {
                                 data {
                                     attributes {
                                         title
-                                        description
-                                        uuid
+                                        content
                                         image {
                                             data {
                                                 attributes {
+                                                    alternativeText
                                                     url
                                                 }
                                             }
                                         }
+                                        slug
+                                        description
                                     }
                                 }
                             }
-                            award_companies {
+                            policies_section_title
+                            policies {
                                 data {
                                     attributes {
-                                        name
-                                        logo {
+                                        title
+                                        slug
+                                        subtitle
+                                        icon {
+                                            data {
+                                                attributes {
+                                                    alternativeText
+                                                    url
+                                                }
+                                            }
+                                        }
+                                        file {
                                             data {
                                                 attributes {
                                                     url
-                                                    provider
+                                                    mime
+                                                    ext
                                                 }
                                             }
                                         }
@@ -56,9 +72,10 @@ export const load = (async (): Promise<{ awardsPage: AwardsPage }> => {
                         }
                     }
                 }
-            }`
+            }
+            `
 		}
 	});
 
-	return { awardsPage: res.data.data.awardsPage.data.attributes };
-}) satisfies PageLoad;
+	return { sectorsPage: res.data.data.sectorPage.data.attributes };
+};

@@ -9,8 +9,6 @@
 
 	export let data: LayoutData;
 
-	console.log(JSON.stringify(data.nav));
-
 	mainLayoutStore.setMoreAboutUs(data.moreAboutUs);
 </script>
 
