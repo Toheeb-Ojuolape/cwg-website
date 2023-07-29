@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
-	import type { AwardsPage } from '$lib/types/awards-page';
 	import './awards-styles.css';
+	import type { Awards } from './types';
 
-	export let awards: AwardsPage['awards']['data'];
+	export let awards: Awards['data'];
 
 	let isButtonVisible = awards.length > 21;
 
@@ -21,7 +21,7 @@
 	{#each awards as { attributes: { image, title, description } }}
 		<div class="award-block">
 			<div class="award-img-wrapper">
-				<img src={CMS_URL + image.data.attributes.url} alt={title} class="bg-img" />
+				<img src={CMS_URL + image.data?.attributes.url} alt={title} class="bg-img" />
 			</div>
 			<div class="award-title">{title}</div>
 			<div class="award-desc">{description}</div>

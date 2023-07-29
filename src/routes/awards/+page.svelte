@@ -7,7 +7,8 @@
 
 	export let data: PageData;
 
-	const pageData = data.awardsPage;
+	$: pageData = data.awardsPage;
+	$: awards = data.awards;
 </script>
 
 <main>
@@ -52,7 +53,7 @@
 		</section>
 
 		<section class="awards-blocks-wrapper section-container">
-			<AwardsBlock awards={pageData.awards.data} />
+			<AwardsBlock {awards} />
 		</section>
 	</div>
 </main>
