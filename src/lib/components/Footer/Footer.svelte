@@ -1,18 +1,19 @@
 <script lang="ts">
-	import {
-		community,
-		company,
-		industries,
-		insights,
-		offices,
-		policies,
-		products
-	} from '$lib/constants/footer-content';
-	import type { FooterData } from '$lib/types/footer-types';
+	import type { CommunityLinks, FooterData } from '$lib/types/footer-types';
 	import FooterLinks from './FooterLinks.svelte';
 	import FooterRightComponent from './FooterRightComponent.svelte';
 
 	export let footer: FooterData;
+
+	function formatSlug(prefix: string, data: CommunityLinks['data']) {
+		return data.map((val) => ({
+			...val,
+			attributes: {
+				...val.attributes,
+				slug: `${prefix}/${val.attributes.slug}`
+			}
+		}));
+	}
 </script>
 
 <footer>
@@ -21,13 +22,19 @@
 			<div class="flex-1">
 				<div class="grid grid-cols-2 gap-4 lg:gap-0 lg:grid-cols-4 pt-22 pb-4 lg:pb-8">
 					<FooterLinks title={footer.company_title} list={footer.company_links.data} />
-					<FooterLinks title={footer.services_title} list={footer.services.data} />
+					<FooterLinks
+						title={footer.services_title}
+						list={formatSlug('services', footer.services.data)}
+					/>
 					<div>
-						<FooterLinks title={footer.sectors_title} list={footer.sectors.data} />
+						<FooterLinks
+							title={footer.sectors_title}
+							list={formatSlug('our-sectors', footer.sectors.data)}
+						/>
 						<div class="hidden lg:block lg:mt-11">
 							<FooterLinks
 								title={footer.community_title}
-								list={footer.community_links.data}
+								list={formatSlug('community', footer.community_links.data)}
 							/>
 						</div>
 					</div>
@@ -38,7 +45,7 @@
 					<div class="block lg:hidden">
 						<FooterLinks
 							title={footer.community_title}
-							list={footer.community_links.data}
+							list={formatSlug('community', footer.community_links.data)}
 						/>
 					</div>
 					<FooterLinks title={footer.policy_title} list={footer.policy_links.data} />

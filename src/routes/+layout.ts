@@ -2,16 +2,16 @@
 
 import { apiClient, graphqlClient } from '$lib/api';
 import type { MoreAboutUs } from '$lib/types/more-about-us-types';
-import type { Footer } from '$lib/types/footer-types';
-import type { Nav } from '$lib/types/nav-type';
+import type { FooterData } from '$lib/types/footer-types';
+import type { NavData } from '$lib/types/nav-type';
 import type { OEMPartner } from '$lib/types/oem-partner';
 
 import type { LayoutLoad } from './$types';
 
 interface LayoutResponseData {
 	oemPartners: OEMPartner[];
-	nav: Nav;
-	footer: Footer;
+	nav: NavData;
+	footer: FooterData;
 	moreAboutUs: MoreAboutUs;
 }
 
