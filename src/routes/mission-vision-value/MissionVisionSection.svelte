@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
 	import LineIcon from '$lib/components/Svgs/LineIcon.svelte';
-	import MissionCompass from '$lib/components/Svgs/MissionCompass.svelte';
-	import VisionEye from '$lib/components/Svgs/VisionEye.svelte';
 	import type { MissionPage } from '$lib/types/mission-page';
 
 	export let data: MissionPage['mission_vision_section'];
