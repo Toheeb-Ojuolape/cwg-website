@@ -1,8 +1,8 @@
-import { graphqlClient } from '$lib/api';
+import { grapgqlClient } from '$lib/api';
 import type { MissionPage } from '$lib/types/mission-page';
 
 export const load = async (): Promise<{ missionPage: MissionPage }> => {
-	const res = await graphqlClient({
+	const res = await grapgqlClient({
 		data: {
 			query: `
             {
