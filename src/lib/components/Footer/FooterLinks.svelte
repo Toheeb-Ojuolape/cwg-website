@@ -10,7 +10,7 @@
 	<ul class="text-white text-body-s">
 		{#each list as { attributes: { title, slug } }}
 			<li>
-				<a href={slug}>{title}</a>
+				<a href={`/${slug}`}>{title}</a>
 			</li>
 		{/each}
 	</ul>
