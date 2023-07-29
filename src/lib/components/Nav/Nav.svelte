@@ -15,8 +15,6 @@
 	import RegionsWrapper from '../OurRegions/RegionsWrapper.svelte';
 	import type { NavData } from '$lib/types/nav-type';
 
-	type SeletedDrawer = 'company' | 'services' | 'community';
-
 	export let nav: NavData;
 
 	let shouldHaveColor = false;
@@ -24,7 +22,7 @@
 	let showDrawer = false;
 	let showDrawerContainer = false;
 
-	let selectedDrawer: SeletedDrawer | undefined;
+	let selectedDrawer: string | undefined;
 
 	$: isWhite = (shouldHaveColor || showDrawer) && $theme === 'light';
 	$: isDark = (shouldHaveColor || showDrawer) && $theme === 'dark';
@@ -51,7 +49,7 @@
 		}, 150);
 	}
 
-	function onSelectDrawerItem(item: SeletedDrawer) {
+	function onSelectDrawerItem(item: string) {
 		if (item !== selectedDrawer) {
 			selectedDrawer = item;
 		} else {
@@ -167,22 +165,21 @@
 		on:keyup
 	>
 		<ul
-			class="[&_li]:py-5 [&_li]:mx-6 [&_li]:border-b-[0.5px] [&_li]:border-b-pewter-blue dark:[&_li]:border-b-white/30 flex-1 overflow-y-auto"
+			class="[&_li]:py-5 [&_li]:cursor-pointer [&_li]:mx-6 [&_li]:border-b-[0.5px] [&_li]:border-b-pewter-blue dark:[&_li]:border-b-white/30 flex-1 overflow-y-auto"
 		>
-			<li on:click={() => onSelectDrawerItem('company')} on:keyup>
+			<li on:click={() => onSelectDrawerItem(nav.company_title)} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
-					<!-- {nav.company_title} -->
-					Company
+					{nav.company_title}
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === nav.community_title}
+						class:rotate-180={selectedDrawer === nav.company_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === nav.community_title}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.company_title}
 				>
 					<div class="overflow-hidden">
 						<CompanyDropdown list={nav.company_links.data} />
@@ -190,7 +187,7 @@
 				</div>
 			</li>
 
-			<li on:click={() => onSelectDrawerItem('services')} on:keyup>
+			<li on:click={() => onSelectDrawerItem(nav.services_title)} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
 					{nav.services_title}
 					<div
@@ -214,7 +211,7 @@
 				<a href={`/${nav.sectors_slug}`} class="">{nav.sectors_title}</a>
 			</li>
 
-			<li on:click={() => onSelectDrawerItem('community')} on:keyup>
+			<li on:click={() => onSelectDrawerItem(nav.community_title)} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
 					{nav.community_title}
 					<div
