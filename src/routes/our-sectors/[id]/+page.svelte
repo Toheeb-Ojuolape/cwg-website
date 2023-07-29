@@ -10,21 +10,23 @@
 
 <main>
 	<header
-		class="header h-[300px] lg:h-[477px] text-white flex flex-col justify-center gap-[10px]"
+		class="header h-[300px] lg:h-[477px] text-white"
 		style={`background-image: url(${CMS_URL}${sector.attributes.header.background_image.data?.attributes.url})`}
 	>
-		<div class="section-container">
-			<div class="header-text-wrapper">
-				<div class="header-top-title uppercase">
-					{sector.attributes.header.headline}
-				</div>
-				<h1 class="text-headline-2 header-title lg:text-headline-1">
-					{sector.attributes.header.title}
-				</h1>
+		<div class="h-full w-full flex flex-col bg-black/50 justify-center gap-[10px]">
+			<div class="section-container">
+				<div class="header-text-wrapper">
+					<div class="header-top-title uppercase">
+						{sector.attributes.header.headline}
+					</div>
+					<h1 class="text-headline-2 header-title lg:text-headline-1">
+						{sector.attributes.header.title}
+					</h1>
 
-				<p class="mb-9 header-title-desc">
-					{sector.attributes.header.description}
-				</p>
+					<p class="mb-9 header-title-desc">
+						{sector.attributes.header.description}
+					</p>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -40,7 +42,11 @@
 				</p>
 			</div>
 			<div class="section-img-side pt-2">
-				<img src={CMS_URL + sector.attributes.sections[0].image?.data?.attributes.url} alt={sector.attributes.sections[0].image?.data?.attributes.alternativeText} class="section-img" />
+				<img
+					src={CMS_URL + sector.attributes.sections[0].image?.data?.attributes.url}
+					alt={sector.attributes.sections[0].image?.data?.attributes.alternativeText}
+					class="section-img"
+				/>
 			</div>
 		</section>
 
@@ -64,7 +70,10 @@
 				class="flex flex-col sm:flex-row bg-whitish-blue dark:bg-dark-highlight items-center sm:gap-19"
 			>
 				<div class="flex-1">
-					<img src={CMS_URL + sector.attributes.sections[2].image?.data?.attributes.url} alt={sector?.attributes.sections[2].image?.data?.attributes.alternativeText} />
+					<img
+						src={CMS_URL + sector.attributes.sections[2].image?.data?.attributes.url}
+						alt={sector?.attributes.sections[2].image?.data?.attributes.alternativeText}
+					/>
 				</div>
 				<div class="flex-1 p-5 pb-8 sm:p-0">
 					<p class="text-body-m max-w-[515px] w-full my-2">
