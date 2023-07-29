@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
+	import type { NavData } from '$lib/types/nav-type';
 
-	export let list: any = [];
+	export let list: NavData['services_links']['data'] = [];
 </script>
 
 <div>

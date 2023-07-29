@@ -7,9 +7,11 @@
 	import type { LayoutData } from './$types';
 	import { mainLayoutStore } from '$lib/stores/layout-store';
 
-	// export let data: LayoutData;
+	export let data: LayoutData;
 
-	// mainLayoutStore.setMoreAboutUs(data.moreAboutUs);
+	console.log(JSON.stringify(data.nav));
+
+	mainLayoutStore.setMoreAboutUs(data.moreAboutUs);
 </script>
 
 <svelte:head>
@@ -36,14 +38,12 @@
 </svelte:head>
 
 <div>
-	<!-- <Nav nav={data.nav} /> -->
-	<Nav />
+	<Nav nav={data.nav} />
 
 	<main>
 		<div class:h-[116px]={$page.url.pathname !== '/'} />
 		<slot />
 	</main>
 
-	<!-- <Footer footer={data.footer} /> -->
-	<Footer />
+	<Footer footer={data.footer} />
 </div>

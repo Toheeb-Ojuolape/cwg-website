@@ -13,11 +13,11 @@
 	import Caret from '../Svgs/Caret.svelte';
 	import '../OurRegions/regions.css';
 	import RegionsWrapper from '../OurRegions/RegionsWrapper.svelte';
+	import type { NavData } from '$lib/types/nav-type';
 
 	type SeletedDrawer = 'company' | 'services' | 'community';
 
-	// export let nav: any;
-	let nav: any;
+	export let nav: NavData;
 
 	let shouldHaveColor = false;
 
@@ -82,49 +82,40 @@
 			class="hidden flex-1 lg:flex items-center justify-center gap-5 font-medium text-[17px] leading-[27px]"
 		>
 			<li>
-				<!-- class:text-white={useWhite}>{nav.company_title}<ArrowDownIcon /></span -->
 				<span
 					class="flex peer gap-1 items-center cursor-pointer"
-					class:text-white={useWhite}>Company<ArrowDownIcon /></span
+					class:text-white={useWhite}>{nav.company_title}<ArrowDownIcon /></span
 				>
 				<div class="Nav__dropdown__container">
-					<!-- <CompanyDropdown list={nav.company_links.data} /> -->
-					<CompanyDropdown />
+					<CompanyDropdown list={nav.company_links.data} />
 				</div>
 			</li>
 
 			<li>
-				<!-- >{nav.services_title}<ArrowDownIcon /></a -->
 				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
-					>Services<ArrowDownIcon /></a
+					>{nav.services_title}<ArrowDownIcon /></a
 				>
 				<div class="Nav__dropdown__container">
-					<!-- <ServicesDropdown list={nav.services_links.data} /> -->
-					<ServicesDropdown />
+					<ServicesDropdown list={nav.services_links.data} />
 				</div>
 			</li>
 
 			<li>
-				<!-- <a href={`/${nav.sectors_slug}`} class:text-white={useWhite}>{nav.sectors_title}</a> -->
-				<a href={`/our-sectors`} class:text-white={useWhite}>Sectors</a>
+				<a href={`/${nav.sectors_slug}`} class:text-white={useWhite}>{nav.sectors_title}</a>
 			</li>
 			<li>
-				<!-- >{nav.community_title}<ArrowDownIcon /></a -->
 				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
-					>Community<ArrowDownIcon /></a
+					>{nav.community_title}<ArrowDownIcon /></a
 				>
 				<div class="Nav__dropdown__container">
-					<!-- <CommunityDropdown list={nav.community_links.data} /> -->
-					<CommunityDropdown />
+					<CommunityDropdown list={nav.community_links.data} />
 				</div>
 			</li>
 			<li>
-				<!-- <a href={`/${nav.insight_slug}`} class:text-white={useWhite}>{nav.insight_title}</a> -->
-				<a href={`/insight`} class:text-white={useWhite}>Insight</a>
+				<a href={`/${nav.insight_slug}`} class:text-white={useWhite}>{nav.insight_title}</a>
 			</li>
 			<li>
-				<!-- >{nav.fifthlab_title}</a -->
-				<a href={`/fifthlab`} class:text-white={useWhite}>Fifthlab</a>
+				<a href={`/fifthlab`} class:text-white={useWhite}>{nav.fifthlab_title}</a>
 			</li>
 		</ul>
 
@@ -184,75 +175,67 @@
 					Company
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === 'company'}
+						class:rotate-180={selectedDrawer === nav.community_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === 'company'}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.community_title}
 				>
 					<div class="overflow-hidden">
-						<!-- <CompanyDropdown list={nav.company_links.data} /> -->
-						<CompanyDropdown />
+						<CompanyDropdown list={nav.company_links.data} />
 					</div>
 				</div>
 			</li>
 
 			<li on:click={() => onSelectDrawerItem('services')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
-					<!-- {nav.services_title} -->
-					Services
+					{nav.services_title}
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === 'services'}
+						class:rotate-180={selectedDrawer === nav.services_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === 'services'}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.services_title}
 				>
 					<div class="overflow-hidden">
-						<!-- <ServicesDropdown list={nav.services_links.data} /> -->
-						<ServicesDropdown />
+						<ServicesDropdown list={nav.services_links.data} />
 					</div>
 				</div>
 			</li>
 
 			<li>
-				<!-- <a href={`/${nav.sectors_slug}`} class="">{nav.sectors_title}</a> -->
-				<a href={`/our-sectors`} class="">Sectors</a>
+				<a href={`/${nav.sectors_slug}`} class="">{nav.sectors_title}</a>
 			</li>
 
 			<li on:click={() => onSelectDrawerItem('community')} on:keyup>
 				<div class="flex peer gap-1 items-center justify-between">
-					<!-- {nav.community_title} -->
-					Community
+					{nav.community_title}
 					<div
 						class="transition duration-500"
-						class:rotate-180={selectedDrawer === 'community'}
+						class:rotate-180={selectedDrawer === nav.community_title}
 					>
 						<ArrowDownIcon />
 					</div>
 				</div>
 				<div
 					class="Nav__drawer__item"
-					class:Nav__drawer__item--visible={selectedDrawer === 'community'}
+					class:Nav__drawer__item--visible={selectedDrawer === nav.community_title}
 				>
 					<div class="overflow-hidden">
-						<!-- <CommunityDropdown list={nav.community_links.data} /> -->
-						<CommunityDropdown />
+						<CommunityDropdown list={nav.community_links.data} />
 					</div>
 				</div>
 			</li>
 
-			<li><a href={`/insight`}>Insight</a></li>
-			<li><a href={`/fifthlab`}>Fifthlab</a></li>
-			<!-- <li><a href={`/${nav.insight_slug}`}>{nav.insight_title}</a></li>
-			<li><a href={`/${nav.fifthlab_slug}`}>{nav.fifthlab_title}</a></li> -->
+			<li><a href={`/${nav.insight_slug}`}>{nav.insight_title}</a></li>
+			<li><a href={`/${nav.fifthlab_slug}`}>{nav.fifthlab_title}</a></li>
 		</ul>
 
 		<div class="region-wrapper-trigger relative max-w-max p-5">

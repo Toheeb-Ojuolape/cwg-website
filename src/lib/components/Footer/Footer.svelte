@@ -8,10 +8,11 @@
 		policies,
 		products
 	} from '$lib/constants/footer-content';
+	import type { FooterData } from '$lib/types/footer-types';
 	import FooterLinks from './FooterLinks.svelte';
 	import FooterRightComponent from './FooterRightComponent.svelte';
 
-	export let footer: any = [];
+	export let footer: FooterData;
 </script>
 
 <footer>
@@ -19,23 +20,29 @@
 		<div class="w-full mx-auto flex flex-col section-container lg:flex-row">
 			<div class="flex-1">
 				<div class="grid grid-cols-2 gap-4 lg:gap-0 lg:grid-cols-4 pt-22 pb-4 lg:pb-8">
-					<FooterLinks title={'Company'} list={company} />
-					<FooterLinks title={'Services'} list={products} />
+					<FooterLinks title={footer.company_title} list={footer.company_links.data} />
+					<FooterLinks title={footer.services_title} list={footer.services.data} />
 					<div>
-						<FooterLinks title={'Sectors'} list={industries} />
+						<FooterLinks title={footer.sectors_title} list={footer.sectors.data} />
 						<div class="hidden lg:block lg:mt-11">
-							<FooterLinks title={'Community'} list={community} />
+							<FooterLinks
+								title={footer.community_title}
+								list={footer.community_links.data}
+							/>
 						</div>
 					</div>
-					<FooterLinks title={'Insight'} list={insights} />
+					<FooterLinks title={footer.insight_title} list={footer.insight_links.data} />
 				</div>
 
 				<div class="grid gap-4 lg:gap-0 grid-cols-2 lg:grid-cols-4 mt-0 lg:mt-11">
 					<div class="block lg:hidden">
-						<FooterLinks title={'Community'} list={community} />
+						<FooterLinks
+							title={footer.community_title}
+							list={footer.community_links.data}
+						/>
 					</div>
-					<FooterLinks title={'Policy'} list={policies} />
-					<FooterLinks title={'Office'} list={offices} />
+					<FooterLinks title={footer.policy_title} list={footer.policy_links.data} />
+					<FooterLinks title={footer.office_title} list={footer.office_links.data} />
 
 					<div class="col-span-1 lg:col-span-2 pt-0 lg:pt-[50px] text-white">
 						<div class="flex gap-6 items-start">

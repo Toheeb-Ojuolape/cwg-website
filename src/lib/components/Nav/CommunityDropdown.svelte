@@ -1,33 +1,14 @@
 <script lang="ts">
-	export let list = [
-		{
-			title: 'The Texcellence Conference',
-			subtitle: 'Unleash innovation, embrace the future',
-			link: '/community/texcellence-conference'
-		},
-		{
-			title: 'Digital Banking Summit',
-			subtitle: 'Transforming customer engagement',
-			link: '/community/digital-banking-summit'
-		},
-		{
-			title: 'The CWG Tech Community',
-			subtitle: 'Cohort for Women and fresh graduate',
-			link: '/community/cwg-tech-community'
-		},
-		{
-			title: 'Pitch for transformation',
-			subtitle: "Empowering Africa's future shapers",
-			link: '/community/pitch-for-transformation'
-		}
-	];
+	import type { NavData } from '$lib/types/nav-type';
+
+	export let list: NavData['community_links']['data'];
 </script>
 
 <div>
 	<div
 		class="lg:py-8 flex flex-col gap-2 px-4 lg:px-6 lg:bg-white dark:lg:bg-black-1000 lg:border lg:border-black-500 dark:lg:border-white/20 lg:rounded-10"
 	>
-		{#each list as { title, subtitle, link: slug }}
+		{#each list as { attributes: { title, subtitle, slug } }}
 			<a
 				href={slug}
 				class="transition duration-300 pb-3 lg:pb-5 lg:border-b-[0.5px] lg:border-b-pewter-blue dark:lg:border-b-white/30 last:border-b-0 last:pb-0 hover:scale-110"

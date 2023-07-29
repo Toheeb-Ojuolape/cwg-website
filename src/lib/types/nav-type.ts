@@ -1,4 +1,4 @@
-export type Nav = {
+export interface NavData {
 	company_title: string;
 	services_title: string;
 	sectors_title: string;
@@ -8,17 +8,52 @@ export type Nav = {
 	insight_slug: string;
 	fifthlab_title: string;
 	fifthlab_slug: string;
-	company_links: NavigationLinkData;
-	services_links: NavigationLinkData;
-	community_links: NavigationLinkData;
-};
+	services_links: ServicesLinks;
+	community_links: ComyLinks;
+	company_links: ComyLinks;
+}
 
-export type NavigationLink = {
+export interface ComyLinks {
+	data: CommunityLinksDatum[];
+}
+
+export interface CommunityLinksDatum {
+	id: number;
+	attributes: PurpleAttributes;
+}
+
+export interface PurpleAttributes {
 	title: string;
 	slug: string;
 	subtitle: string;
-};
+}
 
-export type NavigationLinkData = {
-	data: { attributes: NavigationLink }[];
-};
+export interface ServicesLinks {
+	data: ServicesLinksDatum[];
+}
+
+export interface ServicesLinksDatum {
+	id: number;
+	attributes: FluffyAttributes;
+}
+
+export interface FluffyAttributes {
+	title: string;
+	slug: string;
+	should_show_esteemed_clients: boolean | null;
+	icon: Icon;
+}
+
+export interface Icon {
+	data: Data;
+}
+
+export interface Data {
+	id: number;
+	attributes: DataAttributes;
+}
+
+export interface DataAttributes {
+	alternativeText: string | null;
+	url: string;
+}
