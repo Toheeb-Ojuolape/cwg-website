@@ -12,13 +12,14 @@
 		{#each list as { attributes: { title, slug, icon } }}
 			<a
 				class="text-body-medium-s lg:text-body-medium-l flex items-center gap-2 pb-3 lg:pb-4 lg:border-b-[0.5px] lg:border-b-pewter-blue dark:lg:border-b-white/30 hover:scale-110 transition-all duration-300"
-				href={`/${slug}`}
+				href={`/services/${slug}`}
 				aria-label={title}
 			>
-				<svg viewBox="0 0 24 24" class="h-6 w-6">
-					<use xlink:href={`${CMS_URL}${icon.data.attributes.url}`} />
-				</svg>
-				<!-- <svelte:component this={icon} /> -->
+				<img
+					src={CMS_URL + icon.data.attributes.url}
+					alt={title}
+					class="dark:brightness-0 dark:invert h-6 w-6"
+				/>
 				{title}
 			</a>
 		{/each}
