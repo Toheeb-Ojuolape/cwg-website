@@ -82,17 +82,29 @@
         <div class="tabs-wrapper">
             <ul class="tabs bg-whitish-blue dark:bg-dark-highlight pt-2">
                 <div class="section-container flex gap-[50px]">
-                    <li class="active">Newsroom</li>
-                    <li>Perspectives</li>
-                    <li>Press</li>
-                    <li>Media/Gallery</li>
-                    <li>Podcast</li>
-                    <li>Events</li>
+                    <li class="active">
+                        <a href="#newsroom">Newsroom</a>
+                    </li>
+                    <li>
+                        <a href="#perspectives">Perspectives</a>
+                    </li>
+                    <li>
+                        <a href="#press">Press</a>
+                    </li>
+                    <li>
+                        <a href="#media-gallery">Media/Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#podcast">Podcast</a>
+                    </li>
+                    <li>
+                        <a href="#events">Events</a>
+                    </li>
                 </div>
             </ul>
         </div>
 
-        <section id="" class="section-container py-10">
+        <section id="perspectives" class="section-container py-10">
             <div class="section-header mb-10">
                 <h2 class="text-[32px]">Insights from our blog</h2>
                 <div class="text-[12px]">Learn more about the latest trends transforming the industry.</div>
@@ -101,7 +113,7 @@
             <BlogsBlocks />            
         </section>
 
-        <section id="" class="pt-20 pb-15 bg-midnight-blue text-white my-[10px]">
+        <section id="events" class="pt-20 pb-15 bg-midnight-blue text-white my-[10px]">
             <div class="section-container grid-content-box lg:gap-[50px]">
                 <div class="">
                     <div class="img-wrapper">
@@ -110,7 +122,7 @@
                     <div class="text-[40px] mt-[30px] max-w-[555px]">
                         Celebrating 30 Years of positioning Africa to Maximise the Future
                     </div>
-                    <a href="/insights/cwg-30.svg" class="flex gap-5 text-lg max-w-[170px] mt-[80px]">
+                    <a href="/insights/cwg-30" class="flex gap-5 text-lg max-w-[170px] mt-[80px]">
                         <span>Read more</span>
                         <div class="arrow-right">
                             <ArrowRightLong strokeClassName="stroke-white" />
@@ -132,7 +144,7 @@
             </div>
         </section>
 
-        <section class="press-release py-10">
+        <section id="press" class="press-release py-10">
             <div class="section-container">
                 <h2 class="text-headline-2">CWG Press</h2>
                 <p class="text-[18px]">The CWG team has made significant progress.</p>
@@ -143,7 +155,7 @@
             </div>
         </section>
 
-        <section class="leaders-conversations-section py-10">
+        <section id="podcast" class="leaders-conversations-section py-10">
             <div class="section-container">
                 <h2 class="text-headline-2">Conversations with our leaders</h2>
             </div>
@@ -166,7 +178,7 @@
             </div>
         </section>
 
-        <section class="quarterly-newsletter-section pt-5 pb-10">
+        <section id="newsroom" class="quarterly-newsletter-section pt-5 pb-10">
             <div class="section-container">
                 <h2 class="text-headline-2">CWG Quarterly Newsletter</h2>
             </div>
