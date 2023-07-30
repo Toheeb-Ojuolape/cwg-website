@@ -11,7 +11,7 @@
 		{
 			title: 'Awards',
 			subtitle: 'Award-winning solutions, powering pan-Africa',
-			link: '/'
+			link: '/awards'
 		},
 		{
 			title: 'Partners',
@@ -23,11 +23,11 @@
 			subtitle: 'Supporting Innovation and a Forward Thinking Africa',
 			link: '/mission-vision-value'
 		},
-		{
-			title: 'Regions',
-			subtitle: 'Our companies, our success',
-			link: '/'
-		},
+		// {
+		// 	title: 'Regions',
+		// 	subtitle: 'Our companies, our success',
+		// 	link: '/'
+		// },
 		{
 			title: 'Impact',
 			subtitle: 'Empowering tech frontiers',
@@ -36,7 +36,7 @@
 		{
 			title: 'Careers',
 			subtitle: 'Join the amazing team',
-			link: '/'
+			link: '/careers'
 		},
 		{
 			title: 'Leadership',
@@ -46,7 +46,7 @@
 		{
 			title: 'Investor Relations',
 			subtitle: "Invest with confidence in CWG's tech-driven opportunities",
-			link: '/'
+			link: '/investor-relations'
 		}
 	];
 </script>

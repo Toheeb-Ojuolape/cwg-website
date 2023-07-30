@@ -120,7 +120,7 @@
 			</li>
 			<li>
 				<!-- <a href={`/${nav.insight_slug}`} class:text-white={useWhite}>{nav.insight_title}</a> -->
-				<a href={`/insight`} class:text-white={useWhite}>Insight</a>
+				<a href={`/insights`} class:text-white={useWhite}>Insights</a>
 			</li>
 			<li>
 				<!-- >{nav.fifthlab_title}</a -->
@@ -249,7 +249,7 @@
 				</div>
 			</li>
 
-			<li><a href={`/insight`}>Insight</a></li>
+			<li><a href={`/insights`}>Insights</a></li>
 			<li><a href={`/fifthlab`}>Fifthlab</a></li>
 			<!-- <li><a href={`/${nav.insight_slug}`}>{nav.insight_title}</a></li>
 			<li><a href={`/${nav.fifthlab_slug}`}>{nav.fifthlab_title}</a></li> -->

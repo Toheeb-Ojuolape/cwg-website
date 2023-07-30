@@ -1,0 +1,39 @@
+.share-social-wrapper {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.blog-block:nth-child(n + 9) {
+    display: none; 
+ }
+.blog-block:nth-child(n + 9).show-blog-block {
+    display: block;
+}
+
+.leaders-conversations-section .sc-carousel__pages-container,
+.quarterly-newsletter-section .sc-carousel__pages-container {
+    gap: 20px;
+}
+
+.sub-newsletter-section-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+}
+
+form#sub-newsletter-form input {
+    border: 1px solid #ddd;
+    color: white;
+    background: transparent;
+}
+
+@media(max-width: 640px) {
+    .sub-newsletter-section-bg {
+        position: relative;
+        width: 100%;
+    }
+    .sub-newsletter-section-bg img.bg-img {
+        position: relative;
+    }
+}
