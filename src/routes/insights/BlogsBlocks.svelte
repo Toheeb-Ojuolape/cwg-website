@@ -98,7 +98,7 @@
 
 <div class="blogs-blocks-wrapper grid sm:grid-cols-3 lg:grid-cols-4 gap-[30px] lg:gap-[50px]">
     {#each blogItems as blogItem}
-        <a href="#!" class="blog-block">
+        <a href={blogItem.url} class="blog-block">
             <div class="blog-block-img-wrapper relative">
                 <img src={blogItem.img} alt="blog-img" class="bg-img">
             </div>
