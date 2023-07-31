@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
     import '../services/services-styles.css'
 	import BlogsBlocks from './BlogsBlocks.svelte';
@@ -12,6 +13,39 @@
     let featuredURL = "https://cwg-website.netlify.app/insights/featured";
 
     let newsletterEmail = '';
+
+    // @ts-ignore
+    /**
+	 * @type {string | null}
+	 */
+    let activeSection;
+
+    // Function to update the active section based on scroll position
+    function updateActiveSection() {
+        const sections = document.querySelectorAll("section.scrollspy");
+        const scrollPosition = window.scrollY;
+
+        // @ts-ignore
+        sections.forEach((section, index) => {
+        // @ts-ignore
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute("id");
+
+        if (
+            scrollPosition >= sectionTop - sectionHeight * 0.25 &&
+            scrollPosition < sectionTop + sectionHeight - sectionHeight * 0.25
+        ) {
+            activeSection = sectionId;
+        }
+        });
+    }
+
+    // Call the updateActiveSection function on mount and add scroll event listener
+    onMount(() => {
+        updateActiveSection();
+        window.addEventListener("scroll", updateActiveSection);
+    });
 </script>
 
 <main>
@@ -82,29 +116,29 @@
         <div class="tabs-wrapper">
             <ul class="tabs bg-whitish-blue dark:bg-dark-highlight pt-2">
                 <div class="section-container flex gap-[50px]">
-                    <li class="active">
+                    <li class:active={activeSection === 'perspectives'}>
+                        <a href="#perspectives">Perspectives</a>
+                    </li>
+                    <li class:active={activeSection === 'events'}>
+                        <a href="#events">Events</a>
+                    </li>
+                    <li class:active={activeSection === 'press'}>
+                        <a href="#press">Press</a>
+                    </li>
+                    <li class:active={activeSection === 'podcast'}>
+                        <a href="#podcast">Podcast</a>
+                    </li>
+                    <li class="active" class:active={activeSection === 'newsroom'}>
                         <a href="#newsroom">Newsroom</a>
                     </li>
                     <li>
-                        <a href="#perspectives">Perspectives</a>
-                    </li>
-                    <li>
-                        <a href="#press">Press</a>
-                    </li>
-                    <li>
                         <a href="#media-gallery">Media/Gallery</a>
-                    </li>
-                    <li>
-                        <a href="#podcast">Podcast</a>
-                    </li>
-                    <li>
-                        <a href="#events">Events</a>
                     </li>
                 </div>
             </ul>
         </div>
 
-        <section id="perspectives" class="section-container py-10">
+        <section id="perspectives" class="section-container py-10 scrollspy">
             <div class="section-header mb-10">
                 <h2 class="text-[32px]">Insights from our blog</h2>
                 <div class="text-[12px]">Learn more about the latest trends transforming the industry.</div>
@@ -113,7 +147,7 @@
             <BlogsBlocks />            
         </section>
 
-        <section id="events" class="pt-20 pb-15 bg-midnight-blue text-white my-[10px]">
+        <section id="events" class="pt-20 pb-15 bg-midnight-blue text-white my-[10px] scrollspy">
             <div class="section-container grid-content-box lg:gap-[50px]">
                 <div class="">
                     <div class="img-wrapper">
@@ -144,7 +178,7 @@
             </div>
         </section>
 
-        <section id="press" class="press-release py-10">
+        <section id="press" class="press-release py-10 scrollspy">
             <div class="section-container">
                 <h2 class="text-headline-2">CWG Press</h2>
                 <p class="text-[18px]">The CWG team has made significant progress.</p>
@@ -155,7 +189,7 @@
             </div>
         </section>
 
-        <section id="podcast" class="leaders-conversations-section py-10">
+        <section id="podcast" class="leaders-conversations-section py-10 scrollspy">
             <div class="section-container">
                 <h2 class="text-headline-2">Conversations with our leaders</h2>
             </div>
@@ -178,7 +212,7 @@
             </div>
         </section>
 
-        <section id="newsroom" class="quarterly-newsletter-section pt-5 pb-10">
+        <section id="newsroom" class="quarterly-newsletter-section pt-5 pb-10 scrollspy">
             <div class="section-container">
                 <h2 class="text-headline-2">CWG Quarterly Newsletter</h2>
             </div>
@@ -249,6 +283,12 @@
 		background-position: center 20%;
 	}
 
+    .tabs-wrapper {
+        position: sticky;
+        top: 116px;
+        z-index: 10;
+    }
+
     ul.tabs {
 		border-bottom: 1px solid #ddd;
         float: left;
@@ -263,6 +303,9 @@
 		border-bottom: 3px solid var(--color-midnight-blue);
 		padding-bottom: 5px;
 	}
+    .dark .tabs li.active {
+        border-color: var(--color-pewter-blue);
+    }
 
     @media(min-width: 640px) {
         .section-img {
