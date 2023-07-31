@@ -113,7 +113,9 @@
 				<a href={`/${nav.insight_slug}`} class:text-white={useWhite}>{nav.insight_title}</a>
 			</li>
 			<li>
-				<a href={`/fifthlab`} class:text-white={useWhite}>{nav.fifthlab_title}</a>
+				<a href={`/${nav.fifthlab_slug}`} class:text-white={useWhite}
+					>{nav.fifthlab_title}</a
+				>
 			</li>
 		</ul>
 
