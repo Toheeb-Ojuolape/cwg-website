@@ -1,10 +1,24 @@
-<script>
+<script lang='ts'>
 	import Countup from '$lib/components/Countup.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 	import PlayIcon from '$lib/components/Svgs/PlayIcon.svelte';
 	import SoundWaveIcon from '$lib/components/Svgs/SoundWaveIcon.svelte';
 
 	let selectedBanner = 1;
+
+	let showModal = false;
+	let currentVideoId = '';
+
+
+	const openModal = (videoId: string) => {
+		currentVideoId = videoId;
+		showModal = true;
+	};
+
+	const closeModal = () => {
+		currentVideoId = '';
+		showModal = false;
+	};
 </script>
 
 <header>
@@ -13,7 +27,8 @@
 			<div class="h-[116px]" />
 
 			<div class="flex-1">
-				<div class="text-white flex justify-end gap-[14px]">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<div class="text-white flex justify-end gap-[14px] cursor-pointer" on:click={() => openModal('gBOxaKoezBA')}>
 					<p class="text-body-l">The CWG story</p>
 					<PlayIcon />
 					<div>
@@ -101,6 +116,19 @@
 	</div>
 </header>
 
+{#if showModal}
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<div class="modal" on:click={closeModal}>
+		<iframe
+			src={`https://www.youtube.com/embed/${currentVideoId}`}
+			title="Video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
+	</div>
+{/if}
+
 <style>
 	.hero {
 		background-image: url(../../lib/images/hero_banner.png);
@@ -109,6 +137,26 @@
 		background-size: cover;
 		height: 800px;
 		width: 100%;
+	}
+
+	.modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		padding: 10px;
+	}
+
+	.modal iframe {
+		width: 100%;
+		max-width: 800px;
+		height: 450px;
 	}
 
 	@media (max-width: 1024px) {

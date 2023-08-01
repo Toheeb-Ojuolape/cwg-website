@@ -1,5 +1,6 @@
 <script>
 	import { title } from "process";
+  import { ArrowLeftCircle, ArrowRightCircle, Icon } from "svelte-hero-icons";
 
     let mediaDetails = [
         {
@@ -63,7 +64,7 @@
       },
     ];
 
-    let showModal = false;
+    let showModal = true;
     let selectedAlbumTitle = '';
 
     const openModal = (/** @type {string} */ albumTitle) => {
@@ -73,6 +74,21 @@
     const closeModal = () => {
       showModal = false;
     };
+
+  //   /**
+	//  * @param {number} index
+	//  */
+  //  function goToSlide(index) {
+  //     currentIndex = index;
+  //   }
+  
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % sliderImages.length;
+    }
+  
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+    }
 </script>
 
 {#each mediaDetails as mediaDetail}
@@ -96,12 +112,11 @@
 
 {#if showModal}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div class="modal" on:click={closeModal}>
+    <div class="modal">
         <div class="slider">
             {#each sliderImages as sliderImage, i (sliderImage.image)}
-              <div>
+              <div class="relative">
                 {#if i === currentIndex}
-                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                  <div class="slider-img-wrapper">
                     <img src={sliderImage.image} alt="Slide" class="slider-img" />
                  </div>
@@ -115,7 +130,16 @@
               </div>
             {/each}
             <div class="album-title bg-midnight-blue p-5">{selectedAlbumTitle}</div>
-          </div>
+            
+            <button on:click={prevSlide} disabled={currentIndex === 0} class="slider-btn prev-btn">
+              <Icon src={ArrowLeftCircle} solid={true} class="h-10 w-[44px] fill-pewter-blue relative" />
+            </button>
+            <button on:click={nextSlide} disabled={currentIndex === sliderImages.length - 1} class="slider-btn next-btn">
+              <Icon src={ArrowRightCircle} solid={true} class="h-10 w-[44px] fill-pewter-blue relative" />
+            </button>
+        </div>
+
+        <div class="modal-overlay" on:click={closeModal}></div>
     </div>
 {/if}
 
@@ -129,15 +153,15 @@
     }
 
     .slider {
-      width: 100%;
+      width: 80%;
       overflow: hidden;
       position: relative;
+      z-index: 10;
     }
     .slider-img-wrapper {
         width: 100%;
-        height: 300px;
+        height: auto;
         position: relative;
-        cursor: pointer;
     }
     .slider img.slider-img {
       width: 100%;
@@ -151,28 +175,56 @@
       width: 100%;
       color: white;
       font-size: 18px;
-      cursor: pointer;
     }
     .indicators {
-      position: relative;
+      position: absolute;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       z-index: 1;
-      margin-top: 20px;
+      background: var(--color-midnight-blue);
+      margin: 0;
+      bottom: 0px;
+      right: 0;
+      padding: 15px 30px;
     }
     .indicator {
-      width: 13px;
-      height: 13px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background-color: #d1d1d1;
       margin: 0 3px;
       cursor: pointer;
     }  
     .indicator.active {
-      background-color: var(--color-midnight-blue);
-      width: 26px;
+      background-color: var(--color-pewter-blue);
+      width: 41px;
       border-radius: 12px;
+    }
+
+    button.slider-btn {
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    button.slider-btn::before {
+        position: absolute;
+        content: "";
+        background-color: white;
+        top: 12px;
+        left: 12px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    
+    button.slider-btn.prev-btn {
+        left: 0;
+    }
+    button.slider-btn.next-btn {
+        right: 0;
     }
   
     .modal {
@@ -181,11 +233,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 999;
       padding: 10px;
+    }
+    .modal-overlay {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+
+    @media (max-width: 640px) {
+      .slider {
+        width: 100%;
+      }
     }
 </style>

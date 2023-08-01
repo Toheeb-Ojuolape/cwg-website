@@ -179,8 +179,8 @@
             </div>
         </section>
 
-        <section id="press" class="press-release py-10 scrollspy">
-            <div class="section-container">
+        <section id="press" class="press-release section-container py-10 scrollspy">
+            <div class="">
                 <h2 class="text-headline-2">CWG Press</h2>
                 <p class="text-[18px]">The CWG team has made significant progress.</p>
             </div>
@@ -227,7 +227,7 @@
             <div class="section-container">
                 <h2 class="text-headline-2">CWG Media/Gallery</h2>
             </div>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-[50px]">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-[50px] pt-10">
                 <GalleryMedia />
             </div>
         </section>
@@ -315,6 +315,12 @@
 	}
     .dark .tabs li.active {
         border-color: var(--color-pewter-blue);
+    }
+
+    @media(max-width: 1023px) {
+        .tabs-wrapper {
+            top: 100px;
+        }
     }
 
     @media(min-width: 640px) {

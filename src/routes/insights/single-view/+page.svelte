@@ -103,8 +103,8 @@
     </div>
 </section>
 
-<section id="press" class="press-release pt-20 pb-10">
-    <div class="section-container">
+<section id="press" class="press-release pt-20 pb-10 section-container">
+    <div class="">
         <h2 class="text-headline-2">Related stories</h2>
     </div>
 

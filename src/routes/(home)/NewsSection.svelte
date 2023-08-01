@@ -21,11 +21,11 @@
 	}
 </script>
 
-<section class="box-container bg-whitish-blue dark:bg-white/10 pb-[50px] pt-18 mx-auto">
+<section class="section-container bg-whitish-blue dark:bg-white/10 pb-[50px] pt-18 mx-auto">
 	<div class="flex items-center justify-between mb-17">
 		<h2 class="text-headline-2">News</h2>
 		<a
-			class="mr-4 flex gap-11 items-center lg:mr-8 2xl:mr-0 text-bright-blue text-button-l transition-all duration-300 hover:scale-110"
+			class="mr-4 flex gap-11 items-center lg:mr-0 2xl:mr-0 text-bright-blue text-button-l transition-all duration-300 hover:scale-110"
 			href="/"
 		>
 			View all articles

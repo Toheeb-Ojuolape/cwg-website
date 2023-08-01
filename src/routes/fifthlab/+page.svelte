@@ -70,6 +70,7 @@
 					<img
 						src={CMS_URL + fifthlab.sections[0].image.data.attributes.url}
 						alt={fifthlab.sections[0].image.data.attributes.alt}
+						class="mx-auto"
 					/>
 				</div>
 			</div>
@@ -105,7 +106,7 @@
 
 		<hr class="gray-line" />
 
-		<section class="max-w-[1005px] mx-auto pt-8 lg:pt-9">
+		<section class="max-w-[1005px] mx-auto pt-8 lg:pt-9 pb-10">
 			<div class="text-center sm:mb-13 mb-7 m-auto max-w-[690px] section-header">
 				<h2 class="text-headline-2 mb-2">{fifthlab.product_section_title}</h2>
 				<p class="text-body-l font-normal">
@@ -138,7 +139,7 @@
 
 <style>
 	header.header {
-		background-size: inherit;
+		background-size: cover;
 		background-position: center 20%;
 	}
 </style>

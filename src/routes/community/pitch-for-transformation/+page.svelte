@@ -138,8 +138,8 @@
 		<hr class="gray-line" />
 
 		<!--=== Application-Procedure ===-->
-		<section class="grid sm:grid-cols-2 items-center sm:p-0 pt-10">
-			<div class="section-title-side section-container">
+		<section class="grid sm:grid-cols-2 items-center lg:p-0 sm:py-0 pt-10 section-container">
+			<div class="section-title-side">
 				<div class="max-w-[548px]">
 					<h2 class="text-headline-4 lg:text-headline-2">
 						{pageData.application_procedure_section.title}
@@ -154,7 +154,7 @@
 			</div>
 
 			<div
-				class="section-text-side section-container bg-whitish-blue dark:bg-dark-highlight py-10"
+				class="section-text-side bg-whitish-blue dark:bg-dark-highlight p-10"
 			>
 				<div class="py-2 Pitch__card-content">
 					{@html pageData.application_procedure_section.content}

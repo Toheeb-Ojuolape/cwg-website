@@ -138,10 +138,10 @@
 		<!--=== end of Conference-Topics ===-->
 
 		<!--=== Transformation-Pitch-Section ===-->
-		<section class="transformation-pitch-section mt-5 pt-10 mb-20 lg:my-0 lg:pt-0">
+		<section class="transformation-pitch-section section-container mt-5 pt-10 mb-20 lg:my-0 lg:pt-0">
 			<div class="grid">
-				<div class="section-title-side section-container">
-					<h2 class="text-headline-4 lg:text-headline-2">
+				<div class="section-title-side">
+					<h2 class="text-headline-4 lg:text-headline-2 pt-4">
 						{pageData.pitch_transformation_section.left_title}
 					</h2>
 					<a
@@ -203,12 +203,14 @@
 		<hr class="gray-line" />
 
 		<!--=== Explore-Past-Conference ===-->
-		<section class="section-container py-10">
-			<div class="sm:mb-13 sm:mt-10 mb-7 max-w-[690px] section-header">
-				<h2 class="text-headline-2 mb-2">{pageData.past_conference_title}</h2>
-				<p class="text-body-l font-normal [&_a]:underline">
-					{@html pageData.past_conference_description}
-				</p>
+		<section class="py-10">
+			<div class="section-container">
+				<div class="sm:mb-13 sm:mt-10 mb-7 max-w-[690px] section-header">
+					<h2 class="text-headline-2 mb-2">{pageData.past_conference_title}</h2>
+					<p class="text-body-l font-normal [&_a]:underline">
+						{@html pageData.past_conference_description}
+					</p>
+				</div>
 			</div>
 			<div class="col s12 pad0 sect-contents marquee-content dbs">
 				{#each Array(2) as _}
