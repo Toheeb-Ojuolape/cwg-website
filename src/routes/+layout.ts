@@ -1,5 +1,5 @@
 // export const prerender = true; TODO: uncomment this line to enable prerendering
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 import { apiClient, graphqlClient } from '$lib/api';
 import type { MoreAboutUs } from '$lib/types/more-about-us-types';
