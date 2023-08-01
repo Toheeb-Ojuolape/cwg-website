@@ -84,6 +84,14 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                         subtitle
                                         link_slug
                                         link_title
+                                        image {
+                                            data {
+                                                attributes {
+                                                    alternativeText
+                                                    url
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                                 ... on ComponentProductPageCwgAcademySection {
@@ -245,7 +253,7 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                 }
                             }
                             should_show_esteemed_clients
-                            esteemed_clients {
+                            esteemed_clients(pagination: {pageSize: 100}) {
                                 data {
                                     attributes {
                                         name
