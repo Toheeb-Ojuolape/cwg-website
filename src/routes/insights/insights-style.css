@@ -21,6 +21,9 @@
     width: 50%;
     height: 100%;
 }
+.sub-newsletter-section-bg img.bg-img {
+    object-position: top;
+}
 
 form#sub-newsletter-form input {
     border: 1px solid #ddd;

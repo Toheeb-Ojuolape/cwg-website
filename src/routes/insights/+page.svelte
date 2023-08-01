@@ -9,6 +9,7 @@
 	import LeadersConversations from './LeadersConversations.svelte';
 	import PressRelease from './PressRelease.svelte';
 	import QuarterlyNewsletter from './QuarterlyNewsletter.svelte';
+	import GalleryMedia from './GalleryMedia.svelte';
 
     let featuredURL = "https://cwg-website.netlify.app/insights/featured";
 
@@ -131,7 +132,7 @@
                     <li class="active" class:active={activeSection === 'newsroom'}>
                         <a href="#newsroom">Newsroom</a>
                     </li>
-                    <li>
+                    <li class:active={activeSection === 'media-gallery'}>
                         <a href="#media-gallery">Media/Gallery</a>
                     </li>
                 </div>
@@ -222,6 +223,15 @@
             </div>
         </section>
 
+        <section id="media-gallery" class="scrollspy section-container pt-10 pb-20">
+            <div class="section-container">
+                <h2 class="text-headline-2">CWG Media/Gallery</h2>
+            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-[50px]">
+                <GalleryMedia />
+            </div>
+        </section>
+
         <section class="bg-midnight-blue text-white relative mt-[20px] mb-[50px]">
             <div class="sub-newsletter-section-bg">
                 <img src="/images/newsletter-man.jpg" alt="man" class="bg-img">
@@ -286,7 +296,7 @@
     .tabs-wrapper {
         position: sticky;
         top: 116px;
-        z-index: 10;
+        z-index: 1;
     }
 
     ul.tabs {
