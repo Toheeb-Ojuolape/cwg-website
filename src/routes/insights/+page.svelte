@@ -224,6 +224,9 @@
         </section>
 
         <section id="media-gallery" class="scrollspy section-container pt-10 pb-20">
+            <div class="section-container">
+                <h2 class="text-headline-2">CWG Media/Gallery</h2>
+            </div>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-[50px]">
                 <GalleryMedia />
             </div>
