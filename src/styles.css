@@ -1,53 +1,53 @@
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 body {
-    width: 100%;
-    overflow-x: hidden !important;
+	width: 100%;
+	overflow-x: hidden !important;
 }
 .header-text-wrapper {
-    max-width: 586px;
+	max-width: 586px;
 }
 .header-top-title {
-    font-size: 12px;
-    margin-bottom: 20px;
+	font-size: 12px;
+	margin-bottom: 20px;
 }
 img {
-    max-width: 100%;
+	max-width: 100%;
 }
 .gray-line {
-    background-color: #ddd;
-    opacity: 0.15;
+	background-color: #ddd;
+	opacity: 0.15;
 }
 .bg-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
 }
 .hover-scale {
-    transition: transform 1.2s;
+	transition: transform 1.2s;
 }
 .hover-scale:hover {
-    transform: scale(1.05);
+	transform: scale(1.05);
 }
-@media(min-width: 1024px) {
-    .header-title {
-        line-height: 66px;
-    }
-    .header-title-desc {
-        font-size: 18px;
-        margin-top: 10px;
-    }
+@media (min-width: 1024px) {
+	.header-title {
+		line-height: 66px;
+	}
+	.header-title-desc {
+		font-size: 18px;
+		margin-top: 10px;
+	}
 }
 
-@media(min-width: 640px) {
-    .bg-img-sm {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+@media (min-width: 640px) {
+	.bg-img-sm {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }

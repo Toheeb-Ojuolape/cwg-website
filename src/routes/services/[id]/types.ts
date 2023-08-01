@@ -27,7 +27,14 @@ type ServiceContent =
 	| ComponentGlobalSectionTextWithImage
 	| ComponentGlobalSectionWithText
 	| ComponentGlobalSectionWithCards
-	| ComponentGlobalBlockQuote;
+	| ComponentGlobalBlockQuote
+	| ComponentProductPageAtmServicesNumbers
+	| ComponentProductPageCwgAcademySection
+	| ComponentProductPageOurCoursesSection
+	| ComponentProductPageChangingTheGameSection
+	| ComponentProductPageDeliveryModelSection
+	| ComponentProductPageSupportServicesSection
+	| ComponentProductPageCwgHardwareSection;
 
 interface Action {
 	title: string;
@@ -88,6 +95,86 @@ export interface ComponentGlobalBlockQuote {
 	content: string;
 	title: StringOrNull;
 	action: ActionOrNull;
+}
+
+interface ComponentProductPageAtmServicesNumbers {
+	__typename: 'ComponentProductPageAtmServicesNumbers';
+	title: string;
+	service_numbers: ServiceNumber[];
+}
+
+interface ServiceNumber {
+	title: StringOrNull;
+	content: StringOrNull;
+	subtitle: StringOrNull;
+	link_slug: StringOrNull;
+	link_title: StringOrNull;
+	image: DataImage;
+}
+
+interface ComponentProductPageCwgAcademySection {
+	__typename: 'ComponentProductPageCwgAcademySection';
+	title: StringOrNull;
+	body: StringOrNull;
+	carousel: Carousel[];
+}
+
+interface Carousel {
+	title: StringOrNull;
+	content: StringOrNull;
+	subtitle: StringOrNull;
+	link_slug: StringOrNull;
+	link_title: StringOrNull;
+	image: DataImage;
+}
+
+interface ComponentProductPageOurCoursesSection {
+	__typename: 'ComponentProductPageOurCoursesSection';
+	title: StringOrNull;
+	subtitle: StringOrNull;
+	courses: { data: Course[] };
+}
+
+interface Course {
+	attributes: {
+		name: string;
+		uuid: string;
+		course_catergory: {
+			data: {
+				attributes: {
+					name: string;
+					uuid: string;
+				};
+			};
+		};
+	};
+}
+
+interface ComponentProductPageChangingTheGameSection {
+	__typename: 'ComponentProductPageChangingTheGameSection';
+	title: StringOrNull;
+	content: StringOrNull;
+	image: DataImage;
+}
+
+interface ComponentProductPageDeliveryModelSection {
+	__typename: 'ComponentProductPageDeliveryModelSection';
+	title: StringOrNull;
+	content: StringOrNull;
+	cards: ServiceCard[];
+}
+
+interface ComponentProductPageSupportServicesSection {
+	__typename: 'ComponentProductPageSupportServicesSection';
+	title: StringOrNull;
+	content: StringOrNull;
+	cards: ServiceCard[];
+}
+
+interface ComponentProductPageCwgHardwareSection {
+	__typename: 'ComponentProductPageCwgHardwareSection';
+	title: StringOrNull;
+	cards: ServiceCard[];
 }
 
 interface ServiceEsteemedClients {
