@@ -35,7 +35,7 @@ interface Action {
 	icon: DataImage;
 }
 
-enum Position {
+export enum Position {
 	right = 'right',
 	left = 'left'
 }

@@ -1,5 +1,4 @@
 // export const prerender = true; TODO: uncomment this line to enable prerendering
-
 import { apiClient, graphqlClient } from '$lib/api';
 import type { MoreAboutUs } from '$lib/types/more-about-us-types';
 import type { FooterData } from '$lib/types/footer-types';
