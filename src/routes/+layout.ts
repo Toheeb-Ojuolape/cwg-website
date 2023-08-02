@@ -8,12 +8,14 @@ import type { NavData } from '$lib/types/nav-type';
 import type { OEMPartner } from '$lib/types/oem-partner';
 
 import type { LayoutLoad } from './$types';
+import type { RegionData } from '$lib/types/region-types';
 
 interface LayoutResponseData {
 	oemPartners: OEMPartner[];
 	nav: NavData;
 	footer: FooterData;
 	moreAboutUs: MoreAboutUs;
+	regions: RegionData[];
 }
 
 export const load = (async (): Promise<LayoutResponseData> => {
@@ -178,10 +180,43 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		}
 	});
 
+	const regions = await graphqlClient({
+		data: {
+			query: `{
+				regions {
+					data {
+						attributes {
+							image {
+								data {
+									attributes {
+										url
+									}
+								}
+							}
+							name
+							email
+							address
+							content
+							region_phone_numbers {
+								data {
+									attributes {
+										phone_number
+										extension
+									}
+								}
+							}
+						}
+					}
+				}
+			}`
+		}
+	});
+
 	return {
 		nav,
 		footer: footer.data.data.footer.data.attributes,
 		moreAboutUs,
-		oemPartners: oemPartners.data.data.oemPartners.data
+		oemPartners: oemPartners.data.data.oemPartners.data,
+		regions: regions.data.data.regions.data
 	};
 }) satisfies LayoutLoad;
