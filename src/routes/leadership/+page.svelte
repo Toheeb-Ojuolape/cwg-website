@@ -38,10 +38,6 @@
 					class="header-img bg-pewter-blue"
 				/>
 			</div>
-			<!-- <div
-				class="lg:flex-1 bg-cover bg-no-repeat h-[300px] lg:h-[477px] w-full header-img-side"
-				style={`background-image: url(${CMS_URL}${leadershipPage.attributes.header.right_image.data?.attributes.url})`}
-			/> -->
 		</div>
 	</header>
 
