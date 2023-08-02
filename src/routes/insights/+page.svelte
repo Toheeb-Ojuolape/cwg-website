@@ -142,32 +142,33 @@
 		<div class="tabs-wrapper">
 			<ul class="tabs bg-whitish-blue dark:bg-dark-highlight pt-2">
 				<div class="section-container flex gap-[50px]">
-					<li class:active={activeSection === 'perspectives'}>
+					<li class:active={activeSection === 'perspectivesMain'}>
 						<a href="#perspectives">Perspectives</a>
 					</li>
-					<li class:active={activeSection === 'events'}>
+					<li class:active={activeSection === 'eventsMain'}>
 						<a href="#events">Events</a>
 					</li>
-					<li class:active={activeSection === 'press'}>
+					<li class:active={activeSection === 'pressMain'}>
 						<a href="#press">Press</a>
 					</li>
-					<li class:active={activeSection === 'podcast'}>
+					<li class:active={activeSection === 'podcastMain'}>
 						<a href="#podcast">Podcast</a>
 					</li>
-					<li class:active={activeSection === 'magazine'}>
+					<li class:active={activeSection === 'magazineMain'}>
 						<a href="#magazine">Magazine</a>
 					</li>
-					<li class="active" class:active={activeSection === 'newsroom'}>
+					<li class="active" class:active={activeSection === 'newsroomMain'}>
 						<a href="#newsroom">Newsroom</a>
 					</li>
-					<li class:active={activeSection === 'media-gallery'}>
+					<li class:active={activeSection === 'media-galleryMain'}>
 						<a href="#media-gallery">Media/Gallery</a>
 					</li>
 				</div>
 			</ul>
 		</div>
 
-		<section id="perspectives" class="section-container py-10 scrollspy">
+		<span id="perspectives" class="dummy-id" />
+		<section id="perspectivesMain" class="section-container py-10 scrollspy">
 			<div class="section-header mb-10">
 				<h2 class="text-[32px]">Insights from our blog</h2>
 				<div class="text-[12px]">
@@ -178,7 +179,11 @@
 			<BlogsBlocks />
 		</section>
 
-		<section id="events" class="pt-20 pb-15 bg-midnight-blue text-white my-[10px] scrollspy">
+		<span id="events" class="dummy-id" />
+		<section
+			id="eventsMain"
+			class="pt-20 pb-15 bg-midnight-blue text-white my-[10px] scrollspy"
+		>
 			<div class="section-container grid-content-box lg:gap-[50px]">
 				<div class="">
 					<div class="img-wrapper">
@@ -210,7 +215,8 @@
 			</div>
 		</section>
 
-		<section id="press" class="press-release section-container py-10 scrollspy">
+		<span id="press" class="dummy-id" />
+		<section id="pressMain" class="press-release section-container py-10 scrollspy">
 			<div class="">
 				<h2 class="text-headline-2">CWG Press</h2>
 				<p class="text-[18px]">The CWG team has made significant progress.</p>
@@ -221,7 +227,8 @@
 			</div>
 		</section>
 
-		<section id="podcast" class="leaders-conversations-section py-10 scrollspy">
+		<span id="podcast" class="dummy-id" />
+		<section id="podcastMain" class="leaders-conversations-section py-10 scrollspy">
 			<div class="section-container">
 				<h2 class="text-headline-2">Conversations with our leaders</h2>
 			</div>
@@ -231,7 +238,8 @@
 			</div>
 		</section>
 
-		<section id="magazine" class="digital-magazine-section py-10 scrollspy">
+		<span id="magazine" class="dummy-id" />
+		<section id="magazineMain" class="digital-magazine-section py-10 scrollspy">
 			<div class="section-container">
 				<h2 class="text-headline-2">Digital Edge Magazine</h2>
 				<p class="text-[18px]">
@@ -245,7 +253,8 @@
 			</div>
 		</section>
 
-		<section id="newsroom" class="quarterly-newsletter-section pt-5 pb-10 scrollspy">
+		<span id="newsroom" class="dummy-id" />
+		<section id="newsroomMain" class="quarterly-newsletter-section pt-5 pb-10 scrollspy">
 			<div class="section-container">
 				<h2 class="text-headline-2">CWG Quarterly Newsletter</h2>
 			</div>
@@ -255,7 +264,8 @@
 			</div>
 		</section>
 
-		<section id="media-gallery" class="scrollspy section-container pt-10 pb-20">
+		<span id="media-gallery" class="dummy-id" />
+		<section id="media-galleryMain" class="scrollspy section-container pt-10 pb-20">
 			<div class="section-container">
 				<h2 class="text-headline-2">CWG Media/Gallery</h2>
 			</div>
