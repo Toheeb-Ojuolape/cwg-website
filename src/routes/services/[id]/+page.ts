@@ -118,22 +118,7 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                     __typename
                                     title
                                     subtitle
-                                    courses {
-                                        data {
-                                            attributes {
-                                                name
-                                                uuid
-                                                course_catergory {
-                                                    data {
-                                                        attributes {
-                                                            name
-                                                            uuid
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
+                                    
                                 }
                                 ... on ComponentProductPageChangingTheGameSection {
                                     __typename
