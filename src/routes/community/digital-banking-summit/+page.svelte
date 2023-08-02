@@ -3,7 +3,7 @@
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 	import CwgLogo from '$lib/components/Svgs/CwgLogo.svelte';
-	import sr from 'date-fns/locale/sr';
+	// import sr from 'date-fns/locale/sr';
 	import '../../services/services-styles.css';
 	import '../community-styles.css';
 	import type { PageData } from './$types';

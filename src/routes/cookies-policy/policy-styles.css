@@ -1,0 +1,28 @@
+.table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Table header styling */
+.table thead {
+    background-color: var(--color-midnight-blue);
+    color: white;
+}
+
+/* Alternate row colors */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.dark .table tbody tr:nth-child(even) {
+    background-color: #171717;
+}
+.table-wrapper {
+    overflow: auto;
+}
