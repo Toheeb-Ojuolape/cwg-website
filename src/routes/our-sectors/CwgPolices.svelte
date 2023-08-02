@@ -6,8 +6,12 @@
 	export let policies: SectorsPage['policies']['data'];
 </script>
 
-{#each policies as { attributes: { title, icon, subtitle } }}
-	<a href="#!" download="" class="policies-item sm:p-10 p-5">
+{#each policies as { attributes: { title, icon, subtitle, file } }}
+	<a
+		href={CMS_URL + file.data[0].attributes.url}
+		target="_blank"
+		class="policies-item sm:p-10 p-5"
+	>
 		<div class="flex flex-col justify-between h-full">
 			<div>
 				<img src={CMS_URL + icon.data.attributes.url} alt="premium" class={title} />

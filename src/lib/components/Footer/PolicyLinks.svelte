@@ -14,8 +14,11 @@
 				<a
 					href={file.data.length > 0
 						? `${CMS_URL}${file.data[0].attributes.url}`
-						: `/${slug}`}>{title}</a
+						: `/${slug}`}
+					target={file.data.length > 0 ? '_blank' : '_self'}
 				>
+					{title}
+				</a>
 			</li>
 		{/each}
 	</ul>
