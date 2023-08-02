@@ -44,7 +44,7 @@
 		</div>
 	</header>
 
-	<section class="section-container mx-auto pt-16">
+	<section class="section-container lg:px-33 mx-auto pt-16">
 		<div class="flex -mb-[1px]">
 			{#each leadershipTypes as { attributes: { title, key } }}
 				<button
