@@ -34,7 +34,8 @@ type ServiceContent =
 	| ComponentProductPageChangingTheGameSection
 	| ComponentProductPageDeliveryModelSection
 	| ComponentProductPageSupportServicesSection
-	| ComponentProductPageCwgHardwareSection;
+	| ComponentProductPageCwgHardwareSection
+	| ComponentProductPageSectionWithImageOverlay;
 
 interface Action {
 	title: string;
@@ -112,7 +113,7 @@ interface ServiceNumber {
 	image: DataImage;
 }
 
-interface ComponentProductPageCwgAcademySection {
+export interface ComponentProductPageCwgAcademySection {
 	__typename: 'ComponentProductPageCwgAcademySection';
 	title: StringOrNull;
 	body: StringOrNull;
@@ -128,7 +129,7 @@ interface Carousel {
 	image: DataImage;
 }
 
-interface ComponentProductPageOurCoursesSection {
+export interface ComponentProductPageOurCoursesSection {
 	__typename: 'ComponentProductPageOurCoursesSection';
 	title: StringOrNull;
 	subtitle: StringOrNull;
@@ -160,6 +161,14 @@ interface ComponentProductPageCwgHardwareSection {
 	__typename: 'ComponentProductPageCwgHardwareSection';
 	title: StringOrNull;
 	cards: ServiceCard[];
+}
+
+export interface ComponentProductPageSectionWithImageOverlay {
+	__typename: 'ComponentProductPageSectionWithImageOverlay';
+	title: StringOrNull;
+	left_body: StringOrNull;
+	right_body: StringOrNull;
+	underlay_image: DataImage;
 }
 
 export interface ServiceEsteemedClients {

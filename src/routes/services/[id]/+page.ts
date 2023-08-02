@@ -134,6 +134,20 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                         }
                                     }
                                 }
+                                ... on ComponentProductPageSectionWithImageOverlay {
+                                    __typename
+                                    title
+                                    left_body
+                                    right_body
+                                    underlay_image {
+                                        data {
+                                            attributes {
+                                                alternativeText
+                                                url
+                                            }
+                                        }
+                                    }
+                                }
                                 ... on ComponentProductPageChangingTheGameSection {
                                     __typename
                                     title

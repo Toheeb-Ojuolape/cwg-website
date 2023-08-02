@@ -18,6 +18,9 @@
 	import SupportChangingTheGame from './SupportChangingTheGame.svelte';
 	import SupportDeliveryModelSection from './SupportDeliveryModelSection.svelte';
 	import SupportServicesSection from './SupportServicesSection.svelte';
+	import SectionWithImageOverlay from './SectionWithImageOverlay.svelte';
+	import CwgAcademySection from './CwgAcademySection.svelte';
+	import OurCoursesSection from './OurCoursesSection.svelte';
 
 	export let data: PageData;
 
@@ -30,6 +33,7 @@
 	{/if}
 
 	{#if content.__typename === 'ComponentGlobalSectionTextWithImage' && content.image_position === Position.right && service.slug === 'support-hub'}
+		<hr class="gray-line" />
 		<SupportSectionRightImage section={content} />
 	{:else if content.__typename === 'ComponentGlobalSectionTextWithImage' && content.image_position === Position.right}
 		<div>
@@ -87,6 +91,18 @@
 
 	{#if content.__typename === 'ComponentProductPageSupportServicesSection'}
 		<SupportServicesSection {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentProductPageSectionWithImageOverlay'}
+		<SectionWithImageOverlay {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentProductPageCwgAcademySection'}
+		<CwgAcademySection {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentProductPageOurCoursesSection'}
+		<OurCoursesSection {content} />
 	{/if}
 {/each}
 
