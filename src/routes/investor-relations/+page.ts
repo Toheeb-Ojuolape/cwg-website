@@ -1,7 +1,8 @@
 import { graphqlClient } from '$lib/api';
 import type { PageLoad } from './$types';
+import type { InvestorRelationPage } from './types';
 
-export const load: PageLoad = async () => {
+export const load: PageLoad = async (): Promise<{ pageData: InvestorRelationPage }> => {
 	const res = await graphqlClient({
 		data: {
 			query: `{

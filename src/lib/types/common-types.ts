@@ -50,6 +50,6 @@ export interface AnnualResultBreakdown {
 			percentage: StringOrNull;
 			hasIncreased: boolean;
 			comment: StringOrNull;
-		}[];
-	};
+		};
+	}[];
 }
