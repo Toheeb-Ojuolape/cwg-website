@@ -97,7 +97,7 @@ export interface ComponentGlobalBlockQuote {
 	action: ActionOrNull;
 }
 
-interface ComponentProductPageAtmServicesNumbers {
+export interface ComponentProductPageAtmServicesNumbers {
 	__typename: 'ComponentProductPageAtmServicesNumbers';
 	title: string;
 	service_numbers: ServiceNumber[];
@@ -177,7 +177,7 @@ interface ComponentProductPageCwgHardwareSection {
 	cards: ServiceCard[];
 }
 
-interface ServiceEsteemedClients {
+export interface ServiceEsteemedClients {
 	data: EsteemedClientAttributes[];
 }
 
