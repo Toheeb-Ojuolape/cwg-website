@@ -1,4 +1,4 @@
-import type { DataImage } from './common-types';
+import type { DataImage, StringOrNull } from './common-types';
 
 export interface MissionPage {
 	header: Header;
@@ -8,6 +8,7 @@ export interface MissionPage {
 	our_values_section: OurValuesSection;
 	culture_section_title: string;
 	culture_section_subtitle: string;
+	culture_section_id: StringOrNull;
 	culture_section_body: CultureSectionBody;
 	culture_attributes_section_accordion: CultureAttributesSectionAccordion;
 	culture_attributes_section_image: DataImage;

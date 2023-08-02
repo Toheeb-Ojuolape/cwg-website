@@ -19,12 +19,11 @@
 			culture_attributes_section_accordion,
 			culture_attributes_section_image,
 			culture_section_body,
+			culture_section_id,
 			culture_section_subtitle,
 			culture_section_title,
 			manifesto_section,
 			our_values_section,
-			policy_section_items,
-			policy_section_title,
 			why_cwg_section_carousel,
 			why_cwg_section_image
 		}
@@ -48,6 +47,7 @@
 	<ManifestoSection data={manifesto_section} />
 	<OurValuesSection data={our_values_section} />
 	<CultureSection
+		sectionId={culture_section_id}
 		title={culture_section_title}
 		subtitle={culture_section_subtitle}
 		body={culture_section_body}

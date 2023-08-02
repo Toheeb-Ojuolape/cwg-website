@@ -5,9 +5,10 @@
 	export let title: string;
 	export let subtitle: string;
 	export let body: MissionPage['culture_section_body'];
+	export let sectionId: string | null;
 </script>
 
-<section class="box-container mx-auto mt-[77px]">
+<section id={sectionId} class="box-container mx-auto mt-[77px]">
 	<div class="mb-11 text-center">
 		<h2 class="text-headline-3 lg:text-headline-2 mb-2">{title}</h2>
 		<p class="text-body-m font-light lg:text-body-l">{subtitle}</p>

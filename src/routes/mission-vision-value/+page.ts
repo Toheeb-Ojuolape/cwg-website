@@ -79,6 +79,7 @@ export const load = async (): Promise<{ missionPage: MissionPage }> => {
                             }
                             culture_section_title
                             culture_section_subtitle
+                            culture_section_id
                             culture_section_body {
                                 content
                                 title
