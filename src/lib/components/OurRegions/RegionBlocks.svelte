@@ -86,7 +86,7 @@
 						/>
 					</div>
 					<div class="bg-midnight-blue text-white px-[30px] py-[15px]">
-						<div class="region-name text-[18px]">CWG Nigeria</div>
+						<div class="region-name text-[18px]">{selectedRegion?.name}</div>
 						<a
 							href={`mailto:${selectedRegion?.email}`}
 							class="region-email text-[14px] text-pewter-blue"
