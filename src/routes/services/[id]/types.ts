@@ -132,22 +132,7 @@ interface ComponentProductPageOurCoursesSection {
 	__typename: 'ComponentProductPageOurCoursesSection';
 	title: StringOrNull;
 	subtitle: StringOrNull;
-	courses: { data: Course[] };
-}
-
-interface Course {
-	attributes: {
-		name: string;
-		uuid: string;
-		course_catergory: {
-			data: {
-				attributes: {
-					name: string;
-					uuid: string;
-				};
-			};
-		};
-	};
+	cards: ServiceCard[];
 }
 
 export interface ComponentProductPageChangingTheGameSection {

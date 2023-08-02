@@ -118,7 +118,21 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                     __typename
                                     title
                                     subtitle
-                                    
+                                    cards {
+                                        title
+                                        content
+                                        subtitle
+                                        link_slug
+                                        link_title
+                                        image {
+                                            data {
+                                                attributes {
+                                                    alt: alternativeText
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                                 ... on ComponentProductPageChangingTheGameSection {
                                     __typename
