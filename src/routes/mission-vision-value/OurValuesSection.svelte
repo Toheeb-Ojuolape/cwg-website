@@ -7,7 +7,7 @@
 	const { subtitle, title, values } = data;
 </script>
 
-<section class="mt-27 box-container mx-auto px-21">
+<section class="mt-27 section-container mx-auto px-21">
 	<div class="text-center mb-8">
 		<h2 class="text-headline-2 mb-2">{title}</h2>
 		<p class="text-body-l">{subtitle}</p>

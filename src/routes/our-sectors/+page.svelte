@@ -26,12 +26,14 @@
 		</div>
 	</header>
 
-	<section class="section-container py-20 bg-whitish-blue dark:bg-dark-highlight">
-		<div class="section-header">
-			<h2 class="text-headline-2 mb-4">{sectors_section_title}</h2>
-		</div>
-		<div class="sectors-we-serve-wrapper grid md:grid-cols-2 gap-[30px] md:gap-[40px]">
-			<SectorsWeServe {sectors} />
+	<section class="py-20 bg-whitish-blue dark:bg-dark-highlight">
+		<div class="section-container">
+			<div class="section-header">
+				<h2 class="text-headline-2 mb-4">{sectors_section_title}</h2>
+			</div>
+			<div class="sectors-we-serve-wrapper grid md:grid-cols-2 gap-[30px] md:gap-[40px]">
+				<SectorsWeServe {sectors} />
+			</div>
 		</div>
 	</section>
 

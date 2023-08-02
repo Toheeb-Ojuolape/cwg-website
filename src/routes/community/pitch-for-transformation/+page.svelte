@@ -41,7 +41,7 @@
 		</div>
 	</header>
 
-	<div id="sections-wrapper" class="py-5">
+	<div id="sections-wrapper" class="pt-5">
 		<!--=== Enable-Future-Shakers ===-->
 		<section class="section-container grid-content-box p-10">
 			<div class="section-text-side">

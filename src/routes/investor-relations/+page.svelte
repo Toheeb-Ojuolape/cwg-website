@@ -92,8 +92,8 @@
 
     <hr class="gray-line" />
 
-    <section class="press-release py-10">
-        <div class="section-container flex flex-col sm:flex-row justify-between">
+    <section class="press-release py-10 section-container">
+        <div class="flex flex-col sm:flex-row justify-between">
             <h2 class="text-headline-2">Press Releases</h2>
             <a href="#!" class="text-bright-blue flex items-center gap-[20px] text-[16px]">
                 <span>View all press release</span>

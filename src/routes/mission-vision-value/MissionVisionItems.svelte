@@ -35,8 +35,8 @@
 	<div class="flex flex-col gap-5 lg:flex-row">
 		{#each data as { title, image, content }}
 			<div class="text-white flex-1">
-				<div class="h-[184px]">
-					<img src={CMS_URL + image.data?.attributes.url} alt={title} />
+				<div class="h-[184px] relative">
+					<img src={CMS_URL + image.data?.attributes.url} alt={title} class="fill-img" />
 				</div>
 				<div class="bg-midnight-blue px-8 pt-3 h-[74px]">
 					<p class="text-body-m lg:text-body-l lg:font-normal">{title}</p>
@@ -50,3 +50,12 @@
 		{/each}
 	</div>
 </section>
+
+<style>
+	img.fill-img {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		object-fit: cover;
+	}
+</style>

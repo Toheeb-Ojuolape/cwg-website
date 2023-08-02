@@ -12,7 +12,7 @@
 
 <main>
 	<header
-		class="header text-white lg:h-[477px] py-10 mx-auto flex flex-col justify-center gap-[10px]"
+		class="header text-white lg:h-[477px] py-10 mx-auto flex flex-col justify-center gap-[10px] relative"
 	>
 		<div class="section-container relative">
 			<div class="header-content-wrapper gap-5 items-center">
@@ -136,6 +136,9 @@
 	.header-text-wrapper {
 		max-width: none;
 	}
+	.header-img-wrapper img {
+		object-position: top;
+	}
 
 	@media (min-width: 1024px) {
 		.header-content-wrapper {
@@ -143,6 +146,16 @@
 			grid-template-columns: minmax(586px, 1fr) 1fr;
 			/* grid-template-columns: repeat(2, minmax(0, 1fr)); */
 			gap: 30px;
+		}
+		.header-img-wrapper {
+			position: absolute;
+			height: 100%;
+			width: 50%;
+			right: 0;
+			top: 0;
+		}
+		header.header > .section-container {
+			position: initial;
 		}
 	}
 

@@ -64,7 +64,7 @@
       },
     ];
 
-    let showModal = true;
+    let showModal = false;
     let selectedAlbumTitle = '';
 
     const openModal = (/** @type {string} */ albumTitle) => {
