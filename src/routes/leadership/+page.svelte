@@ -18,7 +18,7 @@
 
 <div>
 	<header
-		class="header text-white bg-midnight-blue text-white lg:h-[477px] py-10 mx-auto flex flex-col justify-center gap-[10px] relative"
+		class="header bg-midnight-blue text-white lg:h-[477px] py-10 mx-auto flex flex-col justify-center gap-[10px] relative"
 	>
 		<div class="section-container">
 			<div class="header-text-wrapper flex-1 mx-4 lg:mx-0 py-10 lg:py-0">
@@ -29,10 +29,11 @@
 					{leadershipPage.attributes.header.description}
 				</p>
 			</div>
-	
+
 			<div class="header-img-wrapper h-[300px] lg:h-[477px] w-full relative">
 				<img
-					src={leadershipPage.attributes.header.right_image.data?.attributes.url}
+					src={CMS_URL +
+						leadershipPage.attributes.header.right_image.data?.attributes.url}
 					alt=""
 					class="header-img bg-pewter-blue"
 				/>
@@ -65,7 +66,6 @@
 
 	<MoreAboutUs />
 </div>
-
 
 <style>
 	.header-img-side {
