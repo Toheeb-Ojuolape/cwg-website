@@ -150,21 +150,21 @@ interface Course {
 	};
 }
 
-interface ComponentProductPageChangingTheGameSection {
+export interface ComponentProductPageChangingTheGameSection {
 	__typename: 'ComponentProductPageChangingTheGameSection';
 	title: StringOrNull;
 	content: StringOrNull;
 	image: DataImage;
 }
 
-interface ComponentProductPageDeliveryModelSection {
+export interface ComponentProductPageDeliveryModelSection {
 	__typename: 'ComponentProductPageDeliveryModelSection';
 	title: StringOrNull;
 	content: StringOrNull;
 	cards: ServiceCard[];
 }
 
-interface ComponentProductPageSupportServicesSection {
+export interface ComponentProductPageSupportServicesSection {
 	__typename: 'ComponentProductPageSupportServicesSection';
 	title: StringOrNull;
 	content: StringOrNull;

@@ -15,6 +15,9 @@
 	import PaymentTerminalSectionWithCards from './PaymentTerminalSectionWithCards.svelte';
 	import PaymentTerminalBlockQuoteSection from './PaymentTerminalBlockQuoteSection.svelte';
 	import SupportSectionRightImage from './SupportSectionRightImage.svelte';
+	import SupportChangingTheGame from './SupportChangingTheGame.svelte';
+	import SupportDeliveryModelSection from './SupportDeliveryModelSection.svelte';
+	import SupportServicesSection from './SupportServicesSection.svelte';
 
 	export let data: PageData;
 
@@ -72,6 +75,18 @@
 
 	{#if content.__typename === 'ComponentGlobalBlockQuote' && service.slug === 'payment-terminal-solution'}
 		<PaymentTerminalBlockQuoteSection {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentProductPageChangingTheGameSection'}
+		<SupportChangingTheGame {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentProductPageDeliveryModelSection'}
+		<SupportDeliveryModelSection {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentProductPageSupportServicesSection'}
+		<SupportServicesSection {content} />
 	{/if}
 {/each}
 
