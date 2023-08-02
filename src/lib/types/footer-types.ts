@@ -1,3 +1,5 @@
+import type { DataImage, StringOrNull } from './common-types';
+
 export interface FooterData {
 	headOfficeAddress: string;
 	phoneNumber: string;
@@ -20,6 +22,17 @@ export interface FooterData {
 	community_links: CommunityLinks;
 	policy_links: PolicyLinks;
 	office_links: CommunityLinks;
+	social_media_handles: SocialMediaHandles;
+}
+
+export interface SocialMediaHandles {
+	data: {
+		attributes: {
+			link: string;
+			name: StringOrNull;
+			icon: DataImage;
+		};
+	}[];
 }
 
 interface PolicyLinks {

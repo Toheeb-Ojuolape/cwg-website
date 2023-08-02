@@ -89,7 +89,7 @@
 
 			<div class="hidden lg:block w-[1.5px] bg-greyish-blue" />
 
-			<FooterRightComponent />
+			<FooterRightComponent socialLinks={footer.social_media_handles.data} />
 			<p class="block lg:hidden text-center text-body-xs text-white mt-[30px] mb-[34px]">
 				{footer.copyright}
 			</p>

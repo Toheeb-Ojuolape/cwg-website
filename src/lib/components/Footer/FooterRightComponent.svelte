@@ -1,7 +1,10 @@
-<script>
+<script lang="ts">
+	import type { SocialMediaHandles } from '$lib/types/footer-types';
 	import ArrowRightSolidIcon from '../Svgs/ArrowRightSolidIcon.svelte';
 	import FooterLogo from '../Svgs/FooterLogo.svelte';
 	import FooterSocials from './FooterSocials.svelte';
+
+	export let socialLinks: SocialMediaHandles['data'];
 </script>
 
 <div class="lg:mx-19 pt-20 lg:pt-22 max-h-fit flex flex-col justify-between lg:pb-8">
@@ -33,5 +36,5 @@
 		</div>
 	</div>
 
-	<FooterSocials />
+	<FooterSocials {socialLinks} />
 </div>

@@ -156,6 +156,21 @@ export const load = (async (): Promise<LayoutResponseData> => {
 									}
 								}
 							}
+							social_media_handles {
+								data {
+									attributes {
+										link
+										name
+										icon {
+											data {
+												attributes {
+													url
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
