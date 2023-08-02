@@ -18,8 +18,26 @@ export interface FooterData {
 	company_links: CommunityLinks;
 	insight_links: CommunityLinks;
 	community_links: CommunityLinks;
-	policy_links: CommunityLinks;
+	policy_links: PolicyLinks;
 	office_links: CommunityLinks;
+}
+
+interface PolicyLinks {
+	data: {
+		attributes: {
+			title: string;
+			slug: string;
+			file: {
+				data: {
+					attributes: {
+						alternativeText: string;
+						ext: string;
+						url: string;
+					};
+				}[];
+			};
+		};
+	}[];
 }
 
 export interface CommunityLinks {
