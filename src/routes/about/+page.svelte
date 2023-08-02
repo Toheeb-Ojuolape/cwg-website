@@ -17,18 +17,20 @@
 
 <div>
 	<header
-		class="header h-[300px] lg:h-[477px] text-white box-container mx-auto px-4 lg:px-8 flex flex-col justify-center gap-[10px]"
+		class="header h-[300px] lg:h-[477px] text-white mx-auto px-4 lg:px-8 flex flex-col justify-center gap-[10px]"
 		style={`background-image: url(${CMS_URL}${about.header.bg_image.data[0].attributes.url});`}
 	>
-		<h1 class="text-headline-2 lg:text-headline-1">{about.header.title}</h1>
-		<a href={about.header.link}
-			><button class="arrow-button text-button-l group"
-				>{about.header.link_text}
-				<div class="arrow-right">
-					<ArrowRightSolidIcon className="fill-white group-hover:fill-pewter-blue" />
-				</div></button
-			></a
-		>
+		<div class="section-container">
+			<h1 class="text-headline-2 lg:text-headline-1">{about.header.title}</h1>
+			<a href={about.header.link}
+				><button class="arrow-button text-button-l group"
+					>{about.header.link_text}
+					<div class="arrow-right">
+						<ArrowRightSolidIcon className="fill-white group-hover:fill-pewter-blue" />
+					</div></button
+				></a
+			>
+		</div>
 	</header>
 
 	<ChampioningSection data={about.section_one} />
