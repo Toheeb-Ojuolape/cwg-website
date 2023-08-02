@@ -21,6 +21,7 @@
 	import SectionWithImageOverlay from './SectionWithImageOverlay.svelte';
 	import CwgAcademySection from './CwgAcademySection.svelte';
 	import OurCoursesSection from './OurCoursesSection.svelte';
+	import { CMS_URL } from '$lib/api';
 
 	export let data: PageData;
 
@@ -103,6 +104,18 @@
 
 	{#if content.__typename === 'ComponentProductPageOurCoursesSection'}
 		<OurCoursesSection {content} />
+	{/if}
+
+	{#if content.__typename === 'ComponentGlobalImageList'}
+		<section class="py-10">
+			<div class="col s12 pad0 sect-contents marquee-content">
+				{#each content.images.data as { attributes: { url } }}
+					<div class="marquee-item">
+						<img src={CMS_URL + url} alt="full-img-gallery" class="w-full" />
+					</div>
+				{/each}
+			</div>
+		</section>
 	{/if}
 {/each}
 

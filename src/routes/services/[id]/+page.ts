@@ -148,6 +148,17 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                         }
                                     }
                                 }
+                                ... on ComponentGlobalImageList {
+                                    __typename
+                                    images {
+                                        data {
+                                            attributes {
+                                                alternativeText
+                                                url
+                                            }
+                                        }
+                                    }
+                                }
                                 ... on ComponentProductPageChangingTheGameSection {
                                     __typename
                                     title

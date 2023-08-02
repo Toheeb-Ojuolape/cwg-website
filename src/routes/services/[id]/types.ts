@@ -35,7 +35,8 @@ type ServiceContent =
 	| ComponentProductPageDeliveryModelSection
 	| ComponentProductPageSupportServicesSection
 	| ComponentProductPageCwgHardwareSection
-	| ComponentProductPageSectionWithImageOverlay;
+	| ComponentProductPageSectionWithImageOverlay
+	| ComponentGlobalImageList;
 
 interface Action {
 	title: string;
@@ -169,6 +170,18 @@ export interface ComponentProductPageSectionWithImageOverlay {
 	left_body: StringOrNull;
 	right_body: StringOrNull;
 	underlay_image: DataImage;
+}
+
+export interface ComponentGlobalImageList {
+	__typename: 'ComponentGlobalImageList';
+	images: {
+		data: {
+			attributes: {
+				alternativeText: StringOrNull;
+				url: string;
+			};
+		}[];
+	};
 }
 
 export interface ServiceEsteemedClients {
