@@ -47,7 +47,7 @@ export enum Position {
 	left = 'left'
 }
 
-interface ServiceCard {
+export interface ServiceCard {
 	title: string;
 	content: string;
 	subtitle: StringOrNull;

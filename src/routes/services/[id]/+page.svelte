@@ -5,6 +5,8 @@
 	import ServiceHeader from './ServiceHeader.svelte';
 	import { Position } from './types';
 	import { theme } from '$lib/stores/theme-store';
+	import PortfolioCards from './PortfolioCards.svelte';
+	import ComponentSectionWithCard from './ComponentSectionWithCard.svelte';
 
 	export let data: PageData;
 
@@ -88,7 +90,10 @@
 					{content.sectionWithTextTitle}
 				</h2>
 			</div>
-			<div class="section-txt-side Pitch__card-content">
+			<div
+				class="section-txt-side"
+				class:Pitch__card-content={service.slug !== 'hardware-services'}
+			>
 				<p class="text-body-s font-light lg:text-body-l">
 					{@html content.sectionWithTextContent}
 				</p>
@@ -99,7 +104,10 @@
 	{#if content.__typename === 'ComponentGlobalSectionWithText' && content.title_position === Position.right}
 		<section class="section-container grid-content-box p-10">
 			<div class="section-txt-side">
-				<p class="text-body-s font-light lg:text-body-l Pitch__card-content">
+				<p
+					class="text-body-s font-light lg:text-body-l"
+					class:Pitch__card-content={service.slug !== 'hardware-services'}
+				>
 					{@html content.sectionWithTextContent}
 				</p>
 			</div>
@@ -115,7 +123,7 @@
 		<hr class="gray-line" />
 	{/if}
 
-	{#if content.__typename === 'ComponentGlobalBlockQuote'}
+	{#if content.__typename === 'ComponentGlobalBlockQuote' && service.slug !== 'payment-terminal-solution'}
 		<section class="section-container p-10 pb-20">
 			<div class="quote-box max-w-[1180px] md:w-[85%] m-auto p-3 pl-[30px]">
 				{@html content.content}
@@ -123,7 +131,18 @@
 		</section>
 	{/if}
 
-	{#if content.__typename === 'ComponentGlobalSectionWithCards'}
+	{#if content.__typename === 'ComponentGlobalSectionWithCards' && service.slug === 'payment-terminal-solution' && !content.sectionWithCardsTitle}
+		<div>
+			<section class="section-container pb-10">
+				<div
+					class="pts-portfolio-wrapper grid lg:grid-cols-3 sm:grid-cols-2 gap-x-[20px] gap-y-[40px] mb-12"
+				>
+					<PortfolioCards cards={content.cards} />
+				</div>
+			</section>
+			<hr class="gray-line" />
+		</div>
+	{:else if content.__typename === 'ComponentGlobalSectionWithCards'}
 		<section class="mt-10 mb-20 section-container mx-auto">
 			<div class="text-center mb-13 m-auto max-w-[850px] section-header">
 				{#if content.sectionWithCardsTitle}
@@ -142,22 +161,8 @@
 			<div
 				class="grid lg:grid-cols-3 sm:grid-cols-2 gap-x-[40px] gap-y-[60px] industries-wrapper"
 			>
-				{#each content.cards as { title, content: cardContent, image, link_slug, link_title, subtitle: cardSubtitle }}
-					<div
-						class="pt-4 bg-whitish-blue dark:bg-dark-highlight flex flex-col industry-block"
-					>
-						<div class="flex-1 px-5 pb-15">
-							<div class="img-box-wrapper w-full bg-midnight-blue mb-4">
-								<img src={CMS_URL + image.data?.attributes.url} alt={title} />
-							</div>
-							<h4 class="text-headline-4 mb-3 industry-block-title">{title}</h4>
-							<div class="text-body-m industry-block-desc">
-								<p>
-									{@html cardContent}
-								</p>
-							</div>
-						</div>
-					</div>
+				{#each content.cards as { title, content: cardContent, image }}
+					<ComponentSectionWithCard {title} {cardContent} {image} />
 				{/each}
 			</div>
 		</section>
@@ -182,6 +187,14 @@
 						<p>{@html serviceNumberContent}</p>
 					</div>
 				{/each}
+			</div>
+		</section>
+	{/if}
+
+	{#if content.__typename === 'ComponentGlobalBlockQuote' && service.slug === 'payment-terminal-solution'}
+		<section class="section-container px-10 pt-10">
+			<div class="quote-box quote-box-2 m-auto p-3 pl-[30px] mb-[50px]">
+				{@html content.content}
 			</div>
 		</section>
 	{/if}
