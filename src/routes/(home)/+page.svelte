@@ -20,5 +20,9 @@
 	<InvestorAnnualCareerSection list={home.home_highlight_cards} />
 	<IndustriesSection content={home.industries_we_dominate_section} />
 	<QualityPolicySection content={home.quality_policy_section} />
-	<NewsSection />
+	<NewsSection
+		list={home.press_releases.data}
+		sectionId={home.press_release_section_id}
+		title={home.press_release_section_title}
+	/>
 </div>
