@@ -1,21 +1,21 @@
-<script>
+<script lang="ts">
+	import { CMS_URL } from '$lib/api';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
-	import HomeQualityPolicy from '$lib/images/home-quality-policy.png';
+	import type { HomePageData } from './types';
+
+	export let content: HomePageData['quality_policy_section'];
 </script>
 
 <section
+	id={content.link_id}
 	class="box-container mx-auto grid lg:grid-cols-3 gap-8 lg:gap-[42px] w-full pl-4 pr-4 lg:pr-0 pt-8 lg:pt-0 lg:pl-8 2xl:pl-0 border-y-[1.5px] border-y-black-600 dark:border-y-white/10 mt-[71px]"
 >
 	<div class="h-full flex flex-col justify-center">
-		<h2 class="text-headline-3 lg:text-headline-2 mb-4 lg:mb-6">Our Quality Policy</h2>
-		<p class="text-body-m font-light lg:text-body-l mb-4 lg:mb-6">
-			CWG Plc shall deliver ICT Solutions that will add value to our customer’s operation,
-			meet and exceed our customer’s expectation and we shall deliver them right first time
-			and all the time
-		</p>
-		<a href="/">
+		<h2 class="text-headline-3 lg:text-headline-2 mb-4 lg:mb-6">{content.title}</h2>
+		<p class="text-body-m font-light lg:text-body-l mb-4 lg:mb-6">{@html content.content}</p>
+		<a href={`/${content.action?.slug}`}>
 			<button class="arrow-button group"
-				>Learn more
+				>{content.action?.title}
 				<div class="mt-1">
 					<ArrowRightLong
 						strokeClassName="stroke-midnight-blue group-hover:stroke-pewter-blue dark:stroke-white"
@@ -27,6 +27,10 @@
 	</div>
 
 	<div class="col-span-2">
-		<img class="h-[335px] w-full" src={HomeQualityPolicy} alt="home-quality-policy" />
+		<img
+			class="h-[335px] w-full"
+			src={CMS_URL + content.image.data?.attributes.url}
+			alt={content.image.data?.attributes.alternativeText}
+		/>
 	</div>
 </section>

@@ -3,13 +3,13 @@
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 
-	export let list: PressRelease[];
-
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
-	import type { PressRelease } from './types';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
+	import type { PressRelease } from '$lib/types/common-types';
+
+	export let list: PressRelease[];
 
 	let carousel: any;
 

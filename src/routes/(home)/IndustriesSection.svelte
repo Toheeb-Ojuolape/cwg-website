@@ -4,6 +4,8 @@
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
 	import { browser } from '$app/environment';
+	import type { HomePageData } from './types';
+	import { CMS_URL } from '$lib/api';
 
 	let shouldShowSlide = false;
 
@@ -19,6 +21,8 @@
 		gotoIndex(index);
 		currentSlide = index;
 	}
+
+	export let content: HomePageData['industries_we_dominate_section'];
 </script>
 
 <section
@@ -31,7 +35,7 @@
 	class="section-container mt-8 lg:mt-[105.65px]"
 >
 	<h2 class="text-headline-2 lg:text-headline-1 text-center mb-6 lg:mb-16">
-		Industries we dominate
+		{content.title}
 	</h2>
 
 	<div class="min-h-[324px]">
@@ -44,25 +48,25 @@
 				let:pagesCount
 				bind:this={carousel}
 			>
-				{#each [1, 2, 3] as _, i}
+				{#each content.cards as { content: cardContent, image, title }}
 					<div class="grid lg:grid-cols-2 gap:4 lg:gap-[55.25px]">
-						<div class="h-[324px] bg-burlywood" />
+						<div class="h-[324px]">
+							<img
+								src={CMS_URL + image.data?.attributes.url}
+								alt={image.data?.attributes.alternativeText}
+							/>
+						</div>
 
 						<div class="flex flex-col justify-center">
 							<h3
 								class="text-headline-4 lg:text-headline-3 mb-6 mt-3 lg:mt-0 lg:mb-[37.5px]"
 							>
-								Financial Service Institutions
+								{title}
 							</h3>
 							<p
 								class="text-body-m font-light lg:text-body-l max-w-[532px] overflow-hidden"
 							>
-								Globally, Financial Services Institutions are constantly undergoing
-								technological upgrades. CWG supports this drive in Financial
-								Technology platforms and provides cloud services and software
-								solutions to about 60% of all financial institutions in Nigeria and
-								has successfully implemented and supported Finacle which is the
-								foremost core banking application in Nigerian banking system.
+								{@html cardContent}
 							</p>
 						</div>
 					</div>

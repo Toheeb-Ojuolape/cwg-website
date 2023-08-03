@@ -3,7 +3,9 @@ import type {
 	CMSLink,
 	DataImage,
 	PageHeader,
+	PressRelease,
 	SectionWithText,
+	SharesHighlight,
 	StringOrNull,
 	UpcomingEvents
 } from '$lib/types/common-types';
@@ -36,36 +38,5 @@ export interface PresentationAndVideo {
 		title: StringOrNull;
 		file: DataImage;
 		type: 'reports' | 'presentationsAndVideos';
-	};
-}
-
-export interface SharesHighlight {
-	image: DataImage;
-	share_price_title: string;
-	share_price_date: string;
-	share_name: string;
-	share_currency: string;
-	share_unit_price: string;
-	fy_title: string;
-	revenue: string;
-	profit_before_tax: string;
-	gross_profit: string;
-	profit_after_tax: string;
-}
-
-export interface PressRelease {
-	attributes: {
-		title: string;
-		image: DataImage;
-		article_date: StringOrNull;
-		read_duration_mins: string;
-		uuid: string;
-		article_type: {
-			data: {
-				attributes: {
-					title: string;
-				};
-			};
-		};
 	};
 }
