@@ -2,6 +2,7 @@
 	import type { CommunityLinks, FooterData } from '$lib/types/footer-types';
 	import FooterLinks from './FooterLinks.svelte';
 	import FooterRightComponent from './FooterRightComponent.svelte';
+	import PolicyLinks from './PolicyLinks.svelte';
 
 	export let footer: FooterData;
 
@@ -48,7 +49,7 @@
 							list={formatSlug('community', footer.community_links.data)}
 						/>
 					</div>
-					<FooterLinks title={footer.policy_title} list={footer.policy_links.data} />
+					<PolicyLinks title={footer.policy_title} list={footer.policy_links.data} />
 					<FooterLinks title={footer.office_title} list={footer.office_links.data} />
 
 					<div class="col-span-1 lg:col-span-2 pt-0 lg:pt-[50px] text-white">
@@ -88,7 +89,7 @@
 
 			<div class="hidden lg:block w-[1.5px] bg-greyish-blue" />
 
-			<FooterRightComponent />
+			<FooterRightComponent socialLinks={footer.social_media_handles.data} />
 			<p class="block lg:hidden text-center text-body-xs text-white mt-[30px] mb-[34px]">
 				{footer.copyright}
 			</p>

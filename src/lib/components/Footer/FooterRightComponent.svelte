@@ -1,28 +1,27 @@
-<script>
+<script lang="ts">
+	import type { SocialMediaHandles } from '$lib/types/footer-types';
 	import ArrowRightSolidIcon from '../Svgs/ArrowRightSolidIcon.svelte';
 	import FooterLogo from '../Svgs/FooterLogo.svelte';
-	// import GlobeIcon from '../Svgs/GlobeIcon.svelte';
 	import FooterSocials from './FooterSocials.svelte';
+
+	export let socialLinks: SocialMediaHandles['data'];
 </script>
 
 <div class="lg:mx-19 pt-20 lg:pt-22 max-h-fit flex flex-col justify-between lg:pb-8">
 	<div>
 		<div class="flex flex-col items-center">
 			<div class="mb-9">
-				<FooterLogo />
+				<a href="/">
+					<FooterLogo />
+				</a>
 			</div>
-			<!-- <button
-			class="text-button-l flex gap-11 items-center h-[46px] border border-white px-7 mx-auto text-white transition duration-500 hover:scale-110 active:bg-white/10"
-			>English
-			<GlobeIcon />
-		</button> -->
 		</div>
 
 		<div class="flex flex-col items-center lg:mt-[182px]">
 			<h6 class="text-headline-6 text-greyish-blue text-center">Stay updated</h6>
 			<p class="mt-4 mb-6 text-body-s lg:max-w-[328.3px] text-white text-center">
-				Subscribe to our newsletter and receive the latest technology insights and updates from the
-				strides of CWG delivered straight to your inbox.
+				Subscribe to our newsletter and receive the latest technology insights and updates
+				from the strides of CWG delivered straight to your inbox.
 			</p>
 			<div class="relative">
 				<input
@@ -37,5 +36,5 @@
 		</div>
 	</div>
 
-	<FooterSocials />
+	<FooterSocials {socialLinks} />
 </div>

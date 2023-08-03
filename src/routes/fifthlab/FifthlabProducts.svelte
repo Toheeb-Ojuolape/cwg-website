@@ -21,7 +21,7 @@
 					/>
 				</div>
 				<p class="products-desc pt-3 pb-8">{@html description}</p>
-				<a href={`/${link}`} class="flex gap-5 text-lg max-w-[170px]">
+				<a href={`${link}`} target="_blank" class="flex gap-5 text-lg max-w-[170px]">
 					<span>{link_text}</span>
 					<div class="arrow-right">
 						<ArrowRightLong strokeClassName="stroke-blue" />

@@ -61,7 +61,11 @@ interface Attributes2 {
 }
 
 interface File {
-	data: [];
+	data: {
+		attributes: {
+			url: string;
+		};
+	}[];
 }
 
 interface Icon {

@@ -34,7 +34,9 @@ type ServiceContent =
 	| ComponentProductPageChangingTheGameSection
 	| ComponentProductPageDeliveryModelSection
 	| ComponentProductPageSupportServicesSection
-	| ComponentProductPageCwgHardwareSection;
+	| ComponentProductPageCwgHardwareSection
+	| ComponentProductPageSectionWithImageOverlay
+	| ComponentGlobalImageList;
 
 interface Action {
 	title: string;
@@ -47,7 +49,7 @@ export enum Position {
 	left = 'left'
 }
 
-interface ServiceCard {
+export interface ServiceCard {
 	title: string;
 	content: string;
 	subtitle: StringOrNull;
@@ -97,7 +99,7 @@ export interface ComponentGlobalBlockQuote {
 	action: ActionOrNull;
 }
 
-interface ComponentProductPageAtmServicesNumbers {
+export interface ComponentProductPageAtmServicesNumbers {
 	__typename: 'ComponentProductPageAtmServicesNumbers';
 	title: string;
 	service_numbers: ServiceNumber[];
@@ -112,7 +114,7 @@ interface ServiceNumber {
 	image: DataImage;
 }
 
-interface ComponentProductPageCwgAcademySection {
+export interface ComponentProductPageCwgAcademySection {
 	__typename: 'ComponentProductPageCwgAcademySection';
 	title: StringOrNull;
 	body: StringOrNull;
@@ -128,43 +130,28 @@ interface Carousel {
 	image: DataImage;
 }
 
-interface ComponentProductPageOurCoursesSection {
+export interface ComponentProductPageOurCoursesSection {
 	__typename: 'ComponentProductPageOurCoursesSection';
 	title: StringOrNull;
 	subtitle: StringOrNull;
-	courses: { data: Course[] };
+	cards: ServiceCard[];
 }
 
-interface Course {
-	attributes: {
-		name: string;
-		uuid: string;
-		course_catergory: {
-			data: {
-				attributes: {
-					name: string;
-					uuid: string;
-				};
-			};
-		};
-	};
-}
-
-interface ComponentProductPageChangingTheGameSection {
+export interface ComponentProductPageChangingTheGameSection {
 	__typename: 'ComponentProductPageChangingTheGameSection';
 	title: StringOrNull;
 	content: StringOrNull;
 	image: DataImage;
 }
 
-interface ComponentProductPageDeliveryModelSection {
+export interface ComponentProductPageDeliveryModelSection {
 	__typename: 'ComponentProductPageDeliveryModelSection';
 	title: StringOrNull;
 	content: StringOrNull;
 	cards: ServiceCard[];
 }
 
-interface ComponentProductPageSupportServicesSection {
+export interface ComponentProductPageSupportServicesSection {
 	__typename: 'ComponentProductPageSupportServicesSection';
 	title: StringOrNull;
 	content: StringOrNull;
@@ -177,7 +164,27 @@ interface ComponentProductPageCwgHardwareSection {
 	cards: ServiceCard[];
 }
 
-interface ServiceEsteemedClients {
+export interface ComponentProductPageSectionWithImageOverlay {
+	__typename: 'ComponentProductPageSectionWithImageOverlay';
+	title: StringOrNull;
+	left_body: StringOrNull;
+	right_body: StringOrNull;
+	underlay_image: DataImage;
+}
+
+export interface ComponentGlobalImageList {
+	__typename: 'ComponentGlobalImageList';
+	images: {
+		data: {
+			attributes: {
+				alternativeText: StringOrNull;
+				url: string;
+			};
+		}[];
+	};
+}
+
+export interface ServiceEsteemedClients {
 	data: EsteemedClientAttributes[];
 }
 

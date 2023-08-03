@@ -118,19 +118,43 @@ export const load: PageLoad = async ({ params }): Promise<{ service: Service }> 
                                     __typename
                                     title
                                     subtitle
-                                    courses {
+                                    cards {
+                                        title
+                                        content
+                                        subtitle
+                                        link_slug
+                                        link_title
+                                        image {
+                                            data {
+                                                attributes {
+                                                    alt: alternativeText
+                                                    url
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                ... on ComponentProductPageSectionWithImageOverlay {
+                                    __typename
+                                    title
+                                    left_body
+                                    right_body
+                                    underlay_image {
                                         data {
                                             attributes {
-                                                name
-                                                uuid
-                                                course_catergory {
-                                                    data {
-                                                        attributes {
-                                                            name
-                                                            uuid
-                                                        }
-                                                    }
-                                                }
+                                                alternativeText
+                                                url
+                                            }
+                                        }
+                                    }
+                                }
+                                ... on ComponentGlobalImageList {
+                                    __typename
+                                    images {
+                                        data {
+                                            attributes {
+                                                alternativeText
+                                                url
                                             }
                                         }
                                     }

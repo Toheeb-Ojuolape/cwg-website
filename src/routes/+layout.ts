@@ -8,12 +8,14 @@ import type { NavData } from '$lib/types/nav-type';
 import type { OEMPartner } from '$lib/types/oem-partner';
 
 import type { LayoutLoad } from './$types';
+import type { RegionData } from '$lib/types/region-types';
 
 interface LayoutResponseData {
 	oemPartners: OEMPartner[];
 	nav: NavData;
 	footer: FooterData;
 	moreAboutUs: MoreAboutUs;
+	regions: RegionData[];
 }
 
 export const load = (async (): Promise<LayoutResponseData> => {
@@ -21,10 +23,6 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		.get(
 			'/nav?populate=*&populate[0]=services_links.icon&populate[1]=community_links&populate[2]=company_links'
 		)
-		.then((res) => res.data.data.attributes);
-
-	const footer = await apiClient
-		.get('/footer?populate=*')
 		.then((res) => res.data.data.attributes);
 
 	const moreAboutUs = await apiClient
@@ -61,10 +59,164 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		}
 	});
 
+	const footer = await graphqlClient({
+		data: {
+			query: `
+			{
+				footer {
+					data {
+						attributes {
+							headOfficeAddress
+							phoneNumber
+							emailAddress
+							copyright
+							services_title
+							sectors_title
+							insight_title
+							community_title
+							policy_title
+							office_title
+							services {
+								data {
+									attributes {
+										title
+										slug
+										image {
+											data {
+												attributes {
+													alternativeText
+													url
+												}
+											}
+										}
+										icon {
+											data {
+												attributes {
+													alternativeText
+													url
+												}
+											}
+										}
+									}
+								}
+							}
+							sectors {
+								data {
+									attributes {
+										title
+										slug
+									}
+								}
+							}
+							company_title
+							company_links {
+								data {
+									attributes {
+										title
+										slug
+									}
+								}
+							}
+							insight_links {
+								data {
+									attributes {
+										title
+										slug
+									}
+								}
+							}
+							community_links {
+								data {
+									attributes {
+										title
+										slug
+									}
+								}
+							}
+							policy_links {
+								data {
+									attributes {
+										title
+										slug
+										file {
+											data {
+												attributes {
+													alternativeText
+													ext
+													url
+												}
+											}
+										}
+									}
+								}
+							}
+							office_links {
+								data {
+									attributes {
+										title
+										slug
+									}
+								}
+							}
+							social_media_handles {
+								data {
+									attributes {
+										link
+										name
+										icon {
+											data {
+												attributes {
+													url
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}`
+		}
+	});
+
+	const regions = await graphqlClient({
+		data: {
+			query: `{
+				regions {
+					data {
+						attributes {
+							image {
+								data {
+									attributes {
+										url
+									}
+								}
+							}
+							name
+							email
+							address
+							content
+							region_phone_numbers {
+								data {
+									attributes {
+										phone_number
+										extension
+									}
+								}
+							}
+						}
+					}
+				}
+			}`
+		}
+	});
+
 	return {
 		nav,
-		footer,
+		footer: footer.data.data.footer.data.attributes,
 		moreAboutUs,
-		oemPartners: oemPartners.data.data.oemPartners.data
+		oemPartners: oemPartners.data.data.oemPartners.data,
+		regions: regions.data.data.regions.data
 	};
 }) satisfies LayoutLoad;

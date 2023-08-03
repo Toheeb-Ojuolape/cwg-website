@@ -14,8 +14,10 @@
 	import '../OurRegions/regions.css';
 	import RegionsWrapper from '../OurRegions/RegionsWrapper.svelte';
 	import type { NavData } from '$lib/types/nav-type';
+	import type { RegionData } from '$lib/types/region-types';
 
 	export let nav: NavData;
+	export let regions: RegionData[];
 
 	let shouldHaveColor = false;
 
@@ -150,7 +152,7 @@
 	</div>
 </nav>
 
-<RegionsWrapper {displayRegion} />
+<RegionsWrapper {displayRegion} {regions} />
 
 <div
 	class="Nav__drawer z-50 fixed left-0 right-0 flex flex-col items-end lg:hidden"

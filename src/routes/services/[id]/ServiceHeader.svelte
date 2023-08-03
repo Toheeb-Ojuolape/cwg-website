@@ -17,6 +17,13 @@
 			<p class="mb-9 header-title-desc">
 				{header.description}
 			</p>
+
+			{#if header.action}
+				<a href={`/${header.action.slug}`} class="flex items-center gap-2 header-link">
+					<span>{header.action.title}</span>
+					<img src="/images/small-arrow-right.svg" alt="small-arrow-right" />
+				</a>
+			{/if}
 		</div>
 	</div>
 </header>
