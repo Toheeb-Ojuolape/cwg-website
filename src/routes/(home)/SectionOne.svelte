@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
-	import Home1 from '$lib/images/home_1.png';
 	import type { HomeSection } from './types';
 
 	export let data: HomeSection;
