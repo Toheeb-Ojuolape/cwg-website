@@ -26,7 +26,7 @@
 		<div class="mx-auto h-full box-container px-4 pb-4 lg:px-8 2xl:px-0 flex flex-col">
 			<div class="h-[116px]" />
 
-			<div class="flex-1">
+			<div class="flex-1 hero-content-wrapper">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<div class="text-white flex justify-end gap-[14px] cursor-pointer" on:click={() => openModal('gBOxaKoezBA')}>
 					<p class="text-body-l">The CWG story</p>
@@ -37,7 +37,7 @@
 					</div>
 				</div>
 
-				<div class="w-full lg:max-w-[50%] text-white text-center lg:text-left">
+				<div class="w-full lg:max-w-[645px] text-white text-center lg:text-left">
 					<h1 class="text-headline-2 lg:text-headline-1 font-medium mb-7">
 						We Are Positioning Africa to Maximize the Future
 					</h1>
@@ -157,6 +157,18 @@
 		width: 100%;
 		max-width: 800px;
 		height: 450px;
+	}
+	@media(min-width: 1024px) {
+		.hero-content-wrapper {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.hero-content-wrapper > .cursor-pointer {
+			position: relative;
+    		top: 94px;
+		}
 	}
 
 	@media (max-width: 1024px) {
