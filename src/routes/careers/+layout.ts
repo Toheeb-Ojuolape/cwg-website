@@ -1,8 +1,8 @@
 import { graphqlClient } from '$lib/api';
-import type { PageLoad } from './$types';
+import type { LayoutLoad } from '../$types';
 import type { CareersPage } from './types';
 
-export const load: PageLoad = async (): Promise<{ careersPage: CareersPage }> => {
+export const load: LayoutLoad = async (): Promise<{ careersPage: CareersPage }> => {
 	const res = await graphqlClient({
 		data: {
 			query: `
@@ -51,6 +51,13 @@ export const load: PageLoad = async (): Promise<{ careersPage: CareersPage }> =>
                                                 attributes {
                                                     alt: alternativeText
                                                     url
+                                                }
+                                            }
+                                        }
+                                        jobs {
+                                            data {
+                                                attributes {
+                                                    uuid
                                                 }
                                             }
                                         }

@@ -9,6 +9,10 @@ import type { OEMPartner } from '$lib/types/oem-partner';
 
 import type { LayoutLoad } from './$types';
 import type { RegionData } from '$lib/types/region-types';
+import { COUNTRIES_QUERY, REGIONS_QUERY } from '$lib/queries/countries-query';
+import { OEM_PARTNERS_QUERY } from '$lib/queries/oem-partners-query';
+import { FOOTER_QUERY } from '$lib/queries/footer-query';
+import type { Country } from '$lib/types/common-types';
 
 interface LayoutResponseData {
 	oemPartners: OEMPartner[];
@@ -16,6 +20,7 @@ interface LayoutResponseData {
 	footer: FooterData;
 	moreAboutUs: MoreAboutUs;
 	regions: RegionData[];
+	countries: Country[];
 }
 
 export const load = (async (): Promise<LayoutResponseData> => {
@@ -29,187 +34,20 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		.get('more-about-us?populate[0]=content.image')
 		.then((res) => res.data.data.attributes);
 
+	const countries = await graphqlClient({
+		data: { query: COUNTRIES_QUERY }
+	});
+
 	const oemPartners = await graphqlClient({
-		data: {
-			query: `{
-				oemPartners {
-					data {
-						attributes {
-							name
-							logo {
-								data {
-									attributes {
-										alternativeText
-										url
-									}
-								}
-							}
-							logo_dark {
-								data {
-									attributes {
-										alternativeText
-										url
-									}
-								}
-							}
-						}
-					}
-				}
-			}`
-		}
+		data: { query: OEM_PARTNERS_QUERY }
 	});
 
 	const footer = await graphqlClient({
-		data: {
-			query: `
-			{
-				footer {
-					data {
-						attributes {
-							headOfficeAddress
-							phoneNumber
-							emailAddress
-							copyright
-							services_title
-							sectors_title
-							insight_title
-							community_title
-							policy_title
-							office_title
-							services {
-								data {
-									attributes {
-										title
-										slug
-										image {
-											data {
-												attributes {
-													alternativeText
-													url
-												}
-											}
-										}
-										icon {
-											data {
-												attributes {
-													alternativeText
-													url
-												}
-											}
-										}
-									}
-								}
-							}
-							sectors {
-								data {
-									attributes {
-										title
-										slug
-									}
-								}
-							}
-							company_title
-							company_links {
-								data {
-									attributes {
-										title
-										slug
-									}
-								}
-							}
-							insight_links {
-								data {
-									attributes {
-										title
-										slug
-									}
-								}
-							}
-							community_links {
-								data {
-									attributes {
-										title
-										slug
-									}
-								}
-							}
-							policy_links {
-								data {
-									attributes {
-										title
-										slug
-										file {
-											data {
-												attributes {
-													alternativeText
-													ext
-													url
-												}
-											}
-										}
-									}
-								}
-							}
-							office_links {
-								data {
-									attributes {
-										title
-										slug
-									}
-								}
-							}
-							social_media_handles {
-								data {
-									attributes {
-										link
-										name
-										icon {
-											data {
-												attributes {
-													url
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}`
-		}
+		data: { query: FOOTER_QUERY }
 	});
 
 	const regions = await graphqlClient({
-		data: {
-			query: `{
-				regions {
-					data {
-						attributes {
-							image {
-								data {
-									attributes {
-										url
-									}
-								}
-							}
-							name
-							email
-							address
-							content
-							region_phone_numbers {
-								data {
-									attributes {
-										phone_number
-										extension
-									}
-								}
-							}
-						}
-					}
-				}
-			}`
-		}
+		data: { query: REGIONS_QUERY }
 	});
 
 	return {
@@ -217,6 +55,7 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		footer: footer.data.data.footer.data.attributes,
 		moreAboutUs,
 		oemPartners: oemPartners.data.data.oemPartners.data,
-		regions: regions.data.data.regions.data
+		regions: regions.data.data.regions.data,
+		countries: countries.data.data.countries.data
 	};
 }) satisfies LayoutLoad;

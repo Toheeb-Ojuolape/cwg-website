@@ -1,3 +1,5 @@
+import type { CareerJob } from './[department]/types';
+
 export interface CareersPage {
 	header: Header;
 	explore_opportunity_title: string;
@@ -19,6 +21,13 @@ export interface PurpleAttributes {
 	title: string;
 	slug: string;
 	icon: RightImage;
+	jobs: {
+		data: {
+			attributes: {
+				uuid: string;
+			};
+		}[];
+	};
 }
 
 export interface RightImage {

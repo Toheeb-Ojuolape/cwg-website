@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { redirect, error } from '@sveltejs/kit';
+	import { error } from '@sveltejs/kit';
 	import type { LayoutData } from '../$types';
 	import LeaderBioSection from './LeaderBioSection.svelte';
 	import LeaderCardHeader from './LeaderCardHeader.svelte';

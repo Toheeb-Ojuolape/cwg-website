@@ -1,31 +1,27 @@
-<script>
-	// @ts-nocheck
-
-	import JoiningCwgQuestions from "../JoiningCwgQuestions.svelte";
-	import Application from "./Application.svelte";
-	import RoleOverview from "./RoleOverview.svelte";
+<script lang="ts">
+	import JoiningCwgQuestions from '../../JoiningCwgQuestions.svelte';
+	import Application from './Application.svelte';
+	import RoleOverview from './RoleOverview.svelte';
 
 	let activeTab = 1;
-	/**
-	 * @param {number} id
-	 */
-	function setActiveTab(id) {
+
+	function setActiveTab(id: number) {
 		activeTab = id;
 	}
 </script>
 
 <main>
-    <header class="header h-[300px] lg:h-[477px] flex flex-col justify-center gap-[10px]">
+	<header class="header h-[300px] lg:h-[477px] flex flex-col justify-center gap-[10px]">
 		<div class="section-container">
 			<div class="header-text-wrapper">
 				<div class="header-top-title uppercase">NIGERIA</div>
 				<h1 class="text-headline-2 header-title lg:text-headline-1">
-                    QA Audit <br> Analyst
-                </h1>
+					QA Audit <br /> Analyst
+				</h1>
 
 				<p class="mb-9 header-title-desc">
 					We're seeking change makers who share our commitment to making a positive impact
-                    while excelling in their work
+					while excelling in their work
 				</p>
 			</div>
 		</div>
@@ -60,7 +56,7 @@
 		</div>
 	</section>
 
-    <JoiningCwgQuestions />
+	<JoiningCwgQuestions />
 </main>
 
 <style>
@@ -75,8 +71,8 @@
 		border-bottom: 3px solid var(--color-burlywood);
 		padding-bottom: 5px;
 	}
-	
-	@media(min-width: 1024px) {
+
+	@media (min-width: 1024px) {
 		.tabs-content-wrapper.section-container {
 			width: 85%;
 			padding: 0 !important;

@@ -102,3 +102,10 @@ export interface PressRelease {
 		};
 	};
 }
+
+export interface Country {
+	attributes: {
+		name: string;
+		logo: DataImage;
+	};
+}

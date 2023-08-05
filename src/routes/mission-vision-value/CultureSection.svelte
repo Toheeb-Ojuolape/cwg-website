@@ -8,7 +8,8 @@
 	export let sectionId: string | null;
 </script>
 
-<section id={sectionId} class="box-container mx-auto mt-[77px]">
+<span id={sectionId} class="dummy-id" />
+<section class="box-container mx-auto mt-[77px]">
 	<div class="mb-11 text-center">
 		<h2 class="text-headline-3 lg:text-headline-2 mb-2">{title}</h2>
 		<p class="text-body-m font-light lg:text-body-l">{subtitle}</p>
