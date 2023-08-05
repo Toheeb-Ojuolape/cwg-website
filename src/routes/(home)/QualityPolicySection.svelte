@@ -13,7 +13,7 @@
 	<div class="h-full flex flex-col justify-center">
 		<h2 class="text-headline-3 lg:text-headline-2 mb-4 lg:mb-6">{content.title}</h2>
 		<p class="text-body-m font-light lg:text-body-l mb-4 lg:mb-6">{@html content.content}</p>
-		<a href={`/${content.action?.slug}`}>
+		<a href={`${CMS_URL}/${content.action?.slug}`} target="_blank">
 			<button class="arrow-button group"
 				>{content.action?.title}
 				<div class="mt-1">
