@@ -19,6 +19,8 @@ export interface CareerJob {
 	attributes: {
 		uuid: string;
 		title: string;
+		description: string | null;
+		overview: string | null;
 		department: {
 			data: {
 				attributes: {

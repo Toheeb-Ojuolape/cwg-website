@@ -53,3 +53,32 @@ export const ALL_JOBS_QUERY = `{
         }
     }
 }`;
+
+export const JOBS_BY_UUID_QUERY = `query ($uuid: String) {
+    jobs(filters: {uuid: {eq: $uuid}}) {
+        data {
+            attributes {
+                title
+                description
+                overview
+                role_type {
+                    data {
+                        attributes {
+                            title
+                            uuid
+                        }
+                    }
+                }
+                can_apply
+                uuid
+                countries {
+                    data {
+                        attributes {
+                            name
+                        }
+                    }
+                }
+            }
+        }
+    }
+}`;

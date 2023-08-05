@@ -1,12 +1,22 @@
 <script lang="ts">
 	import JoiningCwgQuestions from '../../JoiningCwgQuestions.svelte';
+	import type { PageData } from './$types';
 	import Application from './Application.svelte';
 	import RoleOverview from './RoleOverview.svelte';
 
 	let activeTab = 1;
 
+	export let data: PageData;
+
+	$: content = data.role.attributes;
+
 	function setActiveTab(id: number) {
 		activeTab = id;
+	}
+
+	function onApplyClick() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		setActiveTab(2);
 	}
 </script>
 
@@ -14,15 +24,16 @@
 	<header class="header h-[300px] lg:h-[477px] flex flex-col justify-center gap-[10px]">
 		<div class="section-container">
 			<div class="header-text-wrapper">
-				<div class="header-top-title uppercase">NIGERIA</div>
+				<div class="header-top-title uppercase">
+					{content.countries.data.flatMap((c) => c.attributes.name).join(', ')}
+				</div>
 				<h1 class="text-headline-2 header-title lg:text-headline-1">
-					QA Audit <br /> Analyst
+					{content.title}
 				</h1>
 
-				<p class="mb-9 header-title-desc">
-					We're seeking change makers who share our commitment to making a positive impact
-					while excelling in their work
-				</p>
+				{#if content.description}
+					<p class="mb-9 header-title-desc">{content.description}</p>
+				{/if}
 			</div>
 		</div>
 	</header>
@@ -44,7 +55,10 @@
 		<div class="tabs-content-wrapper section-container md:m-auto">
 			{#if activeTab === 1}
 				<div id="role-overview" class="py-10">
-					<RoleOverview />
+					<RoleOverview
+						overview={content.overview ?? ''}
+						on:onApplyClick={onApplyClick}
+					/>
 				</div>
 			{/if}
 
