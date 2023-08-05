@@ -104,6 +104,7 @@
 		<DividendsBlocks data={content.annual_result_breakdowns.data} />
 	</section>
 
+	<span id="annual-reports" class="dummy-id" />
 	<section class="yearly-block">
 		<YearlyDocumentsWrapper data={content.company_years.data} />
 	</section>

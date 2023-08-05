@@ -8,8 +8,9 @@
 </script>
 
 <section class="box-container mx-auto grid lg:grid-cols-3">
-	{#each list as { image, title, subtitle }}
-		<div
+	{#each list as { image, title, subtitle, link_slug }}
+		<a
+			href={`/${link_slug}`}
 			class="Section__card"
 			style={`background-image: url('${CMS_URL}${image.data?.attributes.url}')`}
 		>
@@ -22,7 +23,7 @@
 					{subtitle}
 				</p>
 			</div>
-		</div>
+		</a>
 	{/each}
 </section>
 

@@ -25,5 +25,5 @@
 				}
 			}, duration / (value / step));
 		}
-	}}>{prefix}{initial < 10 ? `0${initial}` : initial}{suffix}</span
+	}}>{prefix}{initial < 10 ? `0${initial}` : initial}{suffix ?? ''}</span
 >

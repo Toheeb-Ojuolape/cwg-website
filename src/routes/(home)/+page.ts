@@ -9,6 +9,22 @@ export const load: PageLoad = async (): Promise<{ home: HomePageData }> => {
                 homePage {
                     data {
                         attributes {
+                            hero_title
+                            hero_subtitle
+                            counter {
+                                title
+                                suffix
+                                value
+                                id
+                            }
+                            hero_images {
+                                data {
+                                    attributes {
+                                        alternativeText
+                                        url
+                                    }
+                                }
+                            }
                             section_one {
                                 content
                                 id

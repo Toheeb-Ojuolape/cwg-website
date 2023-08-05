@@ -14,7 +14,12 @@
 </script>
 
 <div>
-	<Hero />
+	<Hero
+		title={home.hero_title}
+		subtitle={home.hero_subtitle}
+		images={home.hero_images.data}
+		counter={home.counter}
+	/>
 	<SectionOne data={home.section_one} />
 	<SectionTwo data={home.shares_highlight} />
 	<InvestorAnnualCareerSection list={home.home_highlight_cards} />

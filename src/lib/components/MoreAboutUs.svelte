@@ -1,7 +1,6 @@
 <script>
 	import { CMS_URL } from '$lib/api';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
-	import AboutImage from '$lib/images/about-hero.png';
 	import { mainLayoutStore } from '$lib/stores/layout-store';
 
 	const data = $mainLayoutStore.moreAboutUs;

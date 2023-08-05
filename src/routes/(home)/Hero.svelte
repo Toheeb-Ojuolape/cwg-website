@@ -1,14 +1,23 @@
-<script lang='ts'>
+<script lang="ts">
+	import { CMS_URL } from '$lib/api';
 	import Countup from '$lib/components/Countup.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 	import PlayIcon from '$lib/components/Svgs/PlayIcon.svelte';
 	import SoundWaveIcon from '$lib/components/Svgs/SoundWaveIcon.svelte';
+	import type { DataImageAttributes } from '$lib/types/common-types';
+	import type { HomeCounter } from './types';
 
 	let selectedBanner = 1;
 
 	let showModal = false;
 	let currentVideoId = '';
 
+	export let title: string;
+	export let subtitle: string;
+	export let images: DataImageAttributes[];
+	export let counter: HomeCounter[];
+
+	$: heroImageUrl = images[selectedBanner - 1].attributes.url;
 
 	const openModal = (videoId: string) => {
 		currentVideoId = videoId;
@@ -22,13 +31,16 @@
 </script>
 
 <header>
-	<div class="hero">
+	<div class="hero" style={`background-image: url("${CMS_URL}${heroImageUrl}")`}>
 		<div class="mx-auto h-full box-container px-4 pb-4 lg:px-8 2xl:px-0 flex flex-col">
 			<div class="h-[116px]" />
 
 			<div class="flex-1 hero-content-wrapper">
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div class="text-white flex justify-end gap-[14px] cursor-pointer" on:click={() => openModal('gBOxaKoezBA')}>
+				<div
+					class="text-white flex justify-end gap-[14px] cursor-pointer"
+					on:click={() => openModal('gBOxaKoezBA')}
+				>
 					<p class="text-body-l">The CWG story</p>
 					<PlayIcon />
 					<div>
@@ -39,13 +51,10 @@
 
 				<div class="w-full lg:max-w-[645px] text-white text-center lg:text-left">
 					<h1 class="text-headline-2 lg:text-headline-1 font-medium mb-7">
-						We Are Positioning Africa to Maximize the Future
+						{title}
 					</h1>
-					<p class="mb-9">
-						We have over two decades of immense contribution to the Information
-						Communication & Technology Sector across Africa.
-					</p>
-					<a href="/" class="flex justify-center lg:justify-start">
+					<p class="mb-9">{subtitle}</p>
+					<!-- <a href="/" class="flex justify-center lg:justify-start">
 						<button
 							class="text-button-l flex items-center gap-4 group transition-all duration-500 hover:text-pewter-blue hover:scale-110"
 							>Learn more
@@ -55,21 +64,21 @@
 								/>
 							</div></button
 						>
-					</a>
+					</a> -->
 				</div>
 			</div>
 
 			<div
 				class="hidden relative lg:flex lg:flex-col lg:items-end text-body-list-m text-white gap-4"
 			>
-				{#each ['01', '02', '03'] as banner, index}
+				{#each images.slice(0, 3) as _, index}
 					<p
 						class="transition duration-300 hover:text-pewter-blue cursor-pointer"
 						class:text-pewter-blue={selectedBanner === index + 1}
 						on:click={() => (selectedBanner = index + 1)}
 						on:keypress
 					>
-						{banner}
+						{index + 1}
 					</p>
 				{/each}
 
@@ -84,33 +93,14 @@
 			<div
 				class="max-w-[1065px] mx-auto w-full text-burlywood grid grid-cols-2 [&>div]:text-center lg:flex lg:flex-row lg:justify-between"
 			>
-				<div>
-					<p class="text-headline-2 lg:text-headline-1">
-						<Countup value={4} />
-					</p>
-					<p class="text-body-s font-light lg:text-body-l">Operation Hubs</p>
-				</div>
-
-				<div>
-					<p class="text-headline-2 lg:text-headline-1">
-						<Countup value={13} />
-					</p>
-					<p class="text-body-s font-light lg:text-body-l">Partnerships</p>
-				</div>
-
-				<div>
-					<p class="text-headline-2 lg:text-headline-1">
-						<Countup value={26} suffix="+" />
-					</p>
-					<p class="text-body-s font-light lg:text-body-l">Countries</p>
-				</div>
-
-				<div>
-					<p class="text-headline-2 lg:text-headline-1">
-						<Countup value={50} suffix="+" />
-					</p>
-					<p class="text-body-s font-light lg:text-body-l">Awards</p>
-				</div>
+				{#each counter as { suffix, title, value }}
+					<div>
+						<p class="text-headline-2 lg:text-headline-1">
+							<Countup {value} {suffix} />
+						</p>
+						<p class="text-body-s font-light lg:text-body-l">{title}</p>
+					</div>
+				{/each}
 			</div>
 		</div>
 	</div>
@@ -131,7 +121,6 @@
 
 <style>
 	.hero {
-		background-image: url(../../lib/images/hero_banner.png);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -158,7 +147,7 @@
 		max-width: 800px;
 		height: 450px;
 	}
-	@media(min-width: 1024px) {
+	@media (min-width: 1024px) {
 		.hero-content-wrapper {
 			display: flex;
 			flex-direction: row-reverse;
@@ -167,7 +156,7 @@
 		}
 		.hero-content-wrapper > .cursor-pointer {
 			position: relative;
-    		top: 94px;
+			top: 94px;
 		}
 	}
 

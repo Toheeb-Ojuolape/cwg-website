@@ -1,10 +1,12 @@
 export type DataImage = {
-	data: {
-		attributes: {
-			alternativeText: string;
-			url: string;
-		};
-	} | null;
+	data: DataImageAttributes | null;
+};
+
+export type DataImageAttributes = {
+	attributes: {
+		alternativeText: string;
+		url: string;
+	};
 };
 
 export type StringOrNull = string | null;
