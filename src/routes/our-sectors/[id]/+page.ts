@@ -1,9 +1,8 @@
 import { graphqlClient } from '$lib/api';
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from '../$types';
 import type { Sector } from './types';
 
-export const load: PageLoad = async ({ params }) => {
+export const load = async ({ params }) => {
 	const res = await graphqlClient({
 		data: {
 			query: `

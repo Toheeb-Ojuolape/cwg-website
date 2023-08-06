@@ -26,7 +26,7 @@ interface LayoutResponseData {
 export const load = (async (): Promise<LayoutResponseData> => {
 	const nav = await apiClient
 		.get(
-			'/nav?populate=*&populate[0]=services_links.icon&populate[1]=community_links&populate[2]=company_links'
+			'/nav?populate[0]=services_links.icon&populate[1]=community_links&populate[2]=company_links'
 		)
 		.then((res) => res.data.data.attributes);
 

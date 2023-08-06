@@ -27,6 +27,15 @@ export interface SectionWithText {
 	link_id: StringOrNull;
 }
 
+export interface SectionWithImage {
+	content: StringOrNull;
+	title: StringOrNull;
+	image: DataImage;
+	image_position: 'left' | 'right';
+	link_id: StringOrNull;
+	action: CMSLink;
+}
+
 export interface UpcomingEvents {
 	data: UpcomingEvent[];
 }
@@ -86,6 +95,12 @@ export interface CMSSectionWithCards {
 	cards: CMSCard[];
 }
 
+export interface CMSBlockQuote {
+	content: string;
+	title: StringOrNull;
+	source: StringOrNull;
+}
+
 export interface PressRelease {
 	attributes: {
 		title: string;
@@ -108,4 +123,10 @@ export interface Country {
 		name: string;
 		logo: DataImage;
 	};
+}
+
+export interface CMSYoutube {
+	title: string;
+	video_id: string;
+	thumbnail: DataImage;
 }
