@@ -1,5 +1,4 @@
 <script lang="ts">
-	import JoiningCwgQuestions from '../../JoiningCwgQuestions.svelte';
 	import type { PageData } from './$types';
 	import Application from './Application.svelte';
 	import RoleOverview from './RoleOverview.svelte';
@@ -70,7 +69,7 @@
 		</div>
 	</section>
 
-	<JoiningCwgQuestions />
+	<!-- <JoiningCwgQuestions /> -->
 </main>
 
 <style>
