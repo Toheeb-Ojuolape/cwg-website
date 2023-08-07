@@ -138,14 +138,16 @@
 		<!--=== end of Conference-Topics ===-->
 
 		<!--=== Transformation-Pitch-Section ===-->
-		<section class="transformation-pitch-section section-container mt-5 pt-10 mb-20 lg:my-0 lg:pt-0">
+		<section
+			class="transformation-pitch-section section-container mt-5 pt-10 mb-20 lg:my-0 lg:pt-0"
+		>
 			<div class="grid">
 				<div class="section-title-side">
 					<h2 class="text-headline-4 lg:text-headline-2 pt-4">
 						{pageData.pitch_transformation_section.left_title}
 					</h2>
 					<a
-						href={`/${pageData.pitch_transformation_section.left_action.slug}`}
+						href={`${pageData.pitch_transformation_section.left_action.slug}`}
 						class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]"
 					>
 						<span>{pageData.pitch_transformation_section.left_action.title}</span>
@@ -231,7 +233,7 @@
 			class="more-links-wrapper section-container py-20 flex flex-wrap gap-y-5 justify-between"
 		>
 			{#each pageData.actions as { slug, title }}
-				<a href={`/${slug}`} class="flex items-center gap-2">
+				<a href={`${slug}`} class="flex items-center gap-2">
 					<span>{title}</span>
 					<DiagonalArrow strokeClassName="stroke-blue" />
 				</a>
