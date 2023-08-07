@@ -13,6 +13,7 @@
 <main>
 	<header
 		class="header h-[300px] lg:h-[477px] text-white flex flex-col justify-center gap-[10px]"
+		style={`background-image: url(${CMS_URL}${header.background_image.data?.attributes.url})`}
 	>
 		<div class="section-container">
 			<div class="header-text-wrapper">
@@ -65,8 +66,7 @@
 
 <style>
 	header.header {
-		background-image: url('/images/impact-banner.jpg');
-		background-size: inherit;
+		background-size: cover;
 		background-position: center 20%;
 	}
 </style>
