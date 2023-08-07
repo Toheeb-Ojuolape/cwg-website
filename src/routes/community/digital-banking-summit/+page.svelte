@@ -32,7 +32,7 @@
 					</p>
 
 					<a
-						href={`/${pageData.header.action.slug}`}
+						href={`${pageData.header.action.slug}`}
 						class="flex items-center gap-2 header-link"
 					>
 						<span>{pageData.header.action.title}</span>
@@ -123,7 +123,7 @@
 					</h2>
 
 					<a
-						href={`/${pageData.registration_section.action.slug}`}
+						href={`${pageData.registration_section.action.slug}`}
 						class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]"
 					>
 						<span>{pageData.registration_section.action.title}</span>

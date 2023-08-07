@@ -37,6 +37,7 @@
 	background-image: url(/images/vector-half-1.png);
 	background-position: left;
 	background-size: cover;
+	z-index: -10;
 }
 .cut-out-1 {
 	position: absolute;
