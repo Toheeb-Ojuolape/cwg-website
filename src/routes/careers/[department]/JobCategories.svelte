@@ -55,6 +55,7 @@
 		<div class="category-title text-[10px] mb-[20px]">FEATURED ROLES</div>
 
 		<ul class="department-roles grid gap-[20px]">
+			{#if filteredJobs.length < 1}<p class="">No available role</p>{/if}
 			{#each filteredJobs as { attributes: { countries, title, uuid, department } }}
 				<li>
 					<a
