@@ -104,6 +104,7 @@ export interface CMSBlockQuote {
 export interface PressRelease {
 	attributes: {
 		title: string;
+		content: StringOrNull;
 		image: DataImage;
 		article_date: StringOrNull;
 		read_duration_mins: string;

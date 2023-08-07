@@ -33,7 +33,7 @@
 			<h2 class="text-headline-2">{title}</h2>
 			<a
 				class="mr-4 flex gap-11 items-center lg:mr-0 2xl:mr-0 text-bright-blue text-button-l transition-all duration-300 hover:scale-110"
-				href="/"
+				href="/insights#press"
 			>
 				View all articles
 				<div class="mt-1">
@@ -55,7 +55,7 @@
 				>
 					{#each list as { attributes: { article_date, article_type, image, read_duration_mins, title, uuid } }, index}
 						<a
-							href={uuid}
+							href={`/press-release/${uuid}`}
 							class:Carousel__item1={index === 0}
 							class="block group w-[calc(100%/3)] ml-[72px]"
 						>
@@ -77,7 +77,7 @@
 							</div>
 							<p class="text-body-l">
 								<span class="text-bright-blue"
-									>{article_type.data.attributes.title}</span
+									>{article_type.data?.attributes.title ?? 'Press Release'}</span
 								>
 								• {article_date
 									? format(new Date(article_date), 'MMMM dd, yyyy')
