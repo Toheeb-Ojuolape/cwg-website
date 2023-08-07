@@ -3,21 +3,21 @@
 	import type { CompanyYear } from './types';
 
 	let activeTab = 0;
-	/**
-	 * @param {number} id
-	 */
+
 	function setActiveTab(id: number) {
 		activeTab = id;
 	}
 
 	export let data: CompanyYear[];
 
+	$: sortedData = data.sort((a, b) => Number(b.attributes.year) - Number(a.attributes.year));
+
 	$: list = data[activeTab].attributes.presentations_and_videos.data;
 </script>
 
 <ul class="tabs bg-whitish-blue dark:bg-dark-highlight pt-3">
 	<div class="section-container flex gap-[50px]">
-		{#each data as { attributes: { year } }, i}
+		{#each sortedData as { attributes: { year } }, i}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<li class="tab {activeTab === i ? 'active' : ''}" on:click={() => setActiveTab(i)}>
 				{year}
