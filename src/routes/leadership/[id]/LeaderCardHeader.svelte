@@ -19,10 +19,10 @@
 		<p class="text-xs leading-6 font-light uppercase">
 			{leader.attributes.leadership_types.data[0].attributes.title}
 		</p>
-		<h1 class="text-headline-2 lg:text-headline-1 -ml-1">{name}</h1>
+		<h1 class="text-headline-2 lg:text-headline-1 -ml-1">{leader.attributes.name}</h1>
 		<p class="text-body-m font-light lg:text-body-l">{leader.attributes.position}</p>
 		<div class="flex items-center gap-1 mt-2">
-			<a href="/">
+			<a href="#!">
 				<svg
 					width="28"
 					height="23"
@@ -42,7 +42,7 @@
 				</svg>
 			</a>
 
-			<a href="/">
+			<a href="#!">
 				<svg
 					width="23"
 					height="23"

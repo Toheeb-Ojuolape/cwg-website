@@ -13,6 +13,7 @@ import { COUNTRIES_QUERY, REGIONS_QUERY } from '$lib/queries/countries-query';
 import { OEM_PARTNERS_QUERY } from '$lib/queries/oem-partners-query';
 import { FOOTER_QUERY } from '$lib/queries/footer-query';
 import type { Country } from '$lib/types/common-types';
+import type { Leader, LeadershipType } from './leadership/leadership-types';
 
 interface LayoutResponseData {
 	oemPartners: OEMPartner[];
@@ -21,6 +22,8 @@ interface LayoutResponseData {
 	moreAboutUs: MoreAboutUs;
 	regions: RegionData[];
 	countries: Country[];
+	leadershipTypes: LeadershipType[];
+	allLeaders: Leader[];
 }
 
 export const load = (async (): Promise<LayoutResponseData> => {
@@ -50,12 +53,61 @@ export const load = (async (): Promise<LayoutResponseData> => {
 		data: { query: REGIONS_QUERY }
 	});
 
+	const res = await graphqlClient({
+		data: {
+			query: `{
+                leadershipTypes {
+                    data {
+                        attributes {
+                            title
+                            key
+                              leaderships {
+                            data {
+                              attributes {
+                                name
+                                position
+                                excerpt
+                                slug
+                                biography
+                                leadership_types {
+                                    data {
+                                      attributes {
+                                        key
+                                        title
+                                      }
+                                    }
+                                }
+                                social_media {
+                                    link
+                                }
+                                image {
+                                  data {
+                                    attributes {
+                                      alternativeText
+                                      url
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                    }
+                }
+            }`
+		}
+	});
+
 	return {
 		nav,
 		footer: footer.data.data.footer.data.attributes,
 		moreAboutUs,
 		oemPartners: oemPartners.data.data.oemPartners.data,
 		regions: regions.data.data.regions.data,
-		countries: countries.data.data.countries.data
+		countries: countries.data.data.countries.data,
+		leadershipTypes: res.data.data.leadershipTypes.data,
+		allLeaders: res.data.data.leadershipTypes.data.flatMap(
+			(item: LeadershipType) => item.attributes.leaderships.data
+		)
 	};
 }) satisfies LayoutLoad;

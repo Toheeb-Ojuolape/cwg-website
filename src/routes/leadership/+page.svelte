@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { CMS_URL } from '$lib/api';
 	import MoreAboutUs from '$lib/components/MoreAboutUs.svelte';
-	import type { LayoutData } from './$types';
+	import type { PageData } from './$types';
 	import LeadershipCardList from './LeadershipCardList.svelte';
 
-	export let data: LayoutData;
+	export let data: PageData;
 	const { leadershipTypes, leadershipPage } = data;
 
 	let activeTab: string = leadershipTypes[0].attributes.key;

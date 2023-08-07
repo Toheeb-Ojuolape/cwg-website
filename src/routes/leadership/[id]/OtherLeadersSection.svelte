@@ -7,13 +7,10 @@
 
 	$: otherLeaders = allLeaders
 		.filter(
-			(leader) =>
-				leader.attributes.slug !== leader.attributes.slug &&
-				leader.attributes.leadership_types.data.some(
-					(type) =>
-						type.attributes.title ===
-						leader.attributes.leadership_types.data[0].attributes.title
-				)
+			(l) =>
+				l.attributes.slug !== leader.attributes.slug &&
+				l.attributes.leadership_types.data[0].attributes.title ===
+					leader.attributes.leadership_types.data[0].attributes.title
 		)
 		.slice(0, 4);
 </script>
@@ -26,8 +23,8 @@
 	</h2>
 
 	<div class="grid lg:grid-cols-4 gap-4 lg:gap-5">
-		{#each otherLeaders as leader}
-			<PersonCard {leader} />
+		{#each otherLeaders as otherLeader}
+			<PersonCard leader={otherLeader} />
 		{/each}
 	</div>
 </section>
