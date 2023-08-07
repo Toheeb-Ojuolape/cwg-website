@@ -143,7 +143,7 @@
 
 		{#if content.all_events_link}
 			<a
-				href={'/${content.all_events_link.slug}'}
+				href={`/${content.all_events_link.slug}`}
 				class="flex items-center gap-2 mt-5 text-[18px]"
 			>
 				<span>{content.all_events_link.title}</span>
