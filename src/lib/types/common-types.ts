@@ -128,5 +128,11 @@ export interface Country {
 export interface CMSYoutube {
 	title: string;
 	video_id: string;
-	thumbnail: DataImage;
+	thumbnail: {
+		data: {
+			attributes: {
+				url: string;
+			};
+		}[];
+	};
 }

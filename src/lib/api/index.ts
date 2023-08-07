@@ -7,7 +7,7 @@ export const CMS_URL = BASE_URL;
 
 export const apiClient = axios.create({
 	baseURL: `${BASE_URL}/api`,
-	timeout: 5000
+	timeout: 25000
 });
 
 export const graphqlClient = axios.create({

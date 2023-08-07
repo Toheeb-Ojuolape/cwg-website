@@ -26,7 +26,7 @@ export interface CWGAt30PageData {
 	founder_section: {
 		title: string;
 		content: string;
-		leadership: Leadership;
+		leadership: { data: Leadership };
 	};
 	former_ceo: FormerEmployeeCard;
 	random_content: string;
