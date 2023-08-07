@@ -35,7 +35,7 @@
 					</p>
 
 					<a
-						href={`/${pageData.header.action.slug}`}
+						href={`${pageData.header.action.slug}`}
 						class="flex items-center gap-2 header-link"
 					>
 						<span>{pageData.header.action.title}</span>
@@ -110,7 +110,7 @@
 					</p>
 					{#if pageData.section_two.action}
 						<a
-							href={`/${pageData.section_two.action.slug}`}
+							href={`${pageData.section_two.action.slug}`}
 							class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]"
 						>
 							<span>{pageData.section_two.action.title}</span>
@@ -133,7 +133,7 @@
 						{@html pageData.register_section.description}
 					</p>
 					<a
-						href={`/${pageData.register_section.action.slug}`}
+						href={`${pageData.register_section.action.slug}`}
 						class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]"
 					>
 						<span>{pageData.register_section.title}</span>
