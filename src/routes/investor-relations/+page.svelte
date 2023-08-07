@@ -206,7 +206,7 @@
 						{@html content.contact_us_info}
 					</div>
 
-					<a href="#!" class="flex items-center gap-2 mt-5 text-[18px]">
+					<a href="/contact-us" class="flex items-center gap-2 mt-5 text-[18px]">
 						<span>Contact us</span>
 						<div class="arrow-right">
 							<ArrowRightLong strokeClassName="stroke-blue" />
