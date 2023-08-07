@@ -59,7 +59,7 @@ export interface AnnualResultBreakdown {
 		attributes: {
 			title: StringOrNull;
 			percentage: StringOrNull;
-			hasIncreased: boolean;
+			status: 'increased' | 'decreased' | 'unchanged' | null;
 			comment: StringOrNull;
 		};
 	}[];

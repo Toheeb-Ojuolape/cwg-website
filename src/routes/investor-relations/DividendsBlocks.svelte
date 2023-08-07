@@ -6,12 +6,12 @@
 	export let data: AnnualResultBreakdown['data'];
 </script>
 
-{#each data as { attributes: { comment, hasIncreased, percentage, title } }}
+{#each data as { attributes: { comment, status, percentage, title } }}
 	<div class="dividend-block px-[20px] py-[40px]">
 		<div class="text-[24px] mb-[10px]">{title}</div>
 		<div class="flex gap-[5px] items-end">
 			<span class="text-[64px] leading-[1]">{percentage}</span>
-			<div class:decline={!hasIncreased}>
+			<div class:decline={status === 'decreased'}>
 				<DividendArrow />
 			</div>
 		</div>

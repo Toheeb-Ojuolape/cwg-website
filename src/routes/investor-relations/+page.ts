@@ -86,7 +86,7 @@ export const load: PageLoad = async (): Promise<{ pageData: InvestorRelationPage
                                     attributes {
                                         title
                                         percentage
-                                        hasIncreased
+                                        status
                                         comment
                                     }
                                 }
