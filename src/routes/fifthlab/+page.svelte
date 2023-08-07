@@ -92,7 +92,7 @@
 					</p>
 
 					<a
-						href={`/${fifthlab.sections[1].action?.slug}`}
+						href={fifthlab.sections[1].action?.slug}
 						class="flex items-center gap-2 header-link mt-5"
 					>
 						<span>{fifthlab.sections[1].action?.title}</span>
