@@ -79,7 +79,7 @@ export const load = (async (): Promise<{ partnersPage: PartnersPage }> => {
 							}
 							esteemed_client_section_title
 							esteemed_client_section_subtitle
-							esteemed_clients {
+							esteemed_clients(pagination: {pageSize: 100}) {
 								data {
 									attributes {
 										logo {

@@ -1,5 +1,5 @@
 export const OEM_PARTNERS_QUERY = `{
-    oemPartners {
+    oemPartners(pagination: {pageSize: 100}) {
         data {
             attributes {
                 name
