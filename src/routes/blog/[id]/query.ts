@@ -3,10 +3,18 @@ export const BLOG_QUERY = `query ($slug: String){
         data {
             attributes {
                 title
+                blog_categories {
+                    data {
+                        attributes {
+                            name
+                        }
+                    }
+                }
                 blog_author {
                     data {
                         attributes {
                             name
+                            description
                         }
                     }
                 }

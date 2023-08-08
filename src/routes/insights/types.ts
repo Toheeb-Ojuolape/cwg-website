@@ -46,7 +46,7 @@ export interface Blog {
 	attributes: {
 		title: string;
 		blog_author: {
-			data: { attributes: { name: string } };
+			data: { attributes: { name: string; description: string } };
 		};
 		cover_image: DataImage;
 		slug: string;

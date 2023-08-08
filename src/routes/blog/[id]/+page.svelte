@@ -14,7 +14,7 @@
 	});
 </script>
 
-<section class="section-container pt-10">
+<section class="section-container pt-10" class:pb-10={data.blog.related_stories.data.length < 1}>
 	<a href="/insights" class="back-arr">
 		<img src="/images/bright-blue-long-arrow.svg" alt="bright-blue-long-arrow" />
 	</a>
@@ -64,19 +64,29 @@
 	</div>
 
 	<div class="featured-img-wrapper py-[50px]">
-		<img src={CMS_URL + data.blog.cover_image.data?.attributes.url} alt="featured-img" />
+		<img
+			src={CMS_URL + data.blog.cover_image.data?.attributes.url}
+			class="w-full max-h-[500px] h-full"
+			alt="featured-img"
+		/>
 	</div>
 
-	<div class="featured-quoted-text bg-midnight-blue text-white px-[40px] py-[30px] text-[22px]">
-		{data.blog.preface}
-	</div>
+	{#if data.blog.preface}
+		<div
+			class="featured-quoted-text bg-midnight-blue text-white px-[40px] py-[30px] text-[22px]"
+		>
+			{data.blog.preface}
+		</div>
+	{/if}
 
-	<div class="featured-text-content text-[22px]">
-		<p class="my-5">{@html data.blog.content}</p>
-		<!-- <h2 class="text-bright-blue max-w-[603px] text-[32px] py-[20px] leading-[42px]">
+	{#if data.blog.content}
+		<div class="featured-text-content text-[22px]">
+			<p class="my-5">{@html data.blog.content}</p>
+			<!-- <h2 class="text-bright-blue max-w-[603px] text-[32px] py-[20px] leading-[42px]">
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 		</h2> -->
-	</div>
+		</div>
+	{/if}
 
 	<hr class="gray-line mt-[50px] mb-[30px]" />
 
@@ -84,23 +94,23 @@
 		<h3 class="text-bright-blue text-[24px] mb-[15px]">
 			About {data.blog.blog_author.data.attributes.name}
 		</h3>
-		<p class="text-[18px]">
-			CWG is a Pan-African systems solutions company which specializes in a wide array of IT
-			services including: communications, and integration services, infrastructure services,
-			managed and support services, cloud services, and software.
-		</p>
+		<div class="[&_p]:text-[18px]">
+			{@html data.blog.blog_author.data.attributes.description}
+		</div>
 	</div>
 </section>
 
-<section id="press" class="press-release pt-20 pb-10 section-container">
-	<div class="">
-		<h2 class="text-headline-2">Related stories</h2>
-	</div>
+{#if data.blog.related_stories.data.length > 0}
+	<section id="press" class="press-release pt-20 pb-10 section-container">
+		<div class="">
+			<h2 class="text-headline-2">Related stories</h2>
+		</div>
 
-	<div class="py-10">
-		<PressRelease newsThumbails={data.blog.related_stories.data} />
-	</div>
-</section>
+		<div class="py-10">
+			<PressRelease newsThumbails={data.blog.related_stories.data} />
+		</div>
+	</section>
+{/if}
 
 <style>
 	.blog-title {
