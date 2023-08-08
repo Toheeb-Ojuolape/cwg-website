@@ -38,31 +38,24 @@ export const load: PageLoad = async ({
                                     }
                                 }
                             }
-                            blogs {
+                            related_articles {
                                 data {
                                     attributes {
                                         title
-                                        cover_image {
+                                        image {
                                             data {
                                                 attributes {
                                                     url
                                                 }
                                             }
                                         }
-                                        blog_author {
+                                        read_duration_mins
+                                        uuid
+                                        article_date
+                                        article_type {
                                             data {
                                                 attributes {
-                                                    name
-                                                }
-                                            }
-                                        }
-                                        preface
-                                        slug
-                                        date_published
-                                        blog_categories {
-                                            data {
-                                                attributes {
-                                                    name
+                                                    title
                                                 }
                                             }
                                         }

@@ -117,6 +117,7 @@ export interface PressRelease {
 				};
 			};
 		};
+		related_articles: { data: PressRelease[] };
 	};
 }
 

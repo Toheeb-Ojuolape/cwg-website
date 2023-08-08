@@ -86,15 +86,17 @@
 	{/if}
 </section>
 
-<!-- <section id="press" class="press-release pt-20 pb-10 section-container">
-	<div class="">
-		<h2 class="text-headline-2">Related stories</h2>
-	</div>
+{#if content.related_articles.data.length > 0}
+	<section id="press" class="press-release pt-20 pb-10 section-container">
+		<div class="">
+			<h2 class="text-headline-2">Related stories</h2>
+		</div>
 
-	<div class="py-10">
-		<PressRelease />
-	</div>
-</section> -->
+		<div class="py-10">
+			<PressRelease newsThumbails={content.related_articles.data} />
+		</div>
+	</section>
+{/if}
 
 <style>
 	.blog-title {
