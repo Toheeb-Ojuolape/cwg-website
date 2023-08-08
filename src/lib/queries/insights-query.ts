@@ -210,6 +210,13 @@ export const INSIGHTS_PAGE_QUERY = `{
                     section_id
                     title
                     description
+                    image {
+                        data {
+                            attributes {
+                                url
+                            }
+                        }
+                    }
                     socials {
                         data {
                             attributes {

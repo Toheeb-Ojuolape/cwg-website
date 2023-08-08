@@ -13,7 +13,7 @@ export interface InsightsPageData {
 	magazine_section: InsightsSection & { content: { data: Magazine[] } };
 	newsroom_section: InsightsSection & { content: { data: Newsletter[] } };
 	media_section: InsightsSection & { content: { data: Media[] } };
-	send_newsletter_section: InsightsSection & { socials: SocialMediaHandles };
+	send_newsletter_section: InsightsSection & { socials: SocialMediaHandles; image: DataImage };
 }
 
 interface FeaturedBlog {

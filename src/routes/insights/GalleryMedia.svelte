@@ -1,85 +1,26 @@
-<script>
+<script lang="ts">
 	import { ArrowLeftCircle, ArrowRightCircle, Icon } from 'svelte-hero-icons';
+	import type { InsightsPageData } from './types';
+	import { CMS_URL } from '$lib/api';
 
-	let mediaDetails = [
-		{
-			image: '/images/cwg-30-img.jpg',
-			title: 'CWG @ 30',
-			pics: 100
-		},
-		{
-			image: '/images/staff.jpg',
-			title: 'Staff',
-			pics: 37
-		},
-		{
-			image: '/images/management.jpg',
-			title: 'Management',
-			pics: 20
-		},
-		{
-			image: '/images/board-of-directors.jpg',
-			title: 'Board of Directors',
-			pics: 17
-		},
-		{
-			image: '/images/buildings.jpg',
-			title: 'Buildings',
-			pics: 100
-		},
-		{
-			image: '/images/cwg-brand-kit.jpg',
-			title: 'CWG Brand Kit',
-			pics: 34
-		},
-		{
-			image: '/images/gallery-logos.jpg',
-			title: 'Logos',
-			pics: 10
-		},
-		{
-			image: '/images/csr.jpg',
-			title: 'CSR',
-			pics: 100
-		}
-	];
+	export let mediaDetails: InsightsPageData['media_section']['content']['data'];
 
 	let currentIndex = 0;
-	let sliderImages = [
-		{
-			image: '/images/working-woman-2.jpg'
-		},
-		{
-			image: '/images/working-team.jpg'
-		},
-		{
-			image: '/images/youth-bootcamp.jpg'
-		},
-		{
-			image: '/images/working-staff.jpg'
-		},
-		{
-			image: '/images/transportation.jpg'
-		}
-	];
+	let sliderImages: InsightsPageData['media_section']['content']['data'][0]['attributes']['content']['data'] =
+		[];
 
 	let showModal = false;
 	let selectedAlbumTitle = '';
 
-	const openModal = (/** @type {string} */ albumTitle) => {
+	const openModal = (albumTitle: string, content: typeof sliderImages) => {
 		selectedAlbumTitle = albumTitle;
 		showModal = true;
+		currentIndex = 0;
+		sliderImages = content;
 	};
 	const closeModal = () => {
 		showModal = false;
 	};
-
-	//   /**
-	//  * @param {number} index
-	//  */
-	//  function goToSlide(index) {
-	//     currentIndex = index;
-	//   }
 
 	function nextSlide() {
 		currentIndex = (currentIndex + 1) % sliderImages.length;
@@ -90,19 +31,19 @@
 	}
 </script>
 
-{#each mediaDetails as mediaDetail}
+{#each mediaDetails as { attributes: { content, title, uuid } }}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div
 		class="gallery-media-block hover-scale bg-pewter-blue text-white cursor-pointer"
-		on:click={() => openModal(mediaDetail.title)}
+		on:click={() => openModal(title, content.data)}
 	>
 		<div class="gallery-media-img relative">
-			<img src={mediaDetail.image} alt="media" class="bg-img" />
+			<img src={CMS_URL + content.data[0].attributes.url} alt="media" class="bg-img" />
 		</div>
 		<div class="gallery-media-details p-[20px]">
 			<div class="flex justify-between mb-[25px]">
-				<span class="text-[18px]">{mediaDetail.title}</span>
-				<span class="text-[14px]">{mediaDetail.pics}pcs</span>
+				<span class="text-[18px]">{title}</span>
+				<span class="text-[14px]">{content.data.length}pcs</span>
 			</div>
 			<button class="view-all-wrapper text-[14px] flex gap-[7px] px-[5px] pb-[5px]">
 				<span>View all</span>
@@ -116,11 +57,15 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<div class="modal">
 		<div class="slider">
-			{#each sliderImages as sliderImage, i (sliderImage.image)}
+			{#each sliderImages as { attributes: { url } }, i}
 				<div class="relative">
 					{#if i === currentIndex}
 						<div class="slider-img-wrapper">
-							<img src={sliderImage.image} alt="Slide" class="slider-img" />
+							<img
+								src={CMS_URL + url}
+								alt="Slide"
+								class="slider-img max-h-[536px] h-full"
+							/>
 						</div>
 						<div class="indicators">
 							{#each sliderImages as _, j}

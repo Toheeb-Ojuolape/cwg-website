@@ -150,27 +150,11 @@
 		<div class="tabs-wrapper">
 			<ul class="tabs bg-whitish-blue dark:bg-dark-highlight pt-2">
 				<div class="section-container flex gap-[50px]">
-					<li class:active={activeSection === 'perspectivesMain'}>
-						<a href="#perspectives">Perspectives</a>
-					</li>
-					<li class:active={activeSection === 'eventsMain'}>
-						<a href="#events">Events</a>
-					</li>
-					<li class:active={activeSection === 'pressMain'}>
-						<a href="#press">Press</a>
-					</li>
-					<li class:active={activeSection === 'podcastMain'}>
-						<a href="#podcast">Podcast</a>
-					</li>
-					<li class:active={activeSection === 'magazineMain'}>
-						<a href="#magazine">Magazine</a>
-					</li>
-					<li class="active" class:active={activeSection === 'newsroomMain'}>
-						<a href="#newsroom">Newsroom</a>
-					</li>
-					<li class:active={activeSection === 'media-galleryMain'}>
-						<a href="#media-gallery">Media/Gallery</a>
-					</li>
+					{#each content.insights_tab_list as { link_to_section, name }}
+						<li class:active={activeSection === `${link_to_section}Main`}>
+							<a href={`#${link_to_section}`}>{name}</a>
+						</li>
+					{/each}
 				</div>
 			</ul>
 		</div>
@@ -185,9 +169,9 @@
 			<BlogsBlocks list={content.blogs_section.blogs.data} />
 		</section>
 
-		<span id="events" class="dummy-id" />
+		<span id={content.event_section.section_id} class="dummy-id" />
 		<section
-			id="eventsMain"
+			id={`${content.event_section.section_id}Main`}
 			class="pt-20 pb-15 bg-midnight-blue text-white my-[10px] scrollspy"
 		>
 			<div class="section-container grid-content-box lg:gap-[50px]">
@@ -211,18 +195,24 @@
 				<div class="sm:mt-0 mt-[10px]">
 					<p class="text-[18px]">{@html content.event_section.right_content}</p>
 					<div class="mt-[20px] mb-[10px]">
-						<Cwg30Video />
+						<Cwg30Video
+							videoId={content.event_section.youtube_video_id}
+							thumbnail={content.event_section.video_thumbnail}
+						/>
 					</div>
 					<div class="text-[40px]">{content.event_section.right_caption}</div>
 				</div>
 			</div>
 		</section>
 
-		<span id="press" class="dummy-id" />
-		<section id="pressMain" class="press-release section-container py-10 scrollspy">
+		<span id={content.press_release_section.section_id} class="dummy-id" />
+		<section
+			id={`${content.press_release_section.section_id}Main`}
+			class="press-release section-container py-10 scrollspy"
+		>
 			<div class="">
-				<h2 class="text-headline-2">CWG Press</h2>
-				<p class="text-[18px]">The CWG team has made significant progress.</p>
+				<h2 class="text-headline-2">{content.press_release_section.title}</h2>
+				<p class="text-[18px]">{content.press_release_section.description}</p>
 			</div>
 
 			<div class="py-10">
@@ -233,22 +223,24 @@
 		<span id="podcast" class="dummy-id" />
 		<section id="podcastMain" class="leaders-conversations-section py-10 scrollspy">
 			<div class="section-container">
-				<h2 class="text-headline-2">Conversations with our leaders</h2>
+				<h2 class="text-headline-2">{content.podcast_section.title}</h2>
 			</div>
 
 			<div class="section-container py-10">
-				<LeadersConversations />
+				<LeadersConversations
+					conversationsThumbails={content.podcast_section.podcasts.data}
+				/>
 			</div>
 		</section>
 
-		<span id="magazine" class="dummy-id" />
-		<section id="magazineMain" class="digital-magazine-section py-10 scrollspy">
+		<span id={content.magazine_section.section_id} class="dummy-id" />
+		<section
+			id={`${content.magazine_section.section_id}Main`}
+			class="digital-magazine-section py-10 scrollspy"
+		>
 			<div class="section-container">
-				<h2 class="text-headline-2">Digital Edge Magazine</h2>
-				<p class="text-[18px]">
-					This is our yearly in-house publication, an additional platform to bond and
-					share our values.
-				</p>
+				<h2 class="text-headline-2">{content.magazine_section.title}</h2>
+				<p class="text-[18px]">{content.magazine_section.description}</p>
 			</div>
 
 			<div class="section-container py-10">
@@ -256,10 +248,13 @@
 			</div>
 		</section>
 
-		<span id="newsroom" class="dummy-id" />
-		<section id="newsroomMain" class="quarterly-newsletter-section pt-5 pb-10 scrollspy">
+		<span id={content.newsroom_section.section_id} class="dummy-id" />
+		<section
+			id={`${content.newsroom_section.section_id}Main`}
+			class="quarterly-newsletter-section pt-5 pb-10 scrollspy"
+		>
 			<div class="section-container">
-				<h2 class="text-headline-2">CWG Quarterly Newsletter</h2>
+				<h2 class="text-headline-2">{content.newsroom_section.title}</h2>
 			</div>
 
 			<div class="section-container py-10">
@@ -267,29 +262,35 @@
 			</div>
 		</section>
 
-		<span id="media-gallery" class="dummy-id" />
-		<section id="media-galleryMain" class="scrollspy section-container pt-10 pb-20">
+		<span id={content.media_section.section_id} class="dummy-id" />
+		<section
+			id={`${content.media_section.section_id}Main`}
+			class="scrollspy section-container pt-10 pb-20"
+		>
 			<div class="section-container">
-				<h2 class="text-headline-2">CWG Media/Gallery</h2>
+				<h2 class="text-headline-2">{content.media_section.title}</h2>
 			</div>
 			<div class="grid grid-cols-2 lg:grid-cols-4 gap-[50px] pt-10">
-				<GalleryMedia />
+				<GalleryMedia mediaDetails={content.media_section.content.data} />
 			</div>
 		</section>
 
 		<section class="bg-midnight-blue text-white relative mt-[20px] mb-[50px]">
 			<div class="sub-newsletter-section-bg">
-				<img src="/images/newsletter-man.jpg" alt="man" class="bg-img" />
+				<img
+					src={CMS_URL + content.send_newsletter_section.image.data?.attributes.url}
+					alt="man"
+					class="bg-img"
+				/>
 			</div>
 			<div class="section-container grid sm:grid-cols-2">
 				<div />
 				<div class="p-10">
 					<div class="max-w-[445px]">
-						<h2 class="text-[32px] mb-[5px]">Sign up for our newsletter</h2>
-						<div class="text-[15px]">
-							Enter your email to receive the latest news, updates and announcements
-							from CWG!
-						</div>
+						<h2 class="text-[32px] mb-[5px]">
+							{content.send_newsletter_section.title}
+						</h2>
+						<div class="text-[15px]">{content.send_newsletter_section.description}</div>
 					</div>
 
 					<form action="#" id="sub-newsletter-form" class="my-[20px]">
@@ -309,41 +310,11 @@
 					<div class="follow-us mt-[35px]">
 						<div class="text-[18px] mb-[10px]">Follow us</div>
 						<div class="flex gap-[10px]">
-							<a
-								href="https://twitter.com/cwgafrica"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="/images/twitter-1.svg" alt="twitter" />
-							</a>
-							<a
-								href="https://www.linkedin.com/company/cwgafrica/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="/images/linkedln-1.svg" alt="linkedin" />
-							</a>
-							<a
-								href="https://instagram.com/cwgafrica"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="/images/instagram-1.svg" alt="instagram" />
-							</a>
-							<a
-								href="https://www.facebook.com/CWGNigeria"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="/images/facebook-1.svg" alt="facebook" />
-							</a>
-							<a
-								href="https://www.youtube.com/CWGAfrica"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="/images/youtube-1.svg" alt="youtube" />
-							</a>
+							{#each content.send_newsletter_section.socials.data as { attributes: { icon, link, name } }}
+								<a href={link} target="_blank" rel="noopener noreferrer">
+									<img src={CMS_URL + icon.data?.attributes.url} alt={name} />
+								</a>
+							{/each}
 						</div>
 					</div>
 				</div>
