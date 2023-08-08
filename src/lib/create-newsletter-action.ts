@@ -6,18 +6,26 @@ import { CREATE_NEWSLETTER_MUTATION } from './mutations/create-newsletter';
 export const createNewsletterAction = async ({ request }: RequestEvent) => {
 	const formData = await request.formData();
 	const email = formData.get('email');
+	const alerts = formData.get('alerts');
 
 	if (typeof email !== 'string' || !email) {
 		return fail(400, { error: 'Enter a valid email address' });
 	}
 
 	try {
-		await graphqlClient({
+		const res = await graphqlClient({
 			data: {
 				query: CREATE_NEWSLETTER_MUTATION,
-				variables: { email }
+				variables: { email, alerts }
 			}
 		});
+
+		if (res.data.errors) {
+			return fail(400, {
+				error: res.data.errors.flatMap((e: { message: string }) => e.message).join(', ')
+			});
+		}
+
 		return { success: true };
 	} catch (error) {
 		const err = error as AxiosError;

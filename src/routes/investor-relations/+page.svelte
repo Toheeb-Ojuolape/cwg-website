@@ -2,22 +2,30 @@
 	import { CMS_URL } from '$lib/api';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import { format } from 'date-fns';
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 	import DividendsBlocks from './DividendsBlocks.svelte';
 	import PressRelease from './PressRelease.svelte';
 	import UpcomingEventBlock from './UpcomingEventBlock.svelte';
 	import YearlyDocumentsWrapper from './YearlyDocumentsWrapper.svelte';
 	import './investor-relations-styles.css';
+	import { enhance } from '$app/forms';
 
-	let userEmail = '';
 	let pressReleases = false;
 	let events = false;
 	let presentations = false;
 	let generalAnnouncements = false;
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	$: content = data.pageData;
+
+	$: alerts = {
+		pressReleases: pressReleases ?? undefined,
+		events: events ?? undefined,
+		presentations: presentations ?? undefined,
+		generalAnnouncements: generalAnnouncements ?? undefined
+	};
 </script>
 
 <main>
@@ -163,16 +171,27 @@
 					<h2 class="text-headline-2">Email Alerts and Contact Info</h2>
 				</div>
 
-				<form action="#" id="contact-subscription-form">
+				<form method="POST" id="contact-subscription-form" use:enhance>
 					<div class="form-group my-[25px]">
 						<input
 							type="email"
-							bind:value={userEmail}
 							placeholder="Email address"
 							class="inp-field"
+							id="email"
+							name="email"
 							required
 						/>
+						{#if form?.error}
+							<span class="text-error mt-1 block text-body-s">{form.error}</span>
+						{/if}
+
+						{#if form?.success}
+							<span class="text-light-green mt-1 block text-body-s"
+								>Successfully signed up</span
+							>
+						{/if}
 					</div>
+
 					<div class="form-group checkbox-group grid gap-[10px] max-w-[210px]">
 						<label class="cursor-pointer flex gap-[20px]">
 							<input type="checkbox" bind:checked={pressReleases} />
@@ -191,8 +210,10 @@
 							<span>General Announcements</span>
 						</label>
 					</div>
+					<input class="hidden" name="alerts" value={JSON.stringify(alerts)} />
 
 					<button
+						type="submit"
 						class="submit-btn text-bright-blue mt-[30px] px-[24px] py-[10px] text-[14px]"
 					>
 						Submit
