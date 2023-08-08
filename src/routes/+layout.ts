@@ -61,7 +61,7 @@ export const load = (async (): Promise<LayoutResponseData> => {
                         attributes {
                             title
                             key
-                              leaderships {
+                            leaderships {
                             data {
                               attributes {
                                 name
@@ -77,9 +77,17 @@ export const load = (async (): Promise<LayoutResponseData> => {
                                       }
                                     }
                                 }
-                                social_media {
-                                    link
-                                }
+                                social_media_handles {
+									name
+									link
+									icon {
+										data {
+											attributes {
+												url
+											}
+										}
+									}
+								}
                                 image {
                                   data {
                                     attributes {

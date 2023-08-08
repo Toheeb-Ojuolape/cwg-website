@@ -25,7 +25,11 @@ export interface DatumAttributes {
 	slug: string;
 	image: Image;
 	biography: string;
-	social_media: SocialMedia[] | null;
+	social_media_handles: {
+		name: string;
+		link: string;
+		icon: DataImage;
+	}[];
 	leadership_types: {
 		data: {
 			attributes: {
