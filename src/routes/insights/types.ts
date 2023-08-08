@@ -86,6 +86,9 @@ export interface Magazine {
 		uuid: string;
 		issue_date: string;
 		cover: DataImage;
+		file: DataImage;
+		description: string;
+		caption: string;
 	};
 }
 
