@@ -1,7 +1,17 @@
-<script>
+<script lang="ts">
+	import { format } from 'date-fns';
 	import PressRelease from '../../insights/PressRelease.svelte';
+	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
+	import { CMS_URL } from '$lib/api';
 
-	let featuredURL = 'https://cwg-website.netlify.app/insights/featured';
+	export let data: PageData;
+
+	let blogShareableLink = '';
+
+	onMount(function () {
+		blogShareableLink = window.location.href;
+	});
 </script>
 
 <section class="section-container pt-10">
@@ -10,37 +20,42 @@
 	</a>
 
 	<div class="tags flex flex-wrap gap-[15px] mt-[30px]">
-		<span>CWG</span>
-		<span>Hybrid</span>
-		<span>Event</span>
-		<span>Africa</span>
+		{#each data.blog.blog_categories.data as { attributes: { name } }}
+			<span>{name}</span>
+		{/each}
 	</div>
 
 	<h2 class="blog-title text-[48px] leading-[61px] sm:text-[64px] sm:leading-[77px]">
-		Building Resilience in the Hybrid World
+		{data.blog.title}
 	</h2>
 
 	<div class="text-[18px]">
-		By CWG • <span class="text-bright-blue">July 28 2022</span> • 3 mins
+		By {data.blog.blog_author.data.attributes.name} •
+		<span class="text-bright-blue"
+			>{data.blog.date_published
+				? format(new Date(data.blog.date_published), 'MMMM dd yyyy')
+				: ''}</span
+		>
+		<!-- • {3} mins -->
 	</div>
 
 	<div class="social-icon-wrapper flex gap-[20px] items-center my-[15px]">
 		<a
-			href={`https://www.facebook.com/sharer/sharer.php?u=${featuredURL}`}
+			href={`https://www.facebook.com/sharer/sharer.php?u=${blogShareableLink}`}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<img src="/images/share-facebook.svg" alt="facebook" class="w-[12px]" />
 		</a>
 		<a
-			href={`https://www.linkedin.com/shareArticle?url=${featuredURL}`}
+			href={`https://www.linkedin.com/shareArticle?url=${blogShareableLink}`}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<img src="/images/share-linkedin.svg" alt="linkedin" class="w-[24px]" />
 		</a>
 		<a
-			href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${featuredURL}`}
+			href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${blogShareableLink}`}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -49,64 +64,26 @@
 	</div>
 
 	<div class="featured-img-wrapper py-[50px]">
-		<img src="/images/featured-img.jpg" alt="featured-img" />
+		<img src={CMS_URL + data.blog.cover_image.data?.attributes.url} alt="featured-img" />
 	</div>
 
 	<div class="featured-quoted-text bg-midnight-blue text-white px-[40px] py-[30px] text-[22px]">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-		voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+		{data.blog.preface}
 	</div>
 
 	<div class="featured-text-content text-[22px]">
-		<p class="my-5">
-			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-			mollit anim id est laborum.
-		</p>
-		<h2 class="text-bright-blue max-w-[603px] text-[32px] py-[20px] leading-[42px]">
+		<p class="my-5">{@html data.blog.content}</p>
+		<!-- <h2 class="text-bright-blue max-w-[603px] text-[32px] py-[20px] leading-[42px]">
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-		</h2>
-		<p class="my-5">
-			Managing the Integrated Management System at CWG is a responsibility that involves the
-			implementation, maintenance, and continual improvement of our Business Continuity and
-			Information Security Management Systems.
-		</p>
-		<p class="my-5">
-			CWG is no doubt a resilient organization. Our existence and achievements in the last 30
-			years are proof of that. We rely on making intelligent and well-timed actions. Adversity
-			is a part of business, and how we overcome it shapes the success of our company and
-			workers. Disruption is everywhere, and businesses are facing it from all sides. However,
-			It is phenomenal how we have been able to protect against, reduce the likelihood of the
-			occurrence of, prepare for, respond to and recover from disruptions when they arise.
-		</p>
-		<p class="my-5">
-			Being with CWG for 14 years, I have seen how we have weathered the storms (internal and
-			external). From the global economic meltdown (The Great Recession) of 2008 to Occupy
-			Nigeria of 2012, End SARS and the global pandemic of 2020, to mention a few. Our
-			proactiveness contributed majorly to the success of our responses to these prominent
-			disruptions.
-		</p>
-		<p class="my-5">
-			It was easy for us to deliver our products and services during the 2020 pandemic because
-			we started hybrid operations months before the pandemic. We activated our Work From Home
-			Strategy days before government lockdowns kicked off in the countries where we operate.
-			That is how proactive we are.
-		</p>
-		<p class="my-5">
-			It is not a coincidence that we are the first to be certified by PECB to ISO22301:2019
-			in Nigeria. Our achievement of ISO 22301:2019, ISO/IEC 27001, and ISO 9001:2015
-			represents the commitment and dedication of the management and staff to differentiating
-			ourselves, our zeal to sustain quality at all fronts, our innovation initiatives, and
-			our ability to increase efficiency at all levels. I am proud to be a part of the success
-			story. The CWG team is unbeatable.
-		</p>
+		</h2> -->
 	</div>
 
 	<hr class="gray-line mt-[50px] mb-[30px]" />
 
 	<div class="about-cwg-section max-w-[690px]">
-		<h3 class="text-bright-blue text-[24px] mb-[15px]">About CWG</h3>
+		<h3 class="text-bright-blue text-[24px] mb-[15px]">
+			About {data.blog.blog_author.data.attributes.name}
+		</h3>
 		<p class="text-[18px]">
 			CWG is a Pan-African systems solutions company which specializes in a wide array of IT
 			services including: communications, and integration services, infrastructure services,
@@ -121,7 +98,7 @@
 	</div>
 
 	<div class="py-10">
-		<PressRelease />
+		<PressRelease newsThumbails={data.blog.related_stories.data} />
 	</div>
 </section>
 

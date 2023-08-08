@@ -52,6 +52,20 @@ export interface Blog {
 		slug: string;
 		date_published: string;
 		blog_categories: { data: BlogCategory[] };
+		content: string;
+		preface: string;
+		related_stories: { data: PressRelease[] };
+	};
+}
+
+export interface RelatedStory {
+	attributes: {
+		title: string;
+		image: DataImage;
+		article_date: string;
+		read_duration_mins: string;
+		uuid: string;
+		article_type: { data: { attributes: { title: string } } };
 	};
 }
 
