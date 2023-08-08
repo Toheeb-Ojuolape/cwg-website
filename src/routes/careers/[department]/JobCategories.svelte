@@ -41,11 +41,13 @@
 
 		<ul class="department-categories grid gap-[20px] text-[15px]">
 			<li class:active={$page.params.department === 'all'}>
-				<a href="/careers/all">All Departments ({jobs.length})</a>
+				<a href="/careers/all" data-sveltekit-noscroll>All Departments ({jobs.length})</a>
 			</li>
 			{#each departments as { attributes: { title, jobs, slug } }}
 				<li class:active={$page.params.department === slug}>
-					<a href={`/careers/${slug}`}>{title} ({jobs.data.length})</a>
+					<a href={`/careers/${slug}`} data-sveltekit-noscroll
+						>{title} ({jobs.data.length})</a
+					>
 				</li>
 			{/each}
 		</ul>
