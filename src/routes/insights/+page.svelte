@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import '../services/services-styles.css';
@@ -10,16 +10,17 @@
 	import PressRelease from './PressRelease.svelte';
 	import QuarterlyNewsletter from './QuarterlyNewsletter.svelte';
 	import GalleryMedia from './GalleryMedia.svelte';
+	import type { PageData } from './$types';
+	import { CMS_URL } from '$lib/api';
+	import { format } from 'date-fns';
 
 	let featuredURL = 'https://cwg-website.netlify.app/insights/featured';
 
 	let newsletterEmail = '';
 
-	// @ts-ignore
-	/**
-	 * @type {string | null}
-	 */
-	let activeSection;
+	let origin = '';
+
+	let activeSection: string | null;
 
 	// Function to update the active section based on scroll position
 	function updateActiveSection() {
@@ -46,22 +47,27 @@
 	onMount(() => {
 		updateActiveSection();
 		window.addEventListener('scroll', updateActiveSection);
+		origin = window.location.origin;
 	});
+
+	export let data: PageData;
+
+	$: content = data.insightsPage;
 </script>
 
 <main>
 	<header
 		class="header h-[300px] lg:h-[477px] text-white flex flex-col justify-center gap-[10px]"
+		style={`background-image: url('${CMS_URL}${content.header.background_image.data?.attributes.url}')`}
 	>
 		<div class="section-container">
 			<div class="header-text-wrapper">
-				<div class="header-top-title uppercase">Giant strides from CWG</div>
-				<h1 class="text-headline-2 header-title lg:text-headline-1">Insights from CWG</h1>
+				<div class="header-top-title uppercase">{content.header.headline}</div>
+				<h1 class="text-headline-2 header-title lg:text-headline-1">
+					{content.header.title}
+				</h1>
 
-				<p class="mb-9 header-title-desc">
-					Latest updates, press releases about CWG, conversations with our leaders and
-					other articles
-				</p>
+				<p class="mb-9 header-title-desc">{content.header.description}</p>
 			</div>
 		</div>
 	</header>
@@ -69,37 +75,37 @@
 	<div id="sections-wrapper">
 		<section class="bg-whitish-blue dark:bg-dark-highlight pt-10">
 			<div class="section-container">
-				<h2 class="section-title text-[40px] mb-[20px]">Featured</h2>
+				<h2 class="section-title text-[40px] mb-[20px]">
+					{content.featured_section_title}
+				</h2>
 
 				<div class="grid-content-box lg:gap-[50px] mb-15">
 					<div class="section-img-side relative">
 						<img
-							src="/images/featured-img.jpg"
+							src={CMS_URL +
+								content.featured_blog.data.attributes.cover_image.data?.attributes
+									.url}
 							alt="featured-img"
 							class="section-img"
 						/>
 					</div>
 					<div class="section-txt-side">
 						<div class="author-date text-[14px] mb-[10px]">
-							By CWG ∙ 3 mins ∙ May 18, 2022
+							By {content.featured_blog.data.attributes.blog_author.data.attributes
+								.name} ∙ 3 mins ∙ {format(
+								new Date(content.featured_blog.data.attributes.date_published),
+								'MMMM dd, yyyy'
+							)}
 						</div>
 						<div class="featured-section-title text-[32px] mb-[30px]">
-							Building Resilience in the Hybrid World
+							{content.featured_blog.data.attributes.title}
 						</div>
 						<p class="featured-txts my-[20px]">
-							Managing the Integrated Management System at CWG is a responsibility
-							that involves the implementation, maintenance, and continual improvement
-							of our Business Continuity and Information Security Management Systems.
-						</p>
-						<p class="featured-txts my-[20px]">
-							CWG is no doubt a resilient organization. Our existence and achievements
-							in the last 30 years are proof of that. We rely on making intelligent
-							and well-timed actions. Adversity is a part of business, and how we
-							overcome it shapes the success of our company and workers.
+							{content.featured_blog.data.attributes.preface}
 						</p>
 
 						<a
-							href="/insights/single-view"
+							href={`/blog/${content.featured_blog.data.attributes.slug}`}
 							class="flex gap-5 text-lg max-w-[170px] mt-[50px]"
 						>
 							<span>Read more</span>
@@ -115,21 +121,23 @@
 				<div class="section-container flex gap-[10px] items-center">
 					<span class="text-[14px] uppercase">share</span>
 					<a
-						href={`https://www.facebook.com/sharer/sharer.php?u=${featuredURL}`}
+						href={`https://www.facebook.com/sharer/sharer.php?u=${
+							origin + `/blog/${content.featured_blog.data.attributes.slug}`
+						}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<img src="/images/share-facebook.svg" alt="facebook" />
 					</a>
 					<a
-						href={`https://www.linkedin.com/shareArticle?url=${featuredURL}`}
+						href={`https://www.linkedin.com/shareArticle?url=${origin}/blog/${content.featured_blog.data.attributes.slug}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<img src="/images/share-linkedin.svg" alt="linkedin" />
 					</a>
 					<a
-						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${featuredURL}`}
+						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/blog/${content.featured_blog.data.attributes.slug}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -170,13 +178,11 @@
 		<span id="perspectives" class="dummy-id" />
 		<section id="perspectivesMain" class="section-container py-10 scrollspy">
 			<div class="section-header mb-10">
-				<h2 class="text-[32px]">Insights from our blog</h2>
-				<div class="text-[12px]">
-					Learn more about the latest trends transforming the industry.
-				</div>
+				<h2 class="text-[32px]">{content.blogs_section.title}</h2>
+				<div class="text-[12px]">{content.blogs_section.description}</div>
 			</div>
 
-			<BlogsBlocks />
+			<BlogsBlocks list={content.blogs_section.blogs.data} />
 		</section>
 
 		<span id="events" class="dummy-id" />
@@ -190,9 +196,12 @@
 						<img src="/images/cwg-30.svg" alt="cwg-30" class="30-img" />
 					</div>
 					<div class="text-[40px] mt-[30px] max-w-[555px]">
-						Celebrating 30 Years of positioning Africa to Maximise the Future
+						{content.event_section.left_title}
 					</div>
-					<a href="/insights/cwg-30" class="flex gap-5 text-lg max-w-[170px] mt-[80px]">
+					<a
+						href={`${content.event_section.left_link}`}
+						class="flex gap-5 text-lg max-w-[170px] mt-[80px]"
+					>
 						<span>Read more</span>
 						<div class="arrow-right">
 							<ArrowRightLong strokeClassName="stroke-white" />
@@ -200,17 +209,11 @@
 					</a>
 				</div>
 				<div class="sm:mt-0 mt-[10px]">
-					<p class="text-[18px]">
-						CWG started life through our founder Mr. Austin Okere as Computer Warehouse
-						Group in 1992, relatively unknown with normal challenges typical with new
-						business. Some 30 years later, CWG is now listed on the Nigerian Stock
-						Exchange, now operational in about 17 countries in the world and has
-						witnessed the emergence of 2 non-founder CEOs.
-					</p>
+					<p class="text-[18px]">{@html content.event_section.right_content}</p>
 					<div class="mt-[20px] mb-[10px]">
 						<Cwg30Video />
 					</div>
-					<div class="text-[40px]">Road to 30</div>
+					<div class="text-[40px]">{content.event_section.right_caption}</div>
 				</div>
 			</div>
 		</section>
@@ -223,7 +226,7 @@
 			</div>
 
 			<div class="py-10">
-				<PressRelease />
+				<PressRelease newsThumbails={content.press_release_section.articles.data} />
 			</div>
 		</section>
 
@@ -249,7 +252,7 @@
 			</div>
 
 			<div class="section-container py-10">
-				<DigitalMagazineWrapper />
+				<DigitalMagazineWrapper magazineCovers={content.magazine_section.content.data} />
 			</div>
 		</section>
 
@@ -260,7 +263,7 @@
 			</div>
 
 			<div class="section-container py-10">
-				<QuarterlyNewsletter />
+				<QuarterlyNewsletter newsletters={content.newsroom_section.content.data} />
 			</div>
 		</section>
 
@@ -351,7 +354,6 @@
 
 <style>
 	header.header {
-		background-image: url('/images/insights-banner.jpg');
 		background-size: inherit;
 		background-position: center 20%;
 	}

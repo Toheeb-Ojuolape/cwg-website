@@ -5,51 +5,16 @@
 
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
+	import type { InsightsPageData } from './types';
+	import { CMS_URL } from '$lib/api';
+	import { format } from 'date-fns';
 
 	let carousel: any;
 
+	export let newsThumbails: InsightsPageData['press_release_section']['articles']['data'];
+
 	let currentPageIndex = 0;
-	// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-	let newsThumbails = [
-		{
-			image: '/images/press-release-4.jpg',
-			caption:
-				'CWG Explains how ‘Work from Home’ Initiative Aided its 2020 Financial Results',
-			date: 'March 13, 2023',
-			readingLength: '3 mins'
-		},
-		{
-			image: '/images/press-release-5.jpg',
-			caption: 'Telecoms, FSI to hugely boost Nigerian Economy in 2021 – CWG’s business',
-			date: 'March 13, 2023',
-			readingLength: '4 mins'
-		},
-		{
-			image: '/images/press-release-6.jpg',
-			caption: 'CWG urges Corporate Organizations to invest in WFH Policies in 2021',
-			date: 'February 1, 2023',
-			readingLength: '3 mins'
-		},
-		{
-			image: '/images/press-release-1.jpg',
-			caption:
-				'COVID-19: CWG to leverage digital product offerings to boost financial fortune in 2021',
-			date: 'February 22, 2021',
-			readingLength: '3 mins'
-		},
-		{
-			image: '/images/press-release-2.jpg',
-			caption: 'How Smart utilities can power Nigeria’s future smart cities',
-			date: 'February 7, 2021',
-			readingLength: '4 mins'
-		},
-		{
-			image: '/images/press-release-3.jpg',
-			caption: 'CWG posts N11.8 billion revenue in 2020 financial year',
-			date: 'February 1, 2023',
-			readingLength: '3 mins'
-		}
-	];
+
 	let lastIndex = Math.round(newsThumbails.length / 3);
 
 	if (browser) {
@@ -72,7 +37,7 @@
 			particlesToShow={3}
 			particlesToScroll={2}
 		>
-			{#each newsThumbails as newsThumbail, index}
+			{#each newsThumbails as { attributes: { article_date, article_type, image, read_duration_mins, title } }, index}
 				<a
 					href="/"
 					class:Carousel__item1={index === 0}
@@ -80,14 +45,14 @@
 				>
 					<div class="bg-neon-blue pt-[70%] relative w-full mb-[30px] overflow-hidden">
 						<img
-							src={newsThumbail.image}
-							alt="News"
+							src={CMS_URL + image.data?.attributes.url}
+							alt={title}
 							class="h-full w-full object-cover transition-all duration-1000 group-hover:scale-110 bg-img"
 						/>
 					</div>
 					<div class="flex flex-col sm:flex-row gap-7 mb-9">
 						<h6 class="text-headline-6 sm:min-h-[93px] flex-1">
-							{newsThumbail.caption}
+							{title}
 						</h6>
 						<ArrowRightLong
 							fillClassName="fill-midnight-blue dark:fill-white"
@@ -95,8 +60,11 @@
 						/>
 					</div>
 					<p class="text-body-l">
-						<span class="text-bright-blue">Press release</span> • {newsThumbail.date} •
-						<span class="text-bright-blue">{newsThumbail.readingLength}</span>
+						<span class="text-bright-blue"
+							>{article_type.data?.attributes.title ?? ''}</span
+						>
+						• {article_date ? format(new Date(article_date), 'MMMM dd, yyyy') : ''} •
+						<span class="text-bright-blue">{read_duration_mins} mins</span>
 					</p>
 				</a>
 			{/each}

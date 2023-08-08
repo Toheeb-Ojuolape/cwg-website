@@ -1,96 +1,89 @@
 <script lang="ts">
-    import { browser } from '$app/environment';
+	import { browser } from '$app/environment';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
-    
-    // @ts-ignore
+
+	// @ts-ignore
 	import Carousel from 'svelte-carousel';
+	import type { InsightsPageData } from './types';
+	import { CMS_URL } from '$lib/api';
+	import { format } from 'date-fns';
 
-    let carousel: any;
+	let carousel: any;
+	export let newsletters: InsightsPageData['newsroom_section']['content']['data'];
 
-    let currentPageIndex = 0;
-    let newsletters = [
-        {
-            image: '/images/newsletter-thumbnail-1.jpg',
-            caption: 'Road to 30: Creating Sustainable Value Through Technology',
-            date: 'Aug 28, 2022'
-        },
-        {
-            image: '/images/newsletter-thumbnail-2.jpg',
-            caption: 'VOL 2 – Positioning Africa to Maximize the Future',
-            date: 'May 25, 2022'
-        },
-        {
-            image: '/images/newsletter-thumbnail-3.jpg',
-            caption: 'VOL 1 – Connecting the World From Africa',
-            date: 'May 18, 2022'
-        },
-    ]
-    let lastIndex = Math.round(newsletters.length / 3);
+	let currentPageIndex = 0;
+	let lastIndex = Math.round(newsletters.length / 3);
 
-    if (browser) {
-        lastIndex = Math.round(([...newsletters].length + 1) / 3);
-    }
+	if (browser) {
+		lastIndex = Math.round(([...newsletters].length + 1) / 3);
+	}
 
-    function onPageChange(event: { detail: number }) {
-        currentPageIndex = event.detail;
-    }
+	function onPageChange(event: { detail: number }) {
+		currentPageIndex = event.detail;
+	}
 </script>
 
 <div class="relative">
-    {#if browser}
-        <Carousel
-            on:pageChange={onPageChange}
-            bind:this={carousel}
-            arrows={false}
-            infinite={false}
-            dots={false}
-            particlesToShow={3}
-            particlesToScroll={2}
-        >
-            {#each newsletters as newsletter}
-                <div class="slider bg-midnight-blue relative pb-10">
-                    <!-- svelte-ignore a11y-click-events-have-key-events -->
-                    <div class="slider-img-wrapper">
-                        <img src={newsletter.image} alt="Slide" class="slider-img" />
-                    </div>
-                    <div class="slider-caption p-5">{newsletter.caption}</div>
-                    <div class="newsletter-date text-[14px] text-pewter-blue">{newsletter.date}</div>
-                </div>
-            {/each}
+	{#if browser}
+		<Carousel
+			on:pageChange={onPageChange}
+			bind:this={carousel}
+			arrows={false}
+			infinite={false}
+			dots={false}
+			particlesToShow={3}
+			particlesToScroll={2}
+		>
+			{#each newsletters as { attributes: { date, image, title, uuid } }}
+				<div class="slider bg-midnight-blue relative pb-10">
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<div class="slider-img-wrapper">
+						<img
+							src={CMS_URL + image.data?.attributes.url}
+							alt="Slide"
+							class="slider-img"
+						/>
+					</div>
+					<div class="slider-caption p-5">{title}</div>
+					<div class="newsletter-date text-[14px] text-pewter-blue">
+						{date ? format(new Date(date), 'MMM dd, yyyy') : ''}
+					</div>
+				</div>
+			{/each}
 
-            <div class="" />
-            <div class="" />
-        </Carousel>
+			<div class="" />
+			<div class="" />
+		</Carousel>
 
-        <button
-            on:click={() => carousel.goToPrev()}
-            class={`h-11 w-11 flex items-center justify-center rounded-full absolute left-5 lg:left-9 top-[35%] ${
-                currentPageIndex === 0 ? 'bg-white/10' : 'bg-midnight-blue'
-            }`}
-            disabled={currentPageIndex === 0}
-        >
-            <div class="rotate-180">
-                <ArrowRightSolidIcon className="fill-white" />
-            </div>
-        </button>
+		<button
+			on:click={() => carousel.goToPrev()}
+			class={`h-11 w-11 flex items-center justify-center rounded-full absolute left-5 lg:left-9 top-[35%] ${
+				currentPageIndex === 0 ? 'bg-white/10' : 'bg-midnight-blue'
+			}`}
+			disabled={currentPageIndex === 0}
+		>
+			<div class="rotate-180">
+				<ArrowRightSolidIcon className="fill-white" />
+			</div>
+		</button>
 
-        <button
-            on:click={() => carousel.goToNext()}
-            class={`h-11 w-11 flex items-center justify-center rounded-full absolute right-4 lg:right-8 top-[35%] ${
-                lastIndex === currentPageIndex
-                    ? 'bg-black-800 dark:bg-white/10'
-                    : 'bg-midnight-blue'
-            }`}
-            disabled={lastIndex === currentPageIndex}
-        >
-            <ArrowRightSolidIcon className="fill-white" />
-        </button>
-    {/if}
+		<button
+			on:click={() => carousel.goToNext()}
+			class={`h-11 w-11 flex items-center justify-center rounded-full absolute right-4 lg:right-8 top-[35%] ${
+				lastIndex === currentPageIndex
+					? 'bg-black-800 dark:bg-white/10'
+					: 'bg-midnight-blue'
+			}`}
+			disabled={lastIndex === currentPageIndex}
+		>
+			<ArrowRightSolidIcon className="fill-white" />
+		</button>
+	{/if}
 </div>
 
 <style>
-    .Carousel__item1 {
+	.Carousel__item1 {
 		margin-left: 16px;
 	}
 
@@ -106,39 +99,39 @@
 		}
 	}
 
-    @media(max-width: 640px) {
-        .text-headline-6 {
-            font-size: 20px;
-        }
-    }
+	@media (max-width: 640px) {
+		.text-headline-6 {
+			font-size: 20px;
+		}
+	}
 
-    .slider {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-    .slider-img-wrapper {
-        width: 100%;
-        height: 300px;
-        position: relative;
-        cursor: pointer;
-    }
-    img.slider-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  
-    .slider-caption {
-      width: 100%;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-    }
+	.slider {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	.slider-img-wrapper {
+		width: 100%;
+		height: 300px;
+		position: relative;
+		cursor: pointer;
+	}
+	img.slider-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 
-    .newsletter-date {
-        position: absolute;
-        bottom: 1.25rem;
-        left: 1.25rem;
-    }
+	.slider-caption {
+		width: 100%;
+		color: white;
+		font-size: 18px;
+		cursor: pointer;
+	}
+
+	.newsletter-date {
+		position: absolute;
+		bottom: 1.25rem;
+		left: 1.25rem;
+	}
 </style>

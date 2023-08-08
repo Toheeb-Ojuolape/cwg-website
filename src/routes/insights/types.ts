@@ -22,6 +22,7 @@ interface FeaturedBlog {
 			title: string;
 			preface: string;
 			slug: string;
+			date_published: string;
 			blog_author: {
 				data: { attributes: { name: string } };
 			};
