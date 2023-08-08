@@ -30,7 +30,15 @@ export const load: PageLoad = async ({
                                     }
                                 }
                             }
-                            blog {
+                            author {
+                                data {
+                                    attributes {
+                                        name
+                                        description
+                                    }
+                                }
+                            }
+                            blogs {
                                 data {
                                     attributes {
                                         title

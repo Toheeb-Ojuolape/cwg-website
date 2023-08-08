@@ -26,7 +26,8 @@
 	</h2>
 
 	<div class="text-[18px]">
-		By CWG • <span class="text-bright-blue"
+		By {content.author.data.attributes.name} •
+		<span class="text-bright-blue"
 			>{content.article_date
 				? format(new Date(content.article_date), 'MMMM dd yyyy')
 				: ''}</span
@@ -72,16 +73,17 @@
 		</div>
 	{/if}
 
-	<hr class="gray-line mt-[50px] mb-[30px]" />
+	{#if content.author.data.attributes.description}
+		<hr class="gray-line mt-[50px] mb-[30px]" />
 
-	<div class="about-cwg-section max-w-[690px]">
-		<h3 class="text-bright-blue text-[24px] mb-[15px]">About CWG</h3>
-		<p class="text-[18px]">
-			CWG is a Pan-African systems solutions company which specializes in a wide array of IT
-			services including: communications, and integration services, infrastructure services,
-			managed and support services, cloud services, and software.
-		</p>
-	</div>
+		<div class="about-cwg-section max-w-[690px]">
+			<h3 class="text-bright-blue text-[24px] mb-[15px]">
+				About {content.author.data.attributes.name}
+			</h3>
+
+			<div class="[&_p]:text-[18px]">{@html content.author.data.attributes.description}</div>
+		</div>
+	{/if}
 </section>
 
 <!-- <section id="press" class="press-release pt-20 pb-10 section-container">

@@ -109,6 +109,7 @@ export interface PressRelease {
 		article_date: StringOrNull;
 		read_duration_mins: string;
 		uuid: string;
+		author: { data: { attributes: { name: string; description: string } } };
 		article_type: {
 			data: {
 				attributes: {
