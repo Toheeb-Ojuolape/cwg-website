@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="contact-block-wrapper my-10">
-			<div class="contact-block bg-whitish-blue grid md:grid-cols-2">
+			<div class="contact-block bg-whitish-blue dark:bg-dark-highlight grid md:grid-cols-2">
 				<div class="contact-img-side">
 					<img src="/images/head-office.jpg" alt="office" />
 				</div>
@@ -54,7 +54,10 @@
 				</div>
 			</div>
 
-			<div id="abuja" class="contact-block bg-whitish-blue grid md:grid-cols-2">
+			<div
+				id="abuja"
+				class="contact-block bg-whitish-blue dark:bg-dark-highlight grid md:grid-cols-2"
+			>
 				<div class="contact-text-side px-[30px] py-[40px] sm:px-[50px] sm:py-[70px]">
 					<div class="max-w-[450px] m-auto">
 						<div class="contact-block-title text-[24px] mb-[15px]">CWG Abuja</div>
@@ -84,7 +87,10 @@
 				</div>
 			</div>
 
-			<div id="port-harcourt" class="contact-block bg-whitish-blue grid md:grid-cols-2">
+			<div
+				id="port-harcourt"
+				class="contact-block bg-whitish-blue dark:bg-dark-highlight grid md:grid-cols-2"
+			>
 				<div class="contact-text-side px-[30px] py-[40px] sm:px-[50px] sm:py-[70px]">
 					<div class="max-w-[450px] m-auto">
 						<div class="contact-block-title text-[24px] mb-[15px]">
@@ -124,7 +130,9 @@
 		</div>
 
 		<div id="ghana" class="contact-block-wrapper my-10">
-			<div class="contact-block bg-whitish-blue grid md:grid-cols-2 mb-[20px]">
+			<div
+				class="contact-block bg-whitish-blue dark:bg-dark-highlight grid md:grid-cols-2 mb-[20px]"
+			>
 				<div class="contact-img-side">
 					<img src="/images/ghana-office.jpg" alt="office" />
 				</div>
@@ -160,7 +168,10 @@
 				</div>
 			</div>
 
-			<div id="cameroon" class="contact-block bg-whitish-blue grid md:grid-cols-2 mb-[20px]">
+			<div
+				id="cameroon"
+				class="contact-block bg-whitish-blue dark:bg-dark-highlight grid md:grid-cols-2 mb-[20px]"
+			>
 				<div class="contact-img-side">
 					<img src="/images/cameroon-office.jpg" alt="office" />
 				</div>
@@ -195,7 +206,10 @@
 				</div>
 			</div>
 
-			<div id="uganda" class="contact-block bg-whitish-blue grid md:grid-cols-2 mb-[20px]">
+			<div
+				id="uganda"
+				class="contact-block bg-whitish-blue dark:bg-dark-highlight grid md:grid-cols-2 mb-[20px]"
+			>
 				<div class="contact-img-side">
 					<img src="/images/uganda-office.jpg" alt="office" />
 				</div>
