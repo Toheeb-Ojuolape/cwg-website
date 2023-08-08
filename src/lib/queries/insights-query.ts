@@ -22,6 +22,7 @@ export const INSIGHTS_PAGE_QUERY = `{
                             preface
                             slug
                             date_published
+                            read_duration_mins
                             blog_author {
                                 data {
                                     attributes {
@@ -65,6 +66,7 @@ export const INSIGHTS_PAGE_QUERY = `{
                                         }
                                     }
                                 }
+                                read_duration_mins
                                 slug
                                 date_published
                                 blog_categories {

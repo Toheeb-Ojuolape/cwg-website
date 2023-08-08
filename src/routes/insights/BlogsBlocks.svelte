@@ -18,7 +18,7 @@
 </script>
 
 <div class="blogs-blocks-wrapper grid sm:grid-cols-3 lg:grid-cols-4 gap-[30px] lg:gap-[50px]">
-	{#each list as { attributes: { blog_author, blog_categories, cover_image, date_published, slug, title } }}
+	{#each list as { attributes: { blog_author, blog_categories, cover_image, date_published, slug, title, read_duration_mins } }}
 		<a href={`/blog/${slug}`} class="blog-block">
 			<div class="blog-block-img-wrapper relative">
 				<img src={CMS_URL + cover_image.data?.attributes.url} alt={title} class="bg-img" />
@@ -38,7 +38,10 @@
 					By {blog_author.data.attributes.name} ∙ {format(
 						new Date(date_published),
 						'MMMM dd, yyyy'
-					)} ∙ 3 mins
+					)}
+					{#if read_duration_mins}
+						∙ {read_duration_mins} mins
+					{/if}
 				</div>
 			</div>
 		</a>

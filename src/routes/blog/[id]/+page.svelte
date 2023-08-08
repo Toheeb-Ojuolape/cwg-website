@@ -36,7 +36,9 @@
 				? format(new Date(data.blog.date_published), 'MMMM dd yyyy')
 				: ''}</span
 		>
-		<!-- • {3} mins -->
+		{#if data.blog.read_duration_mins}
+			• {data.blog.read_duration_mins} mins
+		{/if}
 	</div>
 
 	<div class="social-icon-wrapper flex gap-[20px] items-center my-[15px]">

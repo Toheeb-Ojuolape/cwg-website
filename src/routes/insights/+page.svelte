@@ -92,7 +92,8 @@
 					<div class="section-txt-side">
 						<div class="author-date text-[14px] mb-[10px]">
 							By {content.featured_blog.data.attributes.blog_author.data.attributes
-								.name} ∙ 3 mins ∙ {format(
+								.name} ∙ {content.featured_blog.data.attributes.read_duration_mins} mins
+							∙ {format(
 								new Date(content.featured_blog.data.attributes.date_published),
 								'MMMM dd, yyyy'
 							)}

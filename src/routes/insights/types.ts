@@ -23,6 +23,7 @@ interface FeaturedBlog {
 			preface: string;
 			slug: string;
 			date_published: string;
+			read_duration_mins: number | null;
 			blog_author: {
 				data: { attributes: { name: string } };
 			};
@@ -51,6 +52,7 @@ export interface Blog {
 		cover_image: DataImage;
 		slug: string;
 		date_published: string;
+		read_duration_mins: number | null;
 		blog_categories: { data: BlogCategory[] };
 		content: string;
 		preface: string;

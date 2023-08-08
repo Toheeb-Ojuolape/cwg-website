@@ -25,6 +25,7 @@ export const BLOG_QUERY = `query ($slug: String){
                         }
                     }
                 }
+                read_duration_mins
                 content
                 preface
                 slug
