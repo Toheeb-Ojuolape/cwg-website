@@ -1,4 +1,5 @@
 import { graphqlClient } from '$lib/api';
+import { MORE_ABOUT_US_QUERY } from '$lib/queries/more-about-us-query';
 import type { MissionPage } from '$lib/types/mission-page';
 
 export const load = async (): Promise<{ missionPage: MissionPage }> => {
@@ -21,6 +22,7 @@ export const load = async (): Promise<{ missionPage: MissionPage }> => {
                                     }
                                 }
                             }
+                            ${MORE_ABOUT_US_QUERY}
                             mission_vision_section {
                                 title
                                 content

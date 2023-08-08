@@ -1,3 +1,5 @@
+import type { PageMoreAboutUs } from './common-types';
+
 export interface AboutPage {
 	journey_section_title: string;
 	pan_african_title: string;
@@ -9,6 +11,7 @@ export interface AboutPage {
 	explore_cwg: ExploreCwg;
 	history_section: HistorySection;
 	journey_section_table: JourneySectionTable[];
+	more_about_us: PageMoreAboutUs;
 }
 
 export interface Celebrating30_Section {

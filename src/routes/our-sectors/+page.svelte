@@ -7,8 +7,14 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	const { header, sectors, sectors_section_title, policies_section_title, policies } =
-		data.sectorsPage;
+	const {
+		header,
+		sectors,
+		sectors_section_title,
+		policies_section_title,
+		policies,
+		more_about_us
+	} = data.sectorsPage;
 </script>
 
 <main>
@@ -48,7 +54,7 @@
 		</div>
 	</section>
 
-	<MoreAboutUs />
+	<MoreAboutUs content={more_about_us} />
 </main>
 
 <style>

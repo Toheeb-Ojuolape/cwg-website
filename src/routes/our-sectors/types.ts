@@ -1,4 +1,4 @@
-import type { DataImage } from '$lib/types/common-types';
+import type { DataImage, PageMoreAboutUs } from '$lib/types/common-types';
 
 export interface SectorsPage {
 	header: Header;
@@ -6,6 +6,7 @@ export interface SectorsPage {
 	sectors: Sectors;
 	policies_section_title: string;
 	policies: Policies;
+	more_about_us: PageMoreAboutUs;
 }
 
 export interface Header {

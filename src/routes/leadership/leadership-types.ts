@@ -1,4 +1,4 @@
-import type { DataImage } from '$lib/types/common-types';
+import type { DataImage, PageMoreAboutUs } from '$lib/types/common-types';
 
 export interface LeadershipType {
 	attributes: LeadershipTypeAttributes;
@@ -63,6 +63,7 @@ export interface LeadershipPage {
 
 export interface Attributes {
 	header: Header;
+	more_about_us: PageMoreAboutUs;
 }
 
 export interface Header {

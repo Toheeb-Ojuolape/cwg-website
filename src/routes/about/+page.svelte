@@ -49,7 +49,7 @@
 
 	<Celebrating30Years data={about.celebrating_30_section} />
 
-	<MoreAboutUs />
+	<MoreAboutUs content={about.more_about_us} />
 </div>
 
 <style>

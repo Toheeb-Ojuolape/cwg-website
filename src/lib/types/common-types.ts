@@ -139,3 +139,12 @@ export interface CMSYoutube {
 		}[];
 	};
 }
+
+export interface PageMoreAboutUs {
+	title: StringOrNull;
+	cards: {
+		title: StringOrNull;
+		slug: StringOrNull;
+		image: DataImage;
+	}[];
+}

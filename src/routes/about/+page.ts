@@ -1,4 +1,5 @@
 import { graphqlClient } from '$lib/api';
+import { MORE_ABOUT_US_QUERY } from '$lib/queries/more-about-us-query';
 import type { AboutPage } from '$lib/types/about-page';
 import type { PageLoad } from './$types';
 
@@ -12,6 +13,7 @@ export const load = (async (): Promise<{ aboutPage: AboutPage }> => {
                         journey_section_title
                         pan_african_title
                         pan_african_content
+                        ${MORE_ABOUT_US_QUERY}
                         pan_african_link {
                             title
                             slug
@@ -93,7 +95,8 @@ export const load = (async (): Promise<{ aboutPage: AboutPage }> => {
                         }
                     }
                 }
-            }}`
+            }
+        }`
 		}
 	});
 

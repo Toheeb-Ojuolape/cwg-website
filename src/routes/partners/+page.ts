@@ -1,4 +1,5 @@
 import { graphqlClient } from '$lib/api';
+import { MORE_ABOUT_US_QUERY } from '$lib/queries/more-about-us-query';
 import type { PartnersPage } from '$lib/types/partners-page';
 import type { PageLoad } from './$types';
 
@@ -23,6 +24,7 @@ export const load = (async (): Promise<{ partnersPage: PartnersPage }> => {
 									}
 								}
 							}
+							${MORE_ABOUT_US_QUERY}
 							section_one_content
 							section_one_images {
 								data {

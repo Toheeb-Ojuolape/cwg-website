@@ -1,4 +1,4 @@
-import type { DataImage, StringOrNull } from './common-types';
+import type { DataImage, PageMoreAboutUs, StringOrNull } from './common-types';
 
 export interface MissionPage {
 	header: Header;
@@ -16,6 +16,7 @@ export interface MissionPage {
 	why_cwg_section_carousel: ManifestoSection[];
 	policy_section_title: string;
 	policy_section_items: CultureAttributesSectionImage;
+	more_about_us: PageMoreAboutUs;
 }
 
 export interface CultureAttributesSectionAccordion {

@@ -1,3 +1,5 @@
+import type { PageMoreAboutUs } from './common-types';
+
 export interface PartnersPage {
 	header: Header;
 	section_one_content: string;
@@ -11,6 +13,7 @@ export interface PartnersPage {
 	esteemed_client_section_title: string;
 	esteemed_client_section_subtitle: string;
 	esteemed_clients: EsteemedClients;
+	more_about_us: PageMoreAboutUs;
 }
 
 export interface EsteemedClients {

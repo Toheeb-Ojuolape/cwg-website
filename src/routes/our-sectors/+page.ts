@@ -1,4 +1,5 @@
 import { graphqlClient } from '$lib/api';
+import { MORE_ABOUT_US_QUERY } from '$lib/queries/more-about-us-query';
 import type { PageLoad } from './$types';
 import type { SectorsPage } from './types';
 
@@ -23,6 +24,7 @@ export const load: PageLoad = async (): Promise<{ sectorsPage: SectorsPage }> =>
                                 }
                                 sub_headline
                             }
+                            ${MORE_ABOUT_US_QUERY}
                             sectors_section_title
                             sectors {
                                 data {

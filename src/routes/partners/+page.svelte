@@ -115,7 +115,7 @@
 		<!--=== end of Esteemed-Clients Section ===-->
 
 		<!--=== More-About-Us Section ===-->
-		<MoreAboutUs />
+		<MoreAboutUs content={partnersPage.more_about_us} />
 		<!--=== end of More-About-Us Section ===-->
 	</div>
 </main>

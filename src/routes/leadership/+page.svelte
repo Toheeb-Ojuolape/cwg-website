@@ -60,7 +60,7 @@
 		</div>
 	</section>
 
-	<MoreAboutUs />
+	<MoreAboutUs content={leadershipPage.attributes.more_about_us} />
 </div>
 
 <style>

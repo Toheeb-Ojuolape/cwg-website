@@ -25,7 +25,8 @@
 			manifesto_section,
 			our_values_section,
 			why_cwg_section_carousel,
-			why_cwg_section_image
+			why_cwg_section_image,
+			more_about_us
 		}
 	} = data;
 </script>
@@ -57,7 +58,7 @@
 		image={culture_attributes_section_image}
 	/>
 	<WhyCwgSection image={why_cwg_section_image} carousel={why_cwg_section_carousel} />
-	<MoreAboutUs />
+	<MoreAboutUs content={more_about_us} />
 </div>
 
 <style>
