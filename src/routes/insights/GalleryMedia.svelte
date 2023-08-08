@@ -61,11 +61,7 @@
 				<div class="relative">
 					{#if i === currentIndex}
 						<div class="slider-img-wrapper">
-							<img
-								src={CMS_URL + url}
-								alt="Slide"
-								class="slider-img max-h-[536px] h-full"
-							/>
+							<img src={CMS_URL + url} alt="Slide" class="slider-img" />
 						</div>
 						<div class="indicators">
 							{#each sliderImages as _, j}
