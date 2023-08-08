@@ -3,16 +3,23 @@
 	import PressRelease from '../../insights/PressRelease.svelte';
 	import type { PageData } from './$types';
 	import { CMS_URL } from '$lib/api';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
 
+	let locationHref = '';
+
 	$: content = data.article;
+
+	onMount(function () {
+		locationHref = window.location.href;
+	});
 </script>
 
-<section class="section-container pt-10">
-	<a href="/insights" class="back-arr">
+<section class="section-container pt-10 pb-10">
+	<button on:click={() => history.back()} class="back-arr">
 		<img src="/images/bright-blue-long-arrow.svg" alt="bright-blue-long-arrow" />
-	</a>
+	</button>
 
 	<h2 class="blog-title text-[48px] leading-[61px] sm:text-[64px] sm:leading-[77px]">
 		{content.title}
@@ -29,21 +36,21 @@
 
 	<div class="social-icon-wrapper flex gap-[20px] items-center my-[15px]">
 		<a
-			href={`https://www.facebook.com/sharer/sharer.php?u=${window.location}`}
+			href={`https://www.facebook.com/sharer/sharer.php?u=${locationHref}`}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<img src="/images/share-facebook.svg" alt="facebook" class="w-[12px]" />
 		</a>
 		<a
-			href={`https://www.linkedin.com/shareArticle?url=${window.location}`}
+			href={`https://www.linkedin.com/shareArticle?url=${locationHref}`}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
 			<img src="/images/share-linkedin.svg" alt="linkedin" class="w-[24px]" />
 		</a>
 		<a
-			href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${window.location}`}
+			href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${locationHref}`}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
@@ -54,7 +61,7 @@
 	<div class="featured-img-wrapper py-[50px]">
 		<img
 			src={CMS_URL + content.image.data?.attributes.url}
-			class="w-full aspect-auto"
+			class="w-full aspect-auto object-cover max-h-[500px] h-full"
 			alt="featured-img"
 		/>
 	</div>

@@ -37,9 +37,9 @@
 			particlesToShow={3}
 			particlesToScroll={2}
 		>
-			{#each newsThumbails as { attributes: { article_date, article_type, image, read_duration_mins, title } }, index}
+			{#each newsThumbails as { attributes: { article_date, article_type, image, read_duration_mins, title, uuid } }, index}
 				<a
-					href="/"
+					href={`/press-release/${uuid}`}
 					class:Carousel__item1={index === 0}
 					class="block group w-[calc(100%/3)] ml-[72px]"
 				>

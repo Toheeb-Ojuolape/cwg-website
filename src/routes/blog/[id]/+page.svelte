@@ -15,9 +15,9 @@
 </script>
 
 <section class="section-container pt-10" class:pb-10={data.blog.related_stories.data.length < 1}>
-	<a href="/insights" class="back-arr">
+	<button on:click={() => history.back()} class="back-arr">
 		<img src="/images/bright-blue-long-arrow.svg" alt="bright-blue-long-arrow" />
-	</a>
+	</button>
 
 	<div class="tags flex flex-wrap gap-[15px] mt-[30px]">
 		{#each data.blog.blog_categories.data as { attributes: { name } }}

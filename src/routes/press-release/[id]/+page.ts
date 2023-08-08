@@ -1,8 +1,11 @@
 import { graphqlClient } from '$lib/api/index.js';
 import type { PressRelease } from '$lib/types/common-types.js';
 import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
-export const load = async ({ params }): Promise<{ article: PressRelease['attributes'] }> => {
+export const load: PageLoad = async ({
+	params
+}): Promise<{ article: PressRelease['attributes'] }> => {
 	const res = await graphqlClient({
 		data: {
 			query: `{
