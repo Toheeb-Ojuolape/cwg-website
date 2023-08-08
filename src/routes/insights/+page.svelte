@@ -10,17 +10,16 @@
 	import PressRelease from './PressRelease.svelte';
 	import QuarterlyNewsletter from './QuarterlyNewsletter.svelte';
 	import GalleryMedia from './GalleryMedia.svelte';
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
-
-	let featuredURL = 'https://cwg-website.netlify.app/insights/featured';
-
-	let newsletterEmail = '';
+	import { enhance } from '$app/forms';
 
 	let origin = '';
 
 	let activeSection: string | null;
+
+	export let form: ActionData;
 
 	// Function to update the active section based on scroll position
 	function updateActiveSection() {
@@ -294,15 +293,30 @@
 						<div class="text-[15px]">{content.send_newsletter_section.description}</div>
 					</div>
 
-					<form action="#" id="sub-newsletter-form" class="my-[20px]">
+					<form method="POST" id="sub-newsletter-form" class="my-[20px]" use:enhance>
 						<div class="relative w-[300px]">
 							<input
 								class="pl-4 pr-8 focus-within:outline focus-within:outline-white text-white peer h-11 w-full bg-transparent border border-black-600 placeholder:text-pewter-blue placeholder:text-button-s"
 								placeholder="My email..."
 								type="email"
-								bind:value={newsletterEmail}
+								id="email"
+								name="email"
 							/>
-							<button class="absolute cursor-pointer right-3 top-[10px]">
+
+							{#if form?.error}
+								<span class="text-error text-body-s">{form.error}</span>
+							{/if}
+
+							{#if form?.success}
+								<span class="text-light-green text-body-s"
+									>Successfully signed up</span
+								>
+							{/if}
+
+							<button
+								type="submit"
+								class="absolute cursor-pointer right-3 top-[10px]"
+							>
 								<img src="/images/arrow-right-white.svg" alt="arrow-right-white" />
 							</button>
 						</div>
