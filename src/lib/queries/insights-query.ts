@@ -48,37 +48,6 @@ export const INSIGHTS_PAGE_QUERY = `{
                     section_id
                     title
                     description
-                    blogs {
-                        data {
-                            attributes {
-                                title
-                                blog_author {
-                                    data {
-                                        attributes {
-                                            name
-                                        }
-                                    }
-                                }
-                                cover_image {
-                                    data {
-                                        attributes {
-                                            url
-                                        }
-                                    }
-                                }
-                                read_duration_mins
-                                slug
-                                date_published
-                                blog_categories {
-                                    data {
-                                        attributes {
-                                            name
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
                 event_section {
                     section_id
@@ -116,30 +85,6 @@ export const INSIGHTS_PAGE_QUERY = `{
                     section_id
                     title
                     description
-                    articles {
-                        data {
-                            attributes {
-                                title
-                                cover_image {
-                                    data {
-                                        attributes {
-                                            url
-                                        }
-                                    }
-                                }
-                                date_published
-                                read_duration_mins
-                                blog_type {
-                                    data {
-                                        attributes {
-                                            name
-                                        }
-                                    }
-                                }
-                                slug
-                            }
-                        }
-                    }
                 }
                 podcast_section {
                     section_id
@@ -187,30 +132,6 @@ export const INSIGHTS_PAGE_QUERY = `{
                     section_id
                     title
                     description
-                    content {
-                        data {
-                            attributes {
-                                title
-                                cover_image {
-                                    data {
-                                        attributes {
-                                            url
-                                        }
-                                    }
-                                }
-                                date_published
-                                read_duration_mins
-                                blog_type {
-                                    data {
-                                        attributes {
-                                            name
-                                        }
-                                    }
-                                }
-                                slug
-                            }
-                        }
-                    }
                 }
                 media_section {
                     section_id

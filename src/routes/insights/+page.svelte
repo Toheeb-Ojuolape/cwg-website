@@ -167,7 +167,11 @@
 				<div class="text-[12px]">{content.blogs_section.description}</div>
 			</div>
 
-			<BlogsBlocks list={content.blogs_section.blogs.data} />
+			<BlogsBlocks
+				list={data.posts.filter(
+					(item) => item.attributes.blog_type.data.attributes.key === 'blog'
+				)}
+			/>
 		</section>
 
 		<span id={content.event_section.section_id} class="dummy-id" />
@@ -224,7 +228,11 @@
 			</div>
 
 			<div class="py-10">
-				<PressRelease newsThumbails={content.press_release_section.articles.data} />
+				<PressRelease
+					newsThumbails={data.posts.filter(
+						(item) => item.attributes.blog_type.data.attributes.key === 'press-release'
+					)}
+				/>
 			</div>
 		</section>
 
@@ -266,7 +274,11 @@
 			</div>
 
 			<div class="section-container py-10">
-				<QuarterlyNewsletter newsletters={content.newsroom_section.content.data} />
+				<QuarterlyNewsletter
+					newsletters={data.posts.filter(
+						(item) => item.attributes.blog_type.data.attributes.key === 'newsletter'
+					)}
+				/>
 			</div>
 		</section>
 
