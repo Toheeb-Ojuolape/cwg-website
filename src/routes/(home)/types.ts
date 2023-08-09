@@ -1,9 +1,9 @@
 import type {
+	CMSBlog,
 	CMSCard,
 	CMSSectionWithCards,
 	DataImage,
 	DataImageAttributes,
-	PressRelease,
 	SharesHighlight,
 	StringOrNull
 } from '$lib/types/common-types';
@@ -20,7 +20,7 @@ export interface HomePageData {
 	quality_policy_section: HomeSectionWithLink;
 	press_release_section_title: string;
 	press_release_section_id: string;
-	press_releases: { data: PressRelease[] };
+	press_releases: { data: CMSBlog[] };
 }
 
 export interface HomeCounter {

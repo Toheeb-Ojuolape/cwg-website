@@ -53,15 +53,15 @@
 					particlesToShow={3}
 					particlesToScroll={2}
 				>
-					{#each list as { attributes: { article_date, article_type, image, read_duration_mins, title, uuid } }, index}
+					{#each list as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title, slug } }, index}
 						<a
-							href={`/press-release/${uuid}`}
+							href={`/blog/${slug}`}
 							class:Carousel__item1={index === 0}
 							class="block group w-[calc(100%/3)] ml-[72px]"
 						>
 							<div class="bg-neon-blue h-[358.81px] w-full mb-[30px] overflow-hidden">
 								<img
-									src={CMS_URL + image.data?.attributes.url}
+									src={CMS_URL + cover_image.data?.attributes.url}
 									alt={title}
 									class="h-full w-full object-cover transition-all duration-1000 group-hover:scale-110"
 								/>
@@ -77,10 +77,10 @@
 							</div>
 							<p class="text-body-l">
 								<span class="text-bright-blue"
-									>{article_type.data?.attributes.title ?? 'Press Release'}</span
+									>{blog_type.data?.attributes.name ?? ''}</span
 								>
-								• {article_date
-									? format(new Date(article_date), 'MMMM dd, yyyy')
+								• {date_published
+									? format(new Date(date_published), 'MMMM dd, yyyy')
 									: ''}
 								•
 								<span class="text-bright-blue">{read_duration_mins} mins</span>

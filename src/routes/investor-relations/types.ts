@@ -1,9 +1,9 @@
 import type {
 	AnnualResultBreakdown,
+	CMSBlog,
 	CMSLink,
 	DataImage,
 	PageHeader,
-	PressRelease,
 	SectionWithText,
 	SharesHighlight,
 	StringOrNull,
@@ -21,7 +21,7 @@ export interface InvestorRelationPage {
 	annual_result_breakdowns: AnnualResultBreakdown;
 	company_years: { data: CompanyYear[] };
 	shares_highlight: SharesHighlight;
-	press_release: { data: PressRelease[] };
+	press_release: { data: CMSBlog[] };
 }
 
 export interface CompanyYear {

@@ -101,26 +101,6 @@ export interface CMSBlockQuote {
 	source: StringOrNull;
 }
 
-export interface PressRelease {
-	attributes: {
-		title: string;
-		content: StringOrNull;
-		image: DataImage;
-		article_date: StringOrNull;
-		read_duration_mins: string;
-		uuid: string;
-		author: { data: { attributes: { name: string; description: string } } };
-		article_type: {
-			data: {
-				attributes: {
-					title: string;
-				};
-			};
-		};
-		related_articles: { data: PressRelease[] };
-	};
-}
-
 export interface Country {
 	attributes: {
 		name: string;
@@ -147,4 +127,42 @@ export interface PageMoreAboutUs {
 		slug: StringOrNull;
 		image: DataImage;
 	}[];
+}
+
+export interface CMSBlog {
+	attributes: {
+		title: string;
+		slug: string;
+		read_duration_mins: number;
+		date_published: string;
+		cover_image: DataImage;
+		blog_type: { data: BlogType };
+		blog_categories: { data: BlogCategory[] };
+		content: StringOrNull;
+		preface: StringOrNull;
+		blog_author: { data: BlogAuthor };
+		related_stories: { data: CMSBlog[] };
+	};
+}
+
+export interface BlogType {
+	attributes: {
+		name: string;
+		key: string;
+	};
+}
+
+export interface BlogCategory {
+	attributes: {
+		name: string;
+		uuid: string;
+	};
+}
+
+export interface BlogAuthor {
+	attributes: {
+		name: string;
+		uuid: string;
+		description: string;
+	};
 }

@@ -7,58 +7,18 @@
 	import Carousel from 'svelte-carousel';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
-	import type { PressRelease } from '$lib/types/common-types';
+	import type { CMSBlog } from '$lib/types/common-types';
 
-	export let list: PressRelease[];
+	export let list: CMSBlog[];
 
 	let carousel: any;
 
 	let currentPageIndex = 0;
-	// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-	let newsThumbails = [
-		{
-			image: '/images/press-release-1.jpg',
-			caption:
-				'COVID-19: CWG to leverage digital product offerings to boost financial fortune in 2021',
-			date: 'February 22, 2021',
-			readingLength: '3 mins'
-		},
-		{
-			image: '/images/press-release-2.jpg',
-			caption: 'How Smart utilities can power Nigeria’s future smart cities',
-			date: 'February 7, 2021',
-			readingLength: '4 mins'
-		},
-		{
-			image: '/images/press-release-3.jpg',
-			caption: 'CWG posts N11.8 billion revenue in 2020 financial year',
-			date: 'February 1, 20213',
-			readingLength: '3 mins'
-		},
-		{
-			image: '/images/press-release-1.jpg',
-			caption:
-				'COVID-19: CWG to leverage digital product offerings to boost financial fortune in 2021',
-			date: 'February 22, 2021',
-			readingLength: '3 mins'
-		},
-		{
-			image: '/images/press-release-2.jpg',
-			caption: 'How Smart utilities can power Nigeria’s future smart cities',
-			date: 'February 7, 2021',
-			readingLength: '4 mins'
-		},
-		{
-			image: '/images/press-release-3.jpg',
-			caption: 'CWG posts N11.8 billion revenue in 2020 financial year',
-			date: 'February 1, 20213',
-			readingLength: '3 mins'
-		}
-	];
-	let lastIndex = Math.round(newsThumbails.length / 3);
+
+	let lastIndex = Math.round(list.length / 3);
 
 	if (browser) {
-		lastIndex = Math.round(([...newsThumbails].length + 1) / 3);
+		lastIndex = Math.round(([...list].length + 1) / 3);
 	}
 
 	function onPageChange(event: { detail: number }) {
@@ -77,7 +37,7 @@
 			particlesToShow={3}
 			particlesToScroll={2}
 		>
-			{#each list as { attributes: { article_date, article_type, image, read_duration_mins, title } }, index}
+			{#each list as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title } }, index}
 				<a
 					href="/"
 					class:Carousel__item1={index === 0}
@@ -85,7 +45,7 @@
 				>
 					<div class="bg-neon-blue pt-[70%] relative w-full mb-[30px] overflow-hidden">
 						<img
-							src={CMS_URL + image.data?.attributes.url}
+							src={CMS_URL + cover_image.data?.attributes.url}
 							alt={title}
 							class="h-full w-full object-cover transition-all duration-1000 group-hover:scale-110 bg-img"
 						/>
@@ -100,8 +60,8 @@
 						/>
 					</div>
 					<p class="text-body-l">
-						<span class="text-bright-blue">{article_type.data.attributes.title}</span> • {article_date
-							? format(new Date(article_date), 'MMMM dd, yyyy')
+						<span class="text-bright-blue">{blog_type.data.attributes.name}</span> • {date_published
+							? format(new Date(date_published), 'MMMM dd, yyyy')
 							: ''} •
 						<span class="text-bright-blue">{read_duration_mins}</span>
 					</p>

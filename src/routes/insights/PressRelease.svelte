@@ -5,13 +5,13 @@
 
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
-	import type { InsightsPageData } from './types';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
+	import type { CMSBlog } from '$lib/types/common-types';
 
 	let carousel: any;
 
-	export let newsThumbails: InsightsPageData['press_release_section']['articles']['data'];
+	export let newsThumbails: CMSBlog[];
 
 	let currentPageIndex = 0;
 
@@ -37,15 +37,15 @@
 			particlesToShow={3}
 			particlesToScroll={2}
 		>
-			{#each newsThumbails as { attributes: { article_date, article_type, image, read_duration_mins, title, uuid } }, index}
+			{#each newsThumbails as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title, slug } }, index}
 				<a
-					href={`/press-release/${uuid}`}
+					href={`/blog/${slug}`}
 					class:Carousel__item1={index === 0}
 					class="block group w-[calc(100%/3)] ml-[72px]"
 				>
 					<div class="bg-neon-blue pt-[70%] relative w-full mb-[30px] overflow-hidden">
 						<img
-							src={CMS_URL + image.data?.attributes.url}
+							src={CMS_URL + cover_image.data?.attributes.url}
 							alt={title}
 							class="h-full w-full object-cover transition-all duration-1000 group-hover:scale-110 bg-img"
 						/>
@@ -60,10 +60,9 @@
 						/>
 					</div>
 					<p class="text-body-l">
-						<span class="text-bright-blue"
-							>{article_type.data?.attributes.title ?? ''}</span
+						<span class="text-bright-blue">{blog_type.data?.attributes.name ?? ''}</span
 						>
-						• {article_date ? format(new Date(article_date), 'MMMM dd, yyyy') : ''} •
+						• {date_published ? format(new Date(date_published), 'MMMM dd, yyyy') : ''} •
 						<span class="text-bright-blue">{read_duration_mins} mins</span>
 					</p>
 				</a>

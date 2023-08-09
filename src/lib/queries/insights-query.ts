@@ -103,23 +103,23 @@ export const INSIGHTS_PAGE_QUERY = `{
                         data {
                             attributes {
                                 title
-                                image {
+                                cover_image {
                                     data {
                                         attributes {
                                             url
                                         }
                                     }
                                 }
-                                article_date
+                                date_published
                                 read_duration_mins
-                                article_type {
+                                blog_type {
                                     data {
                                         attributes {
-                                            title
+                                            name
                                         }
                                     }
                                 }
-                                uuid
+                                slug
                             }
                         }
                     }
@@ -174,15 +174,23 @@ export const INSIGHTS_PAGE_QUERY = `{
                         data {
                             attributes {
                                 title
-                                uuid
-                                date
-                                image {
+                                cover_image {
                                     data {
                                         attributes {
                                             url
                                         }
                                     }
                                 }
+                                date_published
+                                read_duration_mins
+                                blog_type {
+                                    data {
+                                        attributes {
+                                            name
+                                        }
+                                    }
+                                }
+                                slug
                             }
                         }
                     }

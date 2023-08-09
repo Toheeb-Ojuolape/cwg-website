@@ -119,20 +119,21 @@ export const load: PageLoad = async (): Promise<{ home: HomePageData }> => {
                                 data {
                                     attributes {
                                         title
-                                        article_date
+                                        date_published
                                         read_duration_mins
-                                        image {
+                                        cover_image {
                                             data {
                                                 attributes {
                                                     url
                                                 }
                                             }
                                         }
-                                        uuid
-                                        article_type {
+                                        slug
+                                        blog_type {
                                             data {
                                                 attributes {
-                                                    title
+                                                    name
+                                                    key
                                                 }
                                             }
                                         }
