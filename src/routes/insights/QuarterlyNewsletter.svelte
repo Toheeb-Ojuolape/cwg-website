@@ -36,7 +36,7 @@
 			particlesToScroll={2}
 		>
 			{#each newsletters as { attributes: { date_published, cover_image, title, slug } }}
-				<a href={`/blog/${slug}`} class="slider bg-midnight-blue relative pb-10">
+				<a href={`/post/${slug}`} class="slider bg-midnight-blue relative pb-10">
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div class="slider-img-wrapper">
 						<img

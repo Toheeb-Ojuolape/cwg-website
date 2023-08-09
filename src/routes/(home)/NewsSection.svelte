@@ -55,7 +55,7 @@
 				>
 					{#each list as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title, slug } }, index}
 						<a
-							href={`/blog/${slug}`}
+							href={`/post/${slug}`}
 							class:Carousel__item1={index === 0}
 							class="block group w-[calc(100%/3)] ml-[72px]"
 						>

@@ -19,7 +19,7 @@
 
 <div class="blogs-blocks-wrapper grid sm:grid-cols-3 lg:grid-cols-4 gap-[30px] lg:gap-[50px]">
 	{#each list as { attributes: { blog_author, blog_categories, cover_image, date_published, slug, title, read_duration_mins } }}
-		<a href={`/blog/${slug}`} class="blog-block">
+		<a href={`/post/${slug}`} class="blog-block">
 			<div class="blog-block-img-wrapper relative">
 				<img src={CMS_URL + cover_image.data?.attributes.url} alt={title} class="bg-img" />
 			</div>

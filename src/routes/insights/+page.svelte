@@ -106,7 +106,7 @@
 						</p>
 
 						<a
-							href={`/blog/${content.featured_blog.data.attributes.slug}`}
+							href={`/post/${content.featured_blog.data.attributes.slug}`}
 							class="flex gap-5 text-lg max-w-[170px] mt-[50px]"
 						>
 							<span>Read more</span>
@@ -123,7 +123,7 @@
 					<span class="text-[14px] uppercase">share</span>
 					<a
 						href={`https://www.facebook.com/sharer/sharer.php?u=${
-							origin + `/blog/${content.featured_blog.data.attributes.slug}`
+							origin + `/post/${content.featured_blog.data.attributes.slug}`
 						}`}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -131,14 +131,14 @@
 						<img src="/images/share-facebook.svg" alt="facebook" />
 					</a>
 					<a
-						href={`https://www.linkedin.com/shareArticle?url=${origin}/blog/${content.featured_blog.data.attributes.slug}`}
+						href={`https://www.linkedin.com/shareArticle?url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<img src="/images/share-linkedin.svg" alt="linkedin" />
 					</a>
 					<a
-						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/blog/${content.featured_blog.data.attributes.slug}`}
+						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
