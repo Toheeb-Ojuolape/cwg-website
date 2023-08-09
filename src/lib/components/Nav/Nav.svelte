@@ -104,9 +104,9 @@
 				<a href={`/${nav.sectors_slug}`} class:text-white={useWhite}>{nav.sectors_title}</a>
 			</li>
 			<li>
-				<a href="#!" class="flex peer gap-1 items-center" class:text-white={useWhite}
-					>{nav.community_title}<ArrowDownIcon /></a
-				>
+				<div class="flex peer gap-1 items-center" class:text-white={useWhite}>
+					{nav.community_title}<ArrowDownIcon />
+				</div>
 				<div class="Nav__dropdown__container">
 					<CommunityDropdown list={nav.community_links.data} />
 				</div>

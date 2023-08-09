@@ -27,7 +27,7 @@
 		<h2 class="event-title text-[32px] pt-[15px] pb-[30px]">{upcomingEvent.title}</h2>
 
 		<div class="flex gap-[50px]">
-			<a href="/#!" class="flex gap-[12px] text-[16px] header-link text-bright-blue">
+			<a href="/" class="flex gap-[12px] text-[16px] header-link text-bright-blue">
 				<img src="/images/plus.svg" alt="plus" />
 				<span>Add to calendar</span>
 			</a>

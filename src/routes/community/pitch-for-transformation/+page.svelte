@@ -50,7 +50,7 @@
 					{@html pageData.videos_section.description}
 				</p>
 
-				<a href="/#!" class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]">
+				<a href="/" class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]">
 					<span>Register now</span>
 					<div class="arrow-right">
 						<ArrowRightLong strokeClassName="stroke-blue" />
@@ -144,7 +144,7 @@
 					<h2 class="text-headline-4 lg:text-headline-2">
 						{pageData.application_procedure_section.title}
 					</h2>
-					<a href="/#!" class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px] mt-[50px]">
+					<a href="/" class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px] mt-[50px]">
 						<span>Apply now</span>
 						<div class="arrow-right">
 							<ArrowRightLong strokeClassName="stroke-blue" />
@@ -153,9 +153,7 @@
 				</div>
 			</div>
 
-			<div
-				class="section-text-side bg-whitish-blue dark:bg-dark-highlight p-10"
-			>
+			<div class="section-text-side bg-whitish-blue dark:bg-dark-highlight p-10">
 				<div class="py-2 Pitch__card-content">
 					{@html pageData.application_procedure_section.content}
 				</div>
