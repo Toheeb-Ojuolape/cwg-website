@@ -92,7 +92,7 @@
 			</li>
 
 			<li>
-				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
+				<a href="/services" class="flex peer gap-1 items-center" class:text-white={useWhite}
 					>{nav.services_title}<ArrowDownIcon /></a
 				>
 				<div class="Nav__dropdown__container">
@@ -104,7 +104,7 @@
 				<a href={`/${nav.sectors_slug}`} class:text-white={useWhite}>{nav.sectors_title}</a>
 			</li>
 			<li>
-				<a href="/" class="flex peer gap-1 items-center" class:text-white={useWhite}
+				<a href="#!" class="flex peer gap-1 items-center" class:text-white={useWhite}
 					>{nav.community_title}<ArrowDownIcon /></a
 				>
 				<div class="Nav__dropdown__container">
