@@ -95,6 +95,23 @@ export const INSIGHTS_PAGE_QUERY = `{
                         }
                     }
                 }
+                upcoming_events_section_title
+                upcoming_events {
+                    data {
+                        attributes {
+                            title
+                            datetime
+                            video_link
+                            image {
+                                data {
+                                    attributes {
+                                        url
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 press_release_section {
                     section_id
                     title

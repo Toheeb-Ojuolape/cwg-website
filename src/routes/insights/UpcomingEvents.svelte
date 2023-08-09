@@ -1,0 +1,127 @@
+<script lang="ts">
+	import { browser } from '$app/environment';
+	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
+
+	// @ts-ignore
+	import Carousel from 'svelte-carousel';
+	import { CMS_URL } from '$lib/api';
+	import { format } from 'date-fns';
+	import type { UpcomingEvent } from '$lib/types/common-types';
+
+	let carousel: any;
+
+	export let list: UpcomingEvent[];
+
+	let currentPageIndex = 0;
+
+	let lastIndex = Math.round(list.length / 3);
+
+	if (browser) {
+		lastIndex = Math.round(([...list].length + 1) / 3);
+	}
+
+	function onPageChange(event: { detail: number }) {
+		currentPageIndex = event.detail;
+	}
+</script>
+
+<div class="relative">
+	{#if browser}
+		<Carousel
+			on:pageChange={onPageChange}
+			bind:this={carousel}
+			arrows={false}
+			infinite={false}
+			dots={false}
+			particlesToShow={3}
+			particlesToScroll={2}
+		>
+			{#each list as { attributes: { datetime, image, title, video_link } }, index}
+				<a
+					href={video_link}
+					class:Carousel__item1={index === 0}
+					class="block group w-[calc(100%/3)] ml-[72px]"
+				>
+					<div class="bg-neon-blue pt-[70%] relative w-full mb-[30px] overflow-hidden">
+						<img
+							src={CMS_URL + image.data?.attributes.url}
+							alt={title}
+							class="h-full w-full object-cover transition-all duration-1000 group-hover:scale-110 bg-img"
+						/>
+					</div>
+					<div class="flex flex-col sm:flex-row gap-7">
+						<h6 class="text-headline-6 flex-1 mb-2">
+							{title}
+						</h6>
+					</div>
+					{#if datetime}
+						<div class="text-[18px]">
+							<span class="text-bright-blue"
+								>{format(new Date(datetime), 'MMMM dd, yyyy')}</span
+							>
+							∙ {format(new Date(datetime), 'hh:mm')} WAT
+						</div>
+					{/if}
+				</a>
+			{/each}
+
+			<div class="" />
+			<div class="" />
+		</Carousel>
+
+		<button
+			on:click={() => carousel.goToPrev()}
+			class={`h-11 w-11 flex items-center justify-center rounded-full absolute left-5 lg:left-9 top-1/2 ${
+				currentPageIndex === 0 ? 'bg-white/10' : 'bg-midnight-blue'
+			}`}
+			disabled={currentPageIndex === 0}
+		>
+			<div class="rotate-180">
+				<ArrowRightSolidIcon className="fill-white" />
+			</div>
+		</button>
+
+		<button
+			on:click={() => carousel.goToNext()}
+			class={`h-11 w-11 flex items-center justify-center rounded-full absolute right-4 lg:right-8 top-1/2 ${
+				lastIndex === currentPageIndex
+					? 'bg-black-800 dark:bg-white/10'
+					: 'bg-midnight-blue'
+			}`}
+			disabled={lastIndex === currentPageIndex}
+		>
+			<ArrowRightSolidIcon className="fill-white" />
+		</button>
+	{/if}
+</div>
+
+<div class="mt-15 sm:w-[80%] mx-auto h-[1.5px] bg-black-600">
+	<div
+		class="h-[1.5px] bg-bright-blue transition-[width] duration-300"
+		style={`width: calc(100% / ${lastIndex + 1 - currentPageIndex})`}
+	/>
+</div>
+
+<style>
+	.Carousel__item1 {
+		margin-left: 16px;
+	}
+
+	@media (min-width: 1024px) {
+		.Carousel__item1 {
+			margin-left: 32px;
+		}
+	}
+
+	@media (min-width: 1536px) {
+		.Carousel__item1 {
+			margin-left: 0px;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.text-headline-6 {
+			font-size: 20px;
+		}
+	}
+</style>

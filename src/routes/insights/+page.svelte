@@ -14,6 +14,7 @@
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
 	import { enhance } from '$app/forms';
+	import UpcomingEvents from './UpcomingEvents.svelte';
 
 	let origin = '';
 
@@ -203,6 +204,13 @@
 					<div class="text-[40px]">{content.event_section.right_caption}</div>
 				</div>
 			</div>
+		</section>
+		<section id="perspectivesMain" class="section-container py-10 scrollspy">
+			<div class="section-header mb-10">
+				<h2 class="text-headline-2">{content.upcoming_events_section_title}</h2>
+			</div>
+
+			<UpcomingEvents list={content.upcoming_events.data} />
 		</section>
 
 		<span id={content.press_release_section.section_id} class="dummy-id" />

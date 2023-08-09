@@ -1,4 +1,10 @@
-import type { CMSBlog, DataImage, PageHeader, StringOrNull } from '$lib/types/common-types';
+import type {
+	CMSBlog,
+	DataImage,
+	PageHeader,
+	StringOrNull,
+	UpcomingEvent
+} from '$lib/types/common-types';
 import type { SocialMediaHandles } from '$lib/types/footer-types';
 
 export interface InsightsPageData {
@@ -14,6 +20,8 @@ export interface InsightsPageData {
 	newsroom_section: InsightsSection & { content: { data: CMSBlog[] } };
 	media_section: InsightsSection & { content: { data: Media[] } };
 	send_newsletter_section: InsightsSection & { socials: SocialMediaHandles; image: DataImage };
+	upcoming_events_section_title: string;
+	upcoming_events: { data: UpcomingEvent[] };
 }
 
 interface InsightsTab {
