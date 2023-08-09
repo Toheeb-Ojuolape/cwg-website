@@ -1,5 +1,3 @@
-export const prerender = true;
-
 import { graphqlClient } from '$lib/api';
 import type { PageLoad } from './$types';
 import { HOME_QUERY, SERVICES_QUERY } from './query';
