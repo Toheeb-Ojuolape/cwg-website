@@ -51,9 +51,9 @@
 							>Successfully signed up</span
 						>
 					{/if}
-					<div class="absolute right-2 top-[10px]">
+					<button type="submit" class="absolute right-2 top-[10px]">
 						<ArrowRightSolidIcon />
-					</div>
+					</button>
 				</div>
 			</form>
 		</div>
