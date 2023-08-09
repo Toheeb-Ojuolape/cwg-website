@@ -40,7 +40,7 @@
 						class="mb-1 pl-4 pr-8 focus-within:outline focus-within:outline-white text-white peer h-11 w-[300px] bg-transparent border border-black-600 placeholder:text-pewter-blue placeholder:text-button-s"
 						placeholder="My email..."
 						type="email"
-						name="email"
+						bind:value={email}
 					/>
 					{#if response.error}
 						<span class="text-error block text-body-s">{response.error}</span>
