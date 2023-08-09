@@ -82,7 +82,7 @@
 	{/if}
 
 	{#if data.blog.content}
-		<div class="featured-text-content text-body-m lg:text-body-l lg:font-normal">
+		<div class="featured-text-content text-body-m lg:text-body-l font-light">
 			<p class="my-5">{@html data.blog.content}</p>
 			<!-- <h2 class="text-bright-blue max-w-[603px] text-[32px] py-[20px] leading-[42px]">
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
