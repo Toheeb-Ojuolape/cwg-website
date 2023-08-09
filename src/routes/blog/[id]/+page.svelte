@@ -25,7 +25,7 @@
 		{/each}
 	</div>
 
-	<h2 class="blog-title text-[48px] leading-[61px] sm:text-[64px] sm:leading-[77px]">
+	<h2 class="blog-title text-[46px] leading-[58px] sm:text-[52px] sm:leading-[60px] my-[10px] lg:max-w-[80%]">
 		{data.blog.title}
 	</h2>
 

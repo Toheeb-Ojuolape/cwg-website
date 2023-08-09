@@ -115,15 +115,19 @@
 		position: relative;
 		z-index: 10;
 	}
+	.modal .slider > div.relative {
+		background-color: #1e1e1e;
+	}
 	.slider-img-wrapper {
 		width: 100%;
-		height: auto;
+		height: calc(100vh - 150px);
+		max-height: 600px;
 		position: relative;
 	}
 	.slider img.slider-img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: contain;
 	}
 	.album-title {
 		/* position: absolute;
