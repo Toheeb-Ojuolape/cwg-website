@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { applyAction, deserialize, enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
+	import { type ActionResponse, createNewsletterAction } from '$lib/create-newsletter-action';
 	import type { SocialMediaHandles } from '$lib/types/footer-types';
 	import ArrowRightSolidIcon from '../Svgs/ArrowRightSolidIcon.svelte';
 	import FooterLogo from '../Svgs/FooterLogo.svelte';
@@ -8,35 +7,14 @@
 
 	export let socialLinks: SocialMediaHandles['data'];
 
-	let error: string | undefined;
-	let success = false;
+	let email = '';
+	let response: ActionResponse = { error: '', success: false };
 
-	async function handleSubmit(event: any) {
-		error = undefined;
-		success = false;
-
-		// @ts-ignore
-		const data = new FormData(this);
-
-		// @ts-ignore
-		const response = await fetch(this.action, {
-			method: 'POST',
-			body: data
-		});
-
-		const result = deserialize(await response.text());
-
-		if (result.type !== 'success') {
-			// @ts-ignore
-			error = result.data.error;
+	async function handleSubmitForm() {
+		response = await createNewsletterAction({ email });
+		if (response.success) {
+			email = '';
 		}
-
-		if (result.type === 'success') {
-			success = true;
-			await invalidateAll();
-		}
-
-		applyAction(result);
 	}
 </script>
 
@@ -56,13 +34,7 @@
 				Subscribe to our newsletter and receive the latest technology insights and updates
 				from the strides of CWG delivered straight to your inbox.
 			</p>
-			<form
-				method="POST"
-				action="/insights"
-				on:submit|preventDefault={handleSubmit}
-				class="relative"
-				use:enhance
-			>
+			<form on:submit|preventDefault={handleSubmitForm} class="relative">
 				<div class="mb-[82px]">
 					<input
 						class="mb-1 pl-4 pr-8 focus-within:outline focus-within:outline-white text-white peer h-11 w-[300px] bg-transparent border border-black-600 placeholder:text-pewter-blue placeholder:text-button-s"
@@ -70,11 +42,11 @@
 						type="email"
 						name="email"
 					/>
-					{#if error}
-						<span class="text-error block text-body-s">{error}</span>
+					{#if response.error}
+						<span class="text-error block text-body-s">{response.error}</span>
 					{/if}
 
-					{#if success}
+					{#if response.success}
 						<span class="text-light-green block text-body-s"
 							>Successfully signed up</span
 						>

@@ -10,17 +10,15 @@
 	import PressRelease from './PressRelease.svelte';
 	import QuarterlyNewsletter from './QuarterlyNewsletter.svelte';
 	import GalleryMedia from './GalleryMedia.svelte';
-	import type { ActionData, PageData } from './$types';
+	import type { PageData } from './$types';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
-	import { enhance } from '$app/forms';
 	import UpcomingEvents from './UpcomingEvents.svelte';
+	import { createNewsletterAction, type ActionResponse } from '$lib/create-newsletter-action';
 
 	let origin = '';
 
 	let activeSection: string | null;
-
-	export let form: ActionData;
 
 	// Function to update the active section based on scroll position
 	function updateActiveSection() {
@@ -53,6 +51,14 @@
 	export let data: PageData;
 
 	$: content = data.insightsPage;
+
+	let email = '';
+	let response: ActionResponse = { error: '', success: false };
+
+	async function handleSubmitForm() {
+		response = await createNewsletterAction({ email });
+		if (response.success) email = '';
+	}
 </script>
 
 <main>
@@ -313,21 +319,25 @@
 						<div class="text-[15px]">{content.send_newsletter_section.description}</div>
 					</div>
 
-					<form method="POST" id="sub-newsletter-form" class="my-[20px]" use:enhance>
+					<form
+						on:submit|preventDefault={handleSubmitForm}
+						id="sub-newsletter-form"
+						class="my-[20px]"
+					>
 						<div class="relative w-[300px]">
 							<input
 								class="pl-4 pr-8 focus-within:outline focus-within:outline-white text-white peer h-11 w-full bg-transparent border border-black-600 placeholder:text-pewter-blue placeholder:text-button-s"
 								placeholder="My email..."
 								type="email"
 								id="email"
-								name="email"
+								bind:value={email}
 							/>
 
-							{#if form?.error}
-								<span class="text-error text-body-s">{form.error}</span>
+							{#if response.error}
+								<span class="text-error text-body-s">{response.error}</span>
 							{/if}
 
-							{#if form?.success}
+							{#if response.success}
 								<span class="text-light-green text-body-s"
 									>Successfully signed up</span
 								>

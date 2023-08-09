@@ -2,13 +2,13 @@
 	import { CMS_URL } from '$lib/api';
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import { format } from 'date-fns';
-	import type { ActionData, PageData } from './$types';
+	import type { PageData } from './$types';
 	import DividendsBlocks from './DividendsBlocks.svelte';
 	import PressRelease from './PressRelease.svelte';
 	import UpcomingEventBlock from './UpcomingEventBlock.svelte';
 	import YearlyDocumentsWrapper from './YearlyDocumentsWrapper.svelte';
 	import './investor-relations-styles.css';
-	import { enhance } from '$app/forms';
+	import { type ActionResponse, createNewsletterAction } from '$lib/create-newsletter-action';
 
 	let pressReleases = false;
 	let events = false;
@@ -16,7 +16,6 @@
 	let generalAnnouncements = false;
 
 	export let data: PageData;
-	export let form: ActionData;
 
 	$: content = data.pageData;
 
@@ -26,6 +25,20 @@
 		presentations: presentations ?? undefined,
 		generalAnnouncements: generalAnnouncements ?? undefined
 	};
+
+	let email = '';
+	let response: ActionResponse = { error: '', success: false };
+
+	async function handleSubmitForm() {
+		response = await createNewsletterAction({ email, alerts });
+		if (response.success) {
+			email = '';
+			pressReleases = false;
+			events = false;
+			presentations = false;
+			generalAnnouncements = false;
+		}
+	}
 </script>
 
 <main>
@@ -171,21 +184,21 @@
 					<h2 class="text-headline-2">Email Alerts and Contact Info</h2>
 				</div>
 
-				<form method="POST" id="contact-subscription-form" use:enhance>
+				<form on:submit|preventDefault={handleSubmitForm} id="contact-subscription-form">
 					<div class="form-group my-[25px]">
 						<input
 							type="email"
 							placeholder="Email address"
 							class="inp-field"
 							id="email"
-							name="email"
+							bind:value={email}
 							required
 						/>
-						{#if form?.error}
-							<span class="text-error mt-1 block text-body-s">{form.error}</span>
+						{#if response.error}
+							<span class="text-error mt-1 block text-body-s">{response.error}</span>
 						{/if}
 
-						{#if form?.success}
+						{#if response.success}
 							<span class="text-light-green mt-1 block text-body-s"
 								>Successfully signed up</span
 							>
@@ -210,7 +223,6 @@
 							<span>General Announcements</span>
 						</label>
 					</div>
-					<input class="hidden" name="alerts" value={JSON.stringify(alerts)} />
 
 					<button
 						type="submit"
