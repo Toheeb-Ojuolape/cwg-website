@@ -33,7 +33,7 @@ export const load: PageLoad = async (): Promise<{ pageData: InvestorRelationPage
                                 data {
                                     attributes {
                                         title
-                                        image {
+                                        cover_image {
                                             data {
                                                 attributes {
                                                     alternativeText
@@ -41,13 +41,13 @@ export const load: PageLoad = async (): Promise<{ pageData: InvestorRelationPage
                                                 }
                                             }
                                         }
-                                        article_date
+                                        date_published
                                         read_duration_mins
-                                        uuid
-                                        article_type {
+                                        slug
+                                        blog_type {
                                             data {
                                                 attributes {
-                                                    title
+                                                    name
                                                 }
                                             }
                                         }

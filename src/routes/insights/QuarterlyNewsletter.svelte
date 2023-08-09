@@ -5,12 +5,12 @@
 
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
-	import type { InsightsPageData } from './types';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
+	import type { CMSBlog } from '$lib/types/common-types';
 
 	let carousel: any;
-	export let newsletters: InsightsPageData['newsroom_section']['content']['data'];
+	export let newsletters: CMSBlog[];
 
 	let currentPageIndex = 0;
 	let lastIndex = Math.round(newsletters.length / 3);
@@ -35,21 +35,21 @@
 			particlesToShow={3}
 			particlesToScroll={2}
 		>
-			{#each newsletters as { attributes: { date, image, title, uuid } }}
-				<div class="slider bg-midnight-blue relative pb-10">
+			{#each newsletters as { attributes: { date_published, cover_image, title, slug } }}
+				<a href={`/post/${slug}`} class="slider bg-midnight-blue relative pb-10">
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
 					<div class="slider-img-wrapper">
 						<img
-							src={CMS_URL + image.data?.attributes.url}
+							src={CMS_URL + cover_image.data?.attributes.url}
 							alt="Slide"
 							class="slider-img"
 						/>
 					</div>
 					<div class="slider-caption p-5">{title}</div>
 					<div class="newsletter-date text-[14px] text-pewter-blue">
-						{date ? format(new Date(date), 'MMM dd, yyyy') : ''}
+						{date_published ? format(new Date(date_published), 'MMM dd, yyyy') : ''}
 					</div>
-				</div>
+				</a>
 			{/each}
 
 			<div class="" />

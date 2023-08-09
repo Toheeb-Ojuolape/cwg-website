@@ -14,6 +14,7 @@
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
 	import { enhance } from '$app/forms';
+	import UpcomingEvents from './UpcomingEvents.svelte';
 
 	let origin = '';
 
@@ -105,7 +106,7 @@
 						</p>
 
 						<a
-							href={`/blog/${content.featured_blog.data.attributes.slug}`}
+							href={`/post/${content.featured_blog.data.attributes.slug}`}
 							class="flex gap-5 text-lg max-w-[170px] mt-[50px]"
 						>
 							<span>Read more</span>
@@ -122,7 +123,7 @@
 					<span class="text-[14px] uppercase">share</span>
 					<a
 						href={`https://www.facebook.com/sharer/sharer.php?u=${
-							origin + `/blog/${content.featured_blog.data.attributes.slug}`
+							origin + `/post/${content.featured_blog.data.attributes.slug}`
 						}`}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -130,14 +131,14 @@
 						<img src="/images/share-facebook.svg" alt="facebook" />
 					</a>
 					<a
-						href={`https://www.linkedin.com/shareArticle?url=${origin}/blog/${content.featured_blog.data.attributes.slug}`}
+						href={`https://www.linkedin.com/shareArticle?url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<img src="/images/share-linkedin.svg" alt="linkedin" />
 					</a>
 					<a
-						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/blog/${content.featured_blog.data.attributes.slug}`}
+						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -203,6 +204,13 @@
 					<div class="text-[40px]">{content.event_section.right_caption}</div>
 				</div>
 			</div>
+		</section>
+		<section id="perspectivesMain" class="section-container py-10 scrollspy">
+			<div class="section-header mb-10">
+				<h2 class="text-headline-2">{content.upcoming_events_section_title}</h2>
+			</div>
+
+			<UpcomingEvents list={content.upcoming_events.data} />
 		</section>
 
 		<span id={content.press_release_section.section_id} class="dummy-id" />

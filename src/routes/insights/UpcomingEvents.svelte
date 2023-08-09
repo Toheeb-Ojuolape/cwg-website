@@ -1,24 +1,23 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
-	import type { CMSBlog } from '$lib/types/common-types';
+	import type { UpcomingEvent } from '$lib/types/common-types';
 
 	let carousel: any;
 
-	export let newsThumbails: CMSBlog[];
+	export let list: UpcomingEvent[];
 
 	let currentPageIndex = 0;
 
-	let lastIndex = Math.round(newsThumbails.length / 3);
+	let lastIndex = Math.round(list.length / 3);
 
 	if (browser) {
-		lastIndex = Math.round(([...newsThumbails].length + 1) / 3);
+		lastIndex = Math.round(([...list].length + 1) / 3);
 	}
 
 	function onPageChange(event: { detail: number }) {
@@ -37,34 +36,32 @@
 			particlesToShow={3}
 			particlesToScroll={2}
 		>
-			{#each newsThumbails as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title, slug } }, index}
+			{#each list as { attributes: { datetime, image, title, video_link } }, index}
 				<a
-					href={`/post/${slug}`}
+					href={video_link}
 					class:Carousel__item1={index === 0}
 					class="block group w-[calc(100%/3)] ml-[72px]"
 				>
 					<div class="bg-neon-blue pt-[70%] relative w-full mb-[30px] overflow-hidden">
 						<img
-							src={CMS_URL + cover_image.data?.attributes.url}
+							src={CMS_URL + image.data?.attributes.url}
 							alt={title}
 							class="h-full w-full object-cover transition-all duration-1000 group-hover:scale-110 bg-img"
 						/>
 					</div>
-					<div class="flex flex-col sm:flex-row gap-7 mb-9">
-						<h6 class="text-headline-6 sm:min-h-[93px] flex-1">
+					<div class="flex flex-col sm:flex-row gap-7">
+						<h6 class="text-headline-6 flex-1 mb-2">
 							{title}
 						</h6>
-						<ArrowRightLong
-							fillClassName="fill-midnight-blue dark:fill-white"
-							strokeClassName="stroke-midnight-blue dark:stroke-white"
-						/>
 					</div>
-					<p class="text-body-l">
-						<span class="text-bright-blue">{blog_type.data?.attributes.name ?? ''}</span
-						>
-						• {date_published ? format(new Date(date_published), 'MMMM dd, yyyy') : ''} •
-						<span class="text-bright-blue">{read_duration_mins} mins</span>
-					</p>
+					{#if datetime}
+						<div class="text-[18px]">
+							<span class="text-bright-blue"
+								>{format(new Date(datetime), 'MMMM dd, yyyy')}</span
+							>
+							∙ {format(new Date(datetime), 'hh:mm')} WAT
+						</div>
+					{/if}
 				</a>
 			{/each}
 

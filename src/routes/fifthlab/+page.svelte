@@ -2,7 +2,6 @@
 	import '../services/services-styles.css';
 	import './fifthlab-style.css';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
-	import FifthlabBar from '$lib/components/Svgs/FifthlabBar.svelte';
 
 	import emblaCarouselSvelte, { type EmblaCarouselType } from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';

@@ -1,11 +1,12 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 	import Application from './Application.svelte';
 	import RoleOverview from './RoleOverview.svelte';
 
 	let activeTab = 1;
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	$: content = data.role.attributes;
 
@@ -63,7 +64,7 @@
 
 			{#if activeTab === 2}
 				<div id="application" class="py-5">
-					<Application />
+					<Application {form} />
 				</div>
 			{/if}
 		</div>
