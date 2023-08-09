@@ -82,8 +82,10 @@
 								• {date_published
 									? format(new Date(date_published), 'MMMM dd, yyyy')
 									: ''}
-								•
-								<span class="text-bright-blue">{read_duration_mins} mins</span>
+								{#if read_duration_mins}
+									•
+									<span class="text-bright-blue">{read_duration_mins} mins</span>
+								{/if}
 							</p>
 						</a>
 					{/each}
