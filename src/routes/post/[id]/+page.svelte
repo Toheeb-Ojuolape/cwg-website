@@ -25,7 +25,7 @@
 		{/each}
 	</div>
 
-	<h2 class="blog-title text-[46px] leading-[58px] sm:text-[52px] sm:leading-[60px] my-[10px] lg:max-w-[80%]">
+	<h2 class="text-headline-3 lg:text-headline-2">
 		{data.blog.title}
 	</h2>
 
@@ -68,7 +68,7 @@
 	<div class="featured-img-wrapper py-[50px]">
 		<img
 			src={CMS_URL + data.blog.cover_image.data?.attributes.url}
-			class="w-full max-h-[500px] h-full"
+			class="w-full max-h-[500px] h-full object-contain"
 			alt="featured-img"
 		/>
 	</div>
@@ -82,7 +82,7 @@
 	{/if}
 
 	{#if data.blog.content}
-		<div class="featured-text-content text-[22px]">
+		<div class="featured-text-content text-body-m lg:text-body-l lg:font-normal">
 			<p class="my-5">{@html data.blog.content}</p>
 			<!-- <h2 class="text-bright-blue max-w-[603px] text-[32px] py-[20px] leading-[42px]">
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
@@ -113,9 +113,3 @@
 		</div>
 	</section>
 {/if}
-
-<style>
-	.blog-title {
-		letter-spacing: -2px;
-	}
-</style>
