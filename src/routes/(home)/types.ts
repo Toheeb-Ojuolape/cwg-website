@@ -52,3 +52,19 @@ export interface HomeSectionWithLink extends HomeSection {
 		slug: string;
 	} | null;
 }
+
+export interface HomeService {
+	attributes: {
+		title: string;
+		slug: string;
+		image: DataImage;
+		icon: DataImage;
+		description: StringOrNull;
+		content: {
+			__typename: 'ComponentGlobalPageHeader';
+			headline: string;
+			title: string;
+			description: string;
+		}[];
+	};
+}

@@ -7,6 +7,7 @@
 	import QualityPolicySection from './QualityPolicySection.svelte';
 	import SectionOne from './SectionOne.svelte';
 	import SectionTwo from './SectionTwo.svelte';
+	import ServiceListSection from './ServiceListSection.svelte';
 
 	export let data: PageData;
 
@@ -21,6 +22,7 @@
 		counter={home.counter}
 	/>
 	<SectionOne data={home.section_one} />
+	<ServiceListSection list={data.services} />
 	<SectionTwo data={home.shares_highlight} />
 	<InvestorAnnualCareerSection list={home.home_highlight_cards} />
 	<IndustriesSection content={home.industries_we_dominate_section} />
