@@ -24,7 +24,7 @@
 
 <section class="bg-black-400 dark:bg-black">
 	<div class="section">
-		<div class="section-container py-22">
+		<div class="section-container py-5 dark:py-2 lg:py-22">
 			<div
 				class="overflow-hidden"
 				use:emblaCarouselSvelte={{

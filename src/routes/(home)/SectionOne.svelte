@@ -6,7 +6,7 @@
 </script>
 
 <section
-	class="pt-10 pb-11 section-container grid gap-5 lg:gap-[75px] lg:flex lg:flex-row lg:items-center lg:justify-between"
+	class="pt-10 lg:pb-11 section-container grid gap-5 lg:gap-[75px] lg:flex lg:flex-row lg:items-center lg:justify-between"
 >
 	<div class="text-body-m font-light lg:text-body-l flex-1">
 		<p class="mb-4 lg:mb-6">{@html data.content}</p>
