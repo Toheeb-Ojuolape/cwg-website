@@ -29,6 +29,7 @@
 	$: isWhite = (shouldHaveColor || showDrawer) && $theme === 'light';
 	$: isDark = (shouldHaveColor || showDrawer) && $theme === 'dark';
 	$: useWhite = !shouldHaveColor && $page.url.pathname === '/';
+	$: isHome = $page.url.pathname === '/';
 
 	onMount(() => {
 		shouldHaveColor = window.scrollY >= 18;
@@ -141,12 +142,22 @@
 			on:click={() => (showDrawerContainer ? closeDrawer() : (showDrawerContainer = true))}
 		>
 			<div class="Nav__menu-icon" class:Nav__menu-icon--visible={showDrawer}>
-				<div class="bg-midnight-blue dark:bg-white" />
 				<div
+					class:bg-midnight-blue={!isHome || shouldHaveColor}
+					class:bg-white={isHome && !shouldHaveColor}
+					class="dark:bg-white"
+				/>
+				<div
+					class:bg-white={isHome && !shouldHaveColor}
+					class:bg-midnight-blue={!isHome || shouldHaveColor}
 					class="bg-midnight-blue dark:bg-white"
 					class:Nav__menu-icon--middle={showDrawer}
 				/>
-				<div class="bg-midnight-blue dark:bg-white" />
+				<div
+					class:bg-white={isHome && !shouldHaveColor}
+					class:bg-midnight-blue={!isHome || shouldHaveColor}
+					class="bg-midnight-blue dark:bg-white"
+				/>
 			</div>
 		</button>
 	</div>
