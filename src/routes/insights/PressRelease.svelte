@@ -8,6 +8,7 @@
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
 	import type { CMSBlog } from '$lib/types/common-types';
+	import { onMount } from 'svelte';
 
 	let carousel: any;
 
@@ -31,17 +32,25 @@
 	function onPageChange(event: { detail: number }) {
 		currentPageIndex = event.detail;
 	}
+
+	onMount(function () {
+		if (window.innerWidth <= 768) {
+			lastIndex = newsThumbails.length - 1;
+		}
+		isMobile = window.innerWidth <= 768;
+	});
 </script>
 
 <svelte:window on:resize={onWindowResize} />
+
 <div class="relative">
 	{#if browser}
 		<Carousel
 			on:pageChange={onPageChange}
 			bind:this={carousel}
-			{autoplay}
+			autoplay={isMobile && autoplay}
 			arrows={false}
-			infinite={false}
+			infinite={isMobile && autoplay}
 			dots={false}
 			particlesToShow={isMobile ? 1 : 3}
 			particlesToScroll={isMobile ? 1 : 2}
@@ -77,8 +86,10 @@
 				</a>
 			{/each}
 
-			<div class="" />
-			<div class="" />
+			{#if !isMobile}
+				<div class="" />
+				<div class="" />
+			{/if}
 		</Carousel>
 
 		<button
