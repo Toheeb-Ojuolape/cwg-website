@@ -15,15 +15,17 @@
 		<p class="text-body-m font-light lg:text-body-l">{subtitle}</p>
 	</div>
 
-	<div class="flex bg-whitish-blue dark:bg-dark-highlight items-center gap-19">
-		<div class="flex-1 h-[358px]">
+	<div
+		class="flex flex-col gap-8 lg:flex-row bg-whitish-blue dark:bg-dark-highlight lg:items-center lg:gap-19"
+	>
+		<div class="lg:flex-1 lg:h-[358px]">
 			<img
 				src={CMS_URL + body.image.data?.attributes.url}
 				alt={title}
 				class="h-full w-full object-cover"
 			/>
 		</div>
-		<div class="flex-1">
+		<div class="lg:flex-1 px-5 lg:px-0 pb-4 lg:pb-0">
 			<h4 class="text-headline-4 mb-5 max-w-[533px] w-full">
 				{body.title}
 			</h4>

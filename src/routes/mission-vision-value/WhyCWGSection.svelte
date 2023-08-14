@@ -23,16 +23,16 @@
 </script>
 
 <section
-	class="box-container mt-25 mx-auto flex lg:flex-row gap-20 bg-whitish-blue dark:bg-dark-highlight"
+	class="box-container mt-25 mx-auto flex flex-col lg:flex-row gap-8 lg:gap-20 bg-whitish-blue dark:bg-dark-highlight"
 >
-	<div class="flex-1 h-[390px]">
+	<div class="flex-1 lg:h-[390px]">
 		<img
 			src={CMS_URL + image.data?.attributes.url}
 			alt={image.data?.attributes.alternativeText}
 			class="h-full w-full object-cover"
 		/>
 	</div>
-	<div class="flex-1 flex flex-col justify-center">
+	<div class="flex-1 flex flex-col justify-center px-5 lg:px-0 pb-5">
 		<div
 			class="overflow-hidden w-full"
 			use:emblaCarouselSvelte={{
@@ -44,7 +44,7 @@
 			<div class="flex">
 				{#each carousel as { content, title, subtitle }}
 					<div class="flex w-full min-w-full flex-col gap-5 pr-8">
-						<h2 class="text-headline-2">{title}</h2>
+						<h2 class="text-headline-3 lg:text-headline-2">{title}</h2>
 						<h6 class="text-headline-6">{subtitle}</h6>
 						<p class="text-body-m">
 							{@html content ?? ''}

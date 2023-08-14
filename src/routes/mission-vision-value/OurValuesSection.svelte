@@ -13,7 +13,7 @@
 		<p class="text-body-l">{subtitle}</p>
 	</div>
 
-	<div class="grid grid-cols-3 gap-[30px]">
+	<div class="grid grid-cols-1 lg:grid-cols-3 gap-[30px]">
 		{#each values as value}
 			<ValueCard {value} />
 		{/each}

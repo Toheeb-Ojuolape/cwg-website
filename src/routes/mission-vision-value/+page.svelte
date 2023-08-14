@@ -33,13 +33,15 @@
 
 <div>
 	<header
-		class="header h-[477px] mx-auto px-4 lg:px-8"
+		class="header h-[300px] lg:h-[477px] mx-auto px-4 lg:px-8"
 		style={`background-image: url(${CMS_URL}${header.background_image.data?.attributes.url})`}
 	>
-		<div class="section-container">
-			<h1 class="text-headline-2 lg:text-headline-1 w-1/2 text-white">
-				{header.title}
-			</h1>
+		<div>
+			<div class="section-container">
+				<h1 class="text-headline-2 lg:text-headline-1 w-full lg:w-1/2 text-white">
+					{header.title}
+				</h1>
+			</div>
 		</div>
 	</header>
 

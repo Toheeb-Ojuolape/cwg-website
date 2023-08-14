@@ -7,8 +7,8 @@
 	const { content, image, title, subtitle } = value;
 </script>
 
-<div class="pt-4 bg-whitish-blue dark:bg-dark-highlight h-[568px] flex flex-col">
-	<div class="flex-1 px-5">
+<div class="pt-4 bg-whitish-blue dark:bg-dark-highlight h-full min-h-[568px] flex flex-col">
+	<div class="flex-1 px-5 pb-4">
 		<div class="h-[188px] w-full mb-4">
 			<img
 				src={CMS_URL + image.data?.attributes.url}

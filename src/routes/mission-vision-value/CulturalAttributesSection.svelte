@@ -17,13 +17,17 @@
 	}
 </script>
 
-<section class="box-container mx-auto bg-black-300 dark:bg-dark-highlight flex items-center gap-19">
-	<div class="flex-[3] pl-4 lg:pl-8">
-		<h2 class="text-headline-2 mb-6">{section.title}</h2>
+<section
+	class="box-container mx-auto bg-black-300 dark:bg-dark-highlight flex flex-col lg:flex-row items-center gap-19"
+>
+	<div class="flex-[3] pt-8 lg:pt-0 pl-4 lg:pl-8">
+		<h2 class="text-headline-3 lg:text-headline-2 mb-6">{section.title}</h2>
 
 		<div class="flex flex-col gap-[10px]">
 			{#each section.items as { content, title }, i}
-				<div class="border-b border-b-black-600 dark:border-b-black-900 pb-8">
+				<div
+					class="border-b border-b-black-600 dark:border-b-black-900 pb-6 mr-5 lg:mr-0 lg:pb-8"
+				>
 					<button
 						on:click={() => onChangeCurrentIndex(i)}
 						class="flex justify-between items-center w-full"
@@ -48,7 +52,7 @@
 		</div>
 	</div>
 
-	<div class="flex-[2] h-[600px]">
+	<div class="flex-[2] lg:h-[600px]">
 		<img src={CMS_URL + image.data?.attributes.url} alt="Our Cultural Attributes" />
 	</div>
 </section>

@@ -8,15 +8,17 @@
 
 <section class="section-container">
 	{#each data as { title, subtitle, image }, i}
-		<div>
+		<div class="item">
 			<img src={CMS_URL + image.data?.attributes.url} alt={title} />
 			<h5 class="text-headline-6 lg:text-headline-5">{title}</h5>
 			<p>{subtitle}</p>
 		</div>
 
-		{#if i < data.length - 1}
-			<LineIcon />
-		{/if}
+		<div class="hidden lg:block">
+			{#if i < data.length - 1}
+				<LineIcon />
+			{/if}
+		</div>
 	{/each}
 </section>
 
@@ -25,12 +27,25 @@
 		padding: 0 16px;
 		margin-bottom: 32px;
 		display: flex;
+		gap: 80px;
 		flex-direction: column;
 	}
 
 	.section-container > div > p {
 		font-size: 15px;
 		line-height: 24px;
+	}
+
+	@media (max-width: 1023px) {
+		.section-container > div > p {
+			text-align: center;
+		}
+		.section-container > .item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 8px;
+		}
 	}
 
 	@media (min-width: 1024px) {
@@ -42,7 +57,7 @@
 			gap: 104px;
 		}
 
-		.section-container > div {
+		.section-container > .item {
 			flex: 1;
 		}
 
