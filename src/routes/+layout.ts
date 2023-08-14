@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'development') {
+	process.env.NODE_TLS_REJECT_UNAUTHORIZED='0'
+}
+
 import { apiClient, graphqlClient } from '$lib/api';
 import type { MoreAboutUs } from '$lib/types/more-about-us-types';
 import type { FooterData } from '$lib/types/footer-types';
