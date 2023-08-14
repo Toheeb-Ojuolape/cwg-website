@@ -34,8 +34,8 @@
 			arrows={false}
 			infinite={false}
 			dots={false}
-			particlesToShow={3}
-			particlesToScroll={2}
+			particlesToShow={window.innerWidth <= 768 ? 1 : 3}
+			particlesToScroll={window.innerWidth <= 768 ? 1 : 2}
 		>
 			{#each newsThumbails as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title, slug } }, index}
 				<a
