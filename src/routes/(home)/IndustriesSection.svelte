@@ -28,6 +28,7 @@
 <section
 	use:inview
 	on:change={(e) => {
+		// @ts-ignore
 		if (e.detail.inView) {
 			shouldShowSlide = true;
 		}
@@ -50,7 +51,7 @@
 			>
 				{#each content.cards as { content: cardContent, image, title }}
 					<div class="grid lg:grid-cols-2 gap:4 lg:gap-[55.25px]">
-						<div class="h-[324px]">
+						<div class="lg:h-[324px]">
 							<img
 								src={CMS_URL + image.data?.attributes.url}
 								alt={image.data?.attributes.alternativeText}

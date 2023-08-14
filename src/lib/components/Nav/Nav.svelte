@@ -77,7 +77,7 @@
 	class:Nav__scroll--dark={isDark}
 >
 	<div class="flex items-center justify-between px-4 lg:px-8 2xl:px-0 box-container mx-auto">
-		<NavLogo useWhiteLogo={useWhite} />
+		<NavLogo className="h-15 w-13 lg:h-[83px] lg:w-[68px]" useWhiteLogo={useWhite} />
 
 		<ul
 			class="hidden flex-1 lg:flex items-center justify-center gap-5 font-medium text-[17px] leading-[27px]"
@@ -250,18 +250,23 @@
 			<li><a href={`/${nav.fifthlab_slug}`}>{nav.fifthlab_title}</a></li>
 		</ul>
 
-		<div class="region-wrapper-trigger relative max-w-max p-5">
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="flex items-center gap-[10px] cursor-pointer" on:click={toggleDisplayRegion}>
-				<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag" />
-				<span>Nigeria</span>
-				<Caret />
+		<div class="flex items-center justify-between pb-13 mb-10 px-5">
+			<div class="region-wrapper-trigger relative max-w-max">
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<div
+					class="flex items-center gap-[10px] cursor-pointer"
+					on:click={toggleDisplayRegion}
+				>
+					<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag" />
+					<span>Nigeria</span>
+					<Caret />
+				</div>
 			</div>
-		</div>
 
-		<button class="max-w-max p-5">
-			<ThemeSwitcher />
-		</button>
+			<button class="max-w-max">
+				<ThemeSwitcher />
+			</button>
+		</div>
 	</div>
 </div>
 
@@ -294,6 +299,13 @@
 		height: calc(100vh - 101px);
 		top: 101px;
 		backdrop-filter: blur(7px);
+	}
+
+	@media (max-width: 1023px) {
+		.Nav__drawer {
+			height: calc(100vh - 93px);
+			top: 93px;
+		}
 	}
 
 	.Nav__menu-icon {

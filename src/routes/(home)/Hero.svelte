@@ -54,17 +54,6 @@
 						{title}
 					</h1>
 					<p class="mb-9">{subtitle}</p>
-					<!-- <a href="/" class="flex justify-center lg:justify-start">
-						<button
-							class="text-button-l flex items-center gap-4 group transition-all duration-500 hover:text-pewter-blue hover:scale-110"
-							>Learn more
-							<div class="mt-[6px]">
-								<ArrowRightSolidIcon
-									className="fill-white group-hover:fill-pewter-blue"
-								/>
-							</div></button
-						>
-					</a> -->
 				</div>
 			</div>
 

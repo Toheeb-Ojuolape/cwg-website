@@ -39,7 +39,10 @@
 	<Nav nav={data.nav} regions={data.regions} />
 
 	<main>
-		<div class:h-[116px]={$page.url.pathname !== '/'} />
+		<div
+			class:h-[93px]={$page.url.pathname !== '/'}
+			class:lg:h-[116px]={$page.url.pathname !== '/'}
+		/>
 		<slot />
 	</main>
 
