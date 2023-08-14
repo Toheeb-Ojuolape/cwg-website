@@ -15,14 +15,22 @@
 	let currentPageIndex = 0;
 	let lastIndex = Math.round(newsletters.length / 3);
 
-	if (browser) {
-		lastIndex = Math.round(([...newsletters].length + 1) / 3);
+	let innerWidth = 0;
+	let isMobile = true;
+
+	$: if (innerWidth <= 768) lastIndex = newsletters.length;
+	$: isMobile = innerWidth <= 768;
+
+	function onWindowResize(ev: any) {
+		innerWidth = ev.target?.innerWidth ?? 0;
 	}
 
 	function onPageChange(event: { detail: number }) {
 		currentPageIndex = event.detail;
 	}
 </script>
+
+<svelte:window on:resize={onWindowResize} />
 
 <div class="relative">
 	{#if browser}
@@ -32,8 +40,8 @@
 			arrows={false}
 			infinite={false}
 			dots={false}
-			particlesToShow={3}
-			particlesToScroll={2}
+			particlesToShow={isMobile ? 1 : 3}
+			particlesToScroll={isMobile ? 1 : 2}
 		>
 			{#each newsletters as { attributes: { date_published, cover_image, title, slug } }}
 				<a href={`/post/${slug}`} class="slider bg-midnight-blue relative pb-10">

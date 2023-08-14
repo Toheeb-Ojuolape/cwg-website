@@ -12,13 +12,20 @@
 	let carousel: any;
 
 	export let newsThumbails: CMSBlog[];
+	export let autoplay = false;
 
 	let currentPageIndex = 0;
 
 	let lastIndex = Math.round(newsThumbails.length / 3);
 
-	if (browser) {
-		lastIndex = Math.round(([...newsThumbails].length + 1) / 3);
+	let innerWidth = 0;
+	let isMobile = true;
+
+	$: if (innerWidth <= 768) lastIndex = newsThumbails.length - 1;
+	$: isMobile = innerWidth <= 768;
+
+	function onWindowResize(ev: any) {
+		innerWidth = ev.target?.innerWidth ?? 0;
 	}
 
 	function onPageChange(event: { detail: number }) {
@@ -26,22 +33,24 @@
 	}
 </script>
 
+<svelte:window on:resize={onWindowResize} />
 <div class="relative">
 	{#if browser}
 		<Carousel
 			on:pageChange={onPageChange}
 			bind:this={carousel}
+			{autoplay}
 			arrows={false}
 			infinite={false}
 			dots={false}
-			particlesToShow={window.innerWidth <= 768 ? 1 : 3}
-			particlesToScroll={window.innerWidth <= 768 ? 1 : 2}
+			particlesToShow={isMobile ? 1 : 3}
+			particlesToScroll={isMobile ? 1 : 2}
 		>
 			{#each newsThumbails as { attributes: { date_published, blog_type, cover_image, read_duration_mins, title, slug } }, index}
 				<a
 					href={`/post/${slug}`}
 					class:Carousel__item1={index === 0}
-					class="block group w-[calc(100%/3)] ml-[72px]"
+					class="block group w-[calc(100%/3)] lg:ml-[72px]"
 				>
 					<div class="bg-neon-blue pt-[70%] relative w-full mb-[30px] overflow-hidden">
 						<img

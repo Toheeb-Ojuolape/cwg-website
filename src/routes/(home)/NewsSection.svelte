@@ -23,6 +23,6 @@
 			</a>
 		</div>
 
-		<PressRelease newsThumbails={list} />
+		<PressRelease newsThumbails={list} autoplay={true} />
 	</div>
 </section>

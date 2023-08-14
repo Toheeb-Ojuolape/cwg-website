@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 
 	// @ts-ignore
 	import Carousel from 'svelte-carousel';
 	import type { InsightsPageData } from './types';
 	import { CMS_URL } from '$lib/api';
+	import { onMount } from 'svelte';
 
 	let carousel: any;
 
@@ -14,18 +14,17 @@
 	export let conversationsThumbails: InsightsPageData['podcast_section']['podcasts']['data'];
 	let lastIndex = Math.round(conversationsThumbails.length / 3);
 
-	if (browser) {
-		lastIndex = Math.round(([...conversationsThumbails].length + 1) / 3);
-	}
-
 	function onPageChange(event: { detail: number }) {
 		currentPageIndex = event.detail;
 	}
 
 	let showModal = false;
 	let currentVideoId = '';
+	let innerWidth = 0;
 
-	const openModal = (/** @type {string} */ videoId: string) => {
+	$: if (innerWidth <= 768) lastIndex = conversationsThumbails.length;
+
+	const openModal = (videoId: string) => {
 		currentVideoId = videoId;
 		showModal = true;
 	};
@@ -34,7 +33,17 @@
 		currentVideoId = '';
 		showModal = false;
 	};
+
+	function onWindowResize(ev: any) {
+		innerWidth = ev.target?.innerWidth ?? 0;
+	}
+
+	onMount(function () {
+		innerWidth = window.innerWidth;
+	});
 </script>
+
+<svelte:window on:resize={onWindowResize} />
 
 <div class="relative">
 	{#if browser}
@@ -44,8 +53,8 @@
 			arrows={false}
 			infinite={false}
 			dots={false}
-			particlesToShow={3}
-			particlesToScroll={2}
+			particlesToShow={innerWidth <= 768 ? 1 : 3}
+			particlesToScroll={innerWidth <= 768 ? 1 : 2}
 		>
 			{#each conversationsThumbails as { attributes: { thumbnail, title, uuid, youtube_video_id } }}
 				<div class="slider bg-midnight-blue">
