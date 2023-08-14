@@ -296,7 +296,7 @@
 			<div class="section-container">
 				<h2 class="text-headline-2">{content.media_section.title}</h2>
 			</div>
-			<div class="grid grid-cols-2 lg:grid-cols-4 gap-[50px] pt-10">
+			<div class="grid grid-cols-1 gap:10 lg:grid-cols-4 lg:gap-[50px] pt-10">
 				<GalleryMedia mediaDetails={content.media_section.content.data} />
 			</div>
 		</section>
