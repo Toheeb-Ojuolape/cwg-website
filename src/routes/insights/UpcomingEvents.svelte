@@ -7,6 +7,7 @@
 	import { CMS_URL } from '$lib/api';
 	import { format } from 'date-fns';
 	import type { UpcomingEvent } from '$lib/types/common-types';
+	import { onMount } from 'svelte';
 
 	let carousel: any;
 
@@ -16,15 +17,29 @@
 
 	let lastIndex = Math.round(list.length / 3);
 
-	if (browser) {
-		lastIndex = Math.round(([...list].length + 1) / 3);
+	let innerWidth = 0;
+	let isMobile = true;
+
+	$: if (innerWidth <= 768) lastIndex = list.length - 1;
+	$: isMobile = innerWidth <= 768;
+
+	function onWindowResize(ev: any) {
+		innerWidth = ev.target?.innerWidth ?? 0;
 	}
 
 	function onPageChange(event: { detail: number }) {
 		currentPageIndex = event.detail;
 	}
+
+	onMount(function () {
+		if (window.innerWidth <= 768) {
+			lastIndex = list.length - 1;
+		}
+		isMobile = window.innerWidth <= 768;
+	});
 </script>
 
+<svelte:window on:resize={onWindowResize} />
 <div class="relative">
 	{#if browser}
 		<Carousel
@@ -33,8 +48,8 @@
 			arrows={false}
 			infinite={false}
 			dots={false}
-			particlesToShow={3}
-			particlesToScroll={2}
+			particlesToShow={isMobile ? 1 : 3}
+			particlesToScroll={isMobile ? 1 : 2}
 		>
 			{#each list as { attributes: { datetime, image, title, video_link } }, index}
 				<a
