@@ -130,7 +130,7 @@
 					on:click={toggleDisplayRegion}
 				>
 					<img src="/images/nigeria.svg" alt="Nigeria" class="country-flag" />
-					<span>Nigeria</span>
+					<span class:text-white={useWhite}>Nigeria</span>
 					<Caret />
 				</div>
 			</div>
