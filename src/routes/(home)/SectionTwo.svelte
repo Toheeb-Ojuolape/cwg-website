@@ -3,6 +3,7 @@
 	import ArrowRightSolidIcon from '$lib/components/Svgs/ArrowRightSolidIcon.svelte';
 	import VectorLineIcon from '$lib/components/Svgs/VectorLineIcon.svelte';
 	import type { HomePageData } from './types';
+	import { format } from 'date-fns';
 
 	export let data: HomePageData['shares_highlight'];
 </script>
@@ -26,7 +27,11 @@
 					{data.share_currency}{data.share_unit_price}
 				</p>
 			</div>
-			<p class="text-body-l">{data.share_price_title} • 26/03/2023</p>
+			<p class="text-body-l">
+				{data.share_price_title} •
+
+				{data.share_price_date ? format(new Date(data.share_price_date), 'dd/MM/yyyy') : ''}
+			</p>
 		</div>
 
 		<div class="hidden lg:block">
