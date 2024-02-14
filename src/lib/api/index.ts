@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-const BASE_URL =
-	process.env.NODE_ENV !== 'production' ? 'https://cmss.cwg-plc.com' : 'https://cmss.cwg-plc.com';
+const baseUrl: Record<string, string> = {
+	development: 'https://cmss.cwg-plc.com', //'http://localhost:3000',
+	production: 'https://cmss.cwg-plc.com'
+};
+
+const BASE_URL = baseUrl[process.env.NODE_ENV ?? 'development'];
 
 export const CMS_URL = BASE_URL;
 
