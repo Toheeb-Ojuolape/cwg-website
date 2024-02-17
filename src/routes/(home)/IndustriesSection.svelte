@@ -23,6 +23,10 @@
 	}
 
 	export let content: HomePageData['industries_we_dominate_section'];
+
+	function onPageChange(e: CustomEvent) {
+		currentSlide = e.detail;
+	}
 </script>
 
 <section
@@ -45,9 +49,8 @@
 				arrows={false}
 				autoplay={true}
 				initialPageIndex={currentSlide}
-				let:currentPageIndex
-				let:pagesCount
 				bind:this={carousel}
+				on:pageChange={onPageChange}
 			>
 				{#each content.cards as { content: cardContent, image, title }}
 					<div class="grid lg:grid-cols-2 gap:4 lg:gap-[55.25px]">
@@ -76,8 +79,8 @@
 				<div slot="dots">
 					<div class="flex justify-center mt-10 lg:mt-[72px]">
 						<DotPager
-							length={pagesCount}
-							selected={currentPageIndex}
+							length={content.cards.length}
+							selected={currentSlide}
 							on:onSelectDot={(e) => onSelectDot(e.detail.selected)}
 						/>
 					</div>

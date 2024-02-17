@@ -14,6 +14,7 @@
 
 <div class="flex gap-2">
 	{#each Array(length) as _, i}
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			class="Dot"
 			class:Dot--selected={selected === i}
