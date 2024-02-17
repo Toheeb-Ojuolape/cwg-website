@@ -26,6 +26,7 @@ export interface ApplicationProcedureSection {
 	content: string;
 	title_position: string;
 	content_position: string;
+	section_link?: Action;
 }
 
 export interface BlockQuote {

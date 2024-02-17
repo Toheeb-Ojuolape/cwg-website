@@ -121,6 +121,10 @@ export const load: PageLoad = async (): Promise<{ pageData: PitchForTransformati
                                 content
                                 title_position
                                 content_position
+                                section_link {
+                                    title
+                                    slug
+                                }
                             }
                             block_quote {
                                 content

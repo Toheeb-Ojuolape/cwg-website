@@ -147,12 +147,17 @@
 					<h2 class="text-headline-4 lg:text-headline-2">
 						{pageData.application_procedure_section.title}
 					</h2>
-					<a href="/" class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px] mt-[50px]">
-						<span>Apply now</span>
-						<div class="arrow-right">
-							<ArrowRightLong strokeClassName="stroke-blue" />
-						</div>
-					</a>
+					{#if pageData.application_procedure_section.section_link}
+						<a
+							href={pageData.application_procedure_section.section_link.slug}
+							class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px] mt-[50px]"
+						>
+							<span>{pageData.application_procedure_section.section_link.title}</span>
+							<div class="arrow-right">
+								<ArrowRightLong strokeClassName="stroke-blue" />
+							</div>
+						</a>
+					{/if}
 				</div>
 			</div>
 
