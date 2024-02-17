@@ -31,7 +31,7 @@
 				</p>
 
 				<a
-					href={`/${pageData.header.action.slug}`}
+					href={`${pageData.header.action.slug}`}
 					class="flex items-center gap-2 header-link"
 				>
 					<span>{pageData.header.action.title}</span>
