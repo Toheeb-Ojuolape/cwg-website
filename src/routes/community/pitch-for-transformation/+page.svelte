@@ -3,13 +3,15 @@
 	import ArrowRightLong from '$lib/components/Svgs/ArrowRightLong.svelte';
 	import '../../services/services-styles.css';
 	import '../community-styles.css';
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 	import ContactForm from './ContactForm.svelte';
 	import EvaluationCriteria from './EvaluationCriteria.svelte';
 	import PanelOfJudgesBlocks from './PanelOfJudgesBlocks.svelte';
 	import VideoSide from './VideoSide.svelte';
 
 	export let data: PageData;
+
+	export let form: ActionData;
 
 	$: pageData = data.pageData;
 </script>
@@ -202,7 +204,7 @@
 					</p>
 				</div>
 
-				<ContactForm />
+				<ContactForm {form} />
 			</div>
 		</section>
 		<!--=== end of Contact-Us-Section ===-->

@@ -30,8 +30,6 @@ export const actions: Actions = {
 				}
 			});
 
-			console.log(JSON.stringify(res.data));
-
 			if (res.data.errors) {
 				return fail(400, {
 					error: res.data.errors.flatMap((e: any) => e.message).join(', ')
