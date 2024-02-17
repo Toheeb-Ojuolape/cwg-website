@@ -91,7 +91,7 @@
 						{pageData.transformation_champion_section.title}
 					</h2>
 					<a
-						href={`/${pageData.transformation_champion_section.action.slug}`}
+						href={`${pageData.transformation_champion_section.action.slug}`}
 						class="flex gap-5 text-lg pt-8 pb-10 lg:pb-5 max-w-[190px] mt-[15px] lg:mt-[30px]"
 					>
 						<span>{pageData.transformation_champion_section.action.title}</span>
