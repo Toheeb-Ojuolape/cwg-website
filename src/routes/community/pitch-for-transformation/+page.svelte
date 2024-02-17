@@ -42,7 +42,7 @@
 	</header>
 
 	<div id="sections-wrapper" class="pt-5">
-		<!--=== Enable-Future-Shakers ===-->
+		<!--=== Enable-Future-Shapers ===-->
 		<section class="section-container grid-content-box p-10">
 			<div class="section-text-side">
 				<h2 class="text-headline-4 lg:text-headline-2">{pageData.videos_section.title}</h2>
@@ -50,8 +50,11 @@
 					{@html pageData.videos_section.description}
 				</p>
 
-				<a href="/" class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]">
-					<span>Register now</span>
+				<a
+					href={pageData.videos_section.section_link.slug}
+					class="flex gap-5 text-lg pt-8 pb-5 max-w-[190px]"
+				>
+					<span>{pageData.videos_section.section_link.title}</span>
 					<div class="arrow-right">
 						<ArrowRightLong strokeClassName="stroke-blue" />
 					</div>
@@ -171,7 +174,7 @@
 					{@html pageData.block_quote.content}
 				</p>
 				<a
-					href={`/${pageData.block_quote.action.slug}`}
+					href={`${pageData.block_quote.action.slug}`}
 					class="flex gap-5 text-lg pt-8 pb-3 max-w-[354px] mt-[25px]"
 				>
 					<span>{pageData.block_quote.action.title}</span>

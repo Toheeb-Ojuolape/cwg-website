@@ -50,6 +50,10 @@ export const load: PageLoad = async (): Promise<{ pageData: PitchForTransformati
                                         }
                                     }
                                 }
+                                section_link {
+                                    title
+                                    slug
+                                }
                             }
                             judges_panel_title
                             judges_panel_subtitle

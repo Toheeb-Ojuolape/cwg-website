@@ -83,6 +83,10 @@ export interface VideosSection {
 	title: string;
 	description: string;
 	video_links: VideoLink[];
+	section_link: {
+		title: string;
+		slug: string;
+	};
 }
 
 export interface VideoLink {
