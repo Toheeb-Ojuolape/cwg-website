@@ -80,78 +80,82 @@
 
 	<div id="sections-wrapper">
 		<section class="bg-whitish-blue dark:bg-dark-highlight pt-10">
-			<div class="section-container">
-				<h2 class="section-title text-[40px] mb-[20px]">
-					{content.featured_section_title}
-				</h2>
+			{#if content.featured_blog.data}
+				<div class="section-container">
+					<h2 class="section-title text-[40px] mb-[20px]">
+						{content.featured_section_title}
+					</h2>
 
-				<div class="grid-content-box lg:gap-[50px] mb-15">
-					<div class="section-img-side relative">
-						<img
-							src={CMS_URL +
-								content.featured_blog.data.attributes.cover_image.data?.attributes
-									.url}
-							alt="featured-img"
-							class="section-img"
-						/>
-					</div>
-					<div class="section-txt-side">
-						<div class="author-date text-[14px] mb-[10px]">
-							By {content.featured_blog.data.attributes.blog_author.data.attributes
-								.name} ∙ {content.featured_blog.data.attributes.read_duration_mins} mins
-							∙ {format(
-								new Date(content.featured_blog.data.attributes.date_published),
-								'MMMM dd, yyyy'
-							)}
+					<div class="grid-content-box lg:gap-[50px] mb-15">
+						<div class="section-img-side relative">
+							<img
+								src={CMS_URL +
+									content.featured_blog.data?.attributes?.cover_image.data
+										?.attributes.url}
+								alt="featured-img"
+								class="section-img"
+							/>
 						</div>
-						<div class="featured-section-title text-[32px] mb-[30px]">
-							{content.featured_blog.data.attributes.title}
-						</div>
-						<p class="featured-txts my-[20px]">
-							{content.featured_blog.data.attributes.preface}
-						</p>
-
-						<a
-							href={`/post/${content.featured_blog.data.attributes.slug}`}
-							class="flex gap-5 text-lg max-w-[170px] mt-[50px]"
-						>
-							<span>Read more</span>
-							<div class="arrow-right">
-								<ArrowRightLong strokeClassName="stroke-blue" />
+						<div class="section-txt-side">
+							<div class="author-date text-[14px] mb-[10px]">
+								By {content.featured_blog.data?.attributes?.blog_author.data
+									.attributes.name} ∙ {content.featured_blog.data?.attributes
+									?.read_duration_mins} mins ∙ {format(
+									new Date(
+										content.featured_blog.data?.attributes?.date_published
+									),
+									'MMMM dd, yyyy'
+								)}
 							</div>
+							<div class="featured-section-title text-[32px] mb-[30px]">
+								{content.featured_blog.data.attributes.title}
+							</div>
+							<p class="featured-txts my-[20px]">
+								{content.featured_blog.data.attributes.preface}
+							</p>
+
+							<a
+								href={`/post/${content.featured_blog.data.attributes.slug}`}
+								class="flex gap-5 text-lg max-w-[170px] mt-[50px]"
+							>
+								<span>Read more</span>
+								<div class="arrow-right">
+									<ArrowRightLong strokeClassName="stroke-blue" />
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="share-social-wrapper py-5 bg-white dark:bg-black">
+					<div class="section-container flex gap-[10px] items-center">
+						<span class="text-[14px] uppercase">share</span>
+						<a
+							href={`https://www.facebook.com/sharer/sharer.php?u=${
+								origin + `/post/${content.featured_blog.data.attributes.slug}`
+							}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="/images/share-facebook.svg" alt="facebook" />
+						</a>
+						<a
+							href={`https://www.linkedin.com/shareArticle?url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="/images/share-linkedin.svg" alt="linkedin" />
+						</a>
+						<a
+							href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="/images/share-twitter.svg" alt="twitter" />
 						</a>
 					</div>
 				</div>
-			</div>
-
-			<div class="share-social-wrapper py-5 bg-white dark:bg-black">
-				<div class="section-container flex gap-[10px] items-center">
-					<span class="text-[14px] uppercase">share</span>
-					<a
-						href={`https://www.facebook.com/sharer/sharer.php?u=${
-							origin + `/post/${content.featured_blog.data.attributes.slug}`
-						}`}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<img src="/images/share-facebook.svg" alt="facebook" />
-					</a>
-					<a
-						href={`https://www.linkedin.com/shareArticle?url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<img src="/images/share-linkedin.svg" alt="linkedin" />
-					</a>
-					<a
-						href={`https://twitter.com/intent/tweet?text=Your%20Text&url=${origin}/post/${content.featured_blog.data.attributes.slug}`}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<img src="/images/share-twitter.svg" alt="twitter" />
-					</a>
-				</div>
-			</div>
+			{/if}
 		</section>
 
 		<div class="tabs-wrapper">
@@ -316,7 +320,9 @@
 						<h2 class="text-[32px] mb-[5px]">
 							{content.send_newsletter_section.title}
 						</h2>
-						<div class="text-[15px]">{content.send_newsletter_section.description}</div>
+						<div class="text-[15px]">
+							{content.send_newsletter_section.description}
+						</div>
 					</div>
 
 					<form
