@@ -22,7 +22,7 @@ export const actions: Actions = {
 
 		try {
 			await apiClient.post(
-				'/pitch-for-transformation-contact-us-forms',
+				'pitch-for-transformation-contact-us-forms',
 				{ data: { ...data, consent: data.consent === 'on' } },
 				{
 					headers: { 'Content-Type': 'application/json' }

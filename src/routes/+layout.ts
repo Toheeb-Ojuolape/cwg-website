@@ -1,4 +1,4 @@
-import { apiClient, graphqlClient } from '$lib/api';
+import { apiClient, getCmsData, graphqlClient } from '$lib/api';
 import type { MoreAboutUs } from '$lib/types/more-about-us-types';
 import type { FooterData } from '$lib/types/footer-types';
 import type { NavData } from '$lib/types/nav-type';
@@ -24,15 +24,18 @@ interface LayoutResponseData {
 }
 
 export const load = (async (): Promise<LayoutResponseData> => {
-	const nav = await apiClient
-		.get(
-			'/nav?populate[0]=services_links.icon&populate[1]=community_links&populate[2]=company_links'
-		)
-		.then((res) => res.data.data.attributes);
+	const data = await getCmsData('/nav?populate[0]=services_links.icon&populate[1]=community_links&populate[2]=company_links')
 
-	const moreAboutUs = await apiClient
-		.get('more-about-us?populate[0]=content.image')
-		.then((res) => res.data.data.attributes);
+	const nav = data?.data.attributes
+
+	// const moreAboutUs = await apiClient
+	// 	.get('more-about-us?populate[0]=content.image')
+	// 	.then((res) => res.data.data.attributes);
+
+	const aboutUs = await getCmsData('/more-about-us?populate[0]=content.image')
+	const moreAboutUs = aboutUs?.data.attributes
+
+	console.log("moreAboutUs", moreAboutUs)
 
 	const countries = await graphqlClient({
 		data: { query: COUNTRIES_QUERY }
