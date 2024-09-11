@@ -106,3 +106,4 @@ export const graphqlClient = axios.create({
 });
 
 
+export const CMS_URL = 'https://cmss.cwg-plc.com'
