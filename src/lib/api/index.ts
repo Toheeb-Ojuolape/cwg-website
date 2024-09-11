@@ -1,25 +1,23 @@
 import https from 'https';
-import { URL, type Url } from 'url';
-import axios from 'axios'
+import axios from 'axios';
+import { URL } from 'node:url';  // Correct import from 'node:url'
 
 const baseUrl: Record<string, string> = {
-	development: 'https://cmss.cwg-plc.com', //'http://localhost:3000',
-	production: 'https://cmss.cwg-plc.com'
+  development: 'https://cmss.cwg-plc.com', //'http://localhost:3000',
+  production: 'https://cmss.cwg-plc.com'
 };
 
 const BASE_URL = baseUrl[process.env.NODE_ENV ?? 'development'];
 
-// Define your base URL
-
 // Create an HTTPS agent with rejectUnauthorized set to false
-const agent = new https.Agent({  
+const agent = new https.Agent({
   rejectUnauthorized: false
 });
 
 // Function to make GET requests
-export function get(url: Url, options = {}) {
+export function get(path: string, options = {}) {
   return new Promise((resolve, reject) => {
-    const requestUrl = new URL(url, BASE_URL);
+    const requestUrl = new URL(`/api${path}`, BASE_URL); // Use URL class to combine base URL with path
     const requestOptions = {
       ...options,
       method: 'GET',
@@ -52,9 +50,9 @@ export function get(url: Url, options = {}) {
 }
 
 // Function to make POST requests
-export function post(url: Url, body: Body, options = {}) {
+export function post(path: string, body: any, options = {}) {
   return new Promise((resolve, reject) => {
-    const requestUrl = new URL(url, BASE_URL);
+    const requestUrl = new URL(`/api${path}`, BASE_URL); // Use URL class to combine base URL with path
     const requestOptions = {
       ...options,
       method: 'POST',
@@ -94,22 +92,21 @@ export function post(url: Url, body: Body, options = {}) {
 }
 
 // Usage examples
-export const getCmsData = (endpoint) => get(`/api${endpoint}`);
-export const postCmsData = (endpoint, body ) => post(`/api${endpoint}`, body);
-
+export const getCmsData = (endpoint: string) => get(endpoint);
+export const postCmsData = (endpoint: string, body: any) => post(endpoint, body);
 
 export const apiClient = axios.create({
-	baseURL: `${BASE_URL}/api`,
-	timeout: 60000,
-	method: 'post',
-	httpsAgent: agent
+  baseURL: `${BASE_URL}/api`,
+  timeout: 60000,
+  method: 'post',
+  httpsAgent: agent
 });
 
 export const graphqlClient = axios.create({
-	baseURL: `${BASE_URL}/graphql`,
-	timeout: 60000,
-	method: 'post',
-	httpsAgent: agent
+  baseURL: `${BASE_URL}/graphql`,
+  timeout: 60000,
+  method: 'post',
+  httpsAgent: agent
 });
 
-export const CMS_URL = 'https://cmss.cwg-plc.com'
+export const CMS_URL = 'https://cmss.cwg-plc.com';
