@@ -1,6 +1,6 @@
 import https from 'https';
 import axios from 'axios';
-import { URL } from 'node:url'; 
+import { URL } from 'url'; 
 
 const baseUrl: Record<string, string> = {
   development: 'https://cmss.cwg-plc.com', //'http://localhost:3000',

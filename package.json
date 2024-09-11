@@ -42,6 +42,7 @@
 		"embla-carousel-autoplay": "8.0.0-rc22",
 		"embla-carousel-svelte": "8.0.0-rc22",
 		"svelte-inview": "^4.0.2",
+		"url": "^0.11.4",
 		"zod": "^3.22.4"
 	}
 }
