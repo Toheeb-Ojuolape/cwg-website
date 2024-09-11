@@ -98,12 +98,18 @@ export const getCmsData = (endpoint) => get(`/api${endpoint}`);
 export const postCmsData = (endpoint, body ) => post(`/api${endpoint}`, body);
 
 
+export const apiClient = axios.create({
+	baseURL: `${BASE_URL}/api`,
+	timeout: 60000,
+	method: 'post',
+	httpsAgent: agent
+});
+
 export const graphqlClient = axios.create({
 	baseURL: `${BASE_URL}/graphql`,
 	timeout: 60000,
 	method: 'post',
 	httpsAgent: agent
 });
-
 
 export const CMS_URL = 'https://cmss.cwg-plc.com'
